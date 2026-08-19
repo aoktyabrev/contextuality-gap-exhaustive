@@ -418,3 +418,66 @@ https://users.cecs.anu.edu.au/~bdm/data/ — обращение 2026-08-19, `cur
 вместо него калибровка SDP опирается на циклы, полные и пустые графы, где вывод есть
 выше. Если понадобится — берётся частный случай C₅ = K(5,2), который уже покрыт формулой
 циклов.
+
+---
+
+# Stage 1 — дополнение к источникам
+
+Обращения **2026-08-19** (тот же день, что и Stage 0), выгрузки в `sources/`.
+
+## S5 — nauty / geng (генератор для 1.a)
+
+B. D. McKay, A. Piperno, *nauty and Traces*.
+Дистрибутив: https://users.cecs.anu.edu.au/~bdm/nauty/ — обращение 2026-08-19.
+Выгрузка: `sources/nauty2_9_3.tar.gz`,
+SHA-256 `9fc4edae04f88a0f5883985be3b39cf7f898fd6cc96e96b9ee25452743cc1b5b`.
+Собрано из исходников в `build/nauty2_9_3` (`./configure && make geng`), потому что
+пакета в системе нет и сайт pallini.di.uniroma1.it на дату обращения недоступен
+(`curl` возвращает HTTP 000).
+
+Версия из `build/nauty2_9_3/nauty.h` строка 606:
+
+> `#define NAUTYVERSIONID (29300+HAVE_TLS)  /* 10000*version + HAVE_TLS */`
+
+то есть 2.9.3.
+
+**S5.1 — что делают ключи, использованные здесь.** `./geng --help`:
+
+> `     -c    : only write connected graphs`
+> `     -u    : do not output any graphs, just generate and count them`
+> `     -l    : canonically label output graphs`
+> `     -P    : only generate perfect graphs`
+> `     -q    : suppress auxiliary output (except from -v)`
+
+и про распараллеливание:
+
+> ` res/mod splitting is controlled by two parameters -X# and -x# whose default`
+> ` values are displayed when splitting is used. Increasing them will make the`
+> ` division into parts more even at the expense of more overhead, but you must`
+> ` use the same values for all parts. Splitting obeys the laws of modular`
+> ` arithmetic, for example 3/7 is the union of 3/14 and 10/14`
+
+**Читается так, и это ловушка, записанная до счёта:** без `-l` geng выдаёт графы
+в той нумерации, в какой они породились, а не в канонической. Коды graph6 тогда
+законно отличаются от опубликованных `graph9c.g6`, хотя множество классов изоморфизма
+то же. Гейт 1.a поэтому формулируется в двух чтениях (см. `PREREGISTRATION_STAGE1.md` §1.a).
+
+**S5.2 — независимая проверка отсева.** Ключ `-P` («only generate perfect graphs»)
+даёт распознавание совершенных графов, написанное не нами. Он используется как
+внешняя сверка нашего `quadc5/perfect.py`, которого в Stage 0 не с чем было сверить.
+Замечание: определение совершенства у geng мы не читали в исходниках, поэтому
+совпадение счётчиков — свидетельство, а не доказательство, и так и отчитывается.
+
+**S5.3 — тривиальная проверка работоспособности.** `./geng -c 5 -u`:
+
+> `>Z 21 graphs generated in 0.00 sec`
+
+21 — известное число связных графов на 5 вершинах (OEIS A001349), совпадает.
+
+## S6 — числа, которые Stage 1 обязан подтвердить сам
+
+Stage 0 подтвердил собственной выгрузкой 853 / 11 117 / 261 080 (S3). Число
+**11 716 571** для связных графов на 10 вершинах взято из брифа Stage 1 и на момент
+написания предрегистрации **не подтверждено**: оно помечается UNVERIFIED и
+подтверждается или опровергается прогоном `geng -c 10 -u` в блоке 1.a. Файл
+`graph10.g6` намеренно не скачивается — бриф требует генерации потоком.
