@@ -1,0 +1,82 @@
+{
+ "n8": {
+  "total": 11117,
+  "zero": 10619,
+  "nonzero": 498,
+  "zero_cluster_max": 1.0607171674337224e-07,
+  "smallest_positive_gap": 0.025752790038629847,
+  "threshold": 1e-06,
+  "tau_zero_note": "1e-9 is below solver noise; see gap",
+  "perfect": {
+   "dropped": 7805,
+   "pct": 70.20778987136818,
+   "false_positives": 0,
+   "false_negatives": 2814,
+   "fp_examples": [],
+   "fn_examples": [
+    "G?AEBw",
+    "G?AFAw",
+    "G?AFBw",
+    "G?AFbW",
+    "G?AFbw"
+   ],
+   "B_sound": "PASSED",
+   "B_complete": "FAILED"
+  },
+  "sandwich": {
+   "dropped": 10619,
+   "pct": 95.5203742016731,
+   "false_positives": 0,
+   "false_negatives": 0,
+   "fp_examples": [],
+   "fn_examples": [],
+   "B_sound": "PASSED",
+   "B_complete": "PASSED"
+  },
+  "F1_false_negatives_captured_by_F2": 2814,
+  "nonzero_graphs": 498
+ },
+ "n9": {
+  "total": 261080,
+  "zero": 244547,
+  "nonzero": 16533,
+  "zero_cluster_max": 8.964175961523324e-07,
+  "smallest_positive_gap": 0.003657408361974035,
+  "threshold": 1e-06,
+  "tau_zero_note": "1e-9 is below solver noise; see gap",
+  "perfect": {
+   "dropped": 126777,
+   "pct": 48.55867933200552,
+   "false_positives": 0,
+   "false_negatives": 117770,
+   "fp_examples": [],
+   "fn_examples": [
+    "H??CE@}",
+    "H??CF@]",
+    "H??CF@}",
+    "H??CF`M",
+    "H??CF`m"
+   ],
+   "B_sound": "PASSED",
+   "B_complete": "FAILED"
+  },
+  "sandwich": {
+   "dropped": 244541,
+   "pct": 93.66516010418263,
+   "false_positives": 0,
+   "false_negatives": 6,
+   "fp_examples": [],
+   "fn_examples": [
+    "H?q`qjo",
+    "HCOf@pS",
+    "HCQf@pS",
+    "HEhethk",
+    "HEhethm"
+   ],
+   "B_sound": "PASSED",
+   "B_complete": "FAILED"
+  },
+  "F1_false_negatives_captured_by_F2": 117764,
+  "nonzero_graphs": 16533
+ }
+}

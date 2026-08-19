@@ -1,0 +1,923 @@
+{
+ "tolerances": {
+  "tau_an": 1e-12,
+  "tau_hi": 1e-07,
+  "tau_bulk": 1e-05,
+  "tau_gate": 1e-06,
+  "tau_paper": 5e-06
+ },
+ "checks": [
+  {
+   "name": "SDPcal max err [SCSdirect]",
+   "predicted": "<= 1e-07",
+   "obtained": "8.887e-09",
+   "tol": 1e-07,
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "SDPcal max err [CLARABEL]",
+   "predicted": "<= 1e-07",
+   "obtained": "1.397e-08",
+   "tol": 1e-07,
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A1' identity C5 formula = sqrt5",
+   "predicted": "0",
+   "obtained": "0.000e+00",
+   "tol": 1e-12,
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A1'' alpha(C5)",
+   "predicted": 2,
+   "obtained": 2,
+   "tol": "exact",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A1 theta(C5)",
+   "predicted": "2.236067977500",
+   "obtained": "2.236067979342",
+   "tol": 1e-07,
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A1''' Delta(C5)",
+   "predicted": "0.236067977500",
+   "obtained": "0.236067979342",
+   "tol": 1e-06,
+   "verdict": "PASS",
+   "note": "GATE"
+  },
+  {
+   "name": "A2 connected graphs n=7",
+   "predicted": 853,
+   "obtained": 853,
+   "tol": "exact",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A2' argmax Delta n=7 is C7 (up to isomorphism)",
+   "predicted": "C7",
+   "obtained": "FCp`_",
+   "tol": "isomorphism",
+   "verdict": "PASS",
+   "note": "graph6 encodes a labelling; compared as graphs, not as strings"
+  },
+  {
+   "name": "A2'' theta(C7)",
+   "predicted": "3.3176672074",
+   "obtained": "3.3176672104",
+   "tol": 1e-07,
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A2''' Delta(C7) vs paper 0.31767",
+   "predicted": "0.31767",
+   "obtained": "0.31766721",
+   "tol": 5e-06,
+   "verdict": "PASS",
+   "note": "GATE (tau_paper: 5 printed digits)"
+  },
+  {
+   "name": "A2'''b Delta(C7) vs analytic",
+   "predicted": "0.3176672074",
+   "obtained": "0.3176672104",
+   "tol": 1e-06,
+   "verdict": "PASS",
+   "note": "GATE"
+  },
+  {
+   "name": "A3 connected graphs n=8",
+   "predicted": 11117,
+   "obtained": 11117,
+   "tol": "exact",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A3' argmax n=8 graph6",
+   "predicted": "GCQb`o",
+   "obtained": "GCQb`o",
+   "tol": "exact string",
+   "verdict": "PASS",
+   "note": "GATE"
+  },
+  {
+   "name": "A3'' max Delta n=8 vs authors CSV",
+   "predicted": "0.46784373",
+   "obtained": "0.46784377",
+   "tol": 1e-06,
+   "verdict": "PASS",
+   "note": "GATE"
+  },
+  {
+   "name": "A3''b max Delta n=8 vs paper 0.46784",
+   "predicted": "0.46784",
+   "obtained": "0.46784377",
+   "tol": 5e-06,
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A3''' rank2 graph6",
+   "predicted": "GCR`r_",
+   "obtained": "GCR`r_",
+   "tol": "exact string",
+   "verdict": "PASS",
+   "note": "GATE"
+  },
+  {
+   "name": "A3''' rank3 graph6",
+   "predicted": "GCrb`o",
+   "obtained": "GCrb`o",
+   "tol": "exact string",
+   "verdict": "PASS",
+   "note": "GATE"
+  },
+  {
+   "name": "A3'''b rank2 Delta",
+   "predicted": "0.43844718",
+   "obtained": "0.43844718",
+   "tol": 1e-06,
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A3'''' Wagner == rank3 (up to isomorphism)",
+   "predicted": "GCrb`o",
+   "obtained": "Wagner V8",
+   "tol": "isomorphism",
+   "verdict": "PASS",
+   "note": "graph6 encodes a labelling; compared as graphs, not as strings"
+  },
+  {
+   "name": "A3'''' Delta(Wagner) vs CSV",
+   "predicted": "0.41421356",
+   "obtained": "0.41421364",
+   "tol": 1e-06,
+   "verdict": "PASS",
+   "note": "GATE"
+  },
+  {
+   "name": "obs-8 theta(Wagner) = 2+sqrt2 (our observation, not in sources)",
+   "predicted": "3.4142135624",
+   "obtained": "3.4142136393",
+   "tol": 1e-07,
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "A4 ranks 4-6 as a set",
+   "predicted": [
+    "GCQbdo",
+    "GCRb`w",
+    "GCp`dO"
+   ],
+   "obtained": [
+    "GCQbdo",
+    "GCRb`w",
+    "GCp`dO"
+   ],
+   "tol": "set equality",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "bulk vs high-accuracy solver on n=8 top50",
+   "predicted": "<= 1e-05",
+   "obtained": "8.20e-08",
+   "tol": 1e-05,
+   "verdict": "PASS",
+   "note": ""
+  }
+ ],
+ "sdp_calibration": [
+  {
+   "family": "C5",
+   "solver": "SCSdirect",
+   "exact": 2.23606797749979,
+   "got": 2.2360679784550066,
+   "err": 9.552167945514611e-10
+  },
+  {
+   "family": "C5",
+   "solver": "CLARABEL",
+   "exact": 2.23606797749979,
+   "got": 2.2360679793419553,
+   "err": 1.8421655312295115e-09
+  },
+  {
+   "family": "C7",
+   "solver": "SCSdirect",
+   "exact": 3.317667207394096,
+   "got": 3.3176672061427945,
+   "err": 1.2513012848103244e-09
+  },
+  {
+   "family": "C7",
+   "solver": "CLARABEL",
+   "exact": 3.317667207394096,
+   "got": 3.3176672104299736,
+   "err": 3.0358777713956897e-09
+  },
+  {
+   "family": "C9",
+   "solver": "SCSdirect",
+   "exact": 4.360089581434065,
+   "got": 4.360089585801587,
+   "err": 4.367522343784458e-09
+  },
+  {
+   "family": "C9",
+   "solver": "CLARABEL",
+   "exact": 4.360089581434065,
+   "got": 4.360089567462008,
+   "err": 1.3972056400746169e-08
+  },
+  {
+   "family": "K5",
+   "solver": "SCSdirect",
+   "exact": 1.0,
+   "got": 0.9999999999999989,
+   "err": 1.1102230246251565e-15
+  },
+  {
+   "family": "E5",
+   "solver": "SCSdirect",
+   "exact": 5.0,
+   "got": 5.0000000011234,
+   "err": 1.1234000396598276e-09
+  },
+  {
+   "family": "K5",
+   "solver": "CLARABEL",
+   "exact": 1.0,
+   "got": 0.9999999999999989,
+   "err": 1.1102230246251565e-15
+  },
+  {
+   "family": "E5",
+   "solver": "CLARABEL",
+   "exact": 5.0,
+   "got": 4.999999998827224,
+   "err": 1.172775654367797e-09
+  },
+  {
+   "family": "K6",
+   "solver": "SCSdirect",
+   "exact": 1.0,
+   "got": 0.9999999999999996,
+   "err": 4.440892098500626e-16
+  },
+  {
+   "family": "E6",
+   "solver": "SCSdirect",
+   "exact": 6.0,
+   "got": 5.999999997910631,
+   "err": 2.0893686780709686e-09
+  },
+  {
+   "family": "K6",
+   "solver": "CLARABEL",
+   "exact": 1.0,
+   "got": 1.0000000000000007,
+   "err": 6.661338147750939e-16
+  },
+  {
+   "family": "E6",
+   "solver": "CLARABEL",
+   "exact": 6.0,
+   "got": 5.999999999036077,
+   "err": 9.639231635105716e-10
+  },
+  {
+   "family": "K7",
+   "solver": "SCSdirect",
+   "exact": 1.0,
+   "got": 1.0000000000000007,
+   "err": 6.661338147750939e-16
+  },
+  {
+   "family": "E7",
+   "solver": "SCSdirect",
+   "exact": 7.0,
+   "got": 7.000000001504943,
+   "err": 1.5049428370161877e-09
+  },
+  {
+   "family": "K7",
+   "solver": "CLARABEL",
+   "exact": 1.0,
+   "got": 1.0000000000000018,
+   "err": 1.7763568394002505e-15
+  },
+  {
+   "family": "E7",
+   "solver": "CLARABEL",
+   "exact": 7.0,
+   "got": 6.999999999205404,
+   "err": 7.945963886868412e-10
+  },
+  {
+   "family": "K8",
+   "solver": "SCSdirect",
+   "exact": 1.0,
+   "got": 1.0000000000000004,
+   "err": 4.440892098500626e-16
+  },
+  {
+   "family": "E8",
+   "solver": "SCSdirect",
+   "exact": 8.0,
+   "got": 8.000000008887131,
+   "err": 8.887131031087847e-09
+  },
+  {
+   "family": "K8",
+   "solver": "CLARABEL",
+   "exact": 1.0,
+   "got": 0.9999999999999973,
+   "err": 2.6645352591003757e-15
+  },
+  {
+   "family": "E8",
+   "solver": "CLARABEL",
+   "exact": 8.0,
+   "got": 7.999999999327757,
+   "err": 6.722427059457914e-10
+  },
+  {
+   "family": "K9",
+   "solver": "SCSdirect",
+   "exact": 1.0,
+   "got": 1.0000000000000078,
+   "err": 7.771561172376096e-15
+  },
+  {
+   "family": "E9",
+   "solver": "SCSdirect",
+   "exact": 9.0,
+   "got": 8.999999996326713,
+   "err": 3.6732874519884717e-09
+  },
+  {
+   "family": "K9",
+   "solver": "CLARABEL",
+   "exact": 1.0,
+   "got": 1.0000000000000018,
+   "err": 1.7763568394002505e-15
+  },
+  {
+   "family": "E9",
+   "solver": "CLARABEL",
+   "exact": 9.0,
+   "got": 8.999999999250983,
+   "err": 7.490168485446702e-10
+  }
+ ],
+ "n8_top10": [
+  {
+   "rank": 1,
+   "graph6": "GCQb`o",
+   "alpha": 3,
+   "edges": 10,
+   "theta": 3.467843773848189,
+   "delta": 0.46784377384818887
+  },
+  {
+   "rank": 2,
+   "graph6": "GCR`r_",
+   "alpha": 3,
+   "edges": 11,
+   "theta": 3.4384471836258177,
+   "delta": 0.4384471836258177
+  },
+  {
+   "rank": 3,
+   "graph6": "GCrb`o",
+   "alpha": 3,
+   "edges": 12,
+   "theta": 3.414213639334645,
+   "delta": 0.41421363933464495
+  },
+  {
+   "rank": 4,
+   "graph6": "GCRb`w",
+   "alpha": 3,
+   "edges": 12,
+   "theta": 3.3722813629283612,
+   "delta": 0.3722813629283612
+  },
+  {
+   "rank": 5,
+   "graph6": "GCQbdo",
+   "alpha": 3,
+   "edges": 11,
+   "theta": 3.3722813411183274,
+   "delta": 0.37228134111832745
+  },
+  {
+   "rank": 6,
+   "graph6": "GCp`dO",
+   "alpha": 3,
+   "edges": 10,
+   "theta": 3.37228132259818,
+   "delta": 0.3722813225981798
+  },
+  {
+   "rank": 7,
+   "graph6": "GQyurg",
+   "alpha": 2,
+   "edges": 16,
+   "theta": 2.3431457509375324,
+   "delta": 0.3431457509375324
+  },
+  {
+   "rank": 8,
+   "graph6": "GQyurw",
+   "alpha": 2,
+   "edges": 17,
+   "theta": 2.3380444746722624,
+   "delta": 0.3380444746722624
+  },
+  {
+   "rank": 9,
+   "graph6": "GCpdag",
+   "alpha": 3,
+   "edges": 11,
+   "theta": 3.338044461593537,
+   "delta": 0.3380444615935372
+  },
+  {
+   "rank": 10,
+   "graph6": "GUZurw",
+   "alpha": 2,
+   "edges": 18,
+   "theta": 2.3333333365398934,
+   "delta": 0.3333333365398934
+  }
+ ],
+ "n8_top50": [
+  {
+   "rank": 1,
+   "graph6": "GCQb`o",
+   "alpha": 3,
+   "edges": 10,
+   "theta_hi": 3.467843773848189,
+   "delta_hi": 0.46784377384818887,
+   "theta_bulk": 3.467843735535716
+  },
+  {
+   "rank": 2,
+   "graph6": "GCR`r_",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.4384471836258177,
+   "delta_hi": 0.4384471836258177,
+   "theta_bulk": 3.4384471816626023
+  },
+  {
+   "rank": 3,
+   "graph6": "GCrb`o",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.414213639334645,
+   "delta_hi": 0.41421363933464495,
+   "theta_bulk": 3.414213557363881
+  },
+  {
+   "rank": 4,
+   "graph6": "GCRb`w",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.3722813629283612,
+   "delta_hi": 0.3722813629283612,
+   "theta_bulk": 3.3722813246219463
+  },
+  {
+   "rank": 5,
+   "graph6": "GCQbdo",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.3722813411183274,
+   "delta_hi": 0.37228134111832745,
+   "theta_bulk": 3.372281333746484
+  },
+  {
+   "rank": 6,
+   "graph6": "GCp`dO",
+   "alpha": 3,
+   "edges": 10,
+   "theta_hi": 3.37228132259818,
+   "delta_hi": 0.3722813225981798,
+   "theta_bulk": 3.3722813295376843
+  },
+  {
+   "rank": 7,
+   "graph6": "GQyurg",
+   "alpha": 2,
+   "edges": 16,
+   "theta_hi": 2.3431457509375324,
+   "delta_hi": 0.3431457509375324,
+   "theta_bulk": 2.343145755852092
+  },
+  {
+   "rank": 8,
+   "graph6": "GQyurw",
+   "alpha": 2,
+   "edges": 17,
+   "theta_hi": 2.3380444746722624,
+   "delta_hi": 0.3380444746722624,
+   "theta_bulk": 2.3380444553050093
+  },
+  {
+   "rank": 9,
+   "graph6": "GCpdag",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.338044461593537,
+   "delta_hi": 0.3380444615935372,
+   "theta_bulk": 3.338044462089913
+  },
+  {
+   "rank": 10,
+   "graph6": "GUZurw",
+   "alpha": 2,
+   "edges": 18,
+   "theta_hi": 2.3333333365398934,
+   "delta_hi": 0.3333333365398934,
+   "theta_bulk": 2.3333333406877825
+  },
+  {
+   "rank": 11,
+   "graph6": "GCpbdO",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.3309706645631776,
+   "delta_hi": 0.3309706645631776,
+   "theta_bulk": 3.330970658776711
+  },
+  {
+   "rank": 12,
+   "graph6": "GCRbdo",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.329217729542263,
+   "delta_hi": 0.3292177295422629,
+   "theta_bulk": 3.329217694709172
+  },
+  {
+   "rank": 13,
+   "graph6": "GCp`eO",
+   "alpha": 3,
+   "edges": 10,
+   "theta_hi": 3.317667227940181,
+   "delta_hi": 0.3176672279401811,
+   "theta_bulk": 3.3176672047737137
+  },
+  {
+   "rank": 14,
+   "graph6": "GCp`fW",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.3176672202749,
+   "delta_hi": 0.3176672202748998,
+   "theta_bulk": 3.3176671757577045
+  },
+  {
+   "rank": 15,
+   "graph6": "GCp`fg",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.3176672184243468,
+   "delta_hi": 0.31766721842434675,
+   "theta_bulk": 3.3176672050947524
+  },
+  {
+   "rank": 16,
+   "graph6": "GCp`fo",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.317667213229557,
+   "delta_hi": 0.3176672132295568,
+   "theta_bulk": 3.317667210036462
+  },
+  {
+   "rank": 17,
+   "graph6": "GCp`fw",
+   "alpha": 3,
+   "edges": 13,
+   "theta_hi": 3.3176672124855298,
+   "delta_hi": 0.31766721248552976,
+   "theta_bulk": 3.3176672198022135
+  },
+  {
+   "rank": 18,
+   "graph6": "GCp`fO",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.31766721170179,
+   "delta_hi": 0.31766721170179,
+   "theta_bulk": 3.317667213558481
+  },
+  {
+   "rank": 19,
+   "graph6": "GCp`f{",
+   "alpha": 3,
+   "edges": 14,
+   "theta_hi": 3.3176672107640015,
+   "delta_hi": 0.3176672107640015,
+   "theta_bulk": 3.3176672047136404
+  },
+  {
+   "rank": 20,
+   "graph6": "GCp`eo",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.3176672107573717,
+   "delta_hi": 0.3176672107573717,
+   "theta_bulk": 3.3176671875962613
+  },
+  {
+   "rank": 21,
+   "graph6": "GCp`eg",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.3176672094137,
+   "delta_hi": 0.31766720941369986,
+   "theta_bulk": 3.3176672124410933
+  },
+  {
+   "rank": 22,
+   "graph6": "GQyuzw",
+   "alpha": 2,
+   "edges": 18,
+   "theta_hi": 2.3145962126605486,
+   "delta_hi": 0.3145962126605486,
+   "theta_bulk": 2.314596210945585
+  },
+  {
+   "rank": 23,
+   "graph6": "GCpbaw",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.301694376304896,
+   "delta_hi": 0.30169437630489604,
+   "theta_bulk": 3.3016943433499204
+  },
+  {
+   "rank": 24,
+   "graph6": "GCpdPw",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.3016943644462335,
+   "delta_hi": 0.30169436444623354,
+   "theta_bulk": 3.301694337312845
+  },
+  {
+   "rank": 25,
+   "graph6": "GCpbeg",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.3016943453963137,
+   "delta_hi": 0.3016943453963137,
+   "theta_bulk": 3.301694341660755
+  },
+  {
+   "rank": 26,
+   "graph6": "GCrbdS",
+   "alpha": 3,
+   "edges": 13,
+   "theta_hi": 3.2989001806846106,
+   "delta_hi": 0.29890018068461055,
+   "theta_bulk": 3.298900184121099
+  },
+  {
+   "rank": 27,
+   "graph6": "GCY^B_",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.2749172275144183,
+   "delta_hi": 0.27491722751441827,
+   "theta_bulk": 3.2749172015109673
+  },
+  {
+   "rank": 28,
+   "graph6": "GCpdTw",
+   "alpha": 3,
+   "edges": 13,
+   "theta_hi": 3.2360680148987635,
+   "delta_hi": 0.2360680148987635,
+   "theta_bulk": 3.2360679973664404
+  },
+  {
+   "rank": 29,
+   "graph6": "GCpdUs",
+   "alpha": 3,
+   "edges": 13,
+   "theta_hi": 3.236068001571174,
+   "delta_hi": 0.2360680015711738,
+   "theta_bulk": 3.2360679895920708
+  },
+  {
+   "rank": 30,
+   "graph6": "GCpbdg",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.2360679994674353,
+   "delta_hi": 0.23606799946743529,
+   "theta_bulk": 3.236067997374404
+  },
+  {
+   "rank": 31,
+   "graph6": "GCOfdo",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.2360679982421594,
+   "delta_hi": 0.2360679982421594,
+   "theta_bulk": 3.2360679889788417
+  },
+  {
+   "rank": 32,
+   "graph6": "GCpdU{",
+   "alpha": 3,
+   "edges": 14,
+   "theta_hi": 3.2360679978407383,
+   "delta_hi": 0.2360679978407383,
+   "theta_bulk": 3.2360679990523273
+  },
+  {
+   "rank": 33,
+   "graph6": "GQyuv{",
+   "alpha": 2,
+   "edges": 19,
+   "theta_hi": 2.236067996632017,
+   "delta_hi": 0.23606799663201716,
+   "theta_bulk": 2.236067995641035
+  },
+  {
+   "rank": 34,
+   "graph6": "GQzvTw",
+   "alpha": 2,
+   "edges": 18,
+   "theta_hi": 2.236067995604445,
+   "delta_hi": 0.2360679956044449,
+   "theta_bulk": 2.236067999680302
+  },
+  {
+   "rank": 35,
+   "graph6": "GCpbfw",
+   "alpha": 3,
+   "edges": 14,
+   "theta_hi": 3.236067991162422,
+   "delta_hi": 0.23606799116242216,
+   "theta_bulk": 3.2360679912486985
+  },
+  {
+   "rank": 36,
+   "graph6": "GCRbcw",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.236067987753784,
+   "delta_hi": 0.2360679877537839,
+   "theta_bulk": 3.236067989064232
+  },
+  {
+   "rank": 37,
+   "graph6": "GCZbeK",
+   "alpha": 3,
+   "edges": 13,
+   "theta_hi": 3.2360679876725413,
+   "delta_hi": 0.23606798767254134,
+   "theta_bulk": 3.2360680085793763
+  },
+  {
+   "rank": 38,
+   "graph6": "GCQbbc",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.2360679871363467,
+   "delta_hi": 0.2360679871363467,
+   "theta_bulk": 3.2360680013185776
+  },
+  {
+   "rank": 39,
+   "graph6": "GCQbeS",
+   "alpha": 3,
+   "edges": 11,
+   "theta_hi": 3.2360679867972415,
+   "delta_hi": 0.2360679867972415,
+   "theta_bulk": 3.2360679893153126
+  },
+  {
+   "rank": 40,
+   "graph6": "GCQRDO",
+   "alpha": 3,
+   "edges": 9,
+   "theta_hi": 3.236067985029239,
+   "delta_hi": 0.23606798502923887,
+   "theta_bulk": 3.236067989626764
+  },
+  {
+   "rank": 41,
+   "graph6": "GQz^f[",
+   "alpha": 2,
+   "edges": 19,
+   "theta_hi": 2.236067984967195,
+   "delta_hi": 0.23606798496719517,
+   "theta_bulk": 2.2360680068807293
+  },
+  {
+   "rank": 42,
+   "graph6": "GCpVf{",
+   "alpha": 3,
+   "edges": 16,
+   "theta_hi": 3.236067982925533,
+   "delta_hi": 0.23606798292553322,
+   "theta_bulk": 3.236068007034237
+  },
+  {
+   "rank": 43,
+   "graph6": "GCRSv{",
+   "alpha": 3,
+   "edges": 15,
+   "theta_hi": 3.236067979610748,
+   "delta_hi": 0.23606797961074788,
+   "theta_bulk": 3.2360680069445027
+  },
+  {
+   "rank": 44,
+   "graph6": "GCpdR{",
+   "alpha": 3,
+   "edges": 14,
+   "theta_hi": 3.2360679792700973,
+   "delta_hi": 0.23606797927009726,
+   "theta_bulk": 3.236068003453292
+  },
+  {
+   "rank": 45,
+   "graph6": "G?bAVw",
+   "alpha": 4,
+   "edges": 11,
+   "theta_hi": 4.236067979193233,
+   "delta_hi": 0.2360679791932334,
+   "theta_bulk": 4.236067989232889
+  },
+  {
+   "rank": 46,
+   "graph6": "GCZJas",
+   "alpha": 3,
+   "edges": 13,
+   "theta_hi": 3.236067978655381,
+   "delta_hi": 0.23606797865538098,
+   "theta_bulk": 3.2360680193744162
+  },
+  {
+   "rank": 47,
+   "graph6": "GQyvvs",
+   "alpha": 2,
+   "edges": 19,
+   "theta_hi": 2.236067978542035,
+   "delta_hi": 0.2360679785420352,
+   "theta_bulk": 2.2360679895934163
+  },
+  {
+   "rank": 48,
+   "graph6": "GCR`uo",
+   "alpha": 3,
+   "edges": 12,
+   "theta_hi": 3.236067978503147,
+   "delta_hi": 0.2360679785031472,
+   "theta_bulk": 3.2360679911225594
+  },
+  {
+   "rank": 49,
+   "graph6": "GCpVVS",
+   "alpha": 3,
+   "edges": 14,
+   "theta_hi": 3.2360679775204733,
+   "delta_hi": 0.23606797752047326,
+   "theta_bulk": 3.236068018618326
+  },
+  {
+   "rank": 50,
+   "graph6": "GCpVvs",
+   "alpha": 3,
+   "edges": 16,
+   "theta_hi": 3.2360679705847097,
+   "delta_hi": 0.23606797058470974,
+   "theta_bulk": 3.2360679926277403
+  }
+ ],
+ "gate_0a": "PASSED",
+ "fails": []
+}

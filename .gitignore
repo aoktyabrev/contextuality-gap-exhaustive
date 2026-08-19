@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 sources/probe_*
 results/n9_partial_*.csv
+results/n9_all.csv
+authors_run/

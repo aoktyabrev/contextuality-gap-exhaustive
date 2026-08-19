@@ -1,0 +1,411 @@
+{
+ "n": 9,
+ "total": 261080,
+ "seed": 20260819,
+ "verify_top": 1000,
+ "max_solver_diff": 9.672862244514135e-08,
+ "n_over_tau_hi": 0,
+ "over_tau_hi": [],
+ "top50": [
+  {
+   "rank": 1,
+   "graph6": "HCRbdO{",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.6666666924444358,
+   "delta": 0.6666666924444358
+  },
+  {
+   "rank": 2,
+   "graph6": "HCrb`qi",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.618034000895196,
+   "delta": 0.6180340008951961
+  },
+  {
+   "rank": 3,
+   "graph6": "HCQe`pc",
+   "edges": 13,
+   "alpha": 3,
+   "theta": 3.470380853383443,
+   "delta": 0.47038085338344304
+  },
+  {
+   "rank": 4,
+   "graph6": "HCQv@ps",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.4678437743891033,
+   "delta": 0.4678437743891033
+  },
+  {
+   "rank": 5,
+   "graph6": "HCQb`r}",
+   "edges": 17,
+   "alpha": 3,
+   "theta": 3.4678437725115225,
+   "delta": 0.46784377251152254
+  },
+  {
+   "rank": 6,
+   "graph6": "HCQb`r~",
+   "edges": 18,
+   "alpha": 3,
+   "theta": 3.4678437703988556,
+   "delta": 0.4678437703988556
+  },
+  {
+   "rank": 7,
+   "graph6": "HCQb`rK",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.4678437676063005,
+   "delta": 0.46784376760630053
+  },
+  {
+   "rank": 8,
+   "graph6": "HCQb`py",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.467843764645921,
+   "delta": 0.46784376464592103
+  },
+  {
+   "rank": 9,
+   "graph6": "HCQbR_y",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.467843762215399,
+   "delta": 0.46784376221539903
+  },
+  {
+   "rank": 10,
+   "graph6": "HCQb`rY",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.4678437589630122,
+   "delta": 0.4678437589630122
+  },
+  {
+   "rank": 11,
+   "graph6": "HCQb`pq",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.467843758711891,
+   "delta": 0.4678437587118909
+  },
+  {
+   "rank": 12,
+   "graph6": "HCQRDO{",
+   "edges": 13,
+   "alpha": 3,
+   "theta": 3.467843756313266,
+   "delta": 0.467843756313266
+  },
+  {
+   "rank": 13,
+   "graph6": "HCQb`qr",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.4678437553875523,
+   "delta": 0.4678437553875523
+  },
+  {
+   "rank": 14,
+   "graph6": "HCQb`ru",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.467843748830911,
+   "delta": 0.46784374883091084
+  },
+  {
+   "rank": 15,
+   "graph6": "HCQeR`[",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.4678437487439555,
+   "delta": 0.4678437487439555
+  },
+  {
+   "rank": 16,
+   "graph6": "HCQb`ri",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.4678437479400728,
+   "delta": 0.4678437479400728
+  },
+  {
+   "rank": 17,
+   "graph6": "HCQb`pz",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4678437463027527,
+   "delta": 0.4678437463027527
+  },
+  {
+   "rank": 18,
+   "graph6": "HCQb`rm",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.467843746207644,
+   "delta": 0.4678437462076439
+  },
+  {
+   "rank": 19,
+   "graph6": "HCQb`rz",
+   "edges": 17,
+   "alpha": 3,
+   "theta": 3.4678437455705153,
+   "delta": 0.46784374557051533
+  },
+  {
+   "rank": 20,
+   "graph6": "HCQb`ry",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4678437453074067,
+   "delta": 0.4678437453074067
+  },
+  {
+   "rank": 21,
+   "graph6": "HCQb`q}",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4678437451701036,
+   "delta": 0.46784374517010363
+  },
+  {
+   "rank": 22,
+   "graph6": "HCQe`q[",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.4678437425102255,
+   "delta": 0.46784374251022554
+  },
+  {
+   "rank": 23,
+   "graph6": "HCQb`r{",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.467843738161383,
+   "delta": 0.4678437381613829
+  },
+  {
+   "rank": 24,
+   "graph6": "HCQb`rk",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.467843735232673,
+   "delta": 0.4678437352326732
+  },
+  {
+   "rank": 25,
+   "graph6": "HCQb`rq",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.467843734741752,
+   "delta": 0.4678437347417521
+  },
+  {
+   "rank": 26,
+   "graph6": "HCQb`rs",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.467843734347871,
+   "delta": 0.4678437343478712
+  },
+  {
+   "rank": 27,
+   "graph6": "HCRV@qk",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.467843734120612,
+   "delta": 0.4678437341206121
+  },
+  {
+   "rank": 28,
+   "graph6": "HCQb`qu",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.467843732825256,
+   "delta": 0.4678437328252558
+  },
+  {
+   "rank": 29,
+   "graph6": "HCQb`rr",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4678437328015397,
+   "delta": 0.4678437328015397
+  },
+  {
+   "rank": 30,
+   "graph6": "HCQb`qs",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.467843730892797,
+   "delta": 0.4678437308927972
+  },
+  {
+   "rank": 31,
+   "graph6": "HCQb`or",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.4678437305343253,
+   "delta": 0.46784373053432526
+  },
+  {
+   "rank": 32,
+   "graph6": "HCQeR_{",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.4674943019994515,
+   "delta": 0.4674943019994515
+  },
+  {
+   "rank": 33,
+   "graph6": "HCQv@qR",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.4598284417066605,
+   "delta": 0.4598284417066605
+  },
+  {
+   "rank": 34,
+   "graph6": "HCRbdQ{",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.459396015217332,
+   "delta": 0.4593960152173322
+  },
+  {
+   "rank": 35,
+   "graph6": "HCQe`ps",
+   "edges": 14,
+   "alpha": 3,
+   "theta": 3.457613852989985,
+   "delta": 0.45761385298998514
+  },
+  {
+   "rank": 36,
+   "graph6": "HCRbco{",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.4554913852843923,
+   "delta": 0.45549138528439226
+  },
+  {
+   "rank": 37,
+   "graph6": "HCQbdq]",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4522903428818474,
+   "delta": 0.45229034288184744
+  },
+  {
+   "rank": 38,
+   "graph6": "HCQv@pk",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.4505408551688554,
+   "delta": 0.45054085516885545
+  },
+  {
+   "rank": 39,
+   "graph6": "HCpb`zS",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4433342855866647,
+   "delta": 0.44333428558666466
+  },
+  {
+   "rank": 40,
+   "graph6": "HCRb`ym",
+   "edges": 17,
+   "alpha": 3,
+   "theta": 3.438990379233048,
+   "delta": 0.43899037923304807
+  },
+  {
+   "rank": 41,
+   "graph6": "HCRbdRR",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4384472330963347,
+   "delta": 0.4384472330963347
+  },
+  {
+   "rank": 42,
+   "graph6": "HCRbcqh",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.438447217230239,
+   "delta": 0.43844721723023916
+  },
+  {
+   "rank": 43,
+   "graph6": "HCRbdRe",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4384472131847743,
+   "delta": 0.4384472131847743
+  },
+  {
+   "rank": 44,
+   "graph6": "HCRbdPe",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.438447212797409,
+   "delta": 0.43844721279740906
+  },
+  {
+   "rank": 45,
+   "graph6": "HCRbdPq",
+   "edges": 15,
+   "alpha": 3,
+   "theta": 3.4384472114473774,
+   "delta": 0.4384472114473774
+  },
+  {
+   "rank": 46,
+   "graph6": "HCRbdRM",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.438447210733742,
+   "delta": 0.43844721073374204
+  },
+  {
+   "rank": 47,
+   "graph6": "HCRbdRr",
+   "edges": 17,
+   "alpha": 3,
+   "theta": 3.4384472090480767,
+   "delta": 0.43844720904807666
+  },
+  {
+   "rank": 48,
+   "graph6": "HCRbdRm",
+   "edges": 17,
+   "alpha": 3,
+   "theta": 3.4384472077343435,
+   "delta": 0.43844720773434354
+  },
+  {
+   "rank": 49,
+   "graph6": "HCRbdPu",
+   "edges": 16,
+   "alpha": 3,
+   "theta": 3.4384472067897995,
+   "delta": 0.43844720678979954
+  },
+  {
+   "rank": 50,
+   "graph6": "HCRbdRu",
+   "edges": 17,
+   "alpha": 3,
+   "theta": 3.438447206636112,
+   "delta": 0.4384472066361118
+  }
+ ]
+}
