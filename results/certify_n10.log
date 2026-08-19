@@ -1,0 +1,25 @@
+
+=== ICRb`yiu? ===
+PRIMAL  field Q(sqrt(2)) denominator 136: trace 1, zero on edges, PSD exact, rank 4; 1'X1 = (3 + 1/2*sqrt(2)) = 3.707106781187
+DUAL    structure True, (t*I - B) PSD exact True (psd, rank 6), 0 free parameter(s)
+PROVED  theta(ICRb`yiu?) = (3 + 1/2*sqrt(2)) = 3.707106781187, alpha = 3, Delta = 0.707106781187
+
+=== ICQeR`[Mg ===
+NOT OBTAINED -- stuck at: primal: no denominator/field in the search grid gave an exact feasible PSD matrix
+
+=== ICRbcqhNO ===
+PRIMAL  field Q(sqrt(2)) denominator 99: trace 1, zero on edges, PSD exact, rank 4; 1'X1 = 11/3 = 3.666666666667
+DUAL    structure True, (t*I - B) PSD exact True (psd, rank 6), 1 free parameter(s)
+PROVED  theta(ICRbcqhNO) = 11/3 = 3.666666666667, alpha = 3, Delta = 0.666666666667
+
+=== ICQ`fP[r_ ===
+PRIMAL  field Q(sqrt(2)) denominator 99: trace 1, zero on edges, PSD exact, rank 5; 1'X1 = 11/3 = 3.666666666667
+DUAL    structure True, (t*I - B) PSD exact True (psd, rank 5), 0 free parameter(s)
+PROVED  theta(ICQ`fP[r_) = 11/3 = 3.666666666667, alpha = 3, Delta = 0.666666666667
+
+=== ICRbdO{xG ===
+PRIMAL  field Q(sqrt(2)) denominator 198: trace 1, zero on edges, PSD exact, rank 5; 1'X1 = 11/3 = 3.666666666667
+DUAL    structure True, (t*I - B) PSD exact True (psd, rank 5), 0 free parameter(s)
+PROVED  theta(ICRbdO{xG) = 11/3 = 3.666666666667, alpha = 3, Delta = 0.666666666667
+
+proved 4 of 5

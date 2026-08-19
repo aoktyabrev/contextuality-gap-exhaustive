@@ -1,0 +1,418 @@
+{
+ "n": 10,
+ "total": 11716571,
+ "expected": 11716571,
+ "sdp_calls": 975676,
+ "sdp_fraction": 0.08327316925745595,
+ "wall_seconds": 1541.9024827590038,
+ "procs": 7,
+ "seed": 20260819,
+ "nonzero": 975338,
+ "verify_top": 1000,
+ "max_solver_diff": 1.0832339469857288e-07,
+ "over_tau_hi": [
+  "I?`DA`gdG"
+ ],
+ "top50": [
+  {
+   "rank": 1,
+   "graph6": "ICRb`yiu?",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.7071067933947717,
+   "delta_hi": 0.7071067933947717
+  },
+  {
+   "rank": 2,
+   "graph6": "ICQeR`[Mg",
+   "edges": 19,
+   "alpha": 3,
+   "theta_hi": 3.6671550785104268,
+   "delta_hi": 0.6671550785104268
+  },
+  {
+   "rank": 3,
+   "graph6": "ICRbcqhNO",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.666666724159159,
+   "delta_hi": 0.6666667241591591
+  },
+  {
+   "rank": 4,
+   "graph6": "ICQ`fP[r_",
+   "edges": 19,
+   "alpha": 3,
+   "theta_hi": 3.6666667138515057,
+   "delta_hi": 0.6666667138515057
+  },
+  {
+   "rank": 5,
+   "graph6": "ICRbdO{xG",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.66666671167181,
+   "delta_hi": 0.6666667116718101
+  },
+  {
+   "rank": 6,
+   "graph6": "ICRbdO{|g",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.6666667039565684,
+   "delta_hi": 0.6666667039565684
+  },
+  {
+   "rank": 7,
+   "graph6": "ICRbdO{z_",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.666666697933759,
+   "delta_hi": 0.666666697933759
+  },
+  {
+   "rank": 8,
+   "graph6": "ICRbdO{~o",
+   "edges": 23,
+   "alpha": 3,
+   "theta_hi": 3.6666666971362236,
+   "delta_hi": 0.6666666971362236
+  },
+  {
+   "rank": 9,
+   "graph6": "ICRbdO{~w",
+   "edges": 24,
+   "alpha": 3,
+   "theta_hi": 3.6666666946663256,
+   "delta_hi": 0.6666666946663256
+  },
+  {
+   "rank": 10,
+   "graph6": "ICRbdO{}_",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.666666691036464,
+   "delta_hi": 0.6666666910364638
+  },
+  {
+   "rank": 11,
+   "graph6": "ICRbdO{}o",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.666666690236514,
+   "delta_hi": 0.6666666902365139
+  },
+  {
+   "rank": 12,
+   "graph6": "ICRbdO{~G",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.6666666858333743,
+   "delta_hi": 0.6666666858333743
+  },
+  {
+   "rank": 13,
+   "graph6": "ICRbdO{^_",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.666666685715694,
+   "delta_hi": 0.6666666857156942
+  },
+  {
+   "rank": 14,
+   "graph6": "ICRbdO{|G",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.66666668157824,
+   "delta_hi": 0.6666666815782398
+  },
+  {
+   "rank": 15,
+   "graph6": "ICRbdO{u_",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.666666681442125,
+   "delta_hi": 0.6666666814421252
+  },
+  {
+   "rank": 16,
+   "graph6": "ICRbdO{~_",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.666666679122465,
+   "delta_hi": 0.6666666791224651
+  },
+  {
+   "rank": 17,
+   "graph6": "ICRbdO{zg",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.6666666789618616,
+   "delta_hi": 0.6666666789618616
+  },
+  {
+   "rank": 18,
+   "graph6": "ICRbdO{x_",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.6666666783103232,
+   "delta_hi": 0.6666666783103232
+  },
+  {
+   "rank": 19,
+   "graph6": "ICRbdO{{_",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.666666675948847,
+   "delta_hi": 0.6666666759488469
+  },
+  {
+   "rank": 20,
+   "graph6": "ICRbdO{xo",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.6666666749726273,
+   "delta_hi": 0.6666666749726273
+  },
+  {
+   "rank": 21,
+   "graph6": "ICQbfP[r_",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.666666674392309,
+   "delta_hi": 0.6666666743923089
+  },
+  {
+   "rank": 22,
+   "graph6": "ICRbdO{lg",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.66666667434061,
+   "delta_hi": 0.6666666743406102
+  },
+  {
+   "rank": 23,
+   "graph6": "ICRbcqhN?",
+   "edges": 19,
+   "alpha": 3,
+   "theta_hi": 3.6666666741056053,
+   "delta_hi": 0.6666666741056053
+  },
+  {
+   "rank": 24,
+   "graph6": "ICRbdO{|_",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.6666666737384075,
+   "delta_hi": 0.6666666737384075
+  },
+  {
+   "rank": 25,
+   "graph6": "ICRbdO{lG",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.6666666729215036,
+   "delta_hi": 0.6666666729215036
+  },
+  {
+   "rank": 26,
+   "graph6": "ICRbdO{~g",
+   "edges": 23,
+   "alpha": 3,
+   "theta_hi": 3.666666672464831,
+   "delta_hi": 0.6666666724648311
+  },
+  {
+   "rank": 27,
+   "graph6": "ICRbdO{|o",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.666666670622405,
+   "delta_hi": 0.6666666706224049
+  },
+  {
+   "rank": 28,
+   "graph6": "ICRbdO{\\_",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.6666666703262423,
+   "delta_hi": 0.6666666703262423
+  },
+  {
+   "rank": 29,
+   "graph6": "ICRbdO{v_",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.666666668911819,
+   "delta_hi": 0.666666668911819
+  },
+  {
+   "rank": 30,
+   "graph6": "ICRbdO{uo",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.6666666672277084,
+   "delta_hi": 0.6666666672277084
+  },
+  {
+   "rank": 31,
+   "graph6": "ICRb`yi}?",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.636405001726188,
+   "delta_hi": 0.636405001726188
+  },
+  {
+   "rank": 32,
+   "graph6": "ICQbfP[MW",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.6272019563737943,
+   "delta_hi": 0.6272019563737943
+  },
+  {
+   "rank": 33,
+   "graph6": "ICQbdp[r_",
+   "edges": 20,
+   "alpha": 3,
+   "theta_hi": 3.6180934559595013,
+   "delta_hi": 0.6180934559595013
+  },
+  {
+   "rank": 34,
+   "graph6": "ICRb`yiHw",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.618034059273068,
+   "delta_hi": 0.618034059273068
+  },
+  {
+   "rank": 35,
+   "graph6": "ICR`szot_",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.6180340565565237,
+   "delta_hi": 0.6180340565565237
+  },
+  {
+   "rank": 36,
+   "graph6": "ICRb`yi\\o",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.618034056482193,
+   "delta_hi": 0.6180340564821929
+  },
+  {
+   "rank": 37,
+   "graph6": "ICQbvP[r_",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.6180340517042056,
+   "delta_hi": 0.6180340517042056
+  },
+  {
+   "rank": 38,
+   "graph6": "ICRb`yi|w",
+   "edges": 24,
+   "alpha": 3,
+   "theta_hi": 3.6180340383064733,
+   "delta_hi": 0.6180340383064733
+  },
+  {
+   "rank": 39,
+   "graph6": "ICRb`yitO",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.6180340337566643,
+   "delta_hi": 0.6180340337566643
+  },
+  {
+   "rank": 40,
+   "graph6": "ICRb`yilw",
+   "edges": 23,
+   "alpha": 3,
+   "theta_hi": 3.618034029570397,
+   "delta_hi": 0.618034029570397
+  },
+  {
+   "rank": 41,
+   "graph6": "ICRb`yiro",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.6180340265846715,
+   "delta_hi": 0.6180340265846715
+  },
+  {
+   "rank": 42,
+   "graph6": "ICpbdq[tO",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.618034024164714,
+   "delta_hi": 0.618034024164714
+  },
+  {
+   "rank": 43,
+   "graph6": "ICRb`yit_",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.618034023635733,
+   "delta_hi": 0.6180340236357331
+  },
+  {
+   "rank": 44,
+   "graph6": "ICRb`yidw",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.6180340217335667,
+   "delta_hi": 0.6180340217335667
+  },
+  {
+   "rank": 45,
+   "graph6": "ICRb`yi~?",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.6180340202052492,
+   "delta_hi": 0.6180340202052492
+  },
+  {
+   "rank": 46,
+   "graph6": "ICpbfG{TW",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.6180340155074395,
+   "delta_hi": 0.6180340155074395
+  },
+  {
+   "rank": 47,
+   "graph6": "ICRb`yihw",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.618034015448751,
+   "delta_hi": 0.6180340154487509
+  },
+  {
+   "rank": 48,
+   "graph6": "ICRb`yito",
+   "edges": 22,
+   "alpha": 3,
+   "theta_hi": 3.618034014374287,
+   "delta_hi": 0.6180340143742868
+  },
+  {
+   "rank": 49,
+   "graph6": "ICRb`yido",
+   "edges": 21,
+   "alpha": 3,
+   "theta_hi": 3.6180340138996043,
+   "delta_hi": 0.6180340138996043
+  },
+  {
+   "rank": 50,
+   "graph6": "ICRb`yivw",
+   "edges": 24,
+   "alpha": 3,
+   "theta_hi": 3.618034013582466,
+   "delta_hi": 0.618034013582466
+  }
+ ]
+}

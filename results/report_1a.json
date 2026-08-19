@@ -1,0 +1,72 @@
+{
+ "checks": [
+  {
+   "name": "G1 geng -c 9 -u",
+   "predicted": "261080",
+   "obtained": "261080",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "G2 geng -c 10 -u",
+   "predicted": "11716571",
+   "obtained": "11716571",
+   "verdict": "PASS",
+   "note": "brief's number, UNVERIFIED until now (S6)"
+  },
+  {
+   "name": "G3 geng default labelling == graph9c.g6 (as a set)",
+   "predicted": "same set",
+   "obtained": "same set",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "G4a same number of records",
+   "predicted": "261080",
+   "obtained": "261080",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "G4b every generated code is in the Stage 0 table",
+   "predicted": "0",
+   "obtained": "0",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "G4c alpha reproduced for all 261080",
+   "predicted": "0",
+   "obtained": "0",
+   "verdict": "PASS",
+   "note": ""
+  },
+  {
+   "name": "B4 geng -P n=8 == our F1 count",
+   "predicted": "7805",
+   "obtained": "7805",
+   "verdict": "PASS",
+   "note": "our count from Stage 0 results/report_0b.json"
+  },
+  {
+   "name": "B4 geng -P n=9 == our F1 count",
+   "predicted": "126777",
+   "obtained": "126777",
+   "verdict": "PASS",
+   "note": "our count from Stage 0 results/report_0b.json"
+  }
+ ],
+ "geng_count_time_s": 1.78733124100836,
+ "minus_l_differs": 260902,
+ "gate_1a": "PASSED",
+ "counts": {
+  "n9": 261080,
+  "n10": 11716571
+ },
+ "geng_perfect_counts": {
+  "8": 7805,
+  "9": 126777,
+  "10": 3122221
+ }
+}

@@ -7,3 +7,5 @@ results/n9_partial_*.csv
 results/n9_all.csv
 authors_run/
 build/
+results/n10_part_*
+results/n10_nonzero.csv
