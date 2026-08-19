@@ -1,0 +1,6 @@
+.venv/
+.venv-authors/
+__pycache__/
+*.pyc
+sources/probe_*
+results/n9_partial_*.csv
