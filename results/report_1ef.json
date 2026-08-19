@@ -1,0 +1,289 @@
+{
+ "5": {
+  "graph6": "DUW",
+  "n": 5,
+  "edges": 5,
+  "alpha": 2,
+  "theta": 2.2360679793419957,
+  "delta": 0.23606797934199575,
+  "density_pairs": 0.5,
+  "edges_per_vertex": 1.0,
+  "degree_sequence": [
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "regular": true,
+  "vertex_transitive": true,
+  "aut_order": 10,
+  "n_c5": 1,
+  "edges_covered": 5,
+  "D1": true,
+  "D2": false,
+  "D3": false,
+  "cycle_plus_clique": [
+   [
+    5,
+    0
+   ]
+  ],
+  "cycle_plus_clique_example": [
+   [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   []
+  ],
+  "triangles": 0,
+  "d_star": 3,
+  "d_star_indicated": true,
+  "eta_trace": {
+   "2": -Infinity,
+   "3": 2.2360679775001113
+  }
+ },
+ "6": {
+  "graph6": "EUZw",
+  "n": 6,
+  "edges": 10,
+  "alpha": 2,
+  "theta": 2.2360679775325356,
+  "delta": 0.2360679775325356,
+  "density_pairs": 0.6666666666666666,
+  "edges_per_vertex": 1.6666666666666667,
+  "degree_sequence": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   5
+  ],
+  "regular": false,
+  "vertex_transitive": false,
+  "aut_order": 10,
+  "n_c5": 1,
+  "edges_covered": 5,
+  "D1": true,
+  "D2": false,
+  "D3": false,
+  "cycle_plus_clique": [
+   [
+    5,
+    1
+   ]
+  ],
+  "cycle_plus_clique_example": [
+   [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   [
+    5
+   ]
+  ],
+  "triangles": 5,
+  "d_star": 4,
+  "d_star_indicated": true,
+  "eta_trace": {
+   "2": -Infinity,
+   "3": -Infinity,
+   "4": 2.2360679775001113
+  }
+ },
+ "7": {
+  "graph6": "FCp`_",
+  "n": 7,
+  "edges": 7,
+  "alpha": 3,
+  "theta": 3.3176672104298435,
+  "delta": 0.31766721042984347,
+  "density_pairs": 0.3333333333333333,
+  "edges_per_vertex": 1.0,
+  "degree_sequence": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2
+  ],
+  "regular": true,
+  "vertex_transitive": true,
+  "aut_order": 14,
+  "n_c5": 0,
+  "edges_covered": 0,
+  "D1": false,
+  "D2": false,
+  "D3": false,
+  "cycle_plus_clique": [
+   [
+    7,
+    0
+   ]
+  ],
+  "cycle_plus_clique_example": [
+   [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   []
+  ],
+  "triangles": 0,
+  "d_star": 3,
+  "d_star_indicated": true,
+  "eta_trace": {
+   "2": -Infinity,
+   "3": 3.3176672073945186
+  }
+ },
+ "8": {
+  "graph6": "GCQb`o",
+  "n": 8,
+  "edges": 10,
+  "alpha": 3,
+  "theta": 3.467843773848189,
+  "delta": 0.46784377384818887,
+  "density_pairs": 0.35714285714285715,
+  "edges_per_vertex": 1.25,
+  "degree_sequence": [
+   2,
+   2,
+   2,
+   2,
+   3,
+   3,
+   3,
+   3
+  ],
+  "regular": false,
+  "vertex_transitive": false,
+  "aut_order": 8,
+  "n_c5": 4,
+  "edges_covered": 10,
+  "D1": true,
+  "D2": true,
+  "D3": true,
+  "cycle_plus_clique": [],
+  "cycle_plus_clique_example": null,
+  "triangles": 0,
+  "d_star": 3,
+  "d_star_indicated": true,
+  "eta_trace": {
+   "2": -Infinity,
+   "3": 3.2360679775001135
+  }
+ },
+ "9": {
+  "graph6": "HCRbdO{",
+  "n": 9,
+  "edges": 15,
+  "alpha": 3,
+  "theta": 3.6666666924444358,
+  "delta": 0.6666666924444358,
+  "density_pairs": 0.4166666666666667,
+  "edges_per_vertex": 1.6666666666666667,
+  "degree_sequence": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   4,
+   4,
+   4
+  ],
+  "regular": false,
+  "vertex_transitive": false,
+  "aut_order": 12,
+  "n_c5": 12,
+  "edges_covered": 15,
+  "D1": true,
+  "D2": true,
+  "D3": false,
+  "cycle_plus_clique": [
+   [
+    6,
+    3
+   ]
+  ],
+  "cycle_plus_clique_example": [
+   [
+    0,
+    1,
+    3,
+    4,
+    6,
+    7
+   ],
+   [
+    2,
+    5,
+    8
+   ]
+  ],
+  "triangles": 1,
+  "d_star": 4,
+  "d_star_indicated": true,
+  "eta_trace": {
+   "2": -Infinity,
+   "3": 3.0000000000002784,
+   "4": 3.6666666666669494
+  }
+ },
+ "10": {
+  "graph6": "ICRb`yiu?",
+  "n": 10,
+  "edges": 20,
+  "alpha": 3,
+  "theta": 3.7071067933947717,
+  "delta": 0.7071067933947717,
+  "density_pairs": 0.4444444444444444,
+  "edges_per_vertex": 2.0,
+  "degree_sequence": [
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4
+  ],
+  "regular": true,
+  "vertex_transitive": false,
+  "aut_order": 16,
+  "n_c5": 16,
+  "edges_covered": 20,
+  "D1": true,
+  "D2": true,
+  "D3": false,
+  "cycle_plus_clique": [],
+  "cycle_plus_clique_example": null,
+  "triangles": 4,
+  "d_star": 4,
+  "d_star_indicated": true,
+  "eta_trace": {
+   "2": -Infinity,
+   "3": -Infinity,
+   "4": 3.707106781186776
+  }
+ }
+}
