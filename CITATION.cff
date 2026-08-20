@@ -4,7 +4,7 @@ message: "If you use this work, please cite it, and cite the paper it continues.
 type: software
 authors:
   - given-names: Artem
-    family-names: Oktyabrev
+    family-names: Oktiabrev
     email: aoktyabrev@gmail.com
     orcid: "https://orcid.org/0009-0003-3626-2002"
 repository-code: "https://github.com/aoktyabrev/contextuality-gap-exhaustive"

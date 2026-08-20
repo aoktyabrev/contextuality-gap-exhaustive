@@ -186,7 +186,7 @@ Code is MIT; data and documents are CC BY 4.0. See `LICENSE`, `LICENSE-DATA` and
 
 Archived on Zenodo. Cite the concept DOI, which always resolves to the current version:
 
-    Oktyabrev, A. (https://orcid.org/0009-0003-3626-2002) (2026).
+    Oktiabrev, A. (https://orcid.org/0009-0003-3626-2002) (2026).
     Exact contextuality gaps for graphs up to ten vertices.
     Zenodo. https://doi.org/10.5281/zenodo.22031808
 
