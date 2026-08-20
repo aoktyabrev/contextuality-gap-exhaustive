@@ -64,7 +64,7 @@ with height ≤ 10⁹¹. That bound is reported as the result for that graph.
 ## Reproducing this
 
 ```bash
-git clone <this repository> && cd <this repository>
+git clone https://github.com/aoktyabrev/contextuality-gap-exhaustive && cd contextuality-gap-exhaustive
 bash scripts/verify_from_scratch.sh
 ```
 

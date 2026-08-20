@@ -1,14 +1,14 @@
 cff-version: 1.2.0
 title: "Exact contextuality gaps for graphs up to ten vertices"
 message: "If you use this work, please cite it, and cite the paper it continues."
-type: dataset
+type: software
 authors:
   - given-names: Artem
     family-names: Oktyabrev
     email: aoktyabrev@gmail.com
-repository-code: "https://github.com/aoktyabrev/PLACEHOLDER"
+repository-code: "https://github.com/aoktyabrev/contextuality-gap-exhaustive"
 license: MIT
-license-url: "https://github.com/aoktyabrev/PLACEHOLDER/blob/master/LICENSE"
+license-url: "https://github.com/aoktyabrev/contextuality-gap-exhaustive/blob/master/LICENSE"
 version: "1.0.0"
 date-released: "2026-08-20"
 keywords:

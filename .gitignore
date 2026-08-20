@@ -30,3 +30,5 @@ sources/probe_*
 results/theta_highprec.json
 verify.log
 results_published/
+letter_draft.md
+zenodo_steps.md
