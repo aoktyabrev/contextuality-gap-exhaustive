@@ -1,0 +1,114 @@
+Solver listesi: ['CLARABEL', 'SCS', 'SCIPY', 'HIGHS', 'OSQP']
+Total: 12346, Connected: 11117
+α cross-check:   9%|▉         | 975/11117 [00:00<00:10, 940.71it/s] 
+✓ All 11117 graphs: both methods agree on α.
+  Alpha computation certified.
+Computing θ for all connected n=8 graphs with SCS...
+SCS scan:   7%|▋         | 762/11117 [00:05<01:21, 127.44it/s]<repo>/authors_run/certification.py:121: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=cp.SCS, verbose=False, eps=1e-9)
+SCS scan:   7%|▋         | 775/11117 [00:05<03:40, 46.97it/s] 
+SCS scan:  10%|▉         | 1080/11117 [00:10<04:28, 37.43it/s] 
+SCS scan:  11%|█▏        | 1256/11117 [00:12<03:09, 52.11it/s] 
+SCS scan:  12%|█▏        | 1368/11117 [00:13<02:27, 66.15it/s] 
+SCS scan:  17%|█▋        | 1938/11117 [00:18<03:10, 48.27it/s] 
+SCS scan:  19%|█▉        | 2102/11117 [00:20<03:11, 47.10it/s] 
+SCS scan:  21%|██        | 2349/11117 [00:30<02:14, 65.03it/s] 
+SCS scan:  23%|██▎       | 2550/11117 [00:32<01:33, 91.94it/s] 
+SCS scan:  27%|██▋       | 3039/11117 [00:36<02:31, 53.34it/s] 
+SCS scan:  29%|██▊       | 3186/11117 [00:38<03:20, 39.51it/s] 
+SCS scan:  33%|███▎      | 3666/11117 [00:42<01:18, 94.95it/s] 
+SCS scan:  41%|████▏     | 4587/11117 [00:50<02:42, 40.11it/s] 
+SCS scan:  44%|████▎     | 4848/11117 [00:52<01:51, 56.19it/s] 
+SCS scan:  48%|████▊     | 5331/11117 [00:59<02:02, 47.14it/s] 
+SCS scan:  49%|████▉     | 5450/11117 [01:01<02:18, 40.93it/s] 
+SCS scan:  50%|█████     | 5594/11117 [01:03<01:36, 57.48it/s] 
+SCS scan:  51%|█████▏    | 5708/11117 [01:04<00:54, 98.75it/s] 
+SCS scan:  52%|█████▏    | 5771/11117 [01:06<02:14, 39.75it/s] 
+SCS scan:  54%|█████▍    | 6006/11117 [01:09<02:22, 35.81it/s] 
+SCS scan:  55%|█████▌    | 6149/11117 [01:12<04:29, 18.47it/s] 
+SCS scan:  57%|█████▋    | 6379/11117 [01:20<01:49, 43.33it/s] 
+SCS scan:  59%|█████▉    | 6553/11117 [01:22<01:13, 61.84it/s] 
+SCS scan:  61%|██████    | 6807/11117 [01:27<00:46, 91.98it/s] 
+SCS scan:  64%|██████▍   | 7146/11117 [01:34<00:57, 68.73it/s] 
+SCS scan:  67%|██████▋   | 7424/11117 [01:37<01:01, 59.78it/s] 
+SCS scan:  69%|██████▉   | 7694/11117 [01:47<01:35, 35.97it/s] 
+SCS scan:  74%|███████▍  | 8248/11117 [01:57<00:49, 58.17it/s] 
+SCS scan:  75%|███████▌  | 8365/11117 [01:58<00:27, 99.96it/s] 
+SCS scan:  77%|███████▋  | 8568/11117 [02:00<01:19, 32.18it/s] 
+SCS scan:  80%|███████▉  | 8891/11117 [02:05<00:39, 56.34it/s] 
+SCS scan:  82%|████████▏ | 9169/11117 [02:21<00:31, 62.55it/s] 
+SCS scan:  87%|████████▋ | 9662/11117 [03:02<00:44, 33.05it/s] 
+SCS scan:  91%|█████████▏| 10149/11117 [03:15<00:09, 98.42it/s] 
+SCS scan:  92%|█████████▏| 10229/11117 [03:16<00:08, 99.71it/s] 
+SCS scan:  92%|█████████▏| 10274/11117 [03:16<00:08, 94.88it/s] 
+SCS scan:  93%|█████████▎| 10363/11117 [03:17<00:08, 93.22it/s] 
+SCS scan:  94%|█████████▍| 10428/11117 [03:18<00:07, 91.53it/s] 
+SCS scan:  94%|█████████▍| 10484/11117 [03:18<00:06, 93.09it/s] 
+SCS scan:  95%|█████████▌| 10604/11117 [03:20<00:08, 58.42it/s] 
+SCS scan:  96%|█████████▌| 10678/11117 [03:20<00:04, 99.67it/s] 
+SCS scan:  97%|█████████▋| 10802/11117 [03:22<00:03, 84.01it/s] 
+SCS scan:  98%|█████████▊| 10933/11117 [03:23<00:01, 93.89it/s] 
+SCS scan:  99%|█████████▉| 11054/11117 [03:24<00:00, 98.00it/s] 
+Scan complete. Top-50 identified.
+Rank 1: graph6=GCQb`o, Δ=0.46784373
+Running CLARABEL on top-50...
+--- Top-10 Graphs (both solvers) ---
+Rank  Graph6     α    θ(SCS)       θ(CLARABEL)    Δ(SCS)     |Δ solver|   E
+-------------------------------------------------------------------------------------
+1     GCQb`o     3    3.46784      3.46784        0.46784    4.38e-08     10
+2     GCR`r_     3    3.43845      3.43845        0.43845    6.37e-09     11
+3     GCrb`o     3    3.41421      3.41421        0.41421    7.93e-08     12
+4     GCQbdo     3    3.37228      3.37228        0.37228    1.11e-08     11
+5     GCRb`w     3    3.37228      3.37228        0.37228    3.29e-08     12
+6     GCp`dO     3    3.37228      3.37228        0.37228    7.40e-09     10
+7     GQyurg     2    2.34315      2.34315        0.34315    9.38e-10     16
+8     GCpdag     3    3.33804      3.33804        0.33804    1.59e-09     11
+9     GQyurw     2    2.33804      2.33804        0.33804    1.47e-08     17
+10    GUZurw     2    2.33333      2.33333        0.33333    6.54e-09     18
+Running each graph 5 times with both solvers...
+Quad-C5 (Rank 1): θ ∈ [3.46784373, 3.46784377]  (±2.08e-08)
+Rank 2: θ ∈ [3.43844718, 3.43844719]  (±2.65e-09)
+Wagner: θ ∈ [3.41421356, 3.41421364]  (±3.80e-08)
+=== Certification Result ===
+Quad-C5 lower bound: 3.46784373
+Rank-2  upper bound: 3.43844719  →  gap = 2.94e-02
+Wagner  upper bound: 3.41421364  →  gap = 5.36e-02
+✓ Intervals are non-overlapping.
+✓ Quad-C5 is the certified unique maximizer among connected 8-vertex graphs.
+✓ data/all_n8_results.csv saved
+✓ data/top50_certification.csv saved
+✓ data/certified_intervals.csv saved
+All certification data saved to data/.
+Computing primal + dual residuals for top-50...
+Rank  α    θ(CL)      r_p(CL)      r_d(CL)      r_p(SCS)     r_d(SCS)   E
+-------------------------------------------------------------------------------------
+1     3    3.46784    3.67e-17     8.48e-09     1.14e-08     7.61e-06   10
+2     3    3.43845    1.23e-19     1.17e-09     1.57e-11     2.85e-08   11
+3     3    3.41421    2.12e-19     2.52e-09     1.93e-09     2.51e-05   12
+4     3    3.37228    4.27e-18     3.33e-09     3.45e-09     1.76e-06   11
+5     3    3.37228    3.66e-17     5.59e-09     2.31e-10     9.54e-08   12
+6     3    3.37228    2.26e-14     4.64e-10     5.81e-10     1.60e-06   10
+7     2    2.34315    3.33e-15     1.25e-11     8.22e-11     3.44e-07   16
+8     3    3.33804    1.44e-14     1.65e-09     5.15e-12     3.55e-08   11
+9     2    2.33804    3.36e-18     2.97e-10     2.00e-10     5.90e-08   17
+10    2    2.33333    2.22e-16     3.40e-10     5.88e-12     1.27e-08   18
+✓ Dual residual computed for all top-50 graphs.
+✓ data/top50_certification.csv updated with dual residuals.
+SLSQP optimization for η₃(Quad-C5) (500 restarts)...
+Feasible solutions: 499/500
+Best η₃              : 3.236067977500
+1 + √5               : 3.236067977500
+Difference           : 3.42e-13
+=== η₃(Quad-C5) Certification Result ===
+Observed interval   : [3.0035598350, 3.2360679775]
+Interval width      : 2.33e-01
+1 + √5              : 3.2360679775
+Target in interval? : True
+Roots of x²-2x-4=0 : [np.float64(3.23606797749979), np.float64(-1.2360679774997896)]
+Positive root (1+√5): 3.2360679775
+Negative root (1-√5): -1.2360679775  <- outside interval
+Polinom x²-2x-4 @ best_val : 1.53e-12  (should be ≈0)
+✓ η₃(Quad-C5) = 1+√5 numerically certified.
+  |best - (1+√5)| = 3.42e-13
+  x²-2x-4=0 has a unique positive root in the interval -> algebraic identity confirmed.
+✓ data/eta3_certification.csv saved.

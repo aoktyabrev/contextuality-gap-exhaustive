@@ -12,12 +12,37 @@ graph6 strings that does NOT match the published files.  So -l is not used.
 from __future__ import annotations
 import os, subprocess
 
-GENG = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                    "build", "nauty2_9_3", "geng")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+NAUTY_VERSION = "2.9.3"
+GENG = os.path.join(ROOT, "build", "nauty2_9_3", "geng")
+
+_MISSING = """
+geng was not found at
+    {path}
+
+QUADC5 generates the graph enumeration with nauty's geng ({ver}); no graph file is
+downloaded.  Build it once, from the tarball already in sources/:
+
+    mkdir -p build && tar xzf sources/nauty2_9_3.tar.gz -C build
+    cd build/nauty2_9_3 && ./configure && make -j geng
+
+`bash runners/run_stage1.sh` does this automatically if geng is missing.
+A system nauty also works: point the QUADC5_GENG environment variable at its
+binary (Debian/Ubuntu package `nauty` installs it as /usr/bin/nauty-geng).
+"""
+
+
+def geng_path():
+    """Resolve geng, or explain how to get it.  Never raises a bare FileNotFoundError."""
+    env = os.environ.get("QUADC5_GENG")
+    cand = env or GENG
+    if os.path.isfile(cand) and os.access(cand, os.X_OK):
+        return cand
+    raise RuntimeError(_MISSING.format(path=cand, ver=NAUTY_VERSION))
 
 
 def geng_argv(n, connected=True, res=None, mod=None, extra=(), quiet=True):
-    argv = [GENG]
+    argv = [geng_path()]
     if connected:
         argv.append("-c")
     if quiet:

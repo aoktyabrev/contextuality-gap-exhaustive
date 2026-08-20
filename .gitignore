@@ -1,11 +1,30 @@
+# environments
 .venv/
 .venv-authors/
+
+# python caches
 __pycache__/
 *.pyc
-sources/probe_*
-results/n9_partial_*.csv
-results/n9_all.csv
-authors_run/
+*.pyo
+
+# nauty is built from sources/nauty2_9_3.tar.gz, not committed
 build/
+
+# run logs: machine-specific paths and timings, regenerated on every run
+results/*.log
+
+# resumable checkpoints of the sweeps
+results/n9_partial_*.csv
 results/n10_part_*
+results/n10_part_*.done
+
+# bulk sweep outputs kept only in compressed form
+results/n9_all.csv
 results/n10_nonzero.csv
+
+# working copy of the authors' code plus what it produced here
+authors_run/
+
+# scratch
+sources/probe_*
+results/theta_highprec.json

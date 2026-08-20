@@ -1,0 +1,12 @@
+# QUADC5 — pinned versions, exactly those used for the published numbers.
+# Python 3.12.3.  Install into a fresh venv:  pip install -r requirements.txt
+numpy==2.5.2
+scipy==1.18.0
+networkx==3.6.1
+sympy==1.14.0
+mpmath==1.3.0
+# convex-optimisation front end and the three independent SDP solvers
+cvxpy==1.9.2
+clarabel==0.11.1
+scs==3.2.11
+cvxopt==1.3.3
