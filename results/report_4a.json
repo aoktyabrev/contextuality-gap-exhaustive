@@ -1,0 +1,278 @@
+{
+ "note": "the Delta distribution is atomic; see atomicity below",
+ "sizes": {
+  "7": {
+   "N": 33,
+   "distinct": 13,
+   "largest_atom": 8,
+   "largest_atom_value": 0.236067976,
+   "largest_atom_share": 0.24242424242424243,
+   "observed_max": 0.31766721075249027,
+   "top_gap_ratio": 2.065260153861308,
+   "distinct_top3": [
+    0.317667211,
+    0.236067981,
+    0.23606798
+   ],
+   "max_over_median_top100": 1.3456599084443615
+  },
+  "8": {
+   "N": 498,
+   "distinct": 131,
+   "largest_atom": 35,
+   "largest_atom_value": 0.236067979,
+   "largest_atom_share": 0.07028112449799197,
+   "observed_max": 0.4678437355357161,
+   "fit_all_values": [
+    {
+     "q": 0.5,
+     "exceedances": 244,
+     "xi": 2.5679027457047527,
+     "sigma": 3.537882969593322e-09,
+     "tail_endpoint": null,
+     "observed_percentile": 85.29490945057593,
+     "verdict": "inside 5-95"
+    },
+    {
+     "q": 0.8,
+     "exceedances": 98,
+     "xi": 5.0353846382772325,
+     "sigma": 2.4494568092814712e-09,
+     "tail_endpoint": null,
+     "observed_percentile": 12.925073507536977,
+     "verdict": "inside 5-95"
+    },
+    {
+     "q": 0.9,
+     "exceedances": 49,
+     "xi": 8.241497567762607,
+     "sigma": 3.0895117603046155e-09,
+     "tail_endpoint": null,
+     "observed_percentile": 0.6183135715189716,
+     "verdict": "below 5th"
+    },
+    {
+     "q": 0.95,
+     "exceedances": 25,
+     "xi": -1.5968035414559605,
+     "sigma": 0.15154090043833113,
+     "tail_endpoint": 0.33097065877671117,
+     "observed_percentile": 100.0,
+     "verdict": "above 95th"
+    }
+   ],
+   "distinct_count": 131,
+   "fit_distinct": [
+    {
+     "q": 0.5,
+     "exceedances": 60,
+     "xi": 5.453777771921273,
+     "sigma": 2.5625324257726298e-08,
+     "tail_endpoint": null,
+     "observed_percentile": 6.404397539625509,
+     "verdict": "inside 5-95"
+    },
+    {
+     "q": 0.8,
+     "exceedances": 24,
+     "xi": 11.501840892562786,
+     "sigma": 2.3666850466883596e-08,
+     "tail_endpoint": null,
+     "observed_percentile": 0.09441048272526231,
+     "verdict": "below 5th"
+    }
+   ],
+   "top_gap_ratio": 0.273516049639976,
+   "distinct_top3": [
+    0.467843736,
+    0.438447182,
+    0.414213557
+   ],
+   "max_over_median_top100": 1.981817770253439
+  },
+  "9": {
+   "N": 16533,
+   "distinct": 1129,
+   "largest_atom": 601,
+   "largest_atom_value": 0.236067975,
+   "largest_atom_share": 0.03635153934555132,
+   "observed_max": 0.6666666799877143,
+   "fit_all_values": [
+    {
+     "q": 0.5,
+     "exceedances": 8261,
+     "xi": 4.34156547210059,
+     "sigma": 5.123415680613873e-09,
+     "tail_endpoint": null,
+     "observed_percentile": 3.952355055921433e-37,
+     "verdict": "below 5th"
+    },
+    {
+     "q": 0.8,
+     "exceedances": 3305,
+     "xi": 8.750790299942576,
+     "sigma": 4.355834168114397e-09,
+     "tail_endpoint": null,
+     "observed_percentile": 3.9055396802247134e-137,
+     "verdict": "below 5th"
+    },
+    {
+     "q": 0.9,
+     "exceedances": 1653,
+     "xi": -0.4200190153630965,
+     "sigma": 0.10655667634702545,
+     "tail_endpoint": 0.48976288503881193,
+     "observed_percentile": 100.0,
+     "verdict": "above 95th"
+    },
+    {
+     "q": 0.95,
+     "exceedances": 827,
+     "xi": 12.24985010190836,
+     "sigma": 1.7686503328787163e-08,
+     "tail_endpoint": null,
+     "observed_percentile": 2.602751376931769e-74,
+     "verdict": "below 5th"
+    }
+   ],
+   "distinct_count": 1129,
+   "fit_distinct": [
+    {
+     "q": 0.5,
+     "exceedances": 559,
+     "xi": -0.4872396073277589,
+     "sigma": 0.12964631752888445,
+     "tail_endpoint": 0.4911998595747601,
+     "observed_percentile": 100.0,
+     "verdict": "above 95th"
+    },
+    {
+     "q": 0.8,
+     "exceedances": 224,
+     "xi": -0.3451921446474542,
+     "sigma": 0.07187264000945394,
+     "tail_endpoint": 0.5258777759977548,
+     "observed_percentile": 100.0,
+     "verdict": "above 95th"
+    },
+    {
+     "q": 0.9,
+     "exceedances": 112,
+     "xi": -1.296308735266268,
+     "sigma": 0.13198801210794853,
+     "tail_endpoint": 0.467843738,
+     "observed_percentile": 100.0,
+     "verdict": "above 95th"
+    },
+    {
+     "q": 0.95,
+     "exceedances": 56,
+     "xi": -3.28035824106974,
+     "sigma": 0.2578822982829996,
+     "tail_endpoint": 0.467843738,
+     "observed_percentile": 100.0,
+     "verdict": "above 95th"
+    }
+   ],
+   "top_gap_ratio": 0.3238071365518541,
+   "distinct_top3": [
+    0.66666668,
+    0.618034001,
+    0.470380842
+   ],
+   "max_over_median_top100": 1.520517607469086
+  },
+  "10": {
+   "N": 975338,
+   "distinct": 30875,
+   "largest_atom": 28005,
+   "largest_atom_value": 0.236067979,
+   "largest_atom_share": 0.028713123040422908,
+   "observed_max": 0.7071068006217676,
+   "fit_all_values": [
+    {
+     "q": 0.5,
+     "exceedances": 487664,
+     "xi": 5.780270270327943,
+     "sigma": 5.987192572350722e-09,
+     "tail_endpoint": null,
+     "observed_percentile": 0.0,
+     "verdict": "below 5th"
+    },
+    {
+     "q": 0.8,
+     "exceedances": 195066,
+     "xi": 11.731187829987894,
+     "sigma": 8.755755411037093e-09,
+     "tail_endpoint": null,
+     "observed_percentile": 0.0,
+     "verdict": "below 5th"
+    },
+    {
+     "q": 0.9,
+     "exceedances": 97533,
+     "xi": -0.028845759160832016,
+     "sigma": 0.0446101704466559,
+     "tail_endpoint": 1.8482014020213486,
+     "observed_percentile": 7.556469023809151,
+     "verdict": "inside 5-95"
+    },
+    {
+     "q": 0.95,
+     "exceedances": 48767,
+     "xi": -0.14702784762889828,
+     "sigma": 0.054694422537584365,
+     "tail_endpoint": 0.7012181384279104,
+     "observed_percentile": 100.0,
+     "verdict": "above 95th"
+    }
+   ],
+   "distinct_count": 30875,
+   "fit_distinct": [
+    {
+     "q": 0.5,
+     "exceedances": 15432,
+     "xi": -0.28570747302559646,
+     "sigma": 0.13687110321870816,
+     "tail_endpoint": 0.6778216991755067,
+     "observed_percentile": 100.0,
+     "verdict": "above 95th"
+    },
+    {
+     "q": 0.8,
+     "exceedances": 6173,
+     "xi": -0.16157935417795452,
+     "sigma": 0.07497787070456213,
+     "tail_endpoint": 0.7797705636580592,
+     "observed_percentile": 93.77934176153872,
+     "verdict": "inside 5-95"
+    },
+    {
+     "q": 0.9,
+     "exceedances": 3087,
+     "xi": -0.15796210950520878,
+     "sigma": 0.06396303329180317,
+     "tail_endpoint": 0.7746919659584901,
+     "observed_percentile": 96.36336960854739,
+     "verdict": "above 95th"
+    },
+    {
+     "q": 0.95,
+     "exceedances": 1544,
+     "xi": 0.053719110337666326,
+     "sigma": 0.03357600030813749,
+     "tail_endpoint": null,
+     "observed_percentile": 23.083739874238827,
+     "verdict": "inside 5-95"
+    }
+   ],
+   "top_gap_ratio": 81.80361230665794,
+   "distinct_top3": [
+    0.707106801,
+    0.667155062,
+    0.66666671
+   ],
+   "max_over_median_top100": 1.144122830848188
+  }
+ }
+}

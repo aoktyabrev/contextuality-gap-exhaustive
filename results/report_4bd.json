@@ -1,0 +1,183 @@
+{
+ "4b_families": {
+  "9": {
+   "n": 9,
+   "with_cycle_plus_clique": 2,
+   "cpc_shapes": [
+    [
+     6,
+     3
+    ]
+   ],
+   "regular": 0,
+   "vertex_transitive": 0,
+   "aut_orders": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    4,
+    8,
+    8,
+    8,
+    12
+   ],
+   "c5_range": [
+    4,
+    12
+   ],
+   "edges_range": [
+    13,
+    18
+   ],
+   "alpha": [
+    3
+   ],
+   "all_edges_covered": 4
+  },
+  "10": {
+   "n": 10,
+   "with_cycle_plus_clique": 3,
+   "cpc_shapes": [
+    [
+     6,
+     4
+    ]
+   ],
+   "regular": 1,
+   "vertex_transitive": 0,
+   "aut_orders": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    4,
+    4,
+    8,
+    12,
+    16
+   ],
+   "c5_range": [
+    12,
+    19
+   ],
+   "edges_range": [
+    19,
+    24
+   ],
+   "alpha": [
+    3
+   ],
+   "all_edges_covered": 2
+  }
+ },
+ "4b_contains_n9_max": [
+  {
+   "rank": 1,
+   "graph6": "ICRb`yiu?",
+   "contains": false
+  },
+  {
+   "rank": 2,
+   "graph6": "ICQeR`[Mg",
+   "contains": true
+  },
+  {
+   "rank": 3,
+   "graph6": "ICRbcqhNO",
+   "contains": true
+  },
+  {
+   "rank": 4,
+   "graph6": "ICQ`fP[r_",
+   "contains": true
+  },
+  {
+   "rank": 5,
+   "graph6": "ICRbdO{xG",
+   "contains": true
+  },
+  {
+   "rank": 6,
+   "graph6": "ICRbdO{|g",
+   "contains": true
+  },
+  {
+   "rank": 7,
+   "graph6": "ICRbdO{z_",
+   "contains": true
+  },
+  {
+   "rank": 8,
+   "graph6": "ICRbdO{~o",
+   "contains": true
+  },
+  {
+   "rank": 9,
+   "graph6": "ICRbdO{~w",
+   "contains": true
+  },
+  {
+   "rank": 10,
+   "graph6": "ICRbdO{}_",
+   "contains": true
+  }
+ ],
+ "4d_parity": {
+  "n": [
+   7,
+   8,
+   9,
+   10
+  ],
+  "metric": [
+   1.3456599084443615,
+   1.981817770253439,
+   1.520517607469086,
+   1.144122830848188
+  ],
+  "odd": [
+   1.3456599084443615,
+   1.520517607469086
+  ],
+  "even": [
+   1.981817770253439,
+   1.144122830848188
+  ],
+  "separated": false
+ },
+ "4d_alpha": {
+  "5": [
+   2
+  ],
+  "6": [
+   2
+  ],
+  "7": [
+   2,
+   3
+  ],
+  "8": [
+   2,
+   3
+  ],
+  "9": [
+   3
+  ],
+  "10": [
+   3
+  ]
+ },
+ "4d_dstar": {
+  "report_0d_n9.json": {
+   "4": 9,
+   "3": 1
+  },
+  "report_0d_n10.json": {
+   "4": 7,
+   "5": 3
+  }
+ }
+}

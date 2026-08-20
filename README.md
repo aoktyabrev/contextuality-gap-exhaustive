@@ -50,7 +50,11 @@ See `REPORT_STAGE3.md`.
 
 Δ_max is not monotone: Δ_max(6) = Δ_max(5) exactly, because the six-vertex optimum is the
 five-cycle with a dominating vertex attached, which changes neither ϑ nor α. Between n = 9
-and n = 10 the ratio of consecutive maxima is 1.061, against 1.35–1.47 over n = 6…9.
+and n = 10 the ratio of consecutive maxima is 1.061, against 1.35–1.47 over n = 6…9 — but
+only at the very top: from rank 3 downwards the same ratio is 1.41–1.43, the historical
+rate. The value that stands out is 2/3 at n = 9, which lies outside the support of a tail
+fitted to the rest of its own distribution; nine of the ten leading graphs at n = 10 are
+that nine-vertex optimum with a tenth vertex added. See `REPORT_STAGE4.md`.
 
 ## The eight-vertex value
 
@@ -139,6 +143,7 @@ REPORT.md                Stage 0 — n ≤ 9
 REPORT_STAGE1.md         Stage 1 — n = 10, the series, the invariants
 REPORT_STAGE2.md         Stage 2 — the exact eight-vertex value
 REPORT_STAGE3.md         Stage 3 — comparison against the prior database, invariants
+REPORT_STAGE4.md         Stage 4 — where the top of the series is anomalous
 quadc5/                  the library: graph6 codec, alpha, theta, filters, structure,
                          hiprec (arbitrary-precision refinement), numfield (exact
                          arithmetic in a number field with exact sign decisions)
