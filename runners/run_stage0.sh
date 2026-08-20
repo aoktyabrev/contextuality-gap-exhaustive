@@ -12,10 +12,17 @@ $PY tests/test_estimators.py
 echo "### 0.a -- calibration on n=5, 7, 8 (gate)"
 $PY runners/run_0a.py
 
-echo "### 0.a-code -- the authors' own script, in its own venv"
-mkdir -p authors_run && cp -n sources/quadc5_authors_repo/* authors_run/ 2>/dev/null || true
-( cd authors_run && ../.venv-authors/bin/python -u certification.py ) \
-  > results/authors_run_asshipped.log 2>&1 || echo "   (authors' script exited non-zero; see log)"
+echo "### 0.a-code -- the authors' own script, in its own venv (optional cross-check)"
+if [ -x .venv-authors/bin/python ]; then
+  mkdir -p authors_run && cp -n sources/quadc5_authors_repo/* authors_run/ 2>/dev/null || true
+  ( cd authors_run && ../.venv-authors/bin/python -u certification.py ) \
+    > results/authors_run_asshipped.log 2>&1 || echo "   (authors' script exited non-zero; see log)"
+else
+  echo "   skipped: .venv-authors not present.  This step re-runs the ORIGINAL authors'"
+  echo "   code and is a cross-check only -- none of the published numbers depend on it."
+  echo "   To enable:  python3 -m venv .venv-authors &&" \
+       ".venv-authors/bin/pip install numpy networkx cvxpy scipy matplotlib tqdm mpmath"
+fi
 
 echo "### 0.c -- exhaustive sweep over n=9"
 $PY runners/run_0c.py --n 9 --seed "$SEED"

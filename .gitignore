@@ -28,3 +28,5 @@ authors_run/
 # scratch
 sources/probe_*
 results/theta_highprec.json
+verify.log
+results_published/
