@@ -56,6 +56,15 @@ rate. The value that stands out is 2/3 at n = 9, which lies outside the support 
 fitted to the rest of its own distribution; nine of the ten leading graphs at n = 10 are
 that nine-vertex optimum with a tenth vertex added. See `REPORT_STAGE4.md`.
 
+Because Δ subtracts an integer from a continuous quantity, the problem splits by the
+independence number. Writing D(n, a) for the largest ϑ − a over graphs with α = a, the
+overall maximum is max over a of D(n, a), and that decomposition reproduces every
+Δ_max and every maximizer exactly. Layer a = 2 wins at n = 5, 6 and layer a = 3 from
+n = 7 on; layer a = 4 has been closing fast, its gap behind a = 3 falling from 0.307 at
+n = 9 to 0.156 at n = 10. `PREDICTION_N11.md` records, sealed before any eleven-vertex
+graph was computed, that a = 3 should still win with Δ_max(11) ∈ [0.7475, 0.9059] — by a
+margin of 0.006, so it is a prediction that can fail. See `REPORT_STAGE5.md`.
+
 ## The eight-vertex value
 
 The one value the original paper left open. Its authors searched for it by integer relation and
@@ -144,6 +153,8 @@ REPORT_STAGE1.md         Stage 1 — n = 10, the series, the invariants
 REPORT_STAGE2.md         Stage 2 — the exact eight-vertex value
 REPORT_STAGE3.md         Stage 3 — comparison against the prior database, invariants
 REPORT_STAGE4.md         Stage 4 — where the top of the series is anomalous
+REPORT_STAGE5.md         Stage 5 — the series split into layers by alpha
+PREDICTION_N11.md        a sealed, falsifiable prediction for eleven vertices
 quadc5/                  the library: graph6 codec, alpha, theta, filters, structure,
                          hiprec (arbitrary-precision refinement), numfield (exact
                          arithmetic in a number field with exact sign decisions)

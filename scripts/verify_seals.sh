@@ -40,6 +40,7 @@ check 2aebb12 PREREGISTRATION_STAGE1.sha256 "Stage 1"
 check 053f834 PREREGISTRATION_STAGE2.sha256 "Stage 2"
 check a350f2b PREREGISTRATION_STAGE3.sha256 "Stage 3"
 check cf8bb87 PREREGISTRATION_STAGE4.sha256 "Stage 4"
+check 58d604a PREREGISTRATION_STAGE5.sha256 "Stage 5"
 
 echo
 if [ $fail -eq 0 ]; then
