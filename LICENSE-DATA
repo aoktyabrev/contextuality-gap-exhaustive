@@ -1,0 +1,37 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Artem Oktyabrev
+
+This licence covers the DATA and DOCUMENTS in this repository:
+
+    results/            computed tables, certificates and per-block JSON reports
+    REPORT*.md          the stage reports
+    PREREGISTRATION*.md the preregistrations and their hashes
+    SOURCES.md          the source ledger
+    README.md
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, link to the licence, and
+indicate if changes were made.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:           https://creativecommons.org/licenses/by/4.0/
+
+The source code (quadc5/, runners/, scripts/, tests/) is under the MIT licence
+instead; see LICENSE.
+
+NOT COVERED BY EITHER LICENCE -- third-party material redistributed in sources/
+for reproducibility, each under its own terms:
+
+  sources/arxiv_2605.12828*, sources/eprint_2605.12828/
+      Tamer, Mustecaplioglu, Dizdar, Gedik, arXiv:2605.12828.  Copyright the
+      authors; redistributed under the arXiv non-exclusive licence to distribute.
+  sources/quadc5_authors_repo/, sources/zenodo_*
+      github.com/ugurtamerphys/quad-c5-contextuality and its Zenodo archive
+      (DOI 10.5281/zenodo.20465134), copyright the authors.
+  sources/nauty2_9_3.tar.gz
+      nauty and Traces, B. D. McKay and A. Piperno; see the COPYRIGHT file
+      inside the tarball (Apache 2.0 for 2.9.x).
+  sources/mckay_graph*c.g6
+      graph databases by B. D. McKay,
+      https://users.cecs.anu.edu.au/~bdm/data/

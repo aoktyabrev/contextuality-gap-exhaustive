@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+title: "Exact contextuality gaps for graphs up to ten vertices"
+message: "If you use this work, please cite it, and cite the paper it continues."
+type: dataset
+authors:
+  - given-names: Artem
+    family-names: Oktyabrev
+    email: aoktyabrev@gmail.com
+repository-code: "https://github.com/aoktyabrev/PLACEHOLDER"
+license: MIT
+license-url: "https://github.com/aoktyabrev/PLACEHOLDER/blob/master/LICENSE"
+version: "1.0.0"
+date-released: "2026-08-20"
+keywords:
+  - quantum contextuality
+  - Lovasz theta function
+  - semidefinite programming
+  - exhaustive graph enumeration
+  - exact certificates
+abstract: >-
+  Exhaustive enumeration of all connected graphs on up to ten vertices by the
+  contextuality gap Delta(G) = theta(G) - alpha(G), with the maximum determined for
+  each size and the exact value of the Lovasz theta number established for every
+  maximizer by machine-checked primal and dual certificates in exact arithmetic.
+  The eight-vertex value, left open by the paper this continues, is the root of
+  x^4 - x^3 + 23x^2 - 155x + 158 in the interval (3, 4); its Galois group is the
+  full symmetric group on four letters, so the degree cannot be reduced.
+references:
+  - type: article
+    title: "The Quad-C5 Graph: Maximum Contextuality Gap on Eight Vertices"
+    authors:
+      - given-names: Ugur
+        family-names: Tamer
+      - given-names: "Ozgur E."
+        family-names: Mustecaplioglu
+      - given-names: Alper
+        family-names: Dizdar
+      - given-names: Zafer
+        family-names: Gedik
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2605.12828"
+    url: "https://arxiv.org/abs/2605.12828"
