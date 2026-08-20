@@ -18,6 +18,13 @@ than a downloaded file, plus exact certificates and the series over n = 5…10. 
 Δ_max(10) = 1/√2 exactly; the ×1.4 growth of the series collapses to ×1.061 at the last
 step, and no structural invariant survives the whole series. See `REPORT_STAGE1.md`.
 
+**Stage 2 question (closed):** the exact value of ϑ for the eight-vertex maximizer — the
+one hole in the series, and the value whose PSLQ the source's authors withdrew as a false
+positive. Answer: ϑ(`` GCQb`o ``) is the root 3.46784372984… of **x⁴ − x³ + 23x² − 155x +
+158**, proved by exact primal and dual certificates over ℚ(θ); its Galois group is the
+full S₄. The n=10 rank 2 did not close: no minimal polynomial of degree ≤ 48 with height
+≤ 10⁹ exists. See `REPORT_STAGE2.md`.
+
 Separate repository, own `.venv`. Nothing is imported from the earlier campaigns
 (`/home/artem/tomloc`, `/home/artem/tomloc/DSNET`) — not a line of code, not a number.
 
@@ -68,6 +75,7 @@ add a GPU path without a measurement showing it wins.
 ## Commands
 
 ```bash
+bash runners/run_stage2.sh                        # Stage 2 end to end (~60 min)
 bash runners/run_stage1.sh                        # Stage 1 end to end (~45 min)
 .venv/bin/python tests/test_estimators.py         # gate R, ~5 s; blocks everything else
 .venv/bin/python runners/run_0a.py                # calibration n=5,7,8; gate 0.a
@@ -150,3 +158,24 @@ reads. Deleting it and re-running `run_0c.py` also works — the chunk checkpoin
   n = 8, 9 and 10 (7 805 / 126 777 / 3 122 221).
 - **η_d at n = 10 is expensive** — roughly 700 CPU-seconds per graph for d = 2…4 at 300
   restarts. Budget for it, or cut restarts and say so.
+
+
+## Stage 2 additions
+
+- **`quadc5/hiprec.py`** refines the theta optimum to arbitrary precision by Gauss-Newton
+  on the KKT system in mpmath, seeded from CLARABEL. Digits double per iteration; 240 dps
+  gives ~236 honest digits in seconds. Honest digits are *measured* (matching prefix of a
+  `dps` and a `2·dps` run, minus 5), never taken from the solver's own residual.
+- **`quadc5/numfield.py`** is exact arithmetic in ℚ(θ) for arbitrary degree — the degree-2
+  `qfield.py` generalised. Signs are decided exactly: zero test on the coordinate vector,
+  then bisection of a certified rational isolating interval until the rational interval
+  hull of the value excludes zero. **No floating point in that layer.** Two independent
+  PSD tests: pivoted Schur complement and all principal minors.
+- **SDPA-GMP was not used** and does not need to be: GMP/MPFR headers are absent and root
+  is not available, and the high-precision value is only a search input — the result is a
+  certificate that does not depend on any solver. Do not spend time building it.
+- **A found polynomial is never the answer.** PSLQ output is a hypothesis for the
+  certificate step. This is the exact error the source's authors admitted to (S1.9), and
+  the whole point of Stage 2 is not repeating it.
+- **Calibrate on C₇ before touching anything unknown.** Its ϑ is a known cubic, so it
+  exercises the entire degree-≥3 pipeline end to end; `runners/certify_nf.py` runs it first.

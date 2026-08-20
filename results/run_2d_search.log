@@ -15,3 +15,13 @@
    deg 12  bound 1e35   -> none
    deg 14  bound 1e30   -> none
    deg 16  bound 1e26   -> none
+   deg 18  bound 1e24   -> none
+   deg 20  bound 1e21   -> none
+   deg 24  bound 1e18   -> none
+   deg 28  bound 1e15   -> none
+   deg 32  bound 1e13   -> none
+   deg 40  bound 1e11   -> none
+   deg 48  bound 1e9    -> none
+   candidates: 0
+
+wrote results/report_2b.json  (candidates are hypotheses for 2.c, not answers)
