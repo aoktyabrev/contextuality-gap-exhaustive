@@ -1,15 +1,4 @@
 {
- "b2": {
-  "population": 10740895,
-  "sampled": 100000,
-  "seed": 20260819,
-  "max_delta": 1.9000287192483256e-06,
-  "false_positives": 0,
-  "rate": 0.0,
-  "examples": [],
-  "seconds": 876.0990434220002
- },
- "gate_1b": "PASSED",
  "b3_b4": {
   "total": 11716571,
   "F1": 3122221,
@@ -17,10 +6,17 @@
   "F1_matches_geng": true,
   "F2": 10740895,
   "F1_not_in_F2": 0,
-  "seconds": 555,
-  "note": "from results/run_1b_n10.log, first run; the second run used --skip-counts"
+  "seconds": 514.9845441289945
+ },
+ "b2": {
+  "population": 10740895,
+  "sampled": 100000,
+  "seed": 20260819,
+  "max_delta": 1.9000287192483256e-06,
+  "seconds": 253.23822450998705
  },
  "b2_at_tau_1e-6": {
+  "threshold": 1e-06,
   "false_positives": 4,
   "rate": 4e-05,
   "examples": [
@@ -30,19 +26,21 @@
    "ICQbfImio"
   ],
   "deltas_bulk": [
-   1.9e-06,
-   1.707e-06,
-   1.383e-06,
-   1.641e-06
-  ],
-  "verdict": "all four are provably zero: chi(Gbar)=alpha in each, so alpha<=theta<=chi(Gbar) forces theta=alpha; the apparent gap is SCS noise at n=10"
+   1.900029e-06,
+   1.707381e-06,
+   1.383006e-06,
+   1.640757e-06
+  ]
  },
  "b2_at_tau_1e-5": {
+  "threshold": 1e-05,
   "false_positives": 0,
   "rate": 0.0,
-  "max_delta": 1.9000287192483256e-06
+  "examples": [],
+  "deltas_bulk": []
  },
  "noise_floor_measured": 1.9000287192483256e-06,
- "smallest_genuine_gap_n10": 0.00058945,
- "empty_band": "(1.9e-06, 5.89e-04) -- factor 310; any threshold inside gives the same split"
+ "smallest_genuine_gap": 0.0005894047950780745,
+ "empty_band": "(1.9e-06, 0.000589) -- factor 310; any threshold inside gives the same split",
+ "gate_1b": "PASSED"
 }

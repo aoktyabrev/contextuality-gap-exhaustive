@@ -57,7 +57,7 @@
    "note": "our count from Stage 0 results/report_0b.json"
   }
  ],
- "geng_count_time_s": 1.78733124100836,
+ "geng_count_time_s": 1.5891875289962627,
  "minus_l_differs": 260902,
  "gate_1a": "PASSED",
  "counts": {
