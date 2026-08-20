@@ -76,14 +76,16 @@ Requirements: Python 3.12, a C compiler for nauty, ~8 CPU cores, ~2 GB of free d
 intermediate sweep files. No GPU — every SDP here is at most 10×10. If a system nauty is
 preferred, point `QUADC5_GENG` at its `geng` binary.
 
-Measured on 8 cores (AMD-class laptop CPU, WSL2):
+Measured on 8 cores under WSL2, from an empty directory; building the virtual
+environment took 16 s and building `geng` 6 s, so the setup is not the cost — the
+enumeration is:
 
 | stage | what it does | time |
 |---|---|--:|
-| Stage 0 | n ≤ 9: calibration against the source paper, filters, the 261 080-graph sweep | @@T0@@ |
-| Stage 1 | n = 10: the 11 716 571-graph sweep, exact certificates, the series | @@T1@@ |
-| Stage 2 | high-precision values, minimal polynomials, exact certificates | @@T2@@ |
-| **total** | | **@@TTOT@@** |
+| Stage 0 | n ≤ 9: calibration against the source paper, filters, the 261 080-graph sweep | 19 min |
+| Stage 1 | n = 10: the 11 716 571-graph sweep, exact certificates, the series | 53 min |
+| Stage 2 | high-precision values, minimal polynomials, exact certificates | 63 min |
+| **total** | | **2 h 15 min** |
 
 ### Checking the preregistrations
 
