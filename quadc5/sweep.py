@@ -85,4 +85,17 @@ def sweep(g6_path, out_dir, tag, eps=1e-8, chunk=500, procs=7, do_perfect=True,
         w.writerow(FIELDS)
         w.writerows(rows)
     print(f"[{tag}] wrote {out} ({len(rows)} rows) in {time.perf_counter()-t0:.0f}s")
+    _gzip_beside(out)
     return out
+
+
+def _gzip_beside(path):
+    """Keep a committed-size .gz next to a bulk CSV.  Done here rather than by hand so
+    that a clean run produces exactly the artefacts the repository holds."""
+    import gzip, shutil
+    if os.path.getsize(path) < 5 << 20:
+        return
+    with open(path, "rb") as fi, gzip.open(path + ".gz", "wb", compresslevel=9) as fo:
+        shutil.copyfileobj(fi, fo)
+    print(f"    wrote {os.path.basename(path)}.gz "
+          f"({os.path.getsize(path + '.gz') / 1048576:.1f} MB)")

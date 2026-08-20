@@ -27,6 +27,9 @@ fi
 echo "### 0.c -- exhaustive sweep over n=9"
 $PY runners/run_0c.py --n 9 --seed "$SEED"
 
+echo "### 0.c-third -- third-solver check on the leading block"
+$PY runners/run_third_solver.py --n 9 --top 100
+
 echo "### 0.b -- pre-SDP filters and gate B-sound (needs both sweeps)"
 $PY runners/run_0b.py --n 8 9
 

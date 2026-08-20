@@ -1,4 +1,8 @@
 {
+ "n": 9,
+ "top": 100,
+ "solver": "CVXOPT",
+ "tau_hi": 1e-07,
  "max_diff": 3.051446637591937e-07,
  "mean": 1.1727060353905471e-07,
  "over_tau_hi": [

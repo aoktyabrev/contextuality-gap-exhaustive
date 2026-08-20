@@ -84,6 +84,7 @@ if __name__ == "__main__":
     ap.add_argument("--degrees", type=int, nargs="+", default=[2, 3, 4, 6, 8])
     ap.add_argument("--extra-degrees", type=int, nargs="+",
                     default=[5, 7, 9, 10, 12, 16])
+    ap.add_argument("--out", default=os.path.join(RES, "report_2b.json"))
     a = ap.parse_args()
     out = {}
     for code in a.codes:
@@ -100,5 +101,5 @@ if __name__ == "__main__":
                          degrees_searched=sorted(a.degrees + a.extra_degrees),
                          budget_rule="B = floor((D-20)/(d+1)), PREREGISTRATION_STAGE2 3.1")
         print(f"   candidates: {len(c1+c2)}")
-    json.dump(out, open(os.path.join(RES, "report_2b.json"), "w"), indent=1, default=str)
-    print("\nwrote results/report_2b.json  (candidates are hypotheses for 2.c, not answers)")
+    json.dump(out, open(a.out, "w"), indent=1, default=str)
+    print(f"\nwrote {a.out}  (candidates are hypotheses for 2.c, not answers)")

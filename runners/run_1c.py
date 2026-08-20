@@ -47,10 +47,13 @@ for p in sorted(glob.glob(os.path.join(RES, f"{tag}_part_*.csv"))):
                 rows.append(r)
 print(f"[{tag}] {len(rows)} graphs with Delta > 1e-6")
 rows.sort(key=lambda r: -float(r[5]))
-with open(os.path.join(RES, f"{tag}_nonzero.csv"), "w", newline="") as fh:
+nz = os.path.join(RES, f"{tag}_nonzero.csv")
+with open(nz, "w", newline="") as fh:
     w = csv.writer(fh)
     w.writerow(FIELDS)
     w.writerows(rows)
+from quadc5.sweep import _gzip_beside
+_gzip_beside(nz)
 
 K = min(a.verify_top, len(rows))
 print(f"[{tag}] re-solving top {K} on CLARABEL ...")

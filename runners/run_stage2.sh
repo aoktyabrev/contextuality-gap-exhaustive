@@ -19,7 +19,8 @@ $PY runners/certify_nf.py --dps 200
 
 echo "### 2.d -- the same for the n=10 rank 2, deeper search for the negative bound"
 $PY runners/run_2b.py --dps 480 --codes 'ICQeR`[Mg' \
-   --degrees 2 3 4 6 8 --extra-degrees 5 7 9 10 12 14 16 18 20 24 28 32 40 48
+   --degrees 2 3 4 6 8 --extra-degrees 5 7 9 10 12 14 16 18 20 24 28 32 40 48 \
+   --out results/report_2d.json
 
 echo "### 2.e -- symmetry against the degree of the field"
 $PY runners/run_2e.py
