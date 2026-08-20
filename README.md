@@ -4,13 +4,35 @@
 
 Every connected graph on up to ten vertices has been enumerated, the contextuality gap
 Δ(G) = ϑ(G) − α(G) computed for each, and the maximum for every size determined; for each
-maximizer the exact value of the Lovász theta number is given together with a machine-checked
-certificate, not a numerical fit.
+maximizer the exact value of the Lovász theta number is **proved** by a machine-checked
+primal and dual certificate rather than fitted numerically.
 
 This continues **U. Tamer, Ö. E. Müstecaplıoğlu, A. Dizdar and Z. Gedik,
 *The Quad-C₅ Graph: Maximum Contextuality Gap on Eight Vertices*,
 [arXiv:2605.12828](https://arxiv.org/abs/2605.12828)**, which settled the eight-vertex case.
 Their result is reproduced here independently and their maximizer is confirmed.
+
+### What is new here, and what is not
+
+**The enumeration is not new.** A. Cabello, L. E. Danielsen, A. J. López-Tarrida and
+J. R. Portillo published a database of the graphs with ϑ > α for n ≤ 10, accompanying
+[Amselem et al., PRL **108**, 200405 (2012)]. Its counts of such graphs are 1, 3, 33,
+498, 16 533 and 975 330 for n = 5…10. The maximum by Δ can be obtained from that data by
+sorting. The database was hosted at `ii.uib.no/~larsed/quantum_graphs/`, which is now
+dead; only the index page survives, in the Internet Archive.
+
+**What is new is the certification.** Every value quoted here is proved, not fitted: an
+explicit primal matrix bounds ϑ from below and an explicit dual bounds it from above,
+both in exact arithmetic over the relevant number field, with positive semidefiniteness
+checked twice by independent methods. That includes the eight-vertex value, which the
+paper above left open after reporting its integer-relation candidate as a false positive.
+
+**One count differs.** Ours at n = 10 is 975 338 against the database's 975 330. The
+counts agree exactly at n = 8 (498) and n = 9 (16 533). All thirteen of our graphs with
+Δ < 2·10⁻³ carry exact rational certificates of Δ > 0, so our side of the boundary is
+not inflated by solver noise; which eight graphs account for the difference cannot be
+determined, because the per-graph files are no longer retrievable from any source.
+See `REPORT_STAGE3.md`.
 
 ## The series
 
@@ -116,6 +138,7 @@ SOURCES.md               every external number, quoted verbatim with a line numb
 REPORT.md                Stage 0 — n ≤ 9
 REPORT_STAGE1.md         Stage 1 — n = 10, the series, the invariants
 REPORT_STAGE2.md         Stage 2 — the exact eight-vertex value
+REPORT_STAGE3.md         Stage 3 — comparison against the prior database, invariants
 quadc5/                  the library: graph6 codec, alpha, theta, filters, structure,
                          hiprec (arbitrary-precision refinement), numfield (exact
                          arithmetic in a number field with exact sign decisions)
@@ -163,7 +186,8 @@ Code is MIT; data and documents are CC BY 4.0. See `LICENSE`, `LICENSE-DATA` and
 
 Archived on Zenodo. Cite the concept DOI, which always resolves to the current version:
 
-    Oktyabrev, A. (2026). Exact contextuality gaps for graphs up to ten vertices.
+    Oktyabrev, A. (https://orcid.org/0009-0003-3626-2002) (2026).
+    Exact contextuality gaps for graphs up to ten vertices.
     Zenodo. https://doi.org/10.5281/zenodo.22031808
 
 The DOI for this specific release is [10.5281/zenodo.22031809](https://doi.org/10.5281/zenodo.22031809).

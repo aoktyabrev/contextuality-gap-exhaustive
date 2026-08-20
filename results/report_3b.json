@@ -1,0 +1,2570 @@
+{
+ "5": [
+  {
+   "graph6": "DUW",
+   "n": 5,
+   "edges": 5,
+   "density": 0.5,
+   "edges_per_vertex": 1.0,
+   "alpha": 2,
+   "theta": 2.236067978455097,
+   "delta": 0.2360679784550972,
+   "degree_sequence": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "regular": true,
+   "triangles": 0,
+   "n_c5": 1,
+   "edges_covered": 5,
+   "mult_hist": {
+    "1": 5
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     0
+    ]
+   ],
+   "aut_order": 10,
+   "vertex_transitive": true,
+   "edge_transitive": true,
+   "vertex_orbits": [
+    5
+   ],
+   "edge_orbits": [
+    5
+   ],
+   "abelian": false,
+   "C5": 1,
+   "coC5": 1,
+   "rank": 1
+  }
+ ],
+ "6": [
+  {
+   "graph6": "EUZw",
+   "n": 6,
+   "edges": 10,
+   "density": 0.6666666666666666,
+   "edges_per_vertex": 1.6666666666666667,
+   "alpha": 2,
+   "theta": 2.2360679779503636,
+   "delta": 0.2360679779503636,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    5
+   ],
+   "regular": false,
+   "triangles": 5,
+   "n_c5": 1,
+   "edges_covered": 5,
+   "mult_hist": {
+    "0": 5,
+    "1": 5
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     1
+    ]
+   ],
+   "aut_order": 10,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    5
+   ],
+   "edge_orbits": [
+    5,
+    5
+   ],
+   "abelian": false,
+   "C5": 1,
+   "coC5": 1,
+   "rank": 1
+  },
+  {
+   "graph6": "EUZo",
+   "n": 6,
+   "edges": 9,
+   "density": 0.6,
+   "edges_per_vertex": 1.5,
+   "alpha": 2,
+   "theta": 2.2360679769455953,
+   "delta": 0.23606797694559534,
+   "degree_sequence": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    4
+   ],
+   "regular": false,
+   "triangles": 3,
+   "n_c5": 1,
+   "edges_covered": 5,
+   "mult_hist": {
+    "0": 4,
+    "1": 5
+   },
+   "cycle_plus_clique": [
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 1,
+   "coC5": 1,
+   "rank": 2
+  },
+  {
+   "graph6": "EUZO",
+   "n": 6,
+   "edges": 8,
+   "density": 0.5333333333333333,
+   "edges_per_vertex": 1.3333333333333333,
+   "alpha": 2,
+   "theta": 2.2360679762860074,
+   "delta": 0.2360679762860074,
+   "degree_sequence": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    3
+   ],
+   "regular": false,
+   "triangles": 2,
+   "n_c5": 2,
+   "edges_covered": 7,
+   "mult_hist": {
+    "0": 1,
+    "1": 4,
+    "2": 3
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     1
+    ]
+   ],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    2,
+    4
+   ],
+   "abelian": true,
+   "C5": 2,
+   "coC5": 2,
+   "rank": 3
+  }
+ ],
+ "7": [
+  {
+   "graph6": "FCp`_",
+   "n": 7,
+   "edges": 7,
+   "density": 0.3333333333333333,
+   "edges_per_vertex": 1.0,
+   "alpha": 3,
+   "theta": 3.3176672107524903,
+   "delta": 0.31766721075249027,
+   "degree_sequence": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "regular": true,
+   "triangles": 0,
+   "n_c5": 0,
+   "edges_covered": 0,
+   "mult_hist": {
+    "0": 7
+   },
+   "cycle_plus_clique": [
+    [
+     7,
+     0
+    ]
+   ],
+   "aut_order": 14,
+   "vertex_transitive": true,
+   "edge_transitive": true,
+   "vertex_orbits": [
+    7
+   ],
+   "edge_orbits": [
+    7
+   ],
+   "abelian": false,
+   "C5": 0,
+   "coC5": 0,
+   "C7": 1,
+   "coC7": 0,
+   "rank": 1
+  },
+  {
+   "graph6": "FCQb_",
+   "n": 7,
+   "edges": 7,
+   "density": 0.3333333333333333,
+   "edges_per_vertex": 1.0,
+   "alpha": 3,
+   "theta": 3.2360679807646777,
+   "delta": 0.23606798076467772,
+   "degree_sequence": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3
+   ],
+   "regular": false,
+   "triangles": 0,
+   "n_c5": 1,
+   "edges_covered": 5,
+   "mult_hist": {
+    "0": 2,
+    "1": 5
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     2
+    ]
+   ],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 1,
+   "coC5": 1,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 2
+  },
+  {
+   "graph6": "FCpVo",
+   "n": 7,
+   "edges": 10,
+   "density": 0.47619047619047616,
+   "edges_per_vertex": 1.4285714285714286,
+   "alpha": 3,
+   "theta": 3.236067980453724,
+   "delta": 0.2360679804537238,
+   "degree_sequence": [
+    1,
+    2,
+    3,
+    3,
+    3,
+    3,
+    5
+   ],
+   "regular": false,
+   "triangles": 3,
+   "n_c5": 1,
+   "edges_covered": 5,
+   "mult_hist": {
+    "0": 5,
+    "1": 5
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     2
+    ]
+   ],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 1,
+   "coC5": 1,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 3
+  },
+  {
+   "graph6": "FQyuo",
+   "n": 7,
+   "edges": 12,
+   "density": 0.5714285714285714,
+   "edges_per_vertex": 1.7142857142857142,
+   "alpha": 2,
+   "theta": 2.236067980286761,
+   "delta": 0.2360679802867609,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4
+   ],
+   "regular": false,
+   "triangles": 5,
+   "n_c5": 3,
+   "edges_covered": 9,
+   "mult_hist": {
+    "0": 3,
+    "1": 4,
+    "2": 4,
+    "3": 1
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     2
+    ]
+   ],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 3,
+   "coC5": 3,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 4
+  },
+  {
+   "graph6": "FQyqw",
+   "n": 7,
+   "edges": 12,
+   "density": 0.5714285714285714,
+   "edges_per_vertex": 1.7142857142857142,
+   "alpha": 2,
+   "theta": 2.2360679800288583,
+   "delta": 0.23606798002885832,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4
+   ],
+   "regular": false,
+   "triangles": 5,
+   "n_c5": 2,
+   "edges_covered": 7,
+   "mult_hist": {
+    "0": 5,
+    "1": 4,
+    "2": 3
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    4
+   ],
+   "abelian": true,
+   "C5": 2,
+   "coC5": 2,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 5
+  },
+  {
+   "graph6": "FUZ~w",
+   "n": 7,
+   "edges": 16,
+   "density": 0.7619047619047619,
+   "edges_per_vertex": 2.2857142857142856,
+   "alpha": 2,
+   "theta": 2.236067979095665,
+   "delta": 0.2360679790956648,
+   "degree_sequence": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6
+   ],
+   "regular": false,
+   "triangles": 15,
+   "n_c5": 1,
+   "edges_covered": 5,
+   "mult_hist": {
+    "0": 11,
+    "1": 5
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     2
+    ]
+   ],
+   "aut_order": 20,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    5
+   ],
+   "edge_orbits": [
+    1,
+    5,
+    10
+   ],
+   "abelian": false,
+   "C5": 1,
+   "coC5": 1,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 6
+  },
+  {
+   "graph6": "FUZvw",
+   "n": 7,
+   "edges": 15,
+   "density": 0.7142857142857143,
+   "edges_per_vertex": 2.142857142857143,
+   "alpha": 2,
+   "theta": 2.236067978366952,
+   "delta": 0.23606797836695215,
+   "degree_sequence": [
+    3,
+    4,
+    4,
+    4,
+    4,
+    5,
+    6
+   ],
+   "regular": false,
+   "triangles": 12,
+   "n_c5": 1,
+   "edges_covered": 5,
+   "mult_hist": {
+    "0": 10,
+    "1": 5
+   },
+   "cycle_plus_clique": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     2
+    ]
+   ],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 1,
+   "coC5": 1,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 7
+  },
+  {
+   "graph6": "FQyvw",
+   "n": 7,
+   "edges": 14,
+   "density": 0.6666666666666666,
+   "edges_per_vertex": 2.0,
+   "alpha": 2,
+   "theta": 2.2360679778662558,
+   "delta": 0.23606797786625577,
+   "degree_sequence": [
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    6
+   ],
+   "regular": false,
+   "triangles": 10,
+   "n_c5": 2,
+   "edges_covered": 7,
+   "mult_hist": {
+    "0": 7,
+    "1": 4,
+    "2": 3
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     2
+    ]
+   ],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    4
+   ],
+   "abelian": true,
+   "C5": 2,
+   "coC5": 2,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 8
+  },
+  {
+   "graph6": "FQytW",
+   "n": 7,
+   "edges": 12,
+   "density": 0.5714285714285714,
+   "edges_per_vertex": 1.7142857142857142,
+   "alpha": 2,
+   "theta": 2.2360679776799,
+   "delta": 0.23606797767989995,
+   "degree_sequence": [
+    2,
+    2,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "regular": false,
+   "triangles": 7,
+   "n_c5": 3,
+   "edges_covered": 9,
+   "mult_hist": {
+    "0": 3,
+    "1": 6,
+    "3": 3
+   },
+   "cycle_plus_clique": [
+    [
+     5,
+     2
+    ]
+   ],
+   "aut_order": 12,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    2,
+    3
+   ],
+   "edge_orbits": [
+    1,
+    2,
+    3,
+    6
+   ],
+   "abelian": false,
+   "C5": 3,
+   "coC5": 3,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 9
+  },
+  {
+   "graph6": "FUZ~o",
+   "n": 7,
+   "edges": 15,
+   "density": 0.7142857142857143,
+   "edges_per_vertex": 2.142857142857143,
+   "alpha": 2,
+   "theta": 2.236067977510288,
+   "delta": 0.23606797751028807,
+   "degree_sequence": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5
+   ],
+   "regular": false,
+   "triangles": 10,
+   "n_c5": 1,
+   "edges_covered": 5,
+   "mult_hist": {
+    "0": 10,
+    "1": 5
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 20,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    5
+   ],
+   "edge_orbits": [
+    5,
+    10
+   ],
+   "abelian": false,
+   "C5": 1,
+   "coC5": 1,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 10
+  }
+ ],
+ "8": [
+  {
+   "graph6": "GCQb`o",
+   "n": 8,
+   "edges": 10,
+   "density": 0.35714285714285715,
+   "edges_per_vertex": 1.25,
+   "alpha": 3,
+   "theta": 3.467843735535716,
+   "delta": 0.4678437355357161,
+   "degree_sequence": [
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3
+   ],
+   "regular": false,
+   "triangles": 0,
+   "n_c5": 4,
+   "edges_covered": 10,
+   "mult_hist": {
+    "2": 10
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    4,
+    4
+   ],
+   "edge_orbits": [
+    2,
+    4,
+    4
+   ],
+   "abelian": false,
+   "C5": 4,
+   "coC5": 4,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 1
+  },
+  {
+   "graph6": "GCR`r_",
+   "n": 8,
+   "edges": 11,
+   "density": 0.39285714285714285,
+   "edges_per_vertex": 1.375,
+   "alpha": 3,
+   "theta": 3.4384471816626023,
+   "delta": 0.4384471816626023,
+   "degree_sequence": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "regular": false,
+   "triangles": 0,
+   "n_c5": 6,
+   "edges_covered": 11,
+   "mult_hist": {
+    "2": 3,
+    "3": 8
+   },
+   "cycle_plus_clique": [
+    [
+     6,
+     2
+    ]
+   ],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    2,
+    4
+   ],
+   "edge_orbits": [
+    1,
+    2,
+    4,
+    4
+   ],
+   "abelian": true,
+   "C5": 6,
+   "coC5": 6,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 2
+  },
+  {
+   "graph6": "GCrb`o",
+   "n": 8,
+   "edges": 12,
+   "density": 0.42857142857142855,
+   "edges_per_vertex": 1.5,
+   "alpha": 3,
+   "theta": 3.414213557363881,
+   "delta": 0.414213557363881,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "regular": true,
+   "triangles": 0,
+   "n_c5": 8,
+   "edges_covered": 12,
+   "mult_hist": {
+    "2": 4,
+    "4": 8
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 16,
+   "vertex_transitive": true,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    8
+   ],
+   "edge_orbits": [
+    4,
+    8
+   ],
+   "abelian": false,
+   "C5": 8,
+   "coC5": 8,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 3
+  },
+  {
+   "graph6": "GCQbdo",
+   "n": 8,
+   "edges": 11,
+   "density": 0.39285714285714285,
+   "edges_per_vertex": 1.375,
+   "alpha": 3,
+   "theta": 3.372281333746484,
+   "delta": 0.37228133374648387,
+   "degree_sequence": [
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    4
+   ],
+   "regular": false,
+   "triangles": 1,
+   "n_c5": 3,
+   "edges_covered": 10,
+   "mult_hist": {
+    "0": 1,
+    "1": 5,
+    "2": 5
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "abelian": true,
+   "C5": 3,
+   "coC5": 3,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 4
+  },
+  {
+   "graph6": "GCp`dO",
+   "n": 8,
+   "edges": 10,
+   "density": 0.35714285714285715,
+   "edges_per_vertex": 1.25,
+   "alpha": 3,
+   "theta": 3.3722813295376843,
+   "delta": 0.37228132953768434,
+   "degree_sequence": [
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3
+   ],
+   "regular": false,
+   "triangles": 1,
+   "n_c5": 2,
+   "edges_covered": 9,
+   "mult_hist": {
+    "0": 1,
+    "1": 8,
+    "2": 1
+   },
+   "cycle_plus_clique": [
+    [
+     7,
+     1
+    ]
+   ],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 2,
+   "coC5": 2,
+   "C7": 1,
+   "coC7": 0,
+   "rank": 5
+  },
+  {
+   "graph6": "GCRb`w",
+   "n": 8,
+   "edges": 12,
+   "density": 0.42857142857142855,
+   "edges_per_vertex": 1.5,
+   "alpha": 3,
+   "theta": 3.3722813246219463,
+   "delta": 0.3722813246219463,
+   "degree_sequence": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4
+   ],
+   "regular": false,
+   "triangles": 1,
+   "n_c5": 5,
+   "edges_covered": 12,
+   "mult_hist": {
+    "1": 3,
+    "2": 7,
+    "4": 2
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 5,
+   "coC5": 5,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 6
+  },
+  {
+   "graph6": "GQyurg",
+   "n": 8,
+   "edges": 16,
+   "density": 0.5714285714285714,
+   "edges_per_vertex": 2.0,
+   "alpha": 2,
+   "theta": 2.343145755852092,
+   "delta": 0.34314575585209184,
+   "degree_sequence": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "regular": true,
+   "triangles": 8,
+   "n_c5": 8,
+   "edges_covered": 16,
+   "mult_hist": {
+    "2": 8,
+    "3": 8
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 16,
+   "vertex_transitive": true,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    8
+   ],
+   "edge_orbits": [
+    8,
+    8
+   ],
+   "abelian": false,
+   "C5": 8,
+   "coC5": 8,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 7
+  },
+  {
+   "graph6": "GCpdag",
+   "n": 8,
+   "edges": 11,
+   "density": 0.39285714285714285,
+   "edges_per_vertex": 1.375,
+   "alpha": 3,
+   "theta": 3.338044462089913,
+   "delta": 0.338044462089913,
+   "degree_sequence": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "regular": false,
+   "triangles": 2,
+   "n_c5": 2,
+   "edges_covered": 9,
+   "mult_hist": {
+    "0": 2,
+    "1": 8,
+    "2": 1
+   },
+   "cycle_plus_clique": [
+    [
+     6,
+     2
+    ]
+   ],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    2,
+    4
+   ],
+   "edge_orbits": [
+    1,
+    2,
+    4,
+    4
+   ],
+   "abelian": true,
+   "C5": 2,
+   "coC5": 2,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 8
+  },
+  {
+   "graph6": "GQyurw",
+   "n": 8,
+   "edges": 17,
+   "density": 0.6071428571428571,
+   "edges_per_vertex": 2.125,
+   "alpha": 2,
+   "theta": 2.3380444553050093,
+   "delta": 0.33804445530500926,
+   "degree_sequence": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5
+   ],
+   "regular": false,
+   "triangles": 10,
+   "n_c5": 6,
+   "edges_covered": 16,
+   "mult_hist": {
+    "0": 1,
+    "1": 4,
+    "2": 10,
+    "3": 2
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    2,
+    4
+   ],
+   "edge_orbits": [
+    1,
+    2,
+    2,
+    4,
+    4,
+    4
+   ],
+   "abelian": true,
+   "C5": 6,
+   "coC5": 6,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 9
+  },
+  {
+   "graph6": "GUZurw",
+   "n": 8,
+   "edges": 18,
+   "density": 0.6428571428571429,
+   "edges_per_vertex": 2.25,
+   "alpha": 2,
+   "theta": 2.3333333406877825,
+   "delta": 0.33333334068778253,
+   "degree_sequence": [
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5
+   ],
+   "regular": false,
+   "triangles": 12,
+   "n_c5": 4,
+   "edges_covered": 16,
+   "mult_hist": {
+    "0": 2,
+    "1": 12,
+    "2": 4
+   },
+   "cycle_plus_clique": [
+    [
+     4,
+     4
+    ]
+   ],
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    4,
+    4
+   ],
+   "edge_orbits": [
+    2,
+    4,
+    4,
+    8
+   ],
+   "abelian": false,
+   "C5": 4,
+   "coC5": 4,
+   "C7": 0,
+   "coC7": 0,
+   "rank": 10
+  }
+ ],
+ "9": [
+  {
+   "graph6": "HCRbdO{",
+   "n": 9,
+   "edges": 15,
+   "density": 0.4166666666666667,
+   "edges_per_vertex": 1.6666666666666667,
+   "alpha": 3,
+   "theta": 3.6666666923999998,
+   "delta": 0.6666666923999998,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4
+   ],
+   "regular": false,
+   "triangles": 1,
+   "n_c5": 12,
+   "edges_covered": 15,
+   "mult_hist": {
+    "2": 3,
+    "4": 6,
+    "5": 6
+   },
+   "cycle_plus_clique": [
+    [
+     6,
+     3
+    ]
+   ],
+   "aut_order": 12,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    3,
+    6
+   ],
+   "edge_orbits": [
+    3,
+    6,
+    6
+   ],
+   "abelian": false,
+   "C5": 12,
+   "coC5": 12,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 1
+  },
+  {
+   "graph6": "HCrb`qi",
+   "n": 9,
+   "edges": 16,
+   "density": 0.4444444444444444,
+   "edges_per_vertex": 1.7777777777777777,
+   "alpha": 3,
+   "theta": 3.6180340009,
+   "delta": 0.6180340008999998,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "regular": false,
+   "triangles": 2,
+   "n_c5": 12,
+   "edges_covered": 16,
+   "mult_hist": {
+    "2": 6,
+    "4": 2,
+    "5": 8
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    4,
+    4
+   ],
+   "edge_orbits": [
+    2,
+    2,
+    4,
+    8
+   ],
+   "abelian": false,
+   "C5": 12,
+   "coC5": 12,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 2
+  },
+  {
+   "graph6": "HCQe`pc",
+   "n": 9,
+   "edges": 13,
+   "density": 0.3611111111111111,
+   "edges_per_vertex": 1.4444444444444444,
+   "alpha": 3,
+   "theta": 3.4703808534,
+   "delta": 0.4703808534,
+   "degree_sequence": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "regular": false,
+   "triangles": 2,
+   "n_c5": 4,
+   "edges_covered": 13,
+   "mult_hist": {
+    "1": 6,
+    "2": 7
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    2,
+    2,
+    4
+   ],
+   "edge_orbits": [
+    1,
+    2,
+    2,
+    4,
+    4
+   ],
+   "abelian": true,
+   "C5": 4,
+   "coC5": 4,
+   "C7": 2,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 3
+  },
+  {
+   "graph6": "HCQv@ps",
+   "n": 9,
+   "edges": 15,
+   "density": 0.4166666666666667,
+   "edges_per_vertex": 1.6666666666666667,
+   "alpha": 3,
+   "theta": 3.4678437744,
+   "delta": 0.4678437743999999,
+   "degree_sequence": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4
+   ],
+   "regular": false,
+   "triangles": 3,
+   "n_c5": 7,
+   "edges_covered": 13,
+   "mult_hist": {
+    "0": 2,
+    "1": 2,
+    "2": 2,
+    "3": 7,
+    "4": 2
+   },
+   "cycle_plus_clique": [
+    [
+     6,
+     3
+    ]
+   ],
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "abelian": true,
+   "C5": 7,
+   "coC5": 7,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 4
+  },
+  {
+   "graph6": "HCQb`r}",
+   "n": 9,
+   "edges": 17,
+   "density": 0.4722222222222222,
+   "edges_per_vertex": 1.8888888888888888,
+   "alpha": 3,
+   "theta": 3.4678437725,
+   "delta": 0.4678437725000002,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    7
+   ],
+   "regular": false,
+   "triangles": 7,
+   "n_c5": 4,
+   "edges_covered": 10,
+   "mult_hist": {
+    "0": 7,
+    "2": 10
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 4,
+   "coC5": 4,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 5
+  },
+  {
+   "graph6": "HCQb`r~",
+   "n": 9,
+   "edges": 18,
+   "density": 0.5,
+   "edges_per_vertex": 2.0,
+   "alpha": 3,
+   "theta": 3.4678437704,
+   "delta": 0.4678437704,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    8
+   ],
+   "regular": false,
+   "triangles": 10,
+   "n_c5": 4,
+   "edges_covered": 10,
+   "mult_hist": {
+    "0": 8,
+    "2": 10
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    4,
+    4
+   ],
+   "edge_orbits": [
+    2,
+    4,
+    4,
+    4,
+    4
+   ],
+   "abelian": false,
+   "C5": 4,
+   "coC5": 4,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 6
+  },
+  {
+   "graph6": "HCQb`rK",
+   "n": 9,
+   "edges": 14,
+   "density": 0.3888888888888889,
+   "edges_per_vertex": 1.5555555555555556,
+   "alpha": 3,
+   "theta": 3.4678437676,
+   "delta": 0.4678437675999998,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4
+   ],
+   "regular": false,
+   "triangles": 2,
+   "n_c5": 8,
+   "edges_covered": 14,
+   "mult_hist": {
+    "2": 6,
+    "3": 4,
+    "4": 4
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    4,
+    4
+   ],
+   "edge_orbits": [
+    2,
+    4,
+    4,
+    4
+   ],
+   "abelian": false,
+   "C5": 8,
+   "coC5": 8,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 7
+  },
+  {
+   "graph6": "HCQb`py",
+   "n": 9,
+   "edges": 15,
+   "density": 0.4166666666666667,
+   "edges_per_vertex": 1.6666666666666667,
+   "alpha": 3,
+   "theta": 3.4678437646,
+   "delta": 0.4678437646,
+   "degree_sequence": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    5
+   ],
+   "regular": false,
+   "triangles": 4,
+   "n_c5": 5,
+   "edges_covered": 12,
+   "mult_hist": {
+    "0": 3,
+    "1": 2,
+    "2": 7,
+    "3": 3
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 5,
+   "coC5": 5,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 8
+  },
+  {
+   "graph6": "HCQbR_y",
+   "n": 9,
+   "edges": 14,
+   "density": 0.3888888888888889,
+   "edges_per_vertex": 1.5555555555555556,
+   "alpha": 3,
+   "theta": 3.4678437622000002,
+   "delta": 0.46784376220000023,
+   "degree_sequence": [
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4
+   ],
+   "regular": false,
+   "triangles": 3,
+   "n_c5": 5,
+   "edges_covered": 12,
+   "mult_hist": {
+    "0": 2,
+    "1": 2,
+    "2": 7,
+    "3": 3
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "abelian": true,
+   "C5": 5,
+   "coC5": 5,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 9
+  },
+  {
+   "graph6": "HCQb`rY",
+   "n": 9,
+   "edges": 15,
+   "density": 0.4166666666666667,
+   "edges_per_vertex": 1.6666666666666667,
+   "alpha": 3,
+   "theta": 3.467843759,
+   "delta": 0.46784375899999997,
+   "degree_sequence": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    5
+   ],
+   "regular": false,
+   "triangles": 4,
+   "n_c5": 6,
+   "edges_covered": 13,
+   "mult_hist": {
+    "0": 2,
+    "1": 2,
+    "2": 6,
+    "3": 4,
+    "4": 1
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "abelian": true,
+   "C5": 6,
+   "coC5": 6,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 10
+  }
+ ],
+ "10": [
+  {
+   "graph6": "ICRb`yiu?",
+   "n": 10,
+   "edges": 20,
+   "density": 0.4444444444444444,
+   "edges_per_vertex": 2.0,
+   "alpha": 3,
+   "theta": 3.7071067934,
+   "delta": 0.7071067933999999,
+   "degree_sequence": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "regular": true,
+   "triangles": 4,
+   "n_c5": 16,
+   "edges_covered": 20,
+   "mult_hist": {
+    "2": 8,
+    "4": 4,
+    "6": 8
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 16,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    8
+   ],
+   "edge_orbits": [
+    4,
+    8,
+    8
+   ],
+   "abelian": false,
+   "C5": 16,
+   "coC5": 16,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 1
+  },
+  {
+   "graph6": "ICQeR`[Mg",
+   "n": 10,
+   "edges": 19,
+   "density": 0.4222222222222222,
+   "edges_per_vertex": 1.9,
+   "alpha": 3,
+   "theta": 3.6671550785,
+   "delta": 0.6671550785,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5
+   ],
+   "regular": false,
+   "triangles": 5,
+   "n_c5": 16,
+   "edges_covered": 19,
+   "mult_hist": {
+    "2": 5,
+    "3": 2,
+    "4": 2,
+    "5": 6,
+    "6": 2,
+    "7": 2
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 16,
+   "coC5": 16,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 2
+  },
+  {
+   "graph6": "ICRbcqhNO",
+   "n": 10,
+   "edges": 20,
+   "density": 0.4444444444444444,
+   "edges_per_vertex": 2.0,
+   "alpha": 3,
+   "theta": 3.6666667241999997,
+   "delta": 0.6666667241999997,
+   "degree_sequence": [
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5
+   ],
+   "regular": false,
+   "triangles": 6,
+   "n_c5": 15,
+   "edges_covered": 19,
+   "mult_hist": {
+    "0": 1,
+    "1": 2,
+    "2": 5,
+    "4": 2,
+    "5": 7,
+    "6": 1,
+    "7": 2
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 15,
+   "coC5": 15,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 3
+  },
+  {
+   "graph6": "ICQ`fP[r_",
+   "n": 10,
+   "edges": 19,
+   "density": 0.4222222222222222,
+   "edges_per_vertex": 1.9,
+   "alpha": 3,
+   "theta": 3.6666667138999998,
+   "delta": 0.6666667138999998,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5
+   ],
+   "regular": false,
+   "triangles": 4,
+   "n_c5": 19,
+   "edges_covered": 18,
+   "mult_hist": {
+    "0": 1,
+    "3": 3,
+    "4": 2,
+    "5": 4,
+    "6": 7,
+    "8": 2
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    4
+   ],
+   "abelian": true,
+   "C5": 19,
+   "coC5": 19,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 4
+  },
+  {
+   "graph6": "ICRbdO{xG",
+   "n": 10,
+   "edges": 20,
+   "density": 0.4444444444444444,
+   "edges_per_vertex": 2.0,
+   "alpha": 3,
+   "theta": 3.6666667117,
+   "delta": 0.6666667117,
+   "degree_sequence": [
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5
+   ],
+   "regular": false,
+   "triangles": 6,
+   "n_c5": 18,
+   "edges_covered": 19,
+   "mult_hist": {
+    "0": 1,
+    "2": 5,
+    "4": 4,
+    "5": 4,
+    "7": 4,
+    "8": 2
+   },
+   "cycle_plus_clique": [
+    [
+     6,
+     4
+    ]
+   ],
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    2,
+    2,
+    2,
+    4
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    2,
+    4,
+    4,
+    4,
+    4
+   ],
+   "abelian": true,
+   "C5": 18,
+   "coC5": 18,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 5
+  },
+  {
+   "graph6": "ICRbdO{|g",
+   "n": 10,
+   "edges": 22,
+   "density": 0.4888888888888889,
+   "edges_per_vertex": 2.2,
+   "alpha": 3,
+   "theta": 3.666666704,
+   "delta": 0.6666667039999998,
+   "degree_sequence": [
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
+    7
+   ],
+   "regular": false,
+   "triangles": 11,
+   "n_c5": 15,
+   "edges_covered": 19,
+   "mult_hist": {
+    "0": 3,
+    "1": 2,
+    "2": 5,
+    "4": 4,
+    "5": 5,
+    "7": 2,
+    "8": 1
+   },
+   "cycle_plus_clique": [
+    [
+     6,
+     4
+    ]
+   ],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 15,
+   "coC5": 15,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 6
+  },
+  {
+   "graph6": "ICRbdO{z_",
+   "n": 10,
+   "edges": 21,
+   "density": 0.4666666666666667,
+   "edges_per_vertex": 2.1,
+   "alpha": 3,
+   "theta": 3.6666666979,
+   "delta": 0.6666666979000002,
+   "degree_sequence": [
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    6
+   ],
+   "regular": false,
+   "triangles": 7,
+   "n_c5": 16,
+   "edges_covered": 20,
+   "mult_hist": {
+    "0": 1,
+    "1": 2,
+    "2": 4,
+    "3": 2,
+    "4": 4,
+    "5": 4,
+    "6": 1,
+    "7": 2,
+    "8": 1
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "abelian": true,
+   "C5": 16,
+   "coC5": 16,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 7
+  },
+  {
+   "graph6": "ICRbdO{~o",
+   "n": 10,
+   "edges": 23,
+   "density": 0.5111111111111111,
+   "edges_per_vertex": 2.3,
+   "alpha": 3,
+   "theta": 3.6666666971,
+   "delta": 0.6666666971000001,
+   "degree_sequence": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    8
+   ],
+   "regular": false,
+   "triangles": 12,
+   "n_c5": 12,
+   "edges_covered": 15,
+   "mult_hist": {
+    "0": 8,
+    "2": 3,
+    "4": 6,
+    "5": 6
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    2,
+    2,
+    4
+   ],
+   "edge_orbits": [
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    4,
+    4,
+    4
+   ],
+   "abelian": true,
+   "C5": 12,
+   "coC5": 12,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 8
+  },
+  {
+   "graph6": "ICRbdO{~w",
+   "n": 10,
+   "edges": 24,
+   "density": 0.5333333333333333,
+   "edges_per_vertex": 2.4,
+   "alpha": 3,
+   "theta": 3.6666666947,
+   "delta": 0.6666666947,
+   "degree_sequence": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
+    9
+   ],
+   "regular": false,
+   "triangles": 16,
+   "n_c5": 12,
+   "edges_covered": 15,
+   "mult_hist": {
+    "0": 9,
+    "2": 3,
+    "4": 6,
+    "5": 6
+   },
+   "cycle_plus_clique": [
+    [
+     6,
+     4
+    ]
+   ],
+   "aut_order": 12,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    3,
+    6
+   ],
+   "edge_orbits": [
+    3,
+    3,
+    6,
+    6,
+    6
+   ],
+   "abelian": false,
+   "C5": 12,
+   "coC5": 12,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 9
+  },
+  {
+   "graph6": "ICRbdO{}_",
+   "n": 10,
+   "edges": 21,
+   "density": 0.4666666666666667,
+   "edges_per_vertex": 2.1,
+   "alpha": 3,
+   "theta": 3.666666691,
+   "delta": 0.6666666910000001,
+   "degree_sequence": [
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    6
+   ],
+   "regular": false,
+   "triangles": 6,
+   "n_c5": 14,
+   "edges_covered": 19,
+   "mult_hist": {
+    "0": 2,
+    "1": 4,
+    "2": 2,
+    "4": 3,
+    "5": 10
+   },
+   "cycle_plus_clique": [],
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "vertex_orbits": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "edge_orbits": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "abelian": true,
+   "C5": 14,
+   "coC5": 14,
+   "C7": 0,
+   "coC7": 0,
+   "C9": 0,
+   "coC9": 0,
+   "rank": 10
+  }
+ ]
+}

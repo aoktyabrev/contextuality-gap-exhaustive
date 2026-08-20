@@ -579,3 +579,72 @@ C₇ — единственный из четырёх с полем степен
 
 **Вывод:** ни одна наша формулировка не опирается на устаревшую версию, и ничего из
 отчётов не изымается.
+
+---
+
+# Stage 3 — дополнение к источникам
+
+Обращения **2026-08-20**.
+
+## S11 — база квантовых графов (Cabello, Danielsen, López-Tarrida, Portillo)
+
+**Адрес из брифа мёртв.** `http://www.ii.uib.no/~larsed/quantum_graphs/` на 2026-08-20
+отдаёт HTTP 404 (редирект на страницу ошибки Университета Бергена). Мертвы и
+`https://www.ii.uib.no/~larsed/`, и `https://www.ii.uib.no/~larsed/quantum_graphs/`,
+и предполагавшееся зеркало `https://larsed.github.io/quantum_graphs/`.
+
+**Что удалось получить.** Индексная страница базы из Wayback Machine:
+- снимок `20220119160620`, выгрузка `sources/cabello_db_index.html`,
+  SHA-256 в `sources/cabello_db.sha256`;
+- снимок `20240420000804`, выгрузка `sources/cabello_2024.html` — содержание идентично.
+
+Дословно со страницы (формат столбцов):
+
+> Data format (columns): id# nauty-string α ϑ α * d upper bound for orthogonal rank
+> Q=(ϑ-α)/(intersection number) S=(α * -ϑ)/(intersection number) intersection number
+> intersection number of the complement graph chromatic number of the complement graph
+
+и таблица загрузок:
+
+> n Download Size
+> 5 quantum5 1 graph
+> 6 quantum6 3 graphs
+> 7 quantum7 33 graphs
+> 8 quantum8 498 graphs
+> 9 quantum9 16533 graphs (902KB)
+> 10 quantum10 975330 graphs (5.1MB compressed)
+
+**Ключевое обстоятельство, устанавливающее объём базы:** это список **не всех** графов,
+а только тех, у которых ϑ > α. Страница называет их «quantum graphs», и счётчики
+(1, 3, 33, 498, 16533, 975330) — это счётчики графов с положительным зазором, а не
+общее число неизоморфных графов на n вершинах.
+
+**Сами файлы данных недостижимы.** `quantum5`…`quantum10.bz2` в Wayback Machine никогда
+не сохранялись: запрос CDX по `ii.uib.no/~larsed/quantum_graphs/*` возвращает снимки
+**только** индексной страницы. Поиск зеркал результата не дал. Поэтому:
+
+- **счётчики** — проверяемы и процитированы выше;
+- **значения α, ϑ, α\* по каждому графу — UNVERIFIED и в сравнении не участвуют**;
+- **пографовая сверка, которую требует бриф 3.a.3, невыполнима**, и это записано как
+  факт, а не как пропуск.
+
+Правило о недостижимом источнике применено буквально: то, что удалось прочитать,
+процитировано; то, что не удалось, помечено и исключено из решающих сравнений.
+
+## S12 — теоретическое основание отсева, найденное попутно
+
+A. Cabello, L. E. Danielsen, A. J. López-Tarrida, J. R. Portillo,
+*Basic exclusivity graphs in quantum correlations*, https://arxiv.org/abs/1211.5825 —
+обращение 2026-08-20, выгрузка `sources/eprint_1211.5825`,
+исходник `sources/ep1211/Fundamental_structures_17_afterpraproofs.tex`. Из аннотации:
+
+> We prove that quantum theory only violates those NC inequalities whose exclusivity
+> graphs contain, as induced subgraphs, odd cycles of length five or more, and/or their
+> complements.
+
+**Читается так:** Δ(G) > 0 влечёт наличие индуцированной нечётной дыры или антидыры
+длины ≥ 5, то есть несовершенство G. Это ровно то направление, на котором стоит
+звуковость нашего отсева F1 (совершенный ⇒ Δ = 0), и оно здесь получено независимо от
+нас и раньше нас. **Обратное неверно**, и наши данные это показывают количественно:
+на n = 8 несовершенных графов 3 312, а с Δ > 0 — только 498. Утверждение о
+необходимости, не о достаточности.

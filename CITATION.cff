@@ -6,6 +6,7 @@ authors:
   - given-names: Artem
     family-names: Oktyabrev
     email: aoktyabrev@gmail.com
+    orcid: "https://orcid.org/0009-0003-3626-2002"
 repository-code: "https://github.com/aoktyabrev/contextuality-gap-exhaustive"
 license: MIT
 license-url: "https://github.com/aoktyabrev/contextuality-gap-exhaustive/blob/master/LICENSE"

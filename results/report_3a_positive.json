@@ -1,0 +1,262 @@
+[
+ {
+  "n": 10,
+  "alpha": 4,
+  "trace": "1",
+  "sum": "25003512463/6250000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0005619940799999057,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "I?baujoZ_",
+  "solver_deltas": {
+   "CLARABEL": 0.0005894504276433565,
+   "CVXOPT": 0.0005894218412381136,
+   "SCS(1e-11)": 0.0005894283450018634
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 4,
+  "trace": "1",
+  "sum": "200028199703/50000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0005639940600001836,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "ICQe`rKmG",
+  "solver_deltas": {
+   "CLARABEL": 0.0005894477840771017,
+   "CVXOPT": 0.0005893810764021623,
+   "SCS(1e-11)": 0.0005894363080862774
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 4,
+  "trace": "1",
+  "sum": "400096999/100000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0009699899999997541,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "I?beaxwx_",
+  "solver_deltas": {
+   "CLARABEL": 0.000999830498112253,
+   "CVXOPT": 0.0009996382095227574,
+   "SCS(1e-11)": 0.0009997869097304601
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "6002059979/2000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0010299895000001058,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "ICpvUy}^O",
+  "solver_deltas": {
+   "CLARABEL": 0.001047871640172282,
+   "CVXOPT": 0.0010476484368604488,
+   "SCS(1e-11)": 0.0010477839339397832
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "300120799879/100000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0012079987899999978,
+  "denom": 1000000,
+  "eps": "1/1000000",
+  "graph6": "ICruvXy\\g",
+  "solver_deltas": {
+   "CLARABEL": 0.0012120332449487847,
+   "CVXOPT": 0.0012119231078209225,
+   "SCS(1e-11)": 0.0012120165020537144
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "1875887491/625000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0014199856000001176,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "IEhutxm~?",
+  "solver_deltas": {
+   "CLARABEL": 0.001441807879708712,
+   "CVXOPT": 0.0014416865380875166,
+   "SCS(1e-11)": 0.0014418047804092282
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "75035599639/25000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0014239855599997853,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "ICxvRzU}O",
+  "solver_deltas": {
+   "CLARABEL": 0.0014418076270170666,
+   "CVXOPT": 0.0014417794472629808,
+   "SCS(1e-11)": 0.0014418080162821312
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "150071099279/50000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0014219855799999515,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "ICxvRzu}O",
+  "solver_deltas": {
+   "CLARABEL": 0.0014418215452658423,
+   "CVXOPT": 0.0014416133606895976,
+   "SCS(1e-11)": 0.001441814697417776
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 4,
+  "trace": "1",
+  "sum": "40016399833/10000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0016399832999995922,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "I?baujox_",
+  "solver_deltas": {
+   "CLARABEL": 0.0016743041382207835,
+   "CVXOPT": 0.001674226453141081,
+   "SCS(1e-11)": 0.0016742751057305938
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "75041599579/25000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0016639831599998267,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "ICpvUy}zO",
+  "solver_deltas": {
+   "CLARABEL": 0.001683204245498171,
+   "CVXOPT": 0.0016830239804450642,
+   "SCS(1e-11)": 0.00168319500957681
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "300180009981997/100000000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0018000998199698692,
+  "denom": 100000000,
+  "eps": "1/10000000",
+  "graph6": "ICxvezmnO",
+  "solver_deltas": {
+   "CLARABEL": 0.0018002722326073695,
+   "CVXOPT": 0.0018001484104730459,
+   "SCS(1e-11)": 0.0018002630907814066
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "75045199543/25000000000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0018079817199998516,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "ICZVZzwlo",
+  "solver_deltas": {
+   "CLARABEL": 0.0018223219991955197,
+   "CVXOPT": 0.0018222108799674785,
+   "SCS(1e-11)": 0.0018222918748884709
+  }
+ },
+ {
+  "n": 10,
+  "alpha": 3,
+  "trace": "1",
+  "sum": "4690568719/1562500000",
+  "zero_on_edges": true,
+  "psd_schur": true,
+  "psd_minors": true,
+  "rank": 10,
+  "proves_positive": true,
+  "margin": 0.0019639801600002116,
+  "denom": 1000000,
+  "eps": "1/100000",
+  "graph6": "ICvbvZsvO",
+  "solver_deltas": {
+   "CLARABEL": 0.0019871233927029053,
+   "CVXOPT": 0.0019870885023269835,
+   "SCS(1e-11)": 0.001987096129087984
+  }
+ }
+]

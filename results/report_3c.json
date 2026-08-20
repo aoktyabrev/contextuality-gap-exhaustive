@@ -1,0 +1,907 @@
+{
+ "q1": [
+  {
+   "n": 5,
+   "rank": 1,
+   "graph6": "DUW",
+   "aut_order": 10,
+   "vertex_transitive": true,
+   "edge_transitive": true,
+   "regular": true,
+   "edges": 5,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 6,
+   "rank": 1,
+   "graph6": "EUZw",
+   "aut_order": 10,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 10,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 6,
+   "rank": 2,
+   "graph6": "EUZo",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 9,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 6,
+   "rank": 3,
+   "graph6": "EUZO",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 8,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 1,
+   "graph6": "FCp`_",
+   "aut_order": 14,
+   "vertex_transitive": true,
+   "edge_transitive": true,
+   "regular": true,
+   "edges": 7,
+   "field_degree": 3,
+   "minpoly": [
+    -49,
+    49,
+    -7,
+    -1
+   ],
+   "honest_digits": 116,
+   "theta": "3.317667207394095392733208298072381371462"
+  },
+  {
+   "n": 7,
+   "rank": 2,
+   "graph6": "FCQb_",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 7,
+   "field_degree": 2,
+   "minpoly": [
+    -4,
+    -2,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 3,
+   "graph6": "FCpVo",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 10,
+   "field_degree": 2,
+   "minpoly": [
+    -4,
+    -2,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 4,
+   "graph6": "FQyuo",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 12,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 5,
+   "graph6": "FQyqw",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 12,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 6,
+   "graph6": "FUZ~w",
+   "aut_order": 20,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 16,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 7,
+   "graph6": "FUZvw",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 15,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 8,
+   "graph6": "FQyvw",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 14,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 9,
+   "graph6": "FQytW",
+   "aut_order": 12,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 12,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 7,
+   "rank": 10,
+   "graph6": "FUZ~o",
+   "aut_order": 20,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 15,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    0,
+    1
+   ],
+   "honest_digits": 112,
+   "theta": "2.236067977499789696409173668731276235441"
+  },
+  {
+   "n": 8,
+   "rank": 1,
+   "graph6": "GCQb`o",
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 10,
+   "field_degree": 4,
+   "minpoly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.467843729840224108697391881777007924429"
+  },
+  {
+   "n": 8,
+   "rank": 2,
+   "graph6": "GCR`r_",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 11,
+   "field_degree": 2,
+   "minpoly": [
+    -26,
+    11,
+    -1
+   ],
+   "honest_digits": 116,
+   "theta": "3.438447187191169725089295072012961487426"
+  },
+  {
+   "n": 8,
+   "rank": 3,
+   "graph6": "GCrb`o",
+   "aut_order": 16,
+   "vertex_transitive": true,
+   "edge_transitive": false,
+   "regular": true,
+   "edges": 12,
+   "field_degree": 2,
+   "minpoly": [
+    2,
+    -4,
+    1
+   ],
+   "honest_digits": 113,
+   "theta": "3.41421356237309504880168872420969807857"
+  },
+  {
+   "n": 8,
+   "rank": 4,
+   "graph6": "GCQbdo",
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 11,
+   "field_degree": 2,
+   "minpoly": [
+    8,
+    1,
+    -1
+   ],
+   "honest_digits": 116,
+   "theta": "3.37228132326901432992530573410946465911"
+  },
+  {
+   "n": 8,
+   "rank": 5,
+   "graph6": "GCp`dO",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 10,
+   "field_degree": 2,
+   "minpoly": [
+    8,
+    1,
+    -1
+   ],
+   "honest_digits": 116,
+   "theta": "3.37228132326901432992530573410946465911"
+  },
+  {
+   "n": 8,
+   "rank": 6,
+   "graph6": "GCRb`w",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 12,
+   "field_degree": 2,
+   "minpoly": [
+    8,
+    1,
+    -1
+   ],
+   "honest_digits": 116,
+   "theta": "3.37228132326901432992530573410946465911"
+  },
+  {
+   "n": 8,
+   "rank": 7,
+   "graph6": "GQyurg",
+   "aut_order": 16,
+   "vertex_transitive": true,
+   "edge_transitive": false,
+   "regular": true,
+   "edges": 16,
+   "field_degree": 2,
+   "minpoly": [
+    32,
+    -16,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "2.343145750507619804793245103161207685721"
+  },
+  {
+   "n": 8,
+   "rank": 8,
+   "graph6": "GCpdag",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 11,
+   "field_degree": 3,
+   "minpoly": [
+    44,
+    -31,
+    2,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.338044458848351661799777666552793096226"
+  },
+  {
+   "n": 8,
+   "rank": 9,
+   "graph6": "GQyurw",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 17,
+   "field_degree": 3,
+   "minpoly": [
+    -16,
+    24,
+    -5,
+    -1
+   ],
+   "honest_digits": 116,
+   "theta": "2.338044458848351661799777666552793096226"
+  },
+  {
+   "n": 8,
+   "rank": 10,
+   "graph6": "GUZurw",
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 18,
+   "field_degree": 1,
+   "minpoly": [
+    7,
+    -3
+   ],
+   "honest_digits": 116,
+   "theta": "2.333333333333333333333333333333333333333"
+  },
+  {
+   "n": 9,
+   "rank": 1,
+   "graph6": "HCRbdO{",
+   "aut_order": 12,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 15,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 116,
+   "theta": "3.666666666666666666666666666666666666667"
+  },
+  {
+   "n": 9,
+   "rank": 2,
+   "graph6": "HCrb`qi",
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 16,
+   "field_degree": 2,
+   "minpoly": [
+    -5,
+    5,
+    -1
+   ],
+   "honest_digits": 116,
+   "theta": "3.61803398874989484820458683436563811772"
+  },
+  {
+   "n": 9,
+   "rank": 3,
+   "graph6": "HCQe`pc",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 13,
+   "field_degree": null,
+   "minpoly": null,
+   "honest_digits": 116,
+   "theta": "3.470380832511607152154248893260395030315"
+  },
+  {
+   "n": 9,
+   "rank": 4,
+   "graph6": "HCQv@ps",
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 15,
+   "field_degree": 4,
+   "minpoly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.467843729840224108697391881777007924429"
+  },
+  {
+   "n": 9,
+   "rank": 5,
+   "graph6": "HCQb`r}",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 17,
+   "field_degree": 4,
+   "minpoly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.467843729840224108697391881777007924429"
+  },
+  {
+   "n": 9,
+   "rank": 6,
+   "graph6": "HCQb`r~",
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 18,
+   "field_degree": 4,
+   "minpoly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.467843729840224108697391881777007924429"
+  },
+  {
+   "n": 9,
+   "rank": 7,
+   "graph6": "HCQb`rK",
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 14,
+   "field_degree": 4,
+   "minpoly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.467843729840224108697391881777007924429"
+  },
+  {
+   "n": 9,
+   "rank": 8,
+   "graph6": "HCQb`py",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 15,
+   "field_degree": 4,
+   "minpoly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.467843729840224108697391881777007924429"
+  },
+  {
+   "n": 9,
+   "rank": 9,
+   "graph6": "HCQbR_y",
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 14,
+   "field_degree": 4,
+   "minpoly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "honest_digits": 116,
+   "theta": "3.467843729840224108697391881777007924429"
+  },
+  {
+   "n": 9,
+   "rank": 10,
+   "graph6": "HCQb`rY",
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 15,
+   "field_degree": 4,
+   "minpoly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "honest_digits": 110,
+   "theta": "3.467843729840224108697391881777007924429"
+  },
+  {
+   "n": 10,
+   "rank": 1,
+   "graph6": "ICRb`yiu?",
+   "aut_order": 16,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": true,
+   "edges": 20,
+   "field_degree": 2,
+   "minpoly": [
+    -17,
+    12,
+    -2
+   ],
+   "honest_digits": 116,
+   "theta": "3.707106781186547524400844362104849039285"
+  },
+  {
+   "n": 10,
+   "rank": 2,
+   "graph6": "ICQeR`[Mg",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 19,
+   "field_degree": null,
+   "minpoly": null,
+   "honest_digits": 115,
+   "theta": "3.667155056185021442027918759954675041361"
+  },
+  {
+   "n": 10,
+   "rank": 3,
+   "graph6": "ICRbcqhNO",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 20,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 116,
+   "theta": "3.666666666666666666666666666666666666667"
+  },
+  {
+   "n": 10,
+   "rank": 4,
+   "graph6": "ICQ`fP[r_",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 19,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 116,
+   "theta": "3.666666666666666666666666666666666666667"
+  },
+  {
+   "n": 10,
+   "rank": 5,
+   "graph6": "ICRbdO{xG",
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 20,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 116,
+   "theta": "3.666666666666666666666666666666666666667"
+  },
+  {
+   "n": 10,
+   "rank": 6,
+   "graph6": "ICRbdO{|g",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 22,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 110,
+   "theta": "3.666666666666666666666666666666666666667"
+  },
+  {
+   "n": 10,
+   "rank": 7,
+   "graph6": "ICRbdO{z_",
+   "aut_order": 1,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 21,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 113,
+   "theta": "3.666666666666666666666666666666666666667"
+  },
+  {
+   "n": 10,
+   "rank": 8,
+   "graph6": "ICRbdO{~o",
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 23,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 116,
+   "theta": "3.666666666666666666666666666666666666667"
+  },
+  {
+   "n": 10,
+   "rank": 9,
+   "graph6": "ICRbdO{~w",
+   "aut_order": 12,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 24,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 116,
+   "theta": "3.666666666666666666666666666666666666667"
+  },
+  {
+   "n": 10,
+   "rank": 10,
+   "graph6": "ICRbdO{}_",
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "edge_transitive": false,
+   "regular": false,
+   "edges": 21,
+   "field_degree": 1,
+   "minpoly": [
+    -11,
+    3
+   ],
+   "honest_digits": 112,
+   "theta": "3.666666666666666666666666666666666666667"
+  }
+ ],
+ "q2": {
+  "7": {
+   "n": 7,
+   "count": 33,
+   "d1": 0.31766721075249027,
+   "d2": 0.23606798076467772,
+   "gap_1_2": 0.08159922998781255,
+   "spread_top": 0.2534894382125139,
+   "detachment": 0.32190386535711796,
+   "d100": 0.06417777253997636
+  },
+  "8": {
+   "n": 8,
+   "count": 100,
+   "d1": 0.4678437355357161,
+   "d2": 0.4384471816626023,
+   "gap_1_2": 0.029396553873113795,
+   "spread_top": 0.23177575265346118,
+   "detachment": 0.12683187752200276,
+   "d100": 0.23606798288225495
+  },
+  "9": {
+   "n": 9,
+   "count": 100,
+   "d1": 0.6666666924,
+   "d2": 0.6180340009,
+   "gap_1_2": 0.048632691499999936,
+   "spread_top": 0.28294760189999996,
+   "detachment": 0.17187879018387237,
+   "d100": 0.3837190905
+  },
+  "10": {
+   "n": 10,
+   "count": 100,
+   "d1": 0.7071067934,
+   "d2": 0.6671550785,
+   "gap_1_2": 0.039951714900000046,
+   "spread_top": 0.16734673690000001,
+   "detachment": 0.23873614532366805,
+   "d100": 0.5397600565
+  }
+ },
+ "spearman_aut_vs_degree": {
+  "rho": -0.11627234086808129,
+  "p": 0.4633858162485308,
+  "n": 42
+ },
+ "rational_group": {
+  "count": 10,
+  "aut_orders": [
+   1,
+   2,
+   2,
+   2,
+   4,
+   4,
+   8,
+   8,
+   12,
+   12
+  ],
+  "vt": 0,
+  "et": 0
+ },
+ "irrational_group": {
+  "count": 32,
+  "aut_orders": [
+   1,
+   1,
+   1,
+   1,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   4,
+   4,
+   4,
+   4,
+   4,
+   4,
+   8,
+   8,
+   8,
+   8,
+   10,
+   10,
+   12,
+   14,
+   16,
+   16,
+   16,
+   20,
+   20
+  ],
+  "vt": 4,
+  "et": 2
+ },
+ "aut_orders_on_both_sides": [
+  1,
+  2,
+  4,
+  8,
+  12
+ ]
+}
