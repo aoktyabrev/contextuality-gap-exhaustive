@@ -1,0 +1,72 @@
+
+=== FCp`_ ===
+   honest digits D = 236
+   theta = 3.317667207394095392733208298072381371461931021996677379180551322005774
+   deg  2  bound 1e72   -> none
+   deg  3  bound 1e54   -> -x**3 - 7*x**2 + 49*x - 49
+          maxcoef=49  stable@2x=True  |p(t)|=9.88e-469  irreducible=True  near-bound=False  => CANDIDATE
+   deg  4  bound 1e43   -> x**4 + 7*x**3 - 49*x**2 + 49*x
+          maxcoef=49  stable@2x=True  |p(t)|=3.28e-468  irreducible=False  near-bound=False  => NOISE
+   deg  6  bound 1e30   -> x**5 + 8*x**4 - 41*x**3 + 7*x**2 + 49
+          maxcoef=49  stable@2x=True  |p(t)|=1.51e-467  irreducible=False  near-bound=False  => NOISE
+   deg  8  bound 1e24   -> -x**6 - 9*x**5 + 34*x**4 + 42*x**3 - 49*x**2 - 49*x
+          maxcoef=49  stable@2x=True  |p(t)|=6.11e-467  irreducible=False  near-bound=False  => NOISE
+   -- extra degrees beyond the brief, for the negative bound --
+   deg  5  bound 1e36   -> -x**5 - 7*x**4 + 49*x**3 - 49*x**2
+          maxcoef=49  stable@2x=True  |p(t)|=1.09e-467  irreducible=False  near-bound=False  => NOISE
+   deg  7  bound 1e27   -> x**7 + 8*x**6 - 41*x**5 + 7*x**4 + 49*x**2
+          maxcoef=49  stable@2x=True  |p(t)|=1.67e-466  irreducible=False  near-bound=False  => NOISE
+   deg  9  bound 1e21   -> x**8 + 8*x**7 - 42*x**6 + 49*x**4
+          maxcoef=49  stable@2x=True  |p(t)|=5.17e-466  irreducible=False  near-bound=False  => NOISE
+   deg 10  bound 1e19   -> -x**8 - 8*x**7 + 41*x**6 - 6*x**5 + 8*x**4 - 91*x**3 + 49*x
+          maxcoef=91  stable@2x=True  |p(t)|=5.39e-466  irreducible=False  near-bound=False  => NOISE
+   deg 12  bound 1e16   -> x**8 + 8*x**7 - 41*x**6 + 8*x**5 + 8*x**4 + 8*x**3 + 7*x**2 + 49
+          maxcoef=49  stable@2x=True  |p(t)|=5.68e-466  irreducible=False  near-bound=False  => NOISE
+   deg 16  bound 1e12   -> x**15 + 8*x**14 - 41*x**13 + 7*x**12 + 49*x**10 - x**3 - 7*x**2 + 49*x - 49
+          maxcoef=49  stable@2x=True  |p(t)|=2.45e-462  irreducible=False  near-bound=False  => NOISE
+   candidates: 1
+
+=== GCQb`o ===
+   honest digits D = 237
+   theta = 3.467843729840224108697391881777007924428927536912898819982835302380388
+   deg  2  bound 1e72   -> none
+   deg  3  bound 1e54   -> none
+   deg  4  bound 1e43   -> x**4 - x**3 + 23*x**2 - 155*x + 158
+          maxcoef=158  stable@2x=True  |p(t)|=5.85e-469  irreducible=True  near-bound=False  => CANDIDATE
+   deg  6  bound 1e31   -> -x**6 - 23*x**4 + 133*x**3 - 26*x**2 - 3*x - 158
+          maxcoef=158  stable@2x=True  |p(t)|=9.66e-468  irreducible=False  near-bound=False  => NOISE
+   deg  8  bound 1e24   -> -x**6 - 22*x**4 + 132*x**3 - 3*x**2 - 158*x
+          maxcoef=158  stable@2x=True  |p(t)|=9.07e-468  irreducible=False  near-bound=False  => NOISE
+   -- extra degrees beyond the brief, for the negative bound --
+   deg  5  bound 1e36   -> x**4 - x**3 + 23*x**2 - 155*x + 158
+          maxcoef=158  stable@2x=True  |p(t)|=5.85e-469  irreducible=True  near-bound=False  => CANDIDATE
+   deg  7  bound 1e27   -> -x**4 + x**3 - 23*x**2 + 155*x - 158
+          maxcoef=158  stable@2x=True  |p(t)|=5.85e-469  irreducible=True  near-bound=False  => CANDIDATE
+   deg  9  bound 1e21   -> x**7 + 23*x**5 - 133*x**4 + 26*x**3 + 3*x**2 + 158*x
+          maxcoef=158  stable@2x=True  |p(t)|=3.35e-467  irreducible=False  near-bound=False  => NOISE
+   deg 10  bound 1e19   -> x**7 - x**6 + 23*x**5 - 155*x**4 + 158*x**3
+          maxcoef=158  stable@2x=True  |p(t)|=2.44e-467  irreducible=False  near-bound=False  => NOISE
+   deg 12  bound 1e16   -> -x**10 + x**9 - 23*x**8 + 155*x**7 - 158*x**6
+          maxcoef=158  stable@2x=True  |p(t)|=1.02e-465  irreducible=False  near-bound=False  => NOISE
+   deg 16  bound 1e12   -> x**15 + 23*x**13 - 131*x**12 + 26*x**11 + 49*x**10 - 107*x**9 + 51*x**8 + 29*x**7 + 161*x**6 + 158*x**5
+          maxcoef=161  stable@2x=True  |p(t)|=7.34e-463  irreducible=False  near-bound=False  => NOISE
+   candidates: 3
+
+=== ICQeR`[Mg ===
+   honest digits D = 236
+   theta = 3.667155056185021442027918759954675041361357930062253075739905542075088
+   deg  2  bound 1e72   -> none
+   deg  3  bound 1e54   -> none
+   deg  4  bound 1e43   -> none
+   deg  6  bound 1e30   -> none
+   deg  8  bound 1e24   -> none
+   -- extra degrees beyond the brief, for the negative bound --
+   deg  5  bound 1e36   -> none
+   deg  7  bound 1e27   -> none
+   deg  9  bound 1e21   -> none
+   deg 10  bound 1e19   -> none
+   deg 12  bound 1e16   -> none
+   deg 16  bound 1e12   -> none
+   candidates: 0
+
+wrote results/report_2b.json  (candidates are hypotheses for 2.c, not answers)

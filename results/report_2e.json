@@ -1,0 +1,151 @@
+{
+ "rows": [
+  {
+   "label": "n=5 maximizer",
+   "graph6": "DUW",
+   "n": 5,
+   "edges": 5,
+   "aut_order": 10,
+   "vertex_transitive": true,
+   "field_degree": 2,
+   "galois_order": "2",
+   "minpoly": "x**2 - 5",
+   "note": "sqrt5"
+  },
+  {
+   "label": "n=6 maximizer",
+   "graph6": "EUZw",
+   "n": 6,
+   "edges": 10,
+   "aut_order": 10,
+   "vertex_transitive": false,
+   "field_degree": 2,
+   "galois_order": "2",
+   "minpoly": "x**2 - 5",
+   "note": "sqrt5"
+  },
+  {
+   "label": "n=7 maximizer",
+   "graph6": "FCp`_",
+   "n": 7,
+   "edges": 7,
+   "aut_order": 14,
+   "vertex_transitive": true,
+   "field_degree": 3,
+   "galois_order": "3",
+   "minpoly": "x**3 + 7*x**2 - 49*x + 49",
+   "note": "cubic, cyclotomic"
+  },
+  {
+   "label": "n=8 maximizer",
+   "graph6": "GCQb`o",
+   "n": 8,
+   "edges": 10,
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "field_degree": 4,
+   "galois_order": "24",
+   "minpoly": "x**4 - x**3 + 23*x**2 - 155*x + 158",
+   "note": "quartic"
+  },
+  {
+   "label": "n=9 maximizer",
+   "graph6": "HCRbdO{",
+   "n": 9,
+   "edges": 15,
+   "aut_order": 12,
+   "vertex_transitive": false,
+   "field_degree": 1,
+   "galois_order": "1",
+   "minpoly": "x - 11/3",
+   "note": "11/3"
+  },
+  {
+   "label": "n=9 rank 2",
+   "graph6": "HCrb`qi",
+   "n": 9,
+   "edges": 16,
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "field_degree": 2,
+   "galois_order": "2",
+   "minpoly": "x**2 - 5*x + 5",
+   "note": "(5+sqrt5)/2"
+  },
+  {
+   "label": "n=10 maximizer",
+   "graph6": "ICRb`yiu?",
+   "n": 10,
+   "edges": 20,
+   "aut_order": 16,
+   "vertex_transitive": false,
+   "field_degree": 2,
+   "galois_order": "2",
+   "minpoly": "2*x**2 - 12*x + 17",
+   "note": "3+sqrt2/2"
+  },
+  {
+   "label": "n=10 rank 3",
+   "graph6": "ICRbcqhNO",
+   "n": 10,
+   "edges": 20,
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "field_degree": 1,
+   "galois_order": "1",
+   "minpoly": "x - 11/3",
+   "note": "11/3"
+  },
+  {
+   "label": "n=10 rank 4",
+   "graph6": "ICQ`fP[r_",
+   "n": 10,
+   "edges": 19,
+   "aut_order": 4,
+   "vertex_transitive": false,
+   "field_degree": 1,
+   "galois_order": "1",
+   "minpoly": "x - 11/3",
+   "note": "11/3"
+  },
+  {
+   "label": "n=10 rank 5",
+   "graph6": "ICRbdO{xG",
+   "n": 10,
+   "edges": 20,
+   "aut_order": 8,
+   "vertex_transitive": false,
+   "field_degree": 1,
+   "galois_order": "1",
+   "minpoly": "x - 11/3",
+   "note": "11/3"
+  },
+  {
+   "label": "n=10 rank 2",
+   "graph6": "ICQeR`[Mg",
+   "n": 10,
+   "edges": 19,
+   "aut_order": 2,
+   "vertex_transitive": false,
+   "field_degree": null,
+   "galois_order": null,
+   "minpoly": null,
+   "note": "not obtained"
+  }
+ ],
+ "spearman_aut_vs_degree": {
+  "rho": 0.41361526350812605,
+  "p": 0.23476347984588058
+ },
+ "spearman_autpern_vs_degree": {
+  "rho": 0.6257795810860957,
+  "p": 0.05295693061701059
+ },
+ "same_aut_different_degree": {
+  "8": [
+   1,
+   2,
+   4
+  ]
+ }
+}

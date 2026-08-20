@@ -1,0 +1,17 @@
+
+=== ICQeR`[Mg ===
+   honest digits D = 476
+   theta = 3.667155056185021442027918759954675041361357930062253075739905542075088
+   deg  2  bound 1e152  -> none
+   deg  3  bound 1e114  -> none
+   deg  4  bound 1e91   -> none
+   deg  6  bound 1e65   -> none
+   deg  8  bound 1e50   -> none
+   -- extra degrees beyond the brief, for the negative bound --
+   deg  5  bound 1e76   -> none
+   deg  7  bound 1e57   -> none
+   deg  9  bound 1e45   -> none
+   deg 10  bound 1e41   -> none
+   deg 12  bound 1e35   -> none
+   deg 14  bound 1e30   -> none
+   deg 16  bound 1e26   -> none

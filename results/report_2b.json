@@ -1,0 +1,579 @@
+{
+ "FCp`_": {
+  "honest_digits": 236,
+  "theta": "3.3176672073940953927332082980723813714619310219966773791805513220057744353093304477125674273158074971514992035874030716409566775454153560021347605103948218684346371138582185466067878873099973840686837",
+  "candidates": [
+   {
+    "degree": 3,
+    "bound": "1e54",
+    "relation": [
+     -49,
+     49,
+     -7,
+     -1
+    ],
+    "poly": "-x**3 - 7*x**2 + 49*x - 49",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "9.88417e-469",
+    "residual_small": true,
+    "irreducible": true,
+    "near_bound": false,
+    "verdict": "CANDIDATE"
+   }
+  ],
+  "rejected": [
+   {
+    "degree": 2,
+    "bound": "1e72",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 4,
+    "bound": "1e43",
+    "relation": [
+     0,
+     49,
+     -49,
+     7,
+     1
+    ],
+    "poly": "x**4 + 7*x**3 - 49*x**2 + 49*x",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "3.27924e-468",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 6,
+    "bound": "1e30",
+    "relation": [
+     49,
+     0,
+     7,
+     -41,
+     8,
+     1,
+     0
+    ],
+    "poly": "x**5 + 8*x**4 - 41*x**3 + 7*x**2 + 49",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "1.51471e-467",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 8,
+    "bound": "1e24",
+    "relation": [
+     0,
+     -49,
+     -49,
+     42,
+     34,
+     -9,
+     -1,
+     0,
+     0
+    ],
+    "poly": "-x**6 - 9*x**5 + 34*x**4 + 42*x**3 - 49*x**2 - 49*x",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "6.11324e-467",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 5,
+    "bound": "1e36",
+    "relation": [
+     0,
+     0,
+     -49,
+     49,
+     -7,
+     -1
+    ],
+    "poly": "-x**5 - 7*x**4 + 49*x**3 - 49*x**2",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "1.08794e-467",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 7,
+    "bound": "1e27",
+    "relation": [
+     0,
+     0,
+     49,
+     0,
+     7,
+     -41,
+     8,
+     1
+    ],
+    "poly": "x**7 + 8*x**6 - 41*x**5 + 7*x**4 + 49*x**2",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "1.66723e-466",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 9,
+    "bound": "1e21",
+    "relation": [
+     0,
+     0,
+     0,
+     0,
+     49,
+     0,
+     -42,
+     8,
+     1,
+     0
+    ],
+    "poly": "x**8 + 8*x**7 - 42*x**6 + 49*x**4",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "5.17036e-466",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 10,
+    "bound": "1e19",
+    "relation": [
+     0,
+     49,
+     0,
+     -91,
+     8,
+     -6,
+     41,
+     -8,
+     -1,
+     0,
+     0
+    ],
+    "poly": "-x**8 - 8*x**7 + 41*x**6 - 6*x**5 + 8*x**4 - 91*x**3 + 49*x",
+    "max_coeff": 91,
+    "stable_at_2x": true,
+    "residual": "5.38971e-466",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 12,
+    "bound": "1e16",
+    "relation": [
+     49,
+     0,
+     7,
+     8,
+     8,
+     8,
+     -41,
+     8,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "poly": "x**8 + 8*x**7 - 41*x**6 + 8*x**5 + 8*x**4 + 8*x**3 + 7*x**2 + 49",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "5.68277e-466",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 16,
+    "bound": "1e12",
+    "relation": [
+     -49,
+     49,
+     -7,
+     -1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     49,
+     0,
+     7,
+     -41,
+     8,
+     1,
+     0
+    ],
+    "poly": "x**15 + 8*x**14 - 41*x**13 + 7*x**12 + 49*x**10 - x**3 - 7*x**2 + 49*x - 49",
+    "max_coeff": 49,
+    "stable_at_2x": true,
+    "residual": "2.44713e-462",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   }
+  ],
+  "degrees_searched": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   16
+  ],
+  "budget_rule": "B = floor((D-20)/(d+1)), PREREGISTRATION_STAGE2 3.1"
+ },
+ "GCQb`o": {
+  "honest_digits": 237,
+  "theta": "3.4678437298402241086973918817770079244289275369128988199828353023803875115592799469964205201897405683206146451257224602129099468893656073001756707191121275842169788160772168763652085792963650066271288",
+  "candidates": [
+   {
+    "degree": 4,
+    "bound": "1e43",
+    "relation": [
+     158,
+     -155,
+     23,
+     -1,
+     1
+    ],
+    "poly": "x**4 - x**3 + 23*x**2 - 155*x + 158",
+    "max_coeff": 158,
+    "stable_at_2x": true,
+    "residual": "5.85407e-469",
+    "residual_small": true,
+    "irreducible": true,
+    "near_bound": false,
+    "verdict": "CANDIDATE"
+   },
+   {
+    "degree": 5,
+    "bound": "1e36",
+    "relation": [
+     158,
+     -155,
+     23,
+     -1,
+     1,
+     0
+    ],
+    "poly": "x**4 - x**3 + 23*x**2 - 155*x + 158",
+    "max_coeff": 158,
+    "stable_at_2x": true,
+    "residual": "5.85407e-469",
+    "residual_small": true,
+    "irreducible": true,
+    "near_bound": false,
+    "verdict": "CANDIDATE"
+   },
+   {
+    "degree": 7,
+    "bound": "1e27",
+    "relation": [
+     -158,
+     155,
+     -23,
+     1,
+     -1,
+     0,
+     0,
+     0
+    ],
+    "poly": "-x**4 + x**3 - 23*x**2 + 155*x - 158",
+    "max_coeff": 158,
+    "stable_at_2x": true,
+    "residual": "5.85407e-469",
+    "residual_small": true,
+    "irreducible": true,
+    "near_bound": false,
+    "verdict": "CANDIDATE"
+   }
+  ],
+  "rejected": [
+   {
+    "degree": 2,
+    "bound": "1e72",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 3,
+    "bound": "1e54",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 6,
+    "bound": "1e31",
+    "relation": [
+     -158,
+     -3,
+     -26,
+     133,
+     -23,
+     0,
+     -1
+    ],
+    "poly": "-x**6 - 23*x**4 + 133*x**3 - 26*x**2 - 3*x - 158",
+    "max_coeff": 158,
+    "stable_at_2x": true,
+    "residual": "9.65558e-468",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 8,
+    "bound": "1e24",
+    "relation": [
+     0,
+     -158,
+     -3,
+     132,
+     -22,
+     0,
+     -1,
+     0,
+     0
+    ],
+    "poly": "-x**6 - 22*x**4 + 132*x**3 - 3*x**2 - 158*x",
+    "max_coeff": 158,
+    "stable_at_2x": true,
+    "residual": "9.07017e-468",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 9,
+    "bound": "1e21",
+    "relation": [
+     0,
+     158,
+     3,
+     26,
+     -133,
+     23,
+     0,
+     1,
+     0,
+     0
+    ],
+    "poly": "x**7 + 23*x**5 - 133*x**4 + 26*x**3 + 3*x**2 + 158*x",
+    "max_coeff": 158,
+    "stable_at_2x": true,
+    "residual": "3.3484e-467",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 10,
+    "bound": "1e19",
+    "relation": [
+     0,
+     0,
+     0,
+     158,
+     -155,
+     23,
+     -1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "poly": "x**7 - x**6 + 23*x**5 - 155*x**4 + 158*x**3",
+    "max_coeff": 158,
+    "stable_at_2x": true,
+    "residual": "2.44139e-467",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 12,
+    "bound": "1e16",
+    "relation": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     -158,
+     155,
+     -23,
+     1,
+     -1,
+     0,
+     0
+    ],
+    "poly": "-x**10 + x**9 - 23*x**8 + 155*x**7 - 158*x**6",
+    "max_coeff": 158,
+    "stable_at_2x": true,
+    "residual": "1.01816e-465",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   },
+   {
+    "degree": 16,
+    "bound": "1e12",
+    "relation": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     158,
+     161,
+     29,
+     51,
+     -107,
+     49,
+     26,
+     -131,
+     23,
+     0,
+     1,
+     0
+    ],
+    "poly": "x**15 + 23*x**13 - 131*x**12 + 26*x**11 + 49*x**10 - 107*x**9 + 51*x**8 + 29*x**7 + 161*x**6 + 158*x**5",
+    "max_coeff": 161,
+    "stable_at_2x": true,
+    "residual": "7.34228e-463",
+    "residual_small": true,
+    "irreducible": false,
+    "near_bound": false,
+    "verdict": "NOISE"
+   }
+  ],
+  "degrees_searched": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   16
+  ],
+  "budget_rule": "B = floor((D-20)/(d+1)), PREREGISTRATION_STAGE2 3.1"
+ },
+ "ICQeR`[Mg": {
+  "honest_digits": 236,
+  "theta": "3.6671550561850214420279187599546750413613579300622530757399055420750878428149715804279395872443611988475451247386023419941935765265788920951665474511293708925545794050461955392703248395496225781967487",
+  "candidates": [],
+  "rejected": [
+   {
+    "degree": 2,
+    "bound": "1e72",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 3,
+    "bound": "1e54",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 4,
+    "bound": "1e43",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 6,
+    "bound": "1e30",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 8,
+    "bound": "1e24",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 5,
+    "bound": "1e36",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 7,
+    "bound": "1e27",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 9,
+    "bound": "1e21",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 10,
+    "bound": "1e19",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 12,
+    "bound": "1e16",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 16,
+    "bound": "1e12",
+    "why": "no relation returned"
+   }
+  ],
+  "degrees_searched": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   16
+  ],
+  "budget_rule": "B = floor((D-20)/(d+1)), PREREGISTRATION_STAGE2 3.1"
+ }
+}
