@@ -1,5 +1,7 @@
 # Exact contextuality gaps for graphs up to ten vertices
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22031808.svg)](https://doi.org/10.5281/zenodo.22031808)
+
 Every connected graph on up to ten vertices has been enumerated, the contextuality gap
 Δ(G) = ϑ(G) − α(G) computed for each, and the maximum for every size determined; for each
 maximizer the exact value of the Lovász theta number is given together with a machine-checked
@@ -158,3 +160,11 @@ are machine-checkable by anyone with a computer, independently of who produced t
 
 Code is MIT; data and documents are CC BY 4.0. See `LICENSE`, `LICENSE-DATA` and
 `CITATION.cff`.
+
+Archived on Zenodo. Cite the concept DOI, which always resolves to the current version:
+
+    Oktyabrev, A. (2026). Exact contextuality gaps for graphs up to ten vertices.
+    Zenodo. https://doi.org/10.5281/zenodo.22031808
+
+The DOI for this specific release is [10.5281/zenodo.22031809](https://doi.org/10.5281/zenodo.22031809).
+Please cite the paper this continues as well: arXiv:2605.12828.
