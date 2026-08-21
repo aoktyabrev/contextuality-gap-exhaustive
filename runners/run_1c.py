@@ -18,6 +18,8 @@ ap.add_argument("--eps", type=float, default=1e-8)
 ap.add_argument("--buf", type=int, default=4096)
 ap.add_argument("--seed", type=int, default=20260819)
 ap.add_argument("--verify-top", type=int, default=1000)
+ap.add_argument("--positive-only", action="store_true",
+                help="store only positive-gap rows (needed at n=11)")
 a = ap.parse_args()
 tag = f"n{a.n}"
 os.makedirs(RES, exist_ok=True)
@@ -25,7 +27,7 @@ os.makedirs(RES, exist_ok=True)
 expected = gengstream.count(a.n)
 print(f"[{tag}] geng reports {expected} connected graphs; {a.mod} parts on {a.procs} procs")
 t0 = time.perf_counter()
-jobs = [(a.n, r, a.mod, RES, tag, a.eps, a.buf) for r in range(a.mod)]
+jobs = [(a.n, r, a.mod, RES, tag, a.eps, a.buf, a.positive_only) for r in range(a.mod)]
 tot = sdp = 0
 with Pool(a.procs) as pool:
     for k, (nt, ns, el) in enumerate(pool.imap_unordered(run_part, jobs)):
@@ -39,19 +41,31 @@ print(f"[{tag}] swept {tot} graphs ({sdp} needed SDP = {100*sdp/tot:.2f}%) in {w
 assert tot == expected, f"part sum {tot} != geng count {expected}"
 
 # ---- collect the positive-gap rows; the Delta=0 bulk stays on disk only -----
-rows = []
-for p in sorted(glob.glob(os.path.join(RES, f"{tag}_part_*.csv"))):
-    with open(p) as fh:
-        for r in csv.reader(fh):
-            if float(r[5]) > 1e-6:
-                rows.append(r)
-print(f"[{tag}] {len(rows)} graphs with Delta > 1e-6")
-rows.sort(key=lambda r: -float(r[5]))
+# Streaming collection.  Holding every positive row in memory would need tens of
+# gigabytes at n = 11 (about 1.0e8 rows at ~110 bytes each, several times that as
+# Python objects); only a bounded top-K is kept, and the bulk file is written by
+# concatenation.  Consequence, stated rather than hidden: the bulk file is NOT sorted
+# for n >= 11.  The sorted deliverable is the top-K file written below.
+import heapq
+heap, npos = [], 0
 nz = os.path.join(RES, f"{tag}_nonzero.csv")
-with open(nz, "w", newline="") as fh:
-    w = csv.writer(fh)
+with open(nz, "w", newline="") as fo:
+    w = csv.writer(fo)
     w.writerow(FIELDS)
-    w.writerows(rows)
+    for pth in sorted(glob.glob(os.path.join(RES, f"{tag}_part_*.csv"))):
+        with open(pth) as fh:
+            for r in csv.reader(fh):
+                d = float(r[5])
+                if d <= 1e-6:
+                    continue
+                npos += 1
+                w.writerow(r)
+                if len(heap) < a.verify_top:
+                    heapq.heappush(heap, (d, npos, r))
+                elif d > heap[0][0]:
+                    heapq.heapreplace(heap, (d, npos, r))
+print(f"[{tag}] {npos} graphs with Delta > 1e-6")
+rows = [r for _, _, r in sorted(heap, key=lambda t: -t[0])]
 from quadc5.sweep import _gzip_beside
 _gzip_beside(nz)
 
@@ -83,7 +97,7 @@ with open(os.path.join(RES, f"{tag}_top{K}.csv"), "w", newline="") as fh:
                     f"{d['pr_hi']:.3e}", d["status_hi"], d["chi_comp"]])
 json.dump(dict(n=a.n, total=tot, expected=expected, sdp_calls=sdp,
                sdp_fraction=sdp / tot, wall_seconds=wall, procs=a.procs,
-               seed=a.seed, nonzero=len(rows), verify_top=K,
+               seed=a.seed, nonzero=npos, verify_top=K,
                max_solver_diff=worst, over_tau_hi=over[:50],
                top50=[dict(rank=i + 1, **{k: v for k, v in d.items()
                                           if k in ("graph6", "edges", "alpha",

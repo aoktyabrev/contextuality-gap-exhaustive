@@ -22,7 +22,14 @@ FIELDS = ["graph6", "n", "edges", "alpha", "theta", "delta", "filtered",
 
 
 def run_part(args):
-    n, res, mod, out_dir, tag, eps, buf = args
+    """args = (n, res, mod, out_dir, tag, eps, buf[, positive_only])
+
+    positive_only: write only the rows with a positive gap.  At n = 11 the zero-gap
+    graphs are 99% of a billion rows and are provably zero through the sandwich, so
+    storing them costs tens of gigabytes for no information.  The per-part counts are
+    kept in the .done marker either way."""
+    positive_only = args[7] if len(args) > 7 else False
+    n, res, mod, out_dir, tag, eps, buf = args[:7]
     path = os.path.join(out_dir, f"{tag}_part_{res:05d}.csv")
     done = path + ".done"
     # A part counts as finished only if BOTH its data file and its marker exist;
@@ -51,12 +58,14 @@ def run_part(args):
             chi = chromatic_number(n, complement(n, adj))
             E = edges_of(n, adj)
             if chi == a:                      # sandwich collapses: Delta = 0, no SDP
-                rows.append([code, n, len(E), a, float(a), 0.0, 1, chi, 0.0, "sandwich", 0.0])
+                if not positive_only:
+                    rows.append([code, n, len(E), a, float(a), 0.0, 1, chi, 0.0, "sandwich", 0.0])
             else:
                 r = theta_scs_direct(n, E, eps=eps)
                 n_sdp += 1
-                rows.append([code, n, len(E), a, r["theta"], r["theta"] - a, 0, chi,
-                             r["t"], r["status"], r["pr"]])
+                if (not positive_only) or (r["theta"] - a) > 1e-6:
+                    rows.append([code, n, len(E), a, r["theta"], r["theta"] - a, 0, chi,
+                                 r["t"], r["status"], r["pr"]])
         w.writerows(rows)
 
     for code in gengstream.stream(n, res=res, mod=mod):
