@@ -126,7 +126,23 @@ No graph enumeration, no nauty, no SDP solver. `graph6.txt` lists the maximizers
 other sizes so that the eight-vertex number can be seen in context, but it is a table to
 read, not a claim this package proves, and nothing in `verify.py` touches it. How those
 graphs were found, and the certificates for the other sizes, are in the repository named
-in the accompanying letter.
+below.
+
+## Where this came from
+
+This package is an extract. The full study — the exhaustive enumeration that found the
+graph, the certificates for the other sizes, the preregistrations and the stage reports —
+is at
+
+    https://github.com/aoktyabrev/contextuality-gap-exhaustive
+
+archived on Zenodo with concept DOI **10.5281/zenodo.22031808** (always the current
+version) and release DOI **10.5281/zenodo.22031809** (v1.0.0). The same folder you are
+reading is in that repository as `verification_pack/`, from commit `31dd5cf` onward.
+
+Prepared 2026-08-21 by Artem Oktiabrev (ORCID 0009-0003-3626-2002,
+aoktyabrev@gmail.com). Nothing in `verify.py` needs any of the above: it reads only the
+files next to it.
 
 ## Files
 
@@ -138,3 +154,4 @@ in the accompanying letter.
     graph6.txt                             the maximizers for n = 5…10 in one table
     comparison_n8.md                       our eight-vertex ranking beside the published one
     NOTE.md                                this file
+    README.md                              one page: what this is and how to run it

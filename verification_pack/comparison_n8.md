@@ -10,7 +10,9 @@ Your `data/all_n8_results.csv` — all 11 117 connected graphs on eight vertices
 and the identical copy in the Zenodo archive `10.5281/zenodo.20465134` (the six data and
 code files match file-for-file between the two), downloaded 2026-08-19,
 
-against a table computed here from scratch: the graphs generated with nauty's `geng`, α
+against a table computed from scratch in
+https://github.com/aoktyabrev/contextuality-gap-exhaustive
+(doi:10.5281/zenodo.22031808): the graphs generated with nauty's `geng`, α
 by exact search, ϑ by SDP at `eps = 1e-8`, with no input from your files at any step.
 Both tables cover the same 11 117 graphs, identified by graph6 string.
 

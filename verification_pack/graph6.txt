@@ -59,8 +59,13 @@ Proved inside this package, by verify.py, from exact certificates:
 Reported, not re-proved here: the other five rows, and the fact that each row is the
 maximum of Delta over ALL connected graphs on that many vertices.  Establishing
 maximality requires enumerating the graphs, which is exactly what this package is
-built to avoid; the enumeration and its certificates are in the repository named in
-the accompanying letter.  Nothing in verify.py depends on any of it.
+built to avoid; the enumeration and its certificates are at
+
+  https://github.com/aoktyabrev/contextuality-gap-exhaustive
+  doi:10.5281/zenodo.22031808   (concept DOI, always the current version)
+  doi:10.5281/zenodo.22031809   (release v1.0.0)
+
+Nothing in verify.py depends on any of it.
 
 The eight-vertex graph, edge list (vertices 0..7), for anyone who would rather not
 decode graph6 by hand:
