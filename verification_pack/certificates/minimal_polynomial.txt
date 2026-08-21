@@ -1,0 +1,52 @@
+MINIMAL POLYNOMIAL AND WHICH ROOT IS MEANT
+==========================================
+
+    p(x) = x^4 - x^3 + 23 x^2 - 155 x + 158
+
+Coefficients, lowest degree first, as they appear in the certificate file:
+
+    [158, -155, 23, -1, 1]
+
+theta is THE ROOT OF p IN THE OPEN INTERVAL (3, 4).
+
+Why that names exactly one number
+---------------------------------
+p(3) = 81 - 27 + 207 - 465 + 158 = -46      (negative)
+p(4) = 256 - 64 + 368 - 620 + 158 = +98     (positive)
+
+so p has at least one root strictly between 3 and 4.
+
+p'(x)  = 4x^3 - 3x^2 + 46x - 155,      p'(3) = 108 - 27 + 138 - 155 = 64 > 0
+p''(x) = 12x^2 - 6x + 46,              discriminant 36 - 4*12*46 = -2172 < 0
+
+p'' has no real root and positive leading coefficient, so p'' > 0 everywhere, so p' is
+strictly increasing; since p'(3) > 0, p' > 0 on all of [3, 4]; so p is strictly
+increasing on [3, 4] and the root there is unique.
+
+p has two real roots in total, approximately 1.2571762 and 3.4678437, and two complex
+ones.  The interval (3, 4) selects the second.  All four statements above are verified
+exactly, in integer arithmetic, by verify.py before any certificate is examined.
+
+Irreducibility
+--------------
+p is irreducible over the rationals, which is what makes Q[x]/(p) a field and the
+inversions in the verification legitimate.  verify.py establishes it by exhausting the
+two ways a monic integer quartic can factor: a rational root (rational root theorem,
+every candidate tested) or a product of two integer quadratics (every integer
+factorisation enumerated).
+
+Consequences
+------------
+The Galois group of p is the full symmetric group on four letters, of order 24.  Q(theta)
+therefore has no subfield other than Q itself, and the degree cannot be reduced: theta
+admits no expression in a smaller field, and in particular none of the cyclotomic kind
+that the seven-vertex value has.  This fact is not needed for the verification and is
+stated only to explain why the answer looks the way it does.
+
+For reference only, not used in any verdict:
+
+    theta = 3.4678437298402241086973918817770079244289275369128988199828353023803875...
+    alpha = 3
+    Delta = theta - alpha = 0.4678437298402241086973918817770079244289275369128988...
+
+Delta itself is the root of  y^4 + 11 y^3 + 68 y^2 + 64 y - 46  in (0, 1).

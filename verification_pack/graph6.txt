@@ -1,0 +1,71 @@
+MAXIMIZERS OF  Delta(G) = theta(G) - alpha(G)  OVER CONNECTED GRAPHS, n = 5 .. 10
+=================================================================================
+
+Each line is one graph, in graph6, together with its independence number, its exact
+Lovasz theta, and the gap.  The eight-vertex row is the one this package certifies;
+verify.py checks it and nothing else.  The other rows are given so that the eight-vertex
+value can be seen in its place in the sequence.
+
+Codes are in nauty's DEFAULT output labelling, which is the labelling of McKay's
+published graph{n}c.g6 files.  graph6 encodes a LABELLING, not an isomorphism class:
+a different but correct labelling of the same graph gives a different string, so compare
+by isomorphism, not by string, unless both sides come from the same source.
+
+
+  n   graph6         |E|  |Aut|  alpha   theta                      Delta
+ --- -------------- ---- ------ ------ -------------------------- -------------------
+  5   DUW              5     10      2   sqrt(5)                    sqrt(5) - 2
+  6   EUZw            10     10      2   sqrt(5)                    sqrt(5) - 2
+  7   FCp`_            7     14      3   7cos(pi/7)/(1+cos(pi/7))   theta - 3
+  8   GCQb`o          10      8      3   root of the quartic below  theta - 3
+  9   HCRbdO{         15     12      3   11/3                       2/3
+ 10   ICRb`yiu?       20     16      3   3 + sqrt(2)/2              1/sqrt(2)
+
+
+MINIMAL POLYNOMIALS AND THE ROOT THAT IS MEANT
+----------------------------------------------
+"deg" is the degree of theta over the rationals.  The interval isolates the intended
+root; in every case the polynomial is irreducible over Q, so it is the minimal
+polynomial and the degree cannot be lowered.
+
+  n  deg  minimal polynomial of theta            root in     theta (25 digits)
+ --- ---- --------------------------------------- ----------- --------------------------
+  5    2  x^2 - 5                                 (2, 3)      2.236067977499789696409174
+  6    2  x^2 - 5                                 (2, 3)      2.236067977499789696409174
+  7    3  x^3 + 7x^2 - 49x + 49                   (3, 4)      3.317667207394095392733208
+  8    4  x^4 - x^3 + 23x^2 - 155x + 158          (3, 4)      3.467843729840224108697392
+  9    1  3x - 11                                 --          3.666666666666666666666667
+ 10    2  2x^2 - 12x + 17                         (3, 4)      3.707106781186547524400844
+
+The other real roots, which the intervals exclude:
+  n = 7   1.274126679...  and  -11.591793886...
+  n = 8   1.257176231...  (the remaining two roots are complex)
+  n = 10  2.292893218...  = 3 - sqrt(2)/2
+
+Delta as a decimal:
+  n = 5, 6   0.2360679774997896964091736687313   = sqrt(5) - 2
+  n = 7      0.3176672073940953927332082980724
+  n = 8      0.4678437298402241086973918817770
+  n = 9      0.6666666666666666666666666666667   = 2/3
+  n = 10     0.7071067811865475244008443621048   = 1/sqrt(2)
+
+
+WHAT IS PROVED HERE AND WHAT IS ONLY REPORTED
+---------------------------------------------
+Proved inside this package, by verify.py, from exact certificates:
+
+  n = 8   theta(GCQb`o) = the root of x^4 - x^3 + 23x^2 - 155x + 158 in (3, 4).
+
+Reported, not re-proved here: the other five rows, and the fact that each row is the
+maximum of Delta over ALL connected graphs on that many vertices.  Establishing
+maximality requires enumerating the graphs, which is exactly what this package is
+built to avoid; the enumeration and its certificates are in the repository named in
+the accompanying letter.  Nothing in verify.py depends on any of it.
+
+The eight-vertex graph, edge list (vertices 0..7), for anyone who would rather not
+decode graph6 by hand:
+
+  0-3  0-5  1-4  1-6  2-5  2-6  2-7  3-6  3-7  4-7
+
+  alpha = 3; one maximum independent set is {0, 1, 2}.  The graph is 10 edges on 8
+  vertices, degree sequence (2,2,2,2,3,3,3,3), |Aut| = 8, not vertex-transitive.

@@ -93,6 +93,23 @@ Positive semidefiniteness is checked twice by independent methods — a pivoted 
 complement and all 255 principal minors — and both must agree. The high-precision numerics
 only propose the matrix entries; they take no part in the verdict.
 
+### A five-minute check, without cloning this repository
+
+`verification_pack/` is a self-contained package for exactly that claim: a Python script
+with no dependencies beyond the standard library, the exact primal and dual matrices as
+integer numerator/denominator pairs over ℚ(ϑ), and a two-page note explaining what a
+certificate proves and why numerics take no part in it.
+
+```bash
+python3 verification_pack/verify.py     # 21 checks, ~0.7 s, PASS or FAIL, non-zero exit on FAIL
+```
+
+It needs no network, no solver, no enumeration and no part of the rest of this repository,
+and it runs on Python 3.7 through 3.12. Fifteen deliberately corrupted certificates were
+each rejected, including five that leave the matrix symmetric and its trace intact and are
+caught only by the exact positive-semidefiniteness tests. See
+[`verification_pack/NOTE.md`](verification_pack/NOTE.md).
+
 The same machinery closes ϑ for the maximizers at n = 9 and n = 10, and for three further
 graphs at n = 10. It does **not** close the rank-2 graph at n = 10 (`` ICQeR`[Mg ``): at 476
 verified digits no integer relation exists of degree ≤ 48 with height ≤ 10⁹, nor of degree ≤ 4
@@ -160,6 +177,8 @@ quadc5/                  the library: graph6 codec, alpha, theta, filters, struc
                          arithmetic in a number field with exact sign decisions)
 runners/                 one script per block, plus run_stage{0,1,2}.sh
 scripts/                 clean-room verification and the results comparator
+verification_pack/       stand-alone five-minute check of the eight-vertex value: one
+                         dependency-free script, the exact certificates, and a note
 tests/                   the estimator gate: every estimator on random inputs, two routes
 results/                 top-1000 tables, certificates, per-block JSON reports
 sources/                 the paper, its LaTeX source, the authors' repository and Zenodo
