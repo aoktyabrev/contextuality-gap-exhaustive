@@ -15,7 +15,7 @@ check() {                       # check <sealing-commit> <sha256-file> <label>
   local commit="$1" sealfile="$2" label="$3"
   echo "=== $label  (sealed in $commit) ==="
   local prereg
-  prereg=$(awk '{print $2}' "$sealfile" | grep PREREGISTRATION)
+  prereg=$(awk '{print $2}' "$sealfile" | grep -v '^SOURCES\.md$')
   if sha256sum -c <(grep "$prereg\$" "$sealfile") >/dev/null 2>&1; then
     echo "  OK    $prereg is byte-identical to what was sealed"
   else
@@ -41,6 +41,26 @@ check 053f834 PREREGISTRATION_STAGE2.sha256 "Stage 2"
 check a350f2b PREREGISTRATION_STAGE3.sha256 "Stage 3"
 check cf8bb87 PREREGISTRATION_STAGE4.sha256 "Stage 4"
 check 58d604a PREREGISTRATION_STAGE5.sha256 "Stage 5"
+check 7776955 PREREGISTRATION_STAGE6.sha256 "Stage 6"
+check 0cb06ad PREDICTION_EDGES.sha256        "Edge-count prediction |E| = 5(n-6)"
+
+# Predictions committed without a .sha256 of their own: the seal is the commit itself,
+# so the check is that the working tree still matches what that commit contains.
+check_doc() {                   # check_doc <sealing-commit> <file> <label>
+  local commit="$1" file="$2" label="$3"
+  echo "=== $label  (sealed in $commit) ==="
+  local want got
+  want=$(git show "$commit:$file" | sha256sum | awk '{print $1}')
+  got=$(sha256sum "$file" | awk '{print $1}')
+  if [ "$want" = "$got" ]; then
+    echo "  OK    $file is byte-identical to what was sealed"
+  else
+    echo "  FAIL  $file differs from the sealed content"; fail=1
+  fi
+  echo "  sealed at $(git show -s --format=%cI "$commit")"
+}
+
+check_doc 9b833a2 PREDICTION_N11.md "Prediction Delta_max(11)"
 
 echo
 if [ $fail -eq 0 ]; then
