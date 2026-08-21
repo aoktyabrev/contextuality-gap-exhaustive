@@ -128,6 +128,21 @@ so `run_stage0.sh` stops on its own.
 - **η_d is non-convex**; restarts give a lower bound only. `d*` resting on a
   non-exceedance is marked `indicated`, exactly as the source marks its own.
 
+- **A log file name must carry a timestamp or a run id — never a bare name.** Writing
+  `> results/run_6c_n11.log` twice destroys the first run's evidence silently, and a
+  long run's log is often the *only* record of what happened: part timings, ETA drift,
+  where it was restarted. This has now cost the traces of a run twice, neither time
+  through an error in the mathematics. Use
+
+  ```bash
+  LOG=results/run_6c_n11_$(date +%Y%m%dT%H%M%S).log
+  setsid nohup .venv/bin/python -u runners/run_1c.py ... > "$LOG" 2>&1 < /dev/null &
+  ```
+
+  `results/*.log` stays gitignored — the point is not to commit them but to stop them
+  overwriting each other while the work is live. The same applies to any file a re-run
+  would clobber: `run_2b.py` needed `--out` for exactly this reason.
+
 ## Regenerating the bulk data
 
 `results/n9_all.csv` (29 MB, all 261 080 rows) is gitignored; the committed copy is
