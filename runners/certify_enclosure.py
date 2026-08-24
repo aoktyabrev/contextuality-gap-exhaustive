@@ -120,7 +120,7 @@ def primal_lower(n, edges, Xf, D, c, log):
     assert all(X[i][j] == 0 for (i, j) in E)
     if not both_psd(X, n, f"primal X (D=1e{len(str(D))-1}, c={c})", log):
         return None
-    return sum(X[i][j] for i in range(n) for j in range(n))
+    return sum(X[i][j] for i in range(n) for j in range(n)), X
 
 
 # -------------------------------------------------------------------- dual ------
@@ -176,7 +176,7 @@ if __name__ == "__main__":
     print(f"  hiprec dps={a.dps} за {time.time()-t0:.1f} с, residual={nstr(hi['residual'],4)}")
     Xf, Bf, thnum = hi["X"], hi["M"], hi["theta"]
 
-    L = U = None
+    L = U = X_final = B_final = None
     steps_used = 0
     for k in a.ladder:
         D = 10 ** k
@@ -185,11 +185,12 @@ if __name__ == "__main__":
             print(f"  примал D=1e{k}, c={c} ...", flush=True)
             v = primal_lower(n, edges, Xf, D, c, rep["psd_log"])
             if v is not None:
-                L = v
+                L, X_final = v
                 break
         if L is None:
             continue
         B, E = dual_matrix(n, edges, Bf, thnum, D)
+        B_final = B
         u_hi = F(int(mp.nint(thnum * D)) + 2 * max(a.cs) * 11, D)
         u_lo = F(int(mp.nint(thnum * D)) - 2 * max(a.cs) * 11, D)
         U, bs = bisect_upper(n, B, u_lo, u_hi, rep["psd_log"], f"dual D=1e{k}")
@@ -229,6 +230,22 @@ if __name__ == "__main__":
                              strict=(gap > 0))
     print(f"ВТОРОЕ доказано: Delta <= {float(U2)-alpha2:.15f}")
     print(f"РАЗДЕЛЕНИЕ: L - U2 = {float(gap):.10f}  ({'строгое' if gap>0 else 'НЕТ'})")
+    # --- exportable certificate: the exact matrices, as num/den pairs ---
+    def dump(M):
+        return [[[str(M[i][j].numerator), str(M[i][j].denominator)] for j in range(len(M))]
+                for i in range(len(M))]
+    rep["certificate"] = dict(
+        format="quadc5-enclosure-1",
+        note=("theta has no known closed form here; these matrices prove a rational "
+              "enclosure.  Primal: X feasible and PSD gives theta >= 1^T X 1.  Dual: "
+              "u*I - B PSD with B = 1 on the diagonal and on non-edges gives theta <= u."),
+        leader=dict(graph6=a.leader, n=n, alpha=alpha,
+                    edges=[list(e) for e in sorted(map(lambda t: tuple(sorted(t)), edges))],
+                    primal_X=dump(X_final), primal_lower=[str(L.numerator), str(L.denominator)],
+                    dual_B=dump(B_final), dual_u=[str(U.numerator), str(U.denominator)]),
+        second=dict(graph6=a.second, n=n2, alpha=alpha2,
+                    edges=[list(e) for e in sorted(map(lambda t: tuple(sorted(t)), edges2))],
+                    dual_B=dump(B2), dual_u=[str(U2.numerator), str(U2.denominator)]))
     rep["psd_all_agree"] = all(e["agree"] for e in rep["psd_log"])
     rep["psd_tests"] = len(rep["psd_log"])
     print(f"проверок PSD: {len(rep['psd_log'])}, методы согласны везде: {rep['psd_all_agree']}")

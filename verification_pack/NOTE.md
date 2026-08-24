@@ -1,6 +1,6 @@
 # What this checks, and why that is enough
 
-This package proves one statement about one graph. The graph is the eight-vertex,
+This package proves two statements. The first is about one graph. The graph is the eight-vertex,
 ten-edge graph with graph6 code `` GCQb`o `` — the Quad-C₅ graph, edges
 
     0-3  0-5  1-4  1-6  2-5  2-6  2-7  3-6  3-7  4-7
@@ -11,10 +11,13 @@ and the statement is:
 > that is θ = 3.46784372984022410869739188177700792442892753691289881998…,
 > and α = 3, so Δ = θ − α = θ − 3.
 
-`python3 verify.py` checks it in 21 steps and prints PASS or FAIL, exiting non-zero on
+The second is about eleven vertices, where **no closed form exists** — see below.
+
+`python3 verify.py` checks both in 45 steps and prints PASS or FAIL, exiting non-zero on
 FAIL. Standard library only, no installation, no network, no solver. Measured with the
-network switched off: **0.7 s on Python 3.12, 0.9 s on 3.11, 1.3 s on 3.9, 1.8 s on 3.7**
-(an ordinary desktop; the numbers only say that nothing here is slow).
+network switched off: **1.7 s on Python 3.12, 1.9 s on 3.11, 5.9 s on 3.9, 3.4 s on 3.7**
+(an ordinary desktop; the numbers only say that nothing here is slow — the four sets of
+exact principal minors, 2·255 for eight vertices and 3·2047 for eleven, are most of it).
 
 ## Why a certificate rather than a computation
 
@@ -111,7 +114,10 @@ trusted.** What is shipped is the result of that guessing, and `verify.py` re-de
 nothing — it only asks whether the shipped integers satisfy the definition. If the
 guessing had been wrong in any way, some check would fail.
 
-That claim was tested rather than asserted. Fifteen corrupted certificates were built —
+That claim was tested rather than asserted. **Twenty-three** corrupted certificates were
+built — fifteen against the eight-vertex value and eight against the eleven-vertex
+enclosure, including a dual bound lowered below the true optimum, a trace-preserving
+perturbation of the primal diagonal, and a runner-up bound pushed above the leader —
 a single coefficient shifted by 1/4108, a trace-preserving perturbation of the diagonal,
 a symmetric perturbation of an off-diagonal entry, a changed constant term in the
 polynomial, the isolating interval moved onto the other real root, the graph6 string
@@ -127,6 +133,43 @@ other sizes so that the eight-vertex number can be seen in context, but it is a 
 read, not a claim this package proves, and nothing in `verify.py` touches it. How those
 graphs were found, and the certificates for the other sizes, are in the repository named
 below.
+
+## The eleven-vertex result, where there is no closed form
+
+Δ_max(11) — the largest gap over all 1 006 700 565 connected graphs on eleven vertices —
+is attained by `` J?`D@pgd?{? ``, with α = 4 and 17 edges. Its ϑ has **no closed form**:
+it is not a root of any integer polynomial of degree ≤ 48 with height ≤ 10⁹, established
+by integer-relation search at 495 verified digits.
+
+That is not a gap in the work. Solving a semidefinite program exactly means solving a
+univariate polynomial whose degree is the program's *algebraic degree*, and that degree is
+generically enormous — six already for 3×3 matrices, with Galois group typically S₆ and no
+expression in radicals, and 1400–2100 at 6×6 (Nie, Ranestad & Sturmfels 2010). For an 11×11
+program a closed form was never to be expected. What is surprising is the other end of the
+series, where degrees 1 to 4 turn up at all.
+
+So the value is pinned a different way, and the pinning is just as exact:
+
+    L = 1193722133190 / 250000000003        primal certificate:  theta >= L
+    U = 76398216523947 / 16000000000000     dual certificate:    theta <= U
+
+    Delta_max(11) in [0.7748885327027013, 0.7748885327466875],  width 4.4e-11
+
+The primal side is the same argument as for eight vertices — X symmetric, trace exactly 1,
+zero on every one of the 17 edges, positive semidefinite — but over ℚ rather than a number
+field, so 1ᵀX1 is itself a fraction and bounds ϑ from below. The dual side exhibits a
+rational u with u·I − B positive semidefinite, bounding ϑ from above. Both PSD tests run
+twice, by the same two independent methods, over all 2¹¹ − 1 = 2047 principal minors.
+
+A third certificate settles something the numerics alone could not: the runner-up
+`` J?`@f?kUDG_ `` carries its own dual bound, ϑ − 4 ≤ 0.7546860448577810, which is strictly
+below the leader's *lower* bound by 0.0202024878. **The maximum is separated from the field
+by proof, not by comparing solver output.**
+
+What this does **not** prove is that none of the remaining graphs is higher; that rests on
+the sweep's numerics. The sweep's filter, however, is sound by argument rather than by
+measurement — χ(Ḡ) = α forces Δ = 0 through the sandwich α ≤ ϑ ≤ χ(Ḡ) — and it settled
+89.98 % of the billion graphs. The certificates here cover the top of the remaining 10 %.
 
 ## Where this came from
 
@@ -149,6 +192,8 @@ files next to it.
     verify.py                              the checker; run it
     certificates/quadc5_certificate.json   the primal and dual matrices over ℚ(θ),
                                            as integer numerator/denominator pairs
+    certificates/quadc5_n11_enclosure.json the eleven-vertex enclosure: primal, dual, and
+                                           the runner-up's dual, all over ℚ
     certificates/minimal_polynomial.txt    the polynomial, the isolating interval, and
                                            the argument that they name one root
     graph6.txt                             the maximizers for n = 5…10 in one table

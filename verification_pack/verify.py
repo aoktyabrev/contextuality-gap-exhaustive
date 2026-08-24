@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-"""Verify the exact value of the Lovasz theta number of the Quad-C5 graph.
+"""Verify two Lovasz theta results in exact arithmetic.
 
     theta(Quad-C5) = the root of  x^4 - x^3 + 23x^2 - 155x + 158  lying in (3, 4)
+
+    Delta_max(11) in [0.7748885327027013, 0.7748885327466875]   (no closed form exists)
 
 Run:  python3 verify.py            (standard library only; no installation)
 
@@ -328,6 +330,167 @@ def psd_minors(K, M, n):
     return True, cnt
 
 
+
+# --------------------------------------------------------------------------
+def check_enclosure():
+    """The eleven-vertex result.  Here theta has no known closed form: it is not a
+    root of any integer polynomial of degree <= 48 with height <= 1e9.  What is proved
+    instead is a rational enclosure -- a primal certificate bounding theta from below
+    and a dual bounding it from above, both over the rationals rather than a number
+    field, plus a dual certificate putting the runner-up strictly below the leader."""
+    path = os.path.join(HERE, "certificates", "quadc5_n11_enclosure.json")
+    if not os.path.exists(path):
+        return
+    cert = json.load(open(path))
+    lead, sec = cert["leader"], cert["second"]
+
+    def rat(pair):
+        return F(int(pair[0]), int(pair[1]))
+
+    def mat(M):
+        return [[rat(c) for c in row] for row in M]
+
+    print("\n" + "=" * 70)
+    print(f"\ngraph  {lead['graph6']}   n = {lead['n']}   |E| = {len(lead['edges'])}   "
+          f"alpha = {lead['alpha']}")
+    print("claim  theta has no closed form; it lies in an explicit rational interval\n")
+
+    n = lead["n"]
+    edges = set(tuple(sorted(e)) for e in lead["edges"])
+    L, U = rat(lead["primal_lower"]), rat(lead["dual_u"])
+
+    print("5. the certificate describes the graph it names")
+    gn, gedges = decode_g6(lead["graph6"])
+    step("graph6 decodes to the certificate's vertex count", gn == n, f"n = {gn}")
+    step("graph6 decodes to the certificate's edge set", gedges == edges,
+         f"{len(gedges)} edges, decoded independently of the certificate")
+    a_exact = independence_number(n, edges)
+    step("alpha is as claimed", a_exact == lead["alpha"],
+         f"alpha = {a_exact}, by exhaustion over all 2^{n} vertex subsets")
+
+    print("\n6. primal certificate  ->  theta >= L")
+    X = mat(lead["primal_X"])
+    step("X is symmetric", all(X[i][j] == X[j][i] for i in range(n) for j in range(n)))
+    step("trace X = 1", sum(X[i][i] for i in range(n)) == 1)
+    step("X vanishes on every edge", all(X[i][j] == 0 for (i, j) in edges),
+         f"{len(edges)} edges")
+    s_ = sum(X[i][j] for i in range(n) for j in range(n))
+    step("1^T X 1 = L", s_ == L, f"L = {L.numerator}/{L.denominator}")
+    okA, rkA = psd_schur_q(X, n)
+    okB, cntB = psd_minors_q(X, n)
+    step("X is PSD, method A (pivoted Schur complement)", okA, f"rank {rkA}")
+    step("X is PSD, method B (all principal minors)", okB, f"{cntB} minors")
+    step("the two PSD methods agree", okA == okB)
+
+    print("\n7. dual certificate  ->  theta <= U")
+    B = mat(lead["dual_B"])
+    step("B is symmetric", all(B[i][j] == B[j][i] for i in range(n) for j in range(n)))
+    step("B = 1 on the diagonal and on every non-edge",
+         all(B[i][j] == 1 for i in range(n) for j in range(n)
+             if i == j or tuple(sorted((i, j))) not in edges))
+    S = [[(U if i == j else F(0)) - B[i][j] for j in range(n)] for i in range(n)]
+    okA2, rkA2 = psd_schur_q(S, n)
+    okB2, cntB2 = psd_minors_q(S, n)
+    step("U*I - B is PSD, method A", okA2, f"rank {rkA2}")
+    step("U*I - B is PSD, method B", okB2, f"{cntB2} minors")
+    step("the two PSD methods agree", okA2 == okB2)
+
+    print("\n8. the enclosure")
+    step("L <= U", L <= U)
+    w = U - L
+    step("the interval is narrower than the gap to second place", w < F(202, 10000),
+         f"width = {float(w):.3e}")
+
+    print("\n9. the runner-up is strictly below")
+    n2 = sec["n"]
+    edges2 = set(tuple(sorted(e)) for e in sec["edges"])
+    gn2, gedges2 = decode_g6(sec["graph6"])
+    step("second graph6 decodes to its certificate's edge set",
+         gn2 == n2 and gedges2 == edges2, f"{sec['graph6']}, {len(gedges2)} edges")
+    a2 = independence_number(n2, edges2)
+    step("second alpha is as claimed", a2 == sec["alpha"], f"alpha = {a2}")
+    B2 = mat(sec["dual_B"])
+    U2 = rat(sec["dual_u"])
+    step("second B = 1 on the diagonal and on every non-edge",
+         all(B2[i][j] == 1 for i in range(n2) for j in range(n2)
+             if i == j or tuple(sorted((i, j))) not in edges2))
+    S2 = [[(U2 if i == j else F(0)) - B2[i][j] for j in range(n2)] for i in range(n2)]
+    okA3, _ = psd_schur_q(S2, n2)
+    okB3, cnt3 = psd_minors_q(S2, n2)
+    step("U2*I - B2 is PSD, method A", okA3)
+    step("U2*I - B2 is PSD, method B", okB3, f"{cnt3} minors")
+    step("the two PSD methods agree", okA3 == okB3)
+    step("second place is strictly below the leader's lower bound", U2 < L,
+         f"L - U2 = {float(L - U2):.10f}")
+
+    print(f"\nfor reference only, not used above: Delta_max(11) in "
+          f"[{float(L) - lead['alpha']:.16f}, {float(U) - lead['alpha']:.16f}]")
+
+
+def psd_schur_q(M, n):
+    """Method A over plain rationals (no number field)."""
+    A = [row[:] for row in M]
+    idx = list(range(n))
+    rank = 0
+    while idx:
+        p = max(idx, key=lambda i: A[i][i])
+        if A[p][p] < 0:
+            return False, rank
+        if A[p][p] == 0:
+            for i in idx:
+                for j in idx:
+                    if A[i][j] != 0:
+                        return False, rank
+            return True, rank
+        idx.remove(p)
+        piv = A[p][p]
+        for i in idx:
+            if A[i][p] == 0:
+                continue
+            f = A[i][p] / piv
+            for j in idx:
+                A[i][j] -= f * A[p][j]
+        rank += 1
+    return True, rank
+
+
+def _det_q(M, S):
+    k = len(S)
+    A = [[M[i][j] for j in S] for i in S]
+    det = F(1)
+    for c in range(k):
+        p = None
+        for r in range(c, k):
+            if A[r][c] != 0:
+                p = r
+                break
+        if p is None:
+            return F(0)
+        if p != c:
+            A[c], A[p] = A[p], A[c]
+            det = -det
+        det *= A[c][c]
+        inv = F(1) / A[c][c]
+        for r in range(c + 1, k):
+            if A[r][c] == 0:
+                continue
+            f = A[r][c] * inv
+            for j in range(c, k):
+                A[r][j] -= f * A[c][j]
+    return det
+
+
+def psd_minors_q(M, n):
+    """Method B over plain rationals: 2^n - 1 principal minors."""
+    cnt = 0
+    for k in range(1, n + 1):
+        for S in combinations(range(n), k):
+            cnt += 1
+            if _det_q(M, list(S)) < 0:
+                return False, cnt
+    return True, cnt
+
+
 # --------------------------------------------------------------------------
 def main():
     t0 = time.time()
@@ -407,15 +570,18 @@ def main():
     step("hence Delta = theta - alpha is exactly theta - %d" % alpha, True,
          "alpha established in step 0, theta in steps 2-3")
 
+    print(f"\nfor reference only, not used above: theta = {K.approx(theta)}, "
+          f"Delta = theta - alpha = {K.approx(K.sub(theta, K.rat(alpha)))}")
+
+    check_enclosure()
+
     dt = time.time() - t0
     bad = [s for s in STEPS if not s[1]]
     print(f"\nchecked {len(STEPS)} statements in {dt:.1f} s")
-    print(f"for reference only, not used above: theta = {K.approx(theta)}, "
-          f"Delta = theta - alpha = {K.approx(K.sub(theta, K.rat(alpha)))}")
     if bad:
         print(f"\nFAIL - {len(bad)} check(s) did not hold: {[b[0] for b in bad]}")
         return 1
-    print("\nPASS - theta(Quad-C5) is exactly the stated root, proved in both directions.")
+    print("\nPASS - every statement above is proved: the eight-vertex value exactly, the\n       eleven-vertex value to within an explicit rational interval.")
     return 0
 
 
