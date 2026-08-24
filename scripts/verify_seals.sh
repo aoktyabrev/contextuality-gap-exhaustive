@@ -63,6 +63,7 @@ check_doc() {                   # check_doc <sealing-commit> <file> <label>
 }
 
 check_doc 9b833a2 PREDICTION_N11.md "Prediction Delta_max(11)"
+check 490ab59 PREDICTION_N12_LAYERS.sha256  "Prediction: upper layers at n=12"
 
 echo
 if [ $fail -eq 0 ]; then
