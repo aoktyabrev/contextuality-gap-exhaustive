@@ -57,10 +57,16 @@ stage "Stage 2 (exact values)" bash runners/run_stage2.sh
 # Stages 3-7 read only what stages 0-2 produce, so they belong in the reproduction
 # too.  Everything below is minutes, not hours: no new enumeration, only analysis of
 # the tables the sweeps just rebuilt, plus one exact-arithmetic certification.
+# The thirteen graphs certified in 3.a are selected by a rule, not by a list: the
+# n = 10 graphs with Delta < 2e-3, the boundary against the prior database.  They are
+# taken from the sweep this script just rebuilt, so nothing here reads the answer.
 stage "Stage 3 (prior database, invariants)" bash -c \
   ".venv/bin/python runners/run_3b.py && \
    .venv/bin/python runners/run_3c.py && \
-   .venv/bin/python runners/certify_positive_gap.py"
+   .venv/bin/python runners/certify_positive_gap.py \$(.venv/bin/python -c \
+     \"import csv,gzip,os;p='results/n10_nonzero.csv';f=open(p) if os.path.exists(p) else gzip.open(p+'.gz','rt');\
+r=[x for x in csv.DictReader(f) if float(x['delta'])<2e-3];\
+print(' '.join(x['graph6'] for x in sorted(r,key=lambda y:float(y['delta']))))\")"
 stage "Stage 4 (top of the series)" bash -c \
   ".venv/bin/python runners/run_4a.py && \
    .venv/bin/python runners/run_4bd.py && \
