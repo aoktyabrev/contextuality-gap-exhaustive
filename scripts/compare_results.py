@@ -17,6 +17,10 @@ impression.
              the set of graphs and the sorted values are.
   ignored    wall-clock times, iteration counts, solver residuals and anything else
              that is a property of the machine rather than of the mathematics
+  skipped    the n = 11 artefacts.  That sweep is 71.8 hours and this script does not
+             re-run it, so its outputs are input data here, not something the fresh
+             run could produce.  They are named below and the count of skipped files
+             is printed, so the exclusion is visible rather than silent.
 """
 import sys, os, json, csv, math
 
@@ -24,6 +28,10 @@ TOL = 1e-7
 IGNORE_SUBSTRINGS = ("time", "second", "residual", "iteration", "history",
                      "elapsed", "duration", "wall", "_gap", "solver_diff", "pr_hi",
                      "identification_error", "root_gap", "seconds")
+
+# Produced by the n = 11 sweep, which verify_from_scratch.sh deliberately does not
+# re-run.  Comparing them would compare a file with itself.
+NOT_REPRODUCED_HERE = ("n11_", "report_1c_n11")
 
 fails, checks = [], 0
 
@@ -116,7 +124,11 @@ def cmp_csv(pa, pb, name):
 
 def main(dpub, dnew):
     print(f"comparing {dnew}/ against {dpub}/  (tolerance {TOL:g} on floats)\n")
+    skipped = []
     for fn in sorted(os.listdir(dpub)):
+        if any(m in fn for m in NOT_REPRODUCED_HERE):
+            skipped.append(fn)
+            continue
         pa, pb = os.path.join(dpub, fn), os.path.join(dnew, fn)
         if not os.path.exists(pb):
             note(False, fn, "not produced by the fresh run")
@@ -128,6 +140,9 @@ def main(dpub, dnew):
                 note(False, fn, f"unreadable: {e}")
         elif fn.endswith(".csv"):
             cmp_csv(pa, pb, fn)
+    if skipped:
+        print(f"\nskipped {len(skipped)} n=11 artefact(s), not reproduced by this script: "
+              + ", ".join(skipped))
     print(f"\n{checks} comparisons, {len(fails)} mismatches")
     if fails:
         print("\nGATE R.b FAILED -- the following did not reproduce:")

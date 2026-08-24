@@ -44,10 +44,10 @@ fi
 # n11_* files below are 25 GB and are neither copied nor deleted.
 if [ ! -d results_published ]; then
   mkdir -p results_published
-  find results -maxdepth 1 -type f ! -name 'n11_*' -exec cp {} results_published/ \;
+  find results -maxdepth 1 -type f ! -name '*n11*' -exec cp {} results_published/ \;
   say "kept the committed results in results_published/ for comparison"
 fi
-find results -maxdepth 1 -type f ! -name 'authors_run_summary.txt' ! -name 'n11_*' -delete
+find results -maxdepth 1 -type f ! -name 'authors_run_summary.txt' ! -name '*n11*' -delete
 
 # --- 4. the three stages --------------------------------------------------
 stage "Stage 0 (n <= 9)"  bash runners/run_stage0.sh
