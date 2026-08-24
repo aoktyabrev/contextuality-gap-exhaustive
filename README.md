@@ -154,9 +154,18 @@ generate nothing of their own:
 | 10 | 5 | 1 663 003 | 14.19 % |
 
 Those layers need not be enumerated: their maxima are already known from smaller sizes.
-The saving is real and modest, which is what `PREREGISTRATION_STAGE7.md` predicted before
-the run. `REPORT_STAGE7.md` has the verdict; n = 11 is excluded from it, because the
-hypothesis was formed by looking at n = 11.
+
+**All five of the stage's sealed predictions hit** — the analytic claim that α and ϑ both
+shift by exactly k−1, equality for every non-empty layer a ≥ 5 including the ones never
+computed before, the boundary landing at exactly 5 on both sizes, agreement within 10⁻⁶
+(it came out exact), and that the saving would be modest rather than a serious speedup.
+The weak form of the hypothesis — D(n, a) ≥ transfer bound — is violated nowhere; the
+strong form holds above the boundary and fails below it, where layers 2, 3 and 4 exceed
+the transfer bound by 0.04 to 0.20 and so generate values of their own.
+
+`REPORT_STAGE7.md` has the verdict in full. **n = 11 is excluded from it**, because the
+hypothesis was formed by looking at n = 11; the check runs on n = 9 and n = 10, closed
+since 2026-08-18.
 
 ## Structure across the series
 
