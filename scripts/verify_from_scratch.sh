@@ -54,6 +54,25 @@ stage "Stage 0 (n <= 9)"  bash runners/run_stage0.sh
 stage "Stage 1 (n = 10)"  bash runners/run_stage1.sh
 stage "Stage 2 (exact values)" bash runners/run_stage2.sh
 
+# Stages 3-7 read only what stages 0-2 produce, so they belong in the reproduction
+# too.  Everything below is minutes, not hours: no new enumeration, only analysis of
+# the tables the sweeps just rebuilt, plus one exact-arithmetic certification.
+stage "Stage 3 (prior database, invariants)" bash -c \
+  ".venv/bin/python runners/run_3b.py && \
+   .venv/bin/python runners/run_3c.py && \
+   .venv/bin/python runners/certify_positive_gap.py"
+stage "Stage 4 (top of the series)" bash -c \
+  ".venv/bin/python runners/run_4a.py && \
+   .venv/bin/python runners/run_4bd.py && \
+   .venv/bin/python runners/run_4c.py"
+stage "Stage 5 (layers by alpha)" bash -c \
+  ".venv/bin/python runners/run_5a.py && \
+   .venv/bin/python runners/run_5bcef.py"
+stage "Stage 7 (inheritance, series, enclosure)" bash -c \
+  ".venv/bin/python runners/run_7.py && \
+   .venv/bin/python runners/run_7_series.py && \
+   .venv/bin/python runners/certify_enclosure.py"
+
 # --- 5. compare -----------------------------------------------------------
 say ""
 say "=== comparison against the committed results ==="
