@@ -9,13 +9,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 ROOT="$(pwd)"
-LOG="${ROOT}/verify.log"
+LOG="${ROOT}/verify_$(date -u +%Y%m%dT%H%M%SZ).log"
 : > "$LOG"
 
 say() { printf '%s\n' "$*" | tee -a "$LOG"; }
 stage() { local name="$1"; shift; local t0=$SECONDS
   say ""; say "=== $name ==="
-  "$@" >> "$LOG" 2>&1 || { say "FAILED: $name (see verify.log)"; exit 1; }
+  "$@" >> "$LOG" 2>&1 || { say "FAILED: $name (see $LOG)"; exit 1; }
   say "--- $name took $((SECONDS - t0)) s"; }
 
 say "QUADC5 clean reproduction, started $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
@@ -39,11 +39,15 @@ if [ ! -x build/nauty2_9_3/geng ] && [ -z "${QUADC5_GENG:-}" ]; then
 fi
 
 # --- 3. set the published results aside -----------------------------------
+# n = 11 is NOT reproduced here: the sweep is 71.8 hours and nobody will re-run it.
+# Its artefacts are data, not outputs of this script, and must survive it -- the
+# n11_* files below are 25 GB and are neither copied nor deleted.
 if [ ! -d results_published ]; then
-  cp -r results results_published
+  mkdir -p results_published
+  find results -maxdepth 1 -type f ! -name 'n11_*' -exec cp {} results_published/ \;
   say "kept the committed results in results_published/ for comparison"
 fi
-find results -maxdepth 1 -type f ! -name 'authors_run_summary.txt' -delete
+find results -maxdepth 1 -type f ! -name 'authors_run_summary.txt' ! -name 'n11_*' -delete
 
 # --- 4. the three stages --------------------------------------------------
 stage "Stage 0 (n <= 9)"  bash runners/run_stage0.sh
