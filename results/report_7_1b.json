@@ -1,0 +1,685 @@
+{
+ "psd_log": [
+  {
+   "what": "primal X (D=1e6, c=1)",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 u=hi",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step0",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 1976,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step1",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step2",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step3",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step4",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step5",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step6",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step7",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step8",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step9",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step10",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step11",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step12",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step13",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step14",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2021,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step15",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2045,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step16",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2045,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step17",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step18",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step19",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2045,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step20",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step21",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2045,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step22",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step23",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step24",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step25",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step26",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2045,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step27",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step28",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2045,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e6 step29",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2045,
+   "agree": true
+  },
+  {
+   "what": "primal X (D=1e9, c=1)",
+   "schur": false,
+   "rank": 9,
+   "minors": false,
+   "minors_tested": 1029,
+   "agree": true
+  },
+  {
+   "what": "primal X (D=1e9, c=2)",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 u=hi",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step0",
+   "schur": false,
+   "rank": 9,
+   "minors": false,
+   "minors_tested": 1826,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step1",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step2",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step3",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step4",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step5",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step6",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step7",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step8",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step9",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step10",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step11",
+   "schur": false,
+   "rank": 9,
+   "minors": false,
+   "minors_tested": 1851,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step12",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 1999,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step13",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2039,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step14",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step15",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step16",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step17",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step18",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e9 step19",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "primal X (D=1e12, c=1)",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 u=hi",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step0",
+   "schur": false,
+   "rank": 8,
+   "minors": false,
+   "minors_tested": 1508,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step1",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step2",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step3",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step4",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step5",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step6",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step7",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step8",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual D=1e12 step9",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second u=hi",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step0",
+   "schur": false,
+   "rank": 10,
+   "minors": false,
+   "minors_tested": 1946,
+   "agree": true
+  },
+  {
+   "what": "dual second step1",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step2",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step3",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step4",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step5",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step6",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step7",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step8",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  },
+  {
+   "what": "dual second step9",
+   "schur": true,
+   "rank": 11,
+   "minors": true,
+   "minors_tested": 2047,
+   "agree": true
+  }
+ ],
+ "ladder": [
+  {
+   "D": "1e6",
+   "c": 1,
+   "L": "91825/19231",
+   "U": "4005467238701/838860800000",
+   "width": 4.633655718011248e-05,
+   "bisect_steps": 30
+  },
+  {
+   "D": "1e9",
+   "c": 2,
+   "L": "4774888555/1000000023",
+   "U": "3911588686491/819200000000",
+   "width": 8.813664322345901e-08,
+   "bisect_steps": 20
+  },
+  {
+   "D": "1e12",
+   "c": 1,
+   "L": "1193722133190/250000000003",
+   "U": "76398216523947/16000000000000",
+   "width": 4.398616239243242e-11,
+   "bisect_steps": 10
+  }
+ ],
+ "leader": {
+  "graph6": "J?`D@pgd?{?",
+  "alpha": 4,
+  "L": "1193722133190/250000000003",
+  "U": "76398216523947/16000000000000",
+  "L_float": 4.774888532702701,
+  "U_float": 4.7748885327466875,
+  "width": 4.398616239243242e-11,
+  "delta_lo": "193722133178/250000000003",
+  "delta_hi": "12398216523947/16000000000000",
+  "delta_lo_float": 0.7748885327027013,
+  "delta_hi_float": 0.7748885327466875,
+  "gate_width_below_gap": true,
+  "ladder_steps": 4
+ },
+ "second": {
+  "graph6": "J?`@f?kUDG_",
+  "alpha": 4,
+  "U": "152149953435449/32000000000000",
+  "U_float": 4.754686044857781,
+  "delta_hi": "24149953435449/32000000000000",
+  "delta_hi_float": 0.754686044857781,
+  "bisect_steps": 10
+ },
+ "separation": {
+  "L_minus_U2": "161619902761300139693653/8000000000096000000000000",
+  "float": 0.020202487844920087,
+  "strict": true
+ },
+ "psd_all_agree": true,
+ "psd_tests": 78
+}
