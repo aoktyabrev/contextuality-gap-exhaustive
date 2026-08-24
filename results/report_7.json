@@ -1,0 +1,220 @@
+{
+ "blocks": {
+  "7a": {
+   "alpha_ok": 25,
+   "theta_ok": 25,
+   "conn_ok": 25,
+   "trials": 25,
+   "max_theta_err_scs": 1.983677844208387e-08,
+   "max_theta_err_clarabel": 4.6502662165437414e-08,
+   "max_solver_disagreement": 4.2252873200254726e-08
+  },
+  "7b": [
+   {
+    "n": 9,
+    "a": 1,
+    "D": 0.0,
+    "T": 0.0,
+    "source": null,
+    "graph6": "H~~~~~~",
+    "edges": 36,
+    "diff": 0.0,
+    "equal": true,
+    "empty": true
+   },
+   {
+    "n": 9,
+    "a": 2,
+    "D": 0.38371908506320773,
+    "T": 0.34314574729662617,
+    "source": [
+     8,
+     2
+    ],
+    "graph6": "HQyurzU",
+    "edges": 22,
+    "diff": 0.04057333776658156,
+    "equal": false,
+    "empty": false
+   },
+   {
+    "n": 9,
+    "a": 3,
+    "D": 0.6666666799877143,
+    "T": 0.4678437308088883,
+    "source": [
+     8,
+     3
+    ],
+    "graph6": "HCRbdO{",
+    "edges": 15,
+    "diff": 0.19882294917882604,
+    "equal": false,
+    "empty": false
+   },
+   {
+    "n": 9,
+    "a": 4,
+    "D": 0.3600895896083287,
+    "T": 0.31766721075249027,
+    "source": [
+     7,
+     3
+    ],
+    "graph6": "H?bB@_W",
+    "edges": 9,
+    "diff": 0.04242237885583844,
+    "equal": false,
+    "empty": false
+   },
+   {
+    "n": 9,
+    "a": 5,
+    "D": 0.23606800545359174,
+    "T": 0.2360679784550972,
+    "source": [
+     5,
+     2
+    ],
+    "graph6": "H?AEAJ~",
+    "edges": 13,
+    "diff": 2.6998494551122576e-08,
+    "equal": true,
+    "empty": false
+   },
+   {
+    "n": 9,
+    "a": 6,
+    "D": 0.0,
+    "T": 0.0,
+    "source": null,
+    "graph6": "H??FeZi",
+    "edges": 13,
+    "diff": 0.0,
+    "equal": true,
+    "empty": true
+   },
+   {
+    "n": 9,
+    "a": 7,
+    "D": 0.0,
+    "T": 0.0,
+    "source": null,
+    "graph6": "H???Fb~",
+    "edges": 12,
+    "diff": 0.0,
+    "equal": true,
+    "empty": true
+   },
+   {
+    "n": 9,
+    "a": 8,
+    "D": 0.0,
+    "T": 0.0,
+    "source": null,
+    "graph6": "H????B~",
+    "edges": 8,
+    "diff": 0.0,
+    "equal": true,
+    "empty": true
+   },
+   {
+    "n": 10,
+    "a": 2,
+    "D": 0.49999999599868206,
+    "T": 0.38371908506320773,
+    "source": [
+     9,
+     2
+    ],
+    "graph6": "IUZurzmmo",
+    "edges": 30,
+    "diff": 0.11628091093547432,
+    "equal": false,
+    "empty": false
+   },
+   {
+    "n": 10,
+    "a": 3,
+    "D": 0.7071068006217676,
+    "T": 0.6666666799877143,
+    "source": [
+     9,
+     3
+    ],
+    "graph6": "ICRb`yiu?",
+    "edges": 20,
+    "diff": 0.04044012063405322,
+    "equal": false,
+    "empty": false
+   },
+   {
+    "n": 10,
+    "a": 4,
+    "D": 0.5507551490248712,
+    "T": 0.4678437308088883,
+    "source": [
+     8,
+     3
+    ],
+    "graph6": "I?`DA_wJ?",
+    "edges": 12,
+    "diff": 0.08291141821598291,
+    "equal": false,
+    "empty": false
+   },
+   {
+    "n": 10,
+    "a": 5,
+    "D": 0.3176672298607155,
+    "T": 0.31766721075249027,
+    "source": [
+     7,
+     3
+    ],
+    "graph6": "I?AEB?WHG",
+    "edges": 10,
+    "diff": 1.910822522432909e-08,
+    "equal": true,
+    "empty": false
+   },
+   {
+    "n": 10,
+    "a": 6,
+    "D": 0.23606801526610255,
+    "T": 0.2360679784550972,
+    "source": [
+     5,
+     2
+    ],
+    "graph6": "I??CE@An_",
+    "edges": 11,
+    "diff": 3.681100535501969e-08,
+    "equal": true,
+    "empty": false
+   }
+  ],
+  "7c": {
+   "9": {
+    "boundary": 5,
+    "layers": {
+     "2": "!=",
+     "3": "!=",
+     "4": "!=",
+     "5": "="
+    }
+   },
+   "10": {
+    "boundary": 5,
+    "layers": {
+     "2": "!=",
+     "3": "!=",
+     "4": "!=",
+     "5": "=",
+     "6": "="
+    }
+   }
+  }
+ },
+ "fails": []
+}

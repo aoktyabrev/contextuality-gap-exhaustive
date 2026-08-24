@@ -1,0 +1,1040 @@
+Discrete Optimization 25 (2017) 159–174
+Contents lists available at ScienceDirect
+Discrete Optimization
+www.elsevier.com/locate/disopt
+On the Lov´ asz theta function and some variants
+Laura Galli a, Adam N. Letchford b,∗
+a Dipartimento di Informatica, Universit` a di Pisa, Largo B. Pontecorvo 3, 56127 Pisa, Italy
+b Department of Management Science, Lancaster University Management School, Lancaster LA1 4YX,
+United Kingdom
+a r t i c l e i n f o
+Article history:
+Received 9 October 2015
+Received in revised form 3 March
+2017
+Accepted 12 April 2017
+Available online 13 May 2017
+Keywords:
+Stable set problem
+Semidefinite programming
+Lov´ asz theta function
+a b s t r a c t
+The Lov´ asz theta function of a graph is a well-known upper bound on the stability
+number. It can be computed efficiently by solving a semidefinite program (SDP).
+Actually, one can solve either of two SDPs, one due to Lov´ asz and the other to
+Gr¨ otschel et al. The former SDP is often thought to be preferable computationally,
+since it has fewer variables and constraints. We derive some new results on these two
+equivalent SDPs. The surprising result is that, if we weaken the SDPs by aggregating
+constraints, or strengthen them by adding cutting planes, the equivalence breaks
+down. In particular, the Gr¨ otschel et al. scheme typically yields a stronger bound
+than the Lov´ asz one.
+©2017 Elsevier B.V. All rights reserved.
+1. Introduction
+Consider an undirected graph G with vertex set V and edge set E. A set of pairwise non-adjacent
+(respectively, adjacent) vertices is called a stable or independent set (resp. clique). Given a graph G, the
+maximum cardinality of a stable set (resp. clique) in G is called the stability number (resp. clique number )
+and denoted by α(G) (resp. ω(G)). The problem of determining α(G) (resp. ω(G)) is called the maximum
+stable set problem or MSSP (resp. maximum clique problem or MCP).
+The complement of G, denoted by ¯G, is the graph with vertex set V and edge set
+¯E =
+
+{i,j}⊂ V :{i,j}̸∈ E
+
+.
+Since α(G) = ω( ¯G), the MSSP and MCP are equivalent. They have a wide range of applications in
+operational research and computer science. Unfortunately, they are NP -hard in the strong sense, and hard
+even to approximate (H˚ astad [1]).
+In his seminal paper, Lov´ asz [2] defined the so-called theta function of a graph G, denoted by ϑ(G). He
+then proved thatα(G)≤ϑ(G)≤χ( ¯G), where χ( ¯G) denotes the chromatic number of ¯G. Gr¨ otschel et al. [3]
+∗ Corresponding author.
+E-mail addresses: laura.galli@unipi.it (L. Galli), A.N.Letchford@lancaster.ac.uk (A.N. Letchford).
+http://dx.doi.org/10.1016/j.disopt.2017.04.001
+1572-5286/©2017 Elsevier B.V. All rights reserved.
+160 L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174
+showed thatϑ(G) can be computed in polynomial time (to arbitrary fixed precision) by solving a semidefinite
+program (SDP). This result is remarkable, given that computing the chromatic number of a graph, or even
+approximating it, is alsoNP -hard in the strong sense (Feige and Kilian [4]).
+In fact, there are two alternative SDP characterisations ofϑ(G) [5,6]. The one in [6], having fewer variables
+and constraints, seems preferable computationally. Gruber and Rendl [7] showed how to map any feasible
+solution to the larger SDP onto a feasible solution of the smaller SDP with no smaller profit. Yildirim and
+Fan [8] gave a partial mapping in the reverse direction. In this paper, we give a complete mapping in both
+directions, and then extend it to the weighted case, in which each node has a positive weight and the goal
+is to find a maximum weight stable set.
+One can define stronger variants of the theta function by adding cutting planes to the SDPs (see, e.g.,
+[9,10,7,6,11]). We show that, perhaps surprisingly, the two SDPs behave differently in this context. In
+particular, adding a cutting plane to the smaller SDP can lead to less bound improvement than adding the
+analogous inequality to the larger SDP.
+Going in the opposite direction, Lieder et al. [12] recently proposed to weaken the theta function, by
+aggregating equations in the larger SDP. We show that here, too, the two SDPs behave differently.
+The paper is structured as follows. Section 2 is a literature review. Section 3 presents the results on
+the theta function and its weighted version. Section 4 presents the results on strengthened and weakened
+variants of the theta function. Some computational results are presented in Section 5. Concluding remarks
+are made in Section 6.
+Throughout the paper, n will denote|V|,m will denote|E|,e will denote the all-ones vector of dimension
+n and J = eeT will denote the all-ones square matrix of order n. The trace of a square matrix M will be
+denoted by Tr(M). Given two symmetric matrices A,B of the same order, A•B will denote Tr(AB), the
+usual inner product of A and B.
+We will also use the following facts (see, e.g., [5]). A symmetric matrix M∈ Rn×n is positive semidefinite
+(psd) if vTMv≥ 0 for all v∈ Rn. The set of psd matrices of order n forms a convex cone in Rn×n, which is
+denoted by Sn
++. If M is psd, there exists a matrix Y ∈ Rn×n such that M =YTY (Cholesky factorisation).
+If we let yi denote the ith column of Y , then Mij = yT
+i yj for all i and j. The vectors y1,...,y n form the
+so-called Gram representation of M. Finally, an augmented matrix of the form
+
+1 vT
+v M
+
+,
+where v∈ Rn is psd if and only if the matrix M−vvT is psd (Schur complement).
+2. Literature review
+Now we review the relevant literature. For simplicity of notation, we assume throughout this section that
+G contains no isolated nodes.
+2.1. LP-based bounds
+The standard 0–1 LP formulation of the MSSP is constructed as follows (e.g., [5,13]). For each i∈V , let
+xi be a binary variable, taking the value 1 if and only if i is in the stable set. The formulation is then:
+max eTx
+s.t. xi +xj≤ 1 ( ∀{i,j}∈ E) (1)
+xi∈{ 0, 1} (∀i∈V ).
+L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174 161
+To strengthen the LP relaxation one can add valid linear inequalities, such as the following ones, due to
+Padberg [13]:
+• clique inequalities, which take the form 
+i∈Cxi≤ 1, where C is a maximal clique in G;
+• odd hole inequalities, which take the form 
+i∈Hxi≤
+
+|H|
+2
+
+, where H is a set of nodes that induce an
+‘odd hole’ (chordless odd cycle) in G.
+Other known inequalities are surveyed, e.g., in [14,10,5,6].
+The upper bound obtained if one uses all clique (and non-negativity) inequalities is called the fractional
+clique covering number and denoted by χf( ¯G). By definition, α(G) ≤ χf( ¯G) ≤ χ( ¯G). Unfortunately,
+computing χf( ¯G) is also NP -hard [5]. Nevertheless, reasonably good computational results have been
+obtained using LP relaxations (e.g., [15–21]).
+2.2. The theta function
+A rather different upper bound on α(G) was derived by Lov´ asz [2]. Suppose that a vectorx∈{ 0, 1}n is
+feasible for the 0–1 LP formulation presented in the previous subsection. Define the matrixZ =xxT/(eTx)∈
+[0, 1]n×n. By definition, Z is psd and J•Z = (eTx)2/(eTx) = eTx. Moreover, diag(Z) = x/(eTx), which
+implies that Tr(Z) = 1. This leads naturally to the following SDP relaxation of the MSSP, which we will
+call ‘SDP1’:
+max J•Z (2)
+s.t. Zij = 0 ( ∀{i,j}∈ E) (3)
+Tr(Z) = 1 (4)
+Z∈S n
++. (5)
+Lov´ asz called the resulting upper boundϑ(G), and proved that α(G)≤ ϑ(G)≤ χ( ¯G). Nowadays, ϑ(G) is
+called the Lov´ asz theta function.
+Shortly after the publication of [2], it was shown that SDPs can be solved in polynomial time (to arbitrary
+fixed precision) [3]. Thus, ϑ(G) can be computed efficiently, at least in theory.
+Another characterisation of ϑ(G) was derived by Gr¨ otschel et al. [5]. Given a feasible vectorx∈{ 0, 1}n
+as before, consider the matrix X =xxT∈{ 0, 1}n×n. By definition, X is psd, its main diagonal is equal to
+x, and it has zero entries for all edges. Moreover, the augmented matrix
+X+ =
+
+1
+x
+
+1
+x
+T
+=
+
+1 xT
+x X
+
+is also psd. This leads to the following SDP relaxation, which we call ‘ SDP2’:
+max eTx (6)
+s.t. Xii =xi (∀i∈V ) (7)
+Xij = 0 ( ∀{i,j}∈ E) (8)
+
+1 xT
+x X
+
+∈S n+1
++ . (9)
+The resulting upper bound is again ϑ(G).
+Note that SDP2 hasn +m linear constraints, whereas SDP1 has only m + 1. On the other hand, SDP2 has
+a very nice property [5]: if one projects its feasible region into x-space, the resulting convex set satisfies all
+162 L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174
+clique and non-negativity inequalities. This implies that
+α(G)≤ϑ(G)≤χf( ¯G)≤χ( ¯G),
+with equality if G is perfect.
+The relationship between SDP1 and SDP2 is more complicated than it might appear. Gruber and Rendl [7]
+proved the following. Let ( x∗,X∗) be any feasible solution to SDP2, and let γ = eTx∗ denote its profit. If
+γ >0, then one can obtain a feasible solution Z∗ to SDP1 whose profitJ•Z∗ is no smaller than γ by setting
+Zij to X∗
+ij/γ for all i and j. Yildirim and Fan [8] proved a partial result in the other direction. Let Z∗ be
+any feasible solution to SDP1, again with positive profit γ. Then there exists a feasible solution ( x∗,X∗) to
+SDP2 whose profit is no smaller than γ, in which
+x∗
+i =
+
+n
+j=1
+Z∗
+ij
+2
+γZ∗
+ii
+if Z∗
+ii > 0
+= 0 otherwise .
+We remark that a third SDP formulation of ϑ(G), with n +| ¯E| constraints, was given by Dukanovic and
+Rendl [9]. This is preferable when G is very dense.
+2.3. The weighted theta function
+Now consider the weighted version of the stable set problem, mentioned in the introduction. For each
+vertex i∈ V , let wi > 0 be the associated weight. Adapting SDP2 to this case is trivial: just change the
+objective function to wTx. Gr¨ otschel et al. [3] showed that to adapt SDP1, it is necessary to replace the
+objective function with
+
+i∈V
+
+j∈V
+√wiwjZij. (10)
+The resulting bound, the weighted theta function, is denoted by ϑ(G,w ). A proof that both SDPs yield the
+same bound can be found in [5].
+2.4. Variants of the theta function
+As mentioned in the introduction, it is possible to strengthen both SDP1 and SDP2 by adding cutting
+planes (i.e., valid linear inequalities). Schrijver [11] proposed to strengthen SDP1 simply by adding the non-
+negativity inequalities
+Zij≥ 0 ( ∀{i,j}∈ ¯E). (11)
+The resulting bound is denoted by ϑ′(G) [5].
+Dukanovic and Rendl [9] proposed to add, in addition,
+Zik +Zjk≤Zkk (∀{i,j}∈ E, k∈V\{i,j}) (12)
+Zik +Zjk≤Zij +Zkk (∀ stable{i,j,k}). (13)
+As for SDP2, Lov´ asz and Schrijver [6] proposed to add
+Xij≥ 0 ( ∀{i,j}∈ ¯E) (14)
+Xik +Xjk≤xk (∀{i,j}∈ E, k̸=i,j ) (15)
+xi +xj +xk≤ 1 +Xik +Xjk (∀{i,j}∈ E, k̸=i,j ). (16)
+L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174 163
+Gruber and Rendl [7] proposed to add, in addition,
+Xik +Xjk≤xk +Xij (∀ stable{i,j,k}) (17)
+xi +xj +xk≤ 1 +Xij +Xik +Xjk (∀ stable{i,j,k}). (18)
+For further strengthenings of SDP2, see, e.g., [10,17,22,6]. For computational results, see, e.g., [15,16,9,7].
+Generally speaking, adding cutting planes usually yields some improvement in the upper bound, but at the
+cost of dramatically increased computing times.
+Going in the opposite direction, Lieder et al. [12] recently proposed to weaken the theta function, as
+follows. Take SDP2 and replace Eqs. (8) with the single equation
+
+{i,j}∈E
+Xij = 0. (19)
+The resulting bound can be computed much more quickly than ϑ(G), but, unfortunately, it is typically
+significantly weaker.
+3. The theta function and its weighted version
+In this section, we consider the theta function and the two associated SDPs. In Section 3.1, we show how
+to map a feasible Z∗ onto a feasible X∗. In Section 3.2, we extend the mappings in both directions to the
+weighted case.
+3.1. The theta function
+Yildirim and Fan [8] showed how to map a feasible matrix Z∗ to a feasible vector x∗ without losing any
+profit, but they did not show how to construct the associated matrix X∗. The following theorem shows how
+to do this.
+Theorem 1. Let Z∗ be a feasible solution to SDP1, and let γ =J•Z∗ > 0 be the associated profit. Let x∗ be
+defined according to Yildirim and Fan (see the end of Section 2.2). If Z∗
+ij = 0, then set X∗
+ij to 0. Otherwise,
+set X∗
+ij to
+Z∗
+ij
+
+x∗
+ix∗
+j
+Z∗
+iiZ∗
+jj
+=Z∗
+ij
+ n
+k=1
+Z∗
+ik
+ n
+k=1
+Z∗
+jk
+
+γZ∗
+iiZ∗
+jj
+.
+Then the resulting pair (x∗,X∗) forms a feasible solution to SDP2, and its profit, eTx∗, is at least as large
+as γ.
+Proof. Since the profit of (x∗,X∗) is justeTx∗, it does not depend on X∗. Therefore, the fact that the profit
+is at least as large as γ follows from the result in [8]. To complete the proof, it suffices to show that (x∗,X∗)
+satisfies (7)–(9).
+To see that (7) is satisfied, simply note that X∗
+ii = Z∗
+iix∗
+i/Z∗
+ii = x∗
+i by construction. To see that (8) is
+satisfied, simply recall that Z∗
+ij = 0 for all{i,j}∈ E, and note that X∗
+ij = 0 whenever Z∗
+ij = 0.
+To show that (9) is satisfied, it suffices to construct a Gram representation of the augmented matrix
+(X+)∗ =
+
+1 ( x∗)T
+x∗ X∗
+
+.
+164 L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174
+LetZ∗ =YTY and lety1,...,y n be the columns of Y . Note that∥yi∥ =
+
+Z∗
+ii and thatyi is the zero vector
+whenever Z∗
+ii = 0. We define vectors v0,...,v n as follows. We set v0 to Ye/√γ. For all i∈ V such that
+Z∗
+ii > 0, we set vi to yi
+
+x∗
+i/∥yi∥. For all i∈V such that Z∗
+ii = 0, we set vi to the zero vector.
+Now we show that v0,...,v n form a Gram representation of (X+)∗. We do this in three steps. First, we
+note that vT
+0v0 = 1, since
+∥v0∥2 =∥Ye∥2
+γ = (eTYT ) (Ye )
+γ = eTZ∗e
+γ = J•Z∗
+γ = γ
+γ = 1.
+Second, we show that vT
+0vi = x∗
+i for all i∈ V . If Z∗
+ii = 0, this is trivial, since vi is the zero vector and
+x∗
+i = 0 in this case. On the other hand, if Z∗
+ii > 0, we have
+vT
+0vi =
+Ye√γ
+T yi
+
+x∗
+i
+∥yi∥ = (eTYTyi)
+
+x∗
+i√γ∥yi∥ =
+n
+j=1
+Z∗
+ij
+
+x∗
+i√γ∥yi∥.
+Then, since
+x∗
+i =
+ n
+j=1
+Z∗
+ij
+2
+/γZ∗
+ii
+when Z∗
+ii > 0, we have that
+vT
+0vi =
+n
+j=1
+Z∗
+ij
+n
+j=1
+Z∗
+ij
+γ∥yi∥
+
+Z∗
+ii
+=x∗
+i
+as desired.
+Third, we show that vT
+i vj =X∗
+ij for all i and j. If Z∗
+ij = 0, this is trivial, since vi and vj are orthogonal
+and X∗
+ij = 0 in this case. On the other hand, if Z∗
+ij > 0, we have
+vT
+i vj =
+(yT
+i yj)x∗
+ix∗
+j
+∥yi∥∥yj∥ =
+Z∗
+ij
+x∗
+ix∗
+jZ∗
+iiZ∗
+jj
+=X∗
+ij
+as desired. 
+We illustrate Theorem 1 on a small example:
+Example 1. LetG be the graph on 3 nodes withE =
+
+{1, 2},{2, 3}
+
+. It holds trivially thatα(G) =ϑ(G) = 2.
+One can check (e.g., with an Eigenvalue calculator) that the following matrix is a feasible solution for SDP1:
+Z∗ =
+
+
+1/3 0 1 /3
+0 1 /3 0
+1/3 0 1 /3
+
+.
+We haveγ = 5/3. Applying the procedure of Yildirim and Fan, we obtain x∗ = (4/5, 1/5, 4/5)T , with profit
+9/5>γ . Applying our procedure, we obtain
+X∗ =
+
+
+4/5 0 4 /5
+0 1 /5 0
+4/5 0 4 /5
+
+.
+One can check that the corresponding augmented matrix ( X+)∗ is indeed psd. 
+The interesting thing about this example is that, if we take the matrix X∗ and apply the mapping of
+Gruber and Rendl, we obtain the following feasible solution of SDP1:
+L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174 165
+
+
+4/9 0 4 /9
+0 1 /9 0
+4/9 0 4 /9
+
+,
+with an even better profit of 17/9. Further iterations of the mappings yield the profit values 33/17, 65/33
+and 129/65. It is apparent that this sequence of profit values is rapidly converging to ϑ(G) =α(G) = 2.
+An interesting question is to find conditions on the graph G and the starting matrix Z∗ under which
+the sequence of profit values is guaranteed to converge to ϑ(G). Potentially, this could yield a new (primal)
+algorithm to compute ϑ(G). We do not examine this here, however. Instead, we give a second example,
+which illustrates how the mappings in both directions work when both Z∗ and (x∗,X∗) are already optimal.
+Example 2. Let G be the odd hole on 5 nodes. That is, let n = 5 and let
+E =
+
+{1, 2},{1, 5},{2, 3},{3, 4},{4, 5}
+
+.
+It holds trivially that α(G) = 2, and Lov´ asz [2] showed thatϑ(G) =
+√
+5≈ 2.236. One can check with an
+SDP solver that the optimal solution Z∗ to SDP1 has Z∗
+ii = 1/5 for i∈ V,Z∗
+ij = 0 for {i,j}∈ E, and
+Z∗
+ij = (
+√
+5− 1)/10≈ 0.1236 for{i,j}∈ ¯E. One can also check that the optimal solution ( x∗,X∗) to SDP2
+has x∗
+i = X∗
+ii = 1/
+√
+5≈ 0.4472 for i∈ V , X∗
+ij = 0 for {i,j}∈ E, and X∗
+ij = (1− 5−1/2)/2≈ 0.2764 for
+{i,j}∈ ¯E. Finally, one can check that the mappings between Z∗ and (x∗,X∗) work in both directions. In
+particular, (i) Z∗
+ij =X∗
+ij/γ for all i andj, as predicted by Gruber and Rendl, (ii) x∗
+i =
+n
+j=1Z∗
+ij
+2
+γZ∗
+ii
+for all i,
+as predicted by Yildirim and Fan, and (iii)X∗
+ij =Z∗
+ij
+
+x∗
+ix∗
+j
+Z∗
+iiZ∗
+jj
+for alli andj, as predicted by Theorem 1. 
+3.2. The weighted theta function
+In this subsection, we extend the mappings to the weighted case. We start by giving an intuitive
+explanation for the weighted version of SDP1, due to Gr¨ otschel et al. [3], that was presented in Section 2.3.
+Recall that w∈ Rn
++ is the vector of node weights. Let √w denote the vector in Rn whose ith component
+is√wi. Then, the objective function in the weighted version of SDP1, namely (10), can be written in the
+simpler form√wTZ√w. Now, let ¯x∈{ 0, 1}n be the incidence vector of a stable set, whose weight γ =wT ¯x
+is positive. Let ¯z∈ Rn
++ be the vector whose ith component is√wi¯xi/√γ, and let ¯Z = ¯z¯zT . We then have
+¯Z = Diag(√w)¯x¯xT Diag(√w)
+γ .
+One can check that ¯Z satisfies (3)–(5), and is therefore feasible for SDP1. Moreover, we have
+√w
+T ¯Z√w =
+√wT Diag(√w)¯x¯xT Diag(√w)√w
+γ = wT ¯x¯xTw
+γ = γ2
+γ =γ,
+which explains the form of the objective function (10).
+We are now in a position to extend the mappings to the weighted case. This is accomplished in the
+following two theorems.
+Theorem 2. Let (x∗,X∗) be a feasible solution to the weighted version of SDP2, whose profit γ = wTx∗ is
+positive. We can obtain a feasible solution Z∗ to the weighted version of SDP1, whose profit is at least as
+large, by setting Z∗
+ij to√wiwjX∗
+ij/γ for all i and j.
+Proof. By construction, Z∗
+ij = 0 whenever X∗
+ij = 0, and therefore Z∗ satisfies (3). Also, we have
+Tr(Z∗) =
+
+i∈V
+√wiwiX∗
+ii
+γ = 1
+γ
+
+i∈V
+wix∗
+i =γ/γ = 1,
+166 L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174
+which shows that (4) is satisfied. Moreover, by construction, we have
+Z∗ = Diag(√w)X∗ Diag(√w)
+γ .
+Since X∗ is psd, it can be factorised as YTY . This gives
+Z∗ = Diag(√w)YTY Diag(√w)
+γ =
+Y Diag(√w)√γ
+TY Diag(√w)√γ
+
+,
+which shows that (5) is satisfied.
+Finally, we have to show that the profit of Z∗ is at least γ. Due to (9) and the Schur complement,
+X∗−x∗(x∗)T must be psd. This implies that wTX∗w− (wTx∗)2≥ 0, and therefore (wTX∗w)/γ≥wTx∗.
+But
+wTX∗w
+γ =
+√wT Diag(√w)X∗Diag(√w)√w
+γ =√w
+T
+Z∗√w,
+and this is the profit of Z∗. 
+Theorem 3. Let Z∗ be a feasible solution to the weighted version of SDP1, whose profit γ =√wTZ∗√w is
+positive. We can obtain a feasible solution (x∗,X∗) to the weighted version of SDP2, whose profit is at least
+as large, as follows. If Z∗
+ii = 0, set x∗
+i = 0. Otherwise, set x∗
+i to
+
+n
+j=1
+√wjZ∗
+ij
+2
+γZ∗
+ii
+.
+If Z∗
+ij = 0, set X∗
+ij = 0. Otherwise, set X∗
+ij to
+Z∗
+ij
+
+x∗
+ix∗
+j
+Z∗
+iiZ∗
+jj
+=Z∗
+ij
+ n
+k=1
+√wkZ∗
+ik
+ n
+k=1
+√wkZ∗
+jk
+
+γZ∗
+iiZ∗
+jj
+.
+Proof. The proof that (x∗,X∗) is feasible is similar to the proof of Theorem 1. The only difference is that,
+in the Gram representation of the augmented matrix ( X+)∗, we need to set v0 to Y√w/√γ.
+The hard part is to show that the profit of (x∗,X∗) is at least as large as that of Z∗. We adapt the proof
+in [8]. Let V′ ={i∈V :Z∗
+ii > 0}. By construction, we have the following for all i∈V′:
+x∗
+i =vT
+0vi =
+
+x∗
+i√γ∥yi∥
+
+yT
+i Y√w
+
+=
+
+x∗
+i√γ∥yi∥
+
+j∈V
+√wjZ∗
+ij.
+Multiplying both sides by ∥yi∥/
+
+x∗
+i , we have
+∥yi∥
+
+x∗
+i = 1√γ
+
+j∈V
+√wjZ∗
+ij.
+Now, multiplying these equations by√wi and summing over all i∈V′, we obtain
+
+i∈V′
+∥yi∥
+
+wix∗
+i =
+√wTZ∗√w√γ =γ/√γ =√γ.
+Equivalently,
+γ =
+
+i∈V
+∥yi∥
+
+wix∗
+i
+2
+.
+L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174 167
+By the Cauchy–Schwarz inequality, this cannot exceed
+
+i∈V
+∥yi∥2
+
+i∈V
+wix∗
+i
+
+= Tr(Z∗)wTx∗.
+The result then follows from the fact that Tr( Z∗) = 1. 
+Together, Theorems 2 and 3 provide an alternative proof that both SDPs yield the same upper bound,
+namely ϑ(G,w ). They are illustrated on the following example.
+Example 3. Let G be the odd hole on 5 nodes, as in Example 2, but now suppose that nodes 1 ,..., 4 have
+weight 2 and node 5 has weight 3. There are two optimal stable sets, each of weight 5. One can check with
+an SDP solver that the optimal solution to the weighted version of SDP1 is as follows (to 3 d.p.):
+Z∗ =
+
+
+0.074 0 0 .057 0 .057 0
+0 0 .194 0 0 .057 0 .198
+0.057 0 0 .194 0 0 .198
+0.057 0 .057 0 0 .074 0
+0 0 .198 0 .198 0 0 .464
+
+
+.
+One can also check that the optimal solution to the weighted version of SDP2 is
+(X+)∗ =
+
+
+1 0 .188 0 .494 0 .494 0 .188 0 .788
+0.188 0 .188 0 0 .145 0 .145 0
+0.494 0 0 .494 0 0 .145 0 .412
+0.494 0 .145 0 0 .494 0 0 .412
+0.188 0 .145 0 .145 0 0 .188 0
+0.788 0 0 .412 0 .412 0 0 .788
+
+
+.
+These solutions both yield ϑ(G,w )≈ 5.091 > 5. Finally, one can check that the mappings described in
+Theorems 2 and 3 work in this case. 
+4. Variants of the theta function
+Now we consider the variants of the theta function mentioned in Section 2.4. In Section 4.1, we consider
+stronger variants that are obtained by the addition of cutting planes. In Section 4.2, we consider the weakened
+variant of Lieder et al. [12].
+4.1. Strengthening the function with cutting planes
+It is interesting to observe that SDP1 and SDP2 behave rather differently when it comes to cutting planes.
+For example, whereas the inequalities (11)–(13) are very similar to the inequalities (14), (15) and (17),
+respectively, the remaining inequalities for SDP2, i.e., (16) and (18), have not been adapted to SDP1. To
+explain this fact, we will need the following definition:
+Definition 1 (Padberg [23]). The Boolean quadric polytope of order n, denoted by BQPn, is
+conv
+
+(x,y )∈{ 0, 1}n+(
+n
+2) :yij =xixj (1≤i<j ≤n)
+
+.
+This family of polytopes has been studied in great depth, and many families of valid and facet-defining
+inequalities are known (see Deza and Laurent [24] for a survey). In particular, Padberg showed that the
+non-negativity inequalities yij≥ 0 define facets for 1 ≤i<j ≤n.
+168 L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174
+We will also need the following notation:
+• S denotes the set of all incidence vectors of stable sets. That is,
+S ={x∈{ 0, 1}n : (1) hold}.
+• S+ denotes the set of incidence vectors of non-empty stable sets. That is,
+S+ ={x∈S :∥x∦ = 0}.
+• P (Z) denotes the convex hull of all feasible solutions to SDP1 that represent stable sets. That is,
+P (Z) = conv
+
+Z∈ Rn×n
++ : Z = xxT
+eTx for some x∈S+
+
+.
+• P (x,X ) denotes the convex hull of all feasible solutions to SDP2 that represent stable sets. That is,
+P (x,X ) = conv
+
+(x,X )∈ Rn+n2
+:x∈S, X=xxT
+
+.
+We have the following propositions:
+Proposition 1. If the inequality λTx +µTy≤ 0 is valid for BQPn, then the inequality
+
+i∈V
+λiZii +
+
+{i,j}∈ ¯E
+µijZij≤ 0 (20)
+is valid for P (Z). Moreover, the inequalities of this type, together with Eqs. (3), (4) and Zij = Zji for
+1≤i<j ≤n, give a complete linear description of P (Z).
+Proof. For the sake of brevity, we only sketch the proof. Let Z∗ be an extreme point of P (Z). We construct
+a point (x∗,y∗)∈ Rn+(
+n
+2) by setting x∗
+i toZ∗
+ii fori∈V andy∗
+ij toZ∗
+ij for 1≤i<j ≤n. Let P (x,y ) denote
+the convex hull of all such points. Note that P (Z) and P (x,y ) are affinely congruent.
+Now, one shows that P (x,y ) can instead be obtained as follows. Take all extreme points of BQP n that
+satisfy yij = 0 for {i,j}∈ E, construct the cone of these points, and then intersect that cone with the
+hyperplane defined by the equation eTx = 1. From this, it follows that P (x,y ) is completely described by
+the equationeTx = 1, the equationsyij = 0 for{i,j}∈ E, and all valid homogeneous inequalities for BQPn.
+The result follows easily. 
+Proposition 2. If the inequality λTx +µTy≤ν is valid for BQPn, then the inequality
+
+i∈V
+λixi +
+
+{i,j}∈ ¯E
+µijXij≤ν
+is valid for P (x,X ). Moreover, the inequalities of this type, together with Eqs. (7), (8) and Xij = Xji for
+1≤i<j ≤n, give a complete linear description of P (x,X ).
+Proof. Again, we only sketch the proof. Let (x∗,X∗) be an extreme point of P (x,X ). We construct a point
+(x∗,y∗) by setting y∗
+ij to X∗
+ij for 1≤i<j ≤n. Let P′(x,y ) denote the convex hull of all such points. Note
+that P (x,X ) and P′(x,y ) are affinely congruent.
+L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174 169
+Now, one notes that P′(x,y ) is also equal to
+{(x,y )∈ BQPn :yij = 0 (∀{i,j}∈ E)}.
+From this, it follows that P′(x,y ) is completely described by the equations yij = 0 for {i,j}∈ E, and all
+valid inequalities for BQPn. The result follows easily. 
+As an illustration of these results, we recall that Padberg [23] showed that the following triangle
+inequalities define facets of BQPn:
+yik +yjk≤xk +yij (∀{i,j,k}⊂{ 1,...,n }) (21)
+xi +xj +xk≤ 1 +yij +yik +yjk (1≤i<j <k ≤n). (22)
+It is apparent that the inequalities (21) are the source of the inequalities (12) and (13) for SDP1 and the
+inequalities (15) and (17) for SDP2. The inequalities (22) are the source of the inequalities (16) and (18) for
+SDP2, but, being inhomogeneous, do not yield any useful inequalities for SDP1.
+Another issue that turns out to be worth considering is the effect that cutting planes have on the quality
+of the upper bound on the stability number. We start with the simplest cutting planes, the non-negativity
+inequalities (11) and (14). One can check that the mappings given by Gruber and Rendl [7], Yildirim and
+Fan [8] and ourselves all preserve non-negativity. Thus, the bound obtained by imposing non-negativity on
+X in SDP2 is the same as the one obtained by imposing it on Z in SDP1, i.e., is nothing but Schrijver’s bound
+ϑ′(G).
+More generally, suppose we strengthen SDP2 by adding an arbitrary collection of homogeneous valid
+inequalities, such as some or all of (14), (15) and (17). Let (˜x, ˜X) be the optimal solution to the strengthened
+relaxation. The mapping of Gruber and Rendl, which merely divides ˜X by a constant, yields a feasible
+solution ˜Z to SDP1 that satisfies the analogous homogeneous inequalities, and has at least as much profit.
+This implies that the bound obtained by adding the inequalities to SDP2 is at least as strong as the one
+obtained by adding the analogous inequalities to SDP1. Surprisingly, it can be strictly stronger in some cases.
+This is shown in the following example.
+Example 2 (Cont.). Again, let G be the odd hole on 5 nodes. The optimal solution to SDP1 violates the
+homogeneous inequalityZ13 +Z14≤Z11, which is of the form (12). One can check with an SDP solver that,
+if this inequality is added to SDP1 as a cutting plane, the optimal solution becomes (to 3 d.p.):
+
+
+0.272 0 0 .136 0 .136 0
+0 0 .185 0 0 .113 0 .113
+0.136 0 0 .179 0 0 .113
+0.136 0 .113 0 0 .179 0
+0 0 .113 0 .113 0 0 .185
+
+
+.
+The associated upper bound is 2.224.
+The optimal solution to SDP2 violates the analogous homogeneous inequality X13 +X14≤ x1, which is
+of the form (15). One can check that, if this is added to SDP2, the optimal matrix X+ becomes
+
+
+1 0 .586 0 .293 1 /2 1 /2 0 .293
+0.586 0 .586 0 0 .293 0 .293 0
+0.293 0 0 .293 0 0 .293 0 .121
+1/2 0 .293 0 1 /2 0 0 .293
+1/2 0 .293 0 .293 0 1 /2 0
+0.293 0 0 .121 0 .293 0 0 .293
+
+
+.
+The associated upper bound is 2.172. 
+170 L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174
+Thus, if one wishes to add cutting planes, the choice between SDP1 and SDP2 is not at all clear-cut. It is
+true that we reduce the number of variables and constraints by using SDP1, but this can come at the cost of
+a weakened upper bound.
+We remark that Proposition 1 is not valid in the weighted case. In that case, one has to modify the
+inequality (20) by dividing each λi by wi and dividing each µij by√wiwj. It remains true, however, that
+adding homogeneous cutting planes to SDP2 always leads to at least as much bound improvement as adding
+the analogous cutting planes to SDP1. (This can be shown by a modification of the proof of Theorem 2.)
+4.2. The weakened theta function
+Recall that the weakened theta function of Lieder et al. [12] is obtained by taking the constraints (8) in
+SDP2 and replacing them with the single weaker constraint (19). We will denote this bound by ϑLRJ(G). A
+natural question is whether one obtains the same bound if one weakens SDP1 by replacing the constraints
+(3) with the following single constraint:
+
+{i,j}∈E
+Zij = 0. (23)
+The following proposition shows that the bound obtained in this way cannot be better than ϑLRJ(G).
+Proposition 3. If we weaken SDP1 by replacing (3) with (23), the resulting upper bound on α(G) is at least
+as large as ϑLRJ(G).
+Proof. We follow the strategy used in [7]. Suppose the pair ( x∗,X∗) satisfies (7), (9) and (19), and let
+γ =eTx∗ > 0 be the associated objective value. Consider the matrix Z∗ =X∗/γ. It satisfies (4), since
+Tr(Z∗) = Tr(X∗)/γ =eTx∗/γ =γ/γ = 1.
+It satisfies (5), since X∗ is psd; and it satisfies (23), since
+
+{i,j}∈E
+Z∗
+ij =
+
+ 
+{i,j}∈E
+X∗
+ij
+
+/γ = 0/γ = 0.
+Now, sinceX∗− (x∗)(x∗)T is psd, we haveeTX∗e−eT (x∗)(x∗)Te≥ 0. This implies that J•X∗≥γ2, which
+in turn implies that J•Z∗≥γ. 
+The following example shows that, in fact, the bound obtained by weakening SDP1 can be larger than
+ϑLRJ(G). For this reason we will denote it by ϑLRJ
++ (G).
+Example 4. Let n = 4 and E =
+
+{1, 2},{1, 3},{2, 3},{3, 4}
+
+. One can check with an SDP solver that
+α(G) =ϑ(G) =ϑLRJ(G) = 2, while ϑLRJ
++ (G)≈ 2.3855. 
+5. Computational results
+We have seen that relaxations based on SDP1 can be weaker than the analogous relaxations based
+on SDP2. We conducted some computational experiments to see whether this is likely to occur in
+practice. To this end, we began by creating some random graphs according to the classical Erd¨ os–R´ enyi
+process [25], in which each edge is present independently with probability p. For n∈ {20, 30, 100} and
+p∈{ 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9}, we constructed five graphs, making 135 graphs in total.
+L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174 171
+Table 1
+Mean percentage integrality gaps for various upper bounds.
+n Density ϑ ϑ ′ +(12) +(13) +(15) +(17) ϑLRJ
++ ϑLRJ
+0.1 0.00 0.00 0.00 0.00 0.00 0.00 17.83 6.50
+0.2 0.94 0.94 0.09 0.07 0.00 0.00 24.81 9.64
+0.3 2.85 2.75 0.69 0.68 0.32 0.32 28.89 14.05
+0.4 1.91 1.90 0.51 0.50 0.16 0.15 37.70 19.34
+20 0.5 0.79 0.79 0.00 0.00 0.00 0.00 32.65 15.01
+0.6 1.36 1.36 0.14 0.13 0.00 0.00 38.42 18.67
+0.7 6.22 6.01 4.00 4.00 3.36 3.34 61.86 40.24
+0.8 0.00 0.00 0.00 0.00 0.00 0.00 46.88 28.59
+0.9 2.36 2.36 2.02 2.02 1.34 1.34 44.73 23.56
+0.1 0.30 0.30 0.00 0.00 0.00 0.00 20.46 8.82
+0.2 0.28 0.21 0.00 0.00 0.00 0.00 27.83 11.09
+0.3 2.36 2.03 1.01 0.79 0.72 0.68 41.90 18.68
+0.4 5.89 5.57 4.25 4.22 3.49 3.47 54.21 28.94
+30 0.5 0.31 0.24 0.00 0.00 0.00 0.00 41.64 21.80
+0.6 1.36 1.19 0.24 0.24 0.12 0.12 49.09 30.75
+0.7 2.34 2.28 1.49 1.45 1.08 1.05 66.23 41.92
+0.8 1.31 1.31 0.82 0.82 0.69 0.69 50.09 32.74
+0.9 0.00 0.00 0.00 0.00 0.00 0.00 40.88 28.63
+For each graph, we then solved several different SDP relaxations, using CSDP version 6.1.1 (see Borchers
+[26]). The experiments were conducted on a 2.299 GHz AMD Opteron 6376 with 16Gb RAM, under a 64
+bit Linux operating system (Ubuntu 12.4). The C code was compiled with gcc 4.4.3, with -O3 optimisation.
+The results for the 90 smaller instances, with 20 and 30 nodes, are displayed in Tables 1–3. Table 1
+shows the mean gap (averaged over 5 instances) between the upper bound and the optimum, expressed as
+a percentage of the optimum, for eight SDP relaxations and nine different densities. The columns headed
+ϑ and ϑ′ are self-explanatory, but note that ϑ′(G) can be obtained in two ways: by adding constraints
+(11) to SDP1 or adding constraints (14) to SDP2. The column headed “+(12)” was obtained by adding both
+constraints (11) and (12) to SDP1, and the column headed “+(13)” was obtained by adding, in addition,
+constraints (13). Similarly, the column headed “+(15)” was obtained by adding both constraints (14) and
+(15) to SDP2, and the column headed “+(17)” was obtained by adding, in addition, constraints (17). We did
+not experiment with adding constraints (16) or (18), since they have no analogue for SDP1.
+We see that ϑ′(G) is only a little stronger than ϑ(G), a fact already observed in [16,9]. On the other
+hand, adding further cutting planes to either SDP1 or SDP2 typically leads to significant improvements in
+the upper bound. In fact, for at least 50 instances out of 90, the additional cutting planes were able to close
+all of the gap. This accords with results given in [16,9,7]. As for the bounds based on weakening SDP1 or
+SDP2, their performance is disappointing.
+The crucial point, however, is that the bounds based on SDP1 (in columns 5, 6 and 9) are frequently
+worse than their SDP2 counterparts (columns 7, 8 and 10). This indicates that the phenomenon mentioned
+in Section 4 is of practical importance.
+Tables 2 and 3 show the times (in seconds) taken to compute the various bounds for the small instances.
+It is apparent that the addition of the cutting planes (12), (13) or (15), (17) slows down the SDP solver
+significantly, whereas weakening the SDP relaxations leads to a big saving in time. Strangely, however, the
+times for the variants of SDP2 are not much longer than for the variants of SDP1, even though the former
+haven fewer constraints than the latter. It is also remarkable that “SDP2 + (15)” is both stronger and faster
+to compute than “ SDP1 + (13)” .
+For the instances with 100 nodes, the SDP solver was unable to compute some of the stronger bounds in
+a reasonable amount of time. The results with the remaining bounds are shown in Tables 4 and 5. We see
+that, again,ϑ′(G) is only a little stronger than ϑ(G),ϑLRJ(G) is much weaker, andϑLRJ
++ (G) is much weaker
+still. As for running times, the effect of adding or aggregating constraints is even more marked. Moreover, we
+now see that the bounds based on SDP2 now take about 50% longer to compute than those based on SDP1.
+172 L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174
+Table 2
+Mean time taken to solve relaxations based on SDP1.
+n Density ϑ ϑ ′ +(12) +(13) ϑLRJ
++
+0.1 0.00 0.03 0.90 8.43 0.00
+0.2 0.01 0.03 2.66 9.97 0.00
+0.3 0.01 0.03 6.26 13.00 0.00
+0.4 0.01 0.03 12.79 18.03 0.00
+20 0.5 0.01 0.02 18.37 22.20 0.00
+0.6 0.01 0.02 34.28 35.41 0.00
+0.7 0.02 0.02 61.24 59.58 0.00
+0.8 0.03 0.03 84.54 78.52 0.00
+0.9 0.04 0.02 95.45 90.67 0.00
+0.1 0.01 0.42 18.02 345.17 0.01
+0.2 0.02 0.24 58.52 316.61 0.01
+0.3 0.03 0.44 204.57 484.02 0.01
+0.4 0.04 0.23 405.88 665.35 0.01
+30 0.5 0.08 0.42 843.04 1053.02 0.01
+0.6 0.10 0.23 1505.87 1673.03 0.01
+0.7 0.18 0.25 2618.84 2610.24 0.01
+0.8 0.16 0.19 3222.37 3166.29 0.01
+0.9 0.23 0.21 4124.27 3857.24 0.01
+Table 3
+Mean time taken to solve relaxations based on SDP2.
+n Density ϑ ϑ ′ +(15) +(17) ϑLRJ
+0.1 0.01 0.04 0.88 8.89 0.01
+0.2 0.01 0.04 3.55 12.18 0.01
+0.3 0.01 0.05 7.73 15.23 0.00
+0.4 0.02 0.05 14.73 20.41 0.01
+20 0.5 0.02 0.04 20.33 24.04 0.01
+0.6 0.02 0.04 39.82 41.08 0.00
+0.7 0.03 0.04 64.19 61.60 0.01
+0.8 0.04 0.04 82.08 77.82 0.01
+0.9 0.05 0.03 106.64 101.67 0.01
+0.1 0.02 0.63 18.38 367.98 0.01
+0.2 0.02 0.35 69.34 415.20 0.01
+0.3 0.04 0.63 214.68 572.30 0.01
+0.4 0.06 0.33 433.66 736.79 0.01
+30 0.5 0.11 0.56 790.25 1041.33 0.01
+0.6 0.14 0.37 1537.81 1711.69 0.01
+0.7 0.20 0.35 2589.68 2673.10 0.02
+0.8 0.22 0.30 2948.88 2989.95 0.01
+0.9 0.31 0.26 3854.47 3850.89 0.01
+Table 4
+Mean percentage integrality gaps for instances with 100 nodes.
+Density ϑ ϑ ′ ϑLRJ
++ ϑLRJ
+0.1 7.71 7.00 45.20 23.20
+0.2 11.60 10.67 65.19 40.41
+0.3 13.69 12.64 79.08 52.91
+0.4 15.49 14.55 92.90 68.45
+0.5 16.80 16.03 107.30 81.78
+0.6 10.88 10.27 103.94 83.85
+0.7 8.28 7.94 109.61 87.54
+0.8 2.55 2.38 107.78 89.60
+0.9 0.00 0.00 88.35 73.55
+6. Concluding remarks
+It has been known since 1980s [5] that the Lov´ asz theta function can be computed by solving either of
+two equivalent SDPs, which we have labelled SDP1 and SDP2. We have shown, however, that the equivalence
+L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174 173
+Table 5
+Mean time taken to solve SDP relaxations for instances with 100
+nodes.
+Density SDP1 SDP2
+ϑ ϑ ′ ϑLRJ
++ ϑ ϑ ′ ϑLRJ
+0.1 0.45 249.19 0.12 0.85 483.40 0.20
+0.2 2.11 242.63 0.10 2.39 430.05 0.13
+0.3 4.84 233.45 0.13 6.53 381.38 0.21
+0.4 10.14 233.33 0.09 13.81 367.74 0.12
+0.5 18.80 237.10 0.12 25.30 478.52 0.20
+0.6 32.32 224.19 0.09 42.78 332.43 0.13
+0.7 51.99 214.54 0.12 65.34 320.85 0.28
+0.8 83.10 232.80 0.09 106.57 298.75 0.13
+0.9 122.62 213.00 0.09 147.30 312.65 0.13
+between SDP1 and SDP2 breaks down when they are either strengthened (via cutting planes) or weakened
+(via constraint aggregation).
+Our results have implications for the development of exact algorithms for the maximum stable set problem.
+In a branch-and-bound algorithm, a trade-off must be made between the quality of the upper bound and
+the time taken to compute it. If one wishes to use the theta function itself as the upper bound, then SDP1
+is to be preferred to SDP2. If, however, one wishes to use a strengthened or weakened variant of the theta
+number, then the choice between SDP1 and SDP2 is no longer obvious, and further experimentation will be
+needed.
+References
+[1] J. H˚ astad, Clique is hard to approximate withinn1−ϵ, Acta Math. 182 (1999) 105–142.
+[2] L. Lov´ asz, On the Shannon capacity of a graph, IEEE Trans. Inform. Theory 25 (1979) 1–7.
+[3] M. Gr¨ otschel, L. Lov´ asz, A.J. Schrijver, The ellipsoid method and its consequences in combinatorial optimization,
+Combinatorica 1 (1981) 169–197.
+[4] U. Feige, J. Kilian, Zero-knowledge and the chromatic number, J. Comput. System Sci. 57 (1998) 187–199.
+[5] M. Gr¨ otschel, L. Lov´ asz, A.J. Schrijver, Geometric Algorithms and Combinatorial Optimization, Wiley, New York, 1988.
+[6] L. Lov´ asz, A.J. Schrijver, Cones of matrices and set-functions and 0–1 optimization, SIAM J. Optim. 1 (1991) 166–190.
+[7] G. Gruber, F. Rendl, Computational experience with stable set relaxations, SIAM J. Optim. 13 (2003) 1014–1028.
+[8] E.A. Yildirim, X. Fan–Orzechowski, On extracting maximum stable sets in perfect graphs using Lov´ asz’s theta function,
+Comput. Optim. Appl. 33 (2006) 229–247.
+[9] I. Dukanovic, F. Rendl, Semidefinite programming relaxations for graph coloring and maximal clique problems, Math.
+Program. 109 (2007) 345–365.
+[10] M. Giandomenico, A.N. Letchford, Exploring the relationship between max-cut and stable set relaxations, Math. Program.
+106 (2006) 159–175.
+[11] A.J. Schrijver, A comparison of the Delsarte and Lov´ asz bounds, IEEE Trans. Inform. Theory IT-25 (1979) 425–429.
+[12] F. Lieder, F. Rad, F. Jarre, Unifying semidefinite and set-copositive relaxations of binary problems and randomization
+techniques, Comput. Optim. Appl. 61 (2015) 669–688.
+[13] M.W. Padberg, On the facial structure of set packing polyhedra, Math. Program. 5 (1973) 199–215.
+[14] R. Bornd¨ orfer, Aspects of Set Packing, Partitioning and Covering (Doctoral thesis), Technical University of Berlin, 1998.
+[15] E. Balas, S. Ceria, G. Cornu´ ejols, G. Pataki, Polyhedral methods for the maximum clique problem, in: D.S. Johnson,
+M.A. Trick (Eds.), Cliques, Coloring and Satisfiability: The 2nd DIMACS Implementation Challenge, American
+Mathematical Society, Providence, RI, 1996.
+[16] S. Burer, D. Vandenbussche, Solving lift-and-project relaxations of binary integer programs, SIAM J. Optim. 16 (2006)
+726–750.
+[17] M. Giandomenico, A.N. Letchford, F. Rossi, S. Smriglio, An application of the Lov´ asz–SchrijverM(K, K) operator to the
+stable set problem, Math. Program. 120 (2009) 381–401.
+[18] M. Giandomenico, F. Rossi, S. Smriglio, Strong lift-and-project cutting planes for the stable set problem, Math. Program.
+141 (2013) 165–192.
+[19] G.L. Nemhauser, G. Sigismondi, A strong cutting-plane/branch-and-bound algorithm for node packing, J. Oper. Res. Soc.
+Japan 43 (1992) 443–457.
+[20] S. Rebennack, M. Oswald, D.O. Theis, H. Seitz, G. Reinelt, P.M. Pardalos, A branch and cut solver for the maximum
+stable set problem, J. Comb. Optim. 21 (2011) 434–457.
+[21] F. Rossi, S. Smriglio, A branch-and-cut algorithm for the maximum cardinality stable set problem, Oper. Res. Lett. 28
+(2001) 63–74.
+174 L. Galli, A.N. Letchford / Discrete Optimization 25 (2017) 159–174
+[22] M. Laurent, A comparison of the Sherali–Adams, Lov´ asz–Schrijver and Lasserre relaxations for 0–1 programming, Math.
+Oper. Res. 28 (2001) 470–496.
+[23] M.W. Padberg, The Boolean quadric polytope: some characteristics, facets and relatives, Math. Program. 45 (1989)
+139–172.
+[24] M.M. Deza, M. Laurent, Geometry of Cuts and Metrics, Springer-Verlag, Berlin, 1997.
+[25] P. Erd¨ os, A. R´ enyi, On random graphs, Publ. Mat. 6 (1959) 290–297.
+[26] B. Borchers, CSDP, a C library for semidefinite programming, Optim. Methods Softw. 11 (1999) 613–623.
