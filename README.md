@@ -153,6 +153,22 @@ generate nothing of their own:
 | 9 | 5 | 22 922 | 8.78 % |
 | 10 | 5 | 1 663 003 | 14.19 % |
 
+### Half of this is proved and half is measured
+
+The distinction matters and the reports state it explicitly. The **lower half is exact**:
+the cone shifts α and ϑ by the same integer, so Δ transfers untouched and
+D(n, a) ≥ Δ_max(m) holds as an inequality between algebraic numbers, with no floating point
+anywhere in it. The **upper half is measured**: that nothing in the layer *exceeds* the
+transfer was observed on n = 9 and n = 10, at the 10⁻⁸ level that is all a solver can
+offer, and it is not proved at any size.
+
+So the 8.78 % and 14.19 % below are savings established by computing those layers and
+finding nothing new — an observation about two sizes, not a theorem. Proving the upper half
+would turn it into a reduction of the search space that holds without computing anything,
+which for twelve vertices (164 059 830 476 connected graphs, about 490 days at our measured
+rate) is the only way to say anything at all. That is the project's main open question:
+**[`OPEN_PROBLEM.md`](OPEN_PROBLEM.md)**.
+
 Those layers need not be enumerated: their maxima are already known from smaller sizes.
 
 **All five of the stage's sealed predictions hit** — the analytic claim that α and ϑ both
