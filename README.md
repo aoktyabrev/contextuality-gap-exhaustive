@@ -299,10 +299,15 @@ preferred, point `QUADC5_GENG` at its `geng` binary.
 
 **n = 11 is deliberately not part of this script.** Nobody is going to re-run a
 three-day sweep to check a repository, so the eleven-vertex results ship as *data*:
-`results/report_1c_n11.json`, `results/n11_top1000.csv`, `results/n11_nonzero.csv.gz`
-(3.3 GB compressed, 100 827 522 rows with a positive gap) and the certified enclosure in
-`results/report_7_1b.json`. The script leaves those files alone rather than regenerating
-them.
+`results/report_1c_n11.json` (the run's summary and top 50), `results/n11_top1000.csv`
+(the leading thousand graphs, each re-solved on a second solver), and the certified
+enclosure in `results/report_7_1b.json`. The script leaves those files alone rather than
+regenerating them.
+
+The full table of the 100 827 522 graphs with a positive gap is **not distributed**: it is
+10.9 GB raw and 3.3 GB gzipped, past what git or a GitHub release asset will hold. It is
+regenerable by the command below, and available on request. Everything the repository
+*claims* is derived from the top-1000 and the summary, both of which do ship.
 
 For anyone who does want to repeat it:
 

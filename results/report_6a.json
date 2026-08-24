@@ -1,0 +1,75 @@
+{
+ "calibration": {
+  "C5": {
+   "alpha_star": "5/2",
+   "expected": "5/2",
+   "ok": true,
+   "chi_f_of_G": "5/2",
+   "certified": true
+  },
+  "C7": {
+   "alpha_star": "7/2",
+   "expected": "7/2",
+   "ok": true,
+   "chi_f_of_G": "7/3",
+   "certified": true
+  }
+ },
+ "maximizers": [
+  {
+   "n": 5,
+   "graph6": "DUW",
+   "alpha": 2,
+   "theta": 2.236067978455097,
+   "alpha_star": "5/2",
+   "gap": 0.2639320215449028,
+   "certified": true
+  },
+  {
+   "n": 6,
+   "graph6": "EUZw",
+   "alpha": 2,
+   "theta": 2.2360679779503636,
+   "alpha_star": "5/2",
+   "gap": 0.2639320220496364,
+   "certified": true
+  },
+  {
+   "n": 7,
+   "graph6": "FCp`_",
+   "alpha": 3,
+   "theta": 3.3176672107524903,
+   "alpha_star": "7/2",
+   "gap": 0.18233278924750973,
+   "certified": true
+  },
+  {
+   "n": 8,
+   "graph6": "GCQb`o",
+   "alpha": 3,
+   "theta": 3.467843735535716,
+   "alpha_star": "4",
+   "gap": 0.5321562644642839,
+   "certified": true
+  },
+  {
+   "n": 9,
+   "graph6": "HCRbdO{",
+   "alpha": 3,
+   "theta": 3.6666666923999998,
+   "alpha_star": "4",
+   "gap": 0.33333330760000024,
+   "certified": true
+  },
+  {
+   "n": 10,
+   "graph6": "ICRb`yiu?",
+   "alpha": 3,
+   "theta": 3.7071067934,
+   "alpha_star": "4",
+   "gap": 0.29289320660000007,
+   "certified": true
+  }
+ ],
+ "top": {}
+}

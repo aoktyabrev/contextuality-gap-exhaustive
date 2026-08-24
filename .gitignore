@@ -33,3 +33,12 @@ results_published/
 letter_draft.md
 zenodo_steps.md
 results/n11_part_*
+
+# n=11 bulk: 10.9 GB raw, 3.3 GB gzipped -- too large for git and for a release
+# asset (GitHub caps assets at 2 GB).  The top-1000 and the JSON reports ship; the
+# bulk is regenerable by the command documented in the README.
+results/n11_nonzero.csv
+results/n11_nonzero.csv.gz
+
+# editor
+.idea/

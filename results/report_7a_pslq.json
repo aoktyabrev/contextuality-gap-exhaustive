@@ -1,0 +1,78 @@
+{
+ "J?`D@pgd?{?": {
+  "honest_digits": 236,
+  "theta": "4.7748885327460833146843966212883654880698560816327180298463808569128709198256839662812025753407947882697289521996573641186951930773016909547387050579247740228927093804562069796371297069737384699334825",
+  "candidates": [],
+  "rejected": [
+   {
+    "degree": 2,
+    "bound": "1e72",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 3,
+    "bound": "1e54",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 4,
+    "bound": "1e43",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 6,
+    "bound": "1e30",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 8,
+    "bound": "1e24",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 5,
+    "bound": "1e36",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 7,
+    "bound": "1e27",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 9,
+    "bound": "1e21",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 10,
+    "bound": "1e19",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 12,
+    "bound": "1e16",
+    "why": "no relation returned"
+   },
+   {
+    "degree": 16,
+    "bound": "1e12",
+    "why": "no relation returned"
+   }
+  ],
+  "degrees_searched": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   16
+  ],
+  "budget_rule": "B = floor((D-20)/(d+1)), PREREGISTRATION_STAGE2 3.1"
+ }
+}
