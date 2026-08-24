@@ -1,0 +1,133 @@
+[
+	{
+		"number": 1349,
+		"id": "M1657 N0649",
+		"data": "1,1,1,2,6,21,112,853,11117,261080,11716571,1006700565,164059830476,50335907869219,29003487462848061,31397381142761241960,63969560113225176176277,245871831682084026519528568,1787331725248899088890200576580,24636021429399867655322650759681644",
+		"name": "Number of simple connected graphs on n unlabeled nodes.",
+		"comment": [
+			"The singleton graph K_1 is considered connected even though it is conventionally taken to have vertex connectivity 0. - _Eric W. Weisstein_, Jul 21 2020",
+			"Inverse Euler transform of A000088 but with a(0) omitted so that Sum_{k\u003e=0} A000088(n) * x^n = Product_{k\u003e0} (1 - x^k)^-a(k). It is debatable if there is a connected graph with 0 nodes and so a(0)=0 or better start from a(1)=1. - _Michael Somos_, Jun 01 2013. [As Harary once remarked in a famous paper (\"Is the null-graph a pointless concept?\"), the empty graph has every property, which is why a(0)=1. - _N. J. A. Sloane_, Apr 08 2014]"
+		],
+		"reference": [
+			"P. Butler and R. W. Robinson, On the computer calculation of the number of nonseparable graphs, pp. 191 - 208 of Proc. Second Caribbean Conference Combinatorics and Computing (Bridgetown, 1977). Ed. R. C. Read and C. C. Cadogan. University of the West Indies, Cave Hill Campus, Barbados, 1977. vii+223 pp.",
+			"F. Harary and R. C. Read, Is the null-graph a pointless concept?, pp. 37-44 of Graphs and Combinatorics (Washington, Jun 1973), Ed. by R. A. Bari and F. Harary. Lect. Notes Math., Vol. 406. Springer-Verlag, 1974.",
+			"F. Harary and E. M. Palmer, Graphical Enumeration, Academic Press, NY, 1973, page 48, c(x). Also page 242.",
+			"O. B. Lupanov, Asymptotic estimates of the number of graphs with n edges. (Russian) Dokl. Akad. Nauk SSSR 126 1959 498--500. MR0109796 (22 #681).",
+			"O. B. Lupanov, \"On asymptotic estimates of the number of graphs and networks with n edges.\" Problems of Cybernetics [in Russian], Moscow 4 (1960): 5-21.",
+			"R. C. Read and R. J. Wilson, An Atlas of Graphs, Oxford, 1998.",
+			"R. W. Robinson, Numerical implementation of graph counting algorithms, AGRC Grant, Math. Dept., Univ. Newcastle, Australia, 1978.",
+			"N. J. A. Sloane, A Handbook of Integer Sequences, Academic Press, 1973 (includes this sequence).",
+			"N. J. A. Sloane and Simon Plouffe, The Encyclopedia of Integer Sequences, Academic Press, 1995 (includes this sequence).",
+			"Robin J. Wilson, Introduction to Graph Theory, Academic Press, 1972. (But see A126060!)"
+		],
+		"link": [
+			"N. J. A. Sloane, \u003ca href=\"/A001349/b001349.txt\"\u003eTable of n, a(n) for n = 0..75\u003c/a\u003e [Computed using Keith Briggs's values for A000088]",
+			"Michal Adamaszek, \u003ca href=\"https://arxiv.org/abs/1208.3892\"\u003eSmall flag complexes with torsion\u003c/a\u003e, arXiv:1208.3892 [math.CO], 2012.",
+			"Cesar O. Aguilar and Bahman Gharesifard, \u003ca href=\"https://mast.queensu.ca/~bahman/CA-BG-2014.pdf\"\u003eGraph Controllability Classes for the Laplacian Leader-Follower Dynamics\u003c/a\u003e, 2014. See Table 1.",
+			"Jonathan Baker, Kevin N. Vander Meulen, and Adam Van Tuyl, \u003ca href=\"https://doi.org/10.1016/j.disc.2018.07.029\"\u003eShedding vertices of vertex decomposable well-covered graphs\u003c/a\u003e, Discrete Mathematics (2018) Vol. 341, Issue 12, 3355-3369. Also \u003ca href=\"https://arxiv.org/abs/1606.04447\"\u003earXiv:1606.04447\u003c/a\u003e [math.NT], 2016.",
+			"Johannes Bausch and Felix Leditzky, \u003ca href=\"https://arxiv.org/abs/1910.00471\"\u003eError Thresholds for Arbitrary Pauli Noise\u003c/a\u003e, arXiv:1910.00471 [quant-ph], 2019.",
+			"Gunnar Brinkmann, Kris Coolsaet, Jan Goedgebeur and Hadrien Melot, \u003ca href=\"https://arxiv.org/abs/1204.3549\"\u003eHouse of Graphs: a database of interesting graphs\u003c/a\u003e, arXiv:1204.3549 [math.CO], 2012.",
+			"P. Butler and R. W. Robinson, \u003ca href=\"/A002218/a002218.pdf\"\u003eOn the computer calculation of the number of nonseparable graphs\u003c/a\u003e, pp. 191 - 208 of Proc. Second Caribbean Conference Combinatorics and Computing (Bridgetown, 1977). Ed. R. C. Read and C. C. Cadogan. Univ. West Indies, Cave Hill Campus, Barbados, 1977. vii+223 pp. [Annotated scanned copy]",
+			"Peter J. Cameron, \u003ca href=\"https://doi.org/10.1016/0012-365X(89)90081-2\"\u003eSome sequences of integers\u003c/a\u003e, Disc. Math. 75 (1989), 89-102.",
+			"Peter J. Cameron, \u003ca href=\"https://doi.org/10.1016/S0167-5060(08)70569-7\"\u003eSome sequences of integers\u003c/a\u003e, in \"Graph Theory and Combinatorics 1988\", ed. B. Bollobas, Ann. Disc. Math., 43 (1989), 89-102.",
+			"Peter J. Cameron, \u003ca href=\"https://cs.uwaterloo.ca/journals/JIS/VOL3/groups.html\"\u003eSequences realized by oligomorphic permutation groups\u003c/a\u003e, J. Int. Seq. 3 (2000), Art. 00.1.5.",
+			"Pritish Chakraborty, Indradyumna Roy, Soumen Chakrabarti, and Abir De, \u003ca href=\"https://arxiv.org/abs/2510.22479\"\u003eContextual Tokenization for Graph Inverted Indices\u003c/a\u003e, arXiv:2510.22479 [cs.LG], 2025. See p. 14.",
+			"CombOS - Combinatorial Object Server, \u003ca href=\"https://combos.org/nauty\"\u003eGenerate graphs\u003c/a\u003e.",
+			"Gauvain Devillez and Jan Goedgebeur, \u003ca href=\"https://arxiv.org/abs/2603.23070\"\u003eKnowledge management in House of Graphs\u003c/a\u003e, arXiv:2603.23070 [math.CO], 2026. See p. 1.",
+			"Matt DeVos, Adam Dyck, Jonathan Jedwab, and Samuel Simon, \u003ca href=\"https://arxiv.org/abs/1810.01583\"\u003eWhich graphs occur as gamma-graphs?\u003c/a\u003e, arXiv:1810.01583 [math.CO], 2018.",
+			"J. P. Dolch, \u003ca href=\"/A001349/a001349.pdf\"\u003eNames of Hamiltonian graphs\u003c/a\u003e, Proc. 4th S-E Conf. Combin., Graph Theory, Computing, Congress. Numer. 8 (1973), 259-271. (Annotated scanned copy of 3 pages)",
+			"Steven R. Finch, \u003ca href=\"https://doi.org/10.1017/9781316997741\"\u003eMathematical Constants II\u003c/a\u003e, Encyclopedia of Mathematics and Its Applications, Cambridge Univ. Press, Cambridge, 2018.",
+			"E. Friedman, \u003ca href=\"/A000088/a000088a.gif\"\u003eIllustration of small graphs\u003c/a\u003e.",
+			"Chakshu Gupta, \u003ca href=\"https://arxiv.org/abs/2606.29553\"\u003eAn annihilation-number Caro-Wei bound: a TxGraffiti conjecture and an independence-number bracket\u003c/a\u003e, arXiv:2606.29553 [math.CO], 2026. See p. 4.",
+			"Frank Harary, \u003ca href=\"https://doi.org/10.1090/S0002-9947-1955-0068198-2\"\u003eThe number of linear, directed, rooted, and connected graphs\u003c/a\u003e, Trans. Am. Math. Soc. 78 (1955) 445-463.",
+			"Yoshiaki Horiike and Yuki Kawaguchi, \u003ca href=\"https://arxiv.org/abs/2505.11466\"\u003eA comprehensive exploration of interaction networks reveals a connection between entanglement and network structure\u003c/a\u003e, arXiv:2505.11466 [quant-ph], 2025. See p. 9.",
+			"Avraham Itzhakov and Michael Codish, \u003ca href=\"https://modref.github.io/papers/ModRef2019_Incremental%20Symmetry%20Breaking%20Constraints%20for%20Graph%20Search%20Problems.pdf\"\u003eIncremental Symmetry Breaking Constraints for Graph Search Problems\u003c/a\u003e, Ben-Gurion Univ. Negev (Beer-Sheva, Israel, 2019).",
+			"Markus Kirchweger and Stefan Szeider, \u003ca href=\"https://doi.org/10.1145/3670405\"\u003eSAT Modulo Symmetries for Graph Generation and Enumeration\u003c/a\u003e, ACM Trans. Comput. Logic (2024). See p. 27.",
+			"Sascha Kurz, \u003ca href=\"https://arxiv.org/abs/2512.18016\"\u003eEquivalent bounded confidence processes\u003c/a\u003e, arXiv:2512.18016 [physics.soc-ph], 2025. See p. 18, Tables 1 and 2.",
+			"Steffen Lauritzen, Alessandro Rinaldo, and Kayvan Sadeghi, \u003ca href=\"https://arxiv.org/abs/1709.03885\"\u003eOn Exchangeability in Network Models\u003c/a\u003e, arXiv:1709.03885 [math.ST], 2017.",
+			"Xin Li, Rebecca J. Stones, Haidong Wang, Hualiang Deng, Xiaoguang Liu, and Gang Wang, \u003ca href=\"https://doi.org/10.1371/journal.pone.0050093\"\u003eNetMODE: Network Motif Detection without Nauty\u003c/a\u003e, PLoS ONE 7(12) (2012), Art. e50093. - From _N. J. A. Sloane_, Feb 02 2013",
+			"Yu-Ting Lin and Hsin-Po Wang, \u003ca href=\"https://arxiv.org/abs/2510.04249\"\u003eAmbidextrous Degree Sequence Bounds for Pessimistic Cardinality Estimation\u003c/a\u003e, arXiv:2510.04249 [cs.DB], 2025. See p. 16.",
+			"Mengjie Liu, \u003ca href=\"http://dspace.mit.edu/handle/1721.1/7582\"\u003ePredictive Modeling of Polycyclic Aromatic Hydrocarbon Formation During Pyrolysis\u003c/a\u003e, Ph. D. Thesis, Chem. Eng., MIT (2020). See pp. 28, 39, 70, 92, 113, 142.",
+			"Richard J. Mathar, \u003ca href=\"https://arxiv.org/abs/1808.06264\"\u003eCounting Connected Graphs without Overlapping Cycles\u003c/a\u003e, arXiv:1808.06264 [math.CO], 2018.",
+			"Brendan D. McKay, \u003ca href=\"https://users.cecs.anu.edu.au/~bdm/data/graphs.html\"\u003eSimple Graphs\u003c/a\u003e.",
+			"A. Miličević and N. Trinajstić, \u003ca href=\"https://web.archive.org/web/20171110085409/http://www.sicmm.org/~FAMNIT-knjiga/wwwANG/web-pages/405_469_tcm18-67839[1].pdf\"\u003eCombinatorial Enumeration in Chemistry\u003c/a\u003e, Chem. Modell. 4 (2006), 405-469.",
+			"Marius Möller, Laura Hindersin, and Arne Traulsen, \u003ca href=\"https://arxiv.org/abs/1810.12807\"\u003eExploring and mapping the universe of evolutionary graphs\u003c/a\u003e, arXiv:1810.12807 [q-bio.PE], 2018.",
+			"Marius Möller, Laura Hindersin, and Arne Traulsen, \u003ca href=\"https://doi.org/10.1038/s42003-019-0374-x\"\u003eExploring and mapping the universe of evolutionary graphs identifies structural properties affecting fixation probability and time\u003c/a\u003e, Comm. Biol. 2 (2019), Art. 137.",
+			"L. Naughton and G. Pfeiffer, \u003ca href=\"https://cs.uwaterloo.ca/journals/JIS/VOL16/Naughton/naughton2.html\"\u003eInteger Sequences Realized by the Subgroup Pattern of the Symmetric Group\u003c/a\u003e, J. Int. Seq. 16 (2013), Art. 13.5.8.",
+			"Michal Pecho, Jakub Svoboda, Lenka Kopfová, Josef Tkadlec, and Krishnendu Chatterjee, \u003ca href=\"https://arxiv.org/abs/2608.06552\"\u003eReplacers and their evolutionary stability in the Moran process on graphs\u003c/a\u003e, arXiv:2608.06552 [q-bio.PE], 2026. See p. 7.",
+			"Marko Petkovšek and Tomaž Pisanski, \u003ca href=\"https://hrcak.srce.hr/file/4232\"\u003eCounting disconnected structures: chemical trees, fullerenes, I-graphs and others\u003c/a\u003e, Croatica Chem. Acta, 78(4) (2005), 563-567.",
+			"Jitendra Prajapati, \u003ca href=\"https://arxiv.org/abs/2607.26364\"\u003eA counterexample to the claw-free Schur-positivity conjecture\u003c/a\u003e, arXiv:2607.26364 [math.CO], 2026. See p. 3.",
+			"Robert W. Robinson, \u003ca href=\"https://doi.org/10.1016/S0021-9800(70)80089-8\"\u003eEnumeration of non-separable graphs\u003c/a\u003e, J. Combin. Theory 9 (1970), 327-356.",
+			"Gordon Royle, \u003ca href=\"https://web.archive.org/web/20171110084636/http://staffhome.ecm.uwa.edu.au/~00013890/remote/graphs/\"\u003eSmall graphs\u003c/a\u003e, 1999.",
+			"Yoav Spector and Moshe Schwartz, \u003ca href=\"https://arxiv.org/abs/1808.05632\"\u003eStudy of potential Hamiltonians for quantum graphity\u003c/a\u003e, arXiv:1808.05632 [cond-mat.stat-mech], 2018.",
+			"M. L. Stein and P. R. Stein, \u003ca href=\"https://doi.org/10.2172/4180737\"\u003eEnumeration of Linear Graphs and Connected Linear Graphs up to p = 18 Points\u003c/a\u003e. Report LA-3775, Los Alamos Sci. Lab. Univ. California, Los Alamos, NM, Oct 1967.",
+			"Peter Steinbach, \u003ca href=\"/A000088/a000088_17.pdf\"\u003eField Guide to Simple Graphs, Volume 1\u003c/a\u003e, Part 17 (For Volumes 1, 2, 3, 4 of this book see A000088, A008406, A000055, A000664, respectively.)",
+			"Derrick Stolee, \u003ca href=\"https://arxiv.org/abs/1104.5261\"\u003eIsomorph-free generation of 2-connected graphs with applications\u003c/a\u003e, arXiv:1104.5261 [math.CO], 2011.",
+			"Ugur Tamer and Özgür E. Müstecaplıoğlu, \u003ca href=\"https://arxiv.org/abs/2605.12828\"\u003eThe Quad-C_5 Graph: Maximum Contextuality Gap on Eight Vertices\u003c/a\u003e, arXiv:2605.12828 [quant-ph], 2026. See p. 2.",
+			"Rodrigo Stange Tessinari, Marcia Helena Moreira Paiva, Maxwell E. Monteiro, Marcelo E. V. Segatto, Anilton Garcia, George T. Kanellos, Reza Nejabati, and Dimitra Simeonidou, \u003ca href=\"https://doi.org/10.1109/BICOP.2018.8658361\"\u003eOn the Impact of the Physical Topology on the Optical Network Performance\u003c/a\u003e, IEEE British and Irish Conference on Optics and Photonics (BICOP 2018), London.",
+			"James Turner and William H. Kautz, \u003ca href=\"https://doi.org/10.1137/1012125\"\u003eA survey of progress in graph theory in the Soviet Union\u003c/a\u003e SIAM Rev. 12 1970 suppl. iv+68 pp. MR0268074 (42 #2973). See p. 18. - _N. J. A. Sloane_, Apr 08 2014",
+			"Eric Weisstein's World of Mathematics, \u003ca href=\"https://mathworld.wolfram.com/ConnectedGraph.html\"\u003eConnected Graph\u003c/a\u003e.",
+			"Eric Weisstein's World of Mathematics, \u003ca href=\"https://mathworld.wolfram.com/k-ConnectedGraph.html\"\u003ek-Connected Graph\u003c/a\u003e.",
+			"Myung-Gon Yoon, Peter Rowlinson, Dragos Cvetkovic, and Zoran Stanic, \u003ca href=\"https://doi.org/10.1002/asjc.793\"\u003eControllability of multi-agent dynamical systems with a broadcasting control signal\u003c/a\u003e, Asian J. Control 16(4) (2014), 1066-1072. See Table 1.",
+			"\u003ca href=\"/index/Cor#core\"\u003eIndex entries for \"core\" sequences\u003c/a\u003e"
+		],
+		"formula": [
+			"For asymptotics see Lupanov 1959, 1960, also Turner and Kautz, p. 18. - _N. J. A. Sloane_, Apr 08 2014"
+		],
+		"example": [
+			"G.f. = 1 + x + x^2 + 2*x^3 + 6*x^4 + 21*x^5 + 112*x^6 + 853*x^7 + ...."
+		],
+		"maple": [
+			"# To produce all connected graphs on 4 nodes, for example",
+			"with(GraphTheory):",
+			"L:=[NonIsomorphicGraphs](4,output=graphs,outputform=adjacency, restrictto=connected):",
+			"# _N. J. A. Sloane_, Oct 07 2013"
+		],
+		"mathematica": [
+			"\u003c\u003c\"Combinatorica`\"; max = 19; A000088 = Table[ NumberOfGraphs[n], {n, 0, max}]; f[x_] = 1 - Product[ 1/(1 - x^k)^a[k], {k, 1, max}]; a[0] = a[1] = a[2] = 1; coes = CoefficientList[ Series[ f[x], {x, 0, max}], x]; sol = First[ Solve[ Thread[ Rest[ coes + A000088 ] == 0]]]; Table[ a[n], {n, 0, max}] /. sol (* _Jean-François Alcover_, Nov 24 2011 *)",
+			"(* Alternative: *)",
+			"terms = 20;",
+			"mob[m_, n_] := If[Mod[m, n] == 0, MoebiusMu[m/n], 0];",
+			"EULERi[b_] := Module[{a, c, i, d}, c = {}; For[i = 1, i \u003c= Length[b], i++, c = Append[c, i*b[[i]] - Sum[c[[d]]*b[[i - d]], {d, 1, i - 1}]]]; a = {}; For[i = 1, i \u003c= Length[b], i++, a = Append[a, (1/i)*Sum[mob[i, d]*c[[d]], {d, 1, i}]]]; Return[a]];",
+			"permcount[v_] := Module[{m = 1, s = 0, k = 0, t}, For[i = 1, i \u003c= Length[v], i++, t = v[[i]]; k = If[i \u003e 1 \u0026\u0026 t == v[[i - 1]], k + 1, 1]; m *= t*k; s += t]; s!/m];",
+			"edges[v_] := Sum[GCD[v[[i]], v[[j]]], {i, 2, Length[v]}, {j, 1, i - 1}] + Total[Quotient[v, 2]];",
+			"a88[n_] := Module[{s = 0}, Do[s += permcount[p]*2^edges[p], {p, IntegerPartitions[n]}]; s/n!];",
+			"Join[{1}, EULERi[Array[a88, terms]]] (* _Jean-François Alcover_, Jul 28 2018, after _Andrew Howroyd_ *)"
+		],
+		"program": [
+			"(SageMath)",
+			"property=lambda G: G.is_connected()",
+			"def a(n):",
+			"    return len([1 for G in graphs(n) if property(G)])",
+			"# _Ralf Stephan_, May 30 2014",
+			"(Python)",
+			"from functools import lru_cache",
+			"from itertools import combinations",
+			"from fractions import Fraction",
+			"from math import prod, gcd, factorial",
+			"from sympy import mobius, divisors",
+			"from sympy.utilities.iterables import partitions",
+			"def A001349(n):",
+			"    if n == 0: return 1",
+			"    @lru_cache(maxsize=None)",
+			"    def b(n): return int(sum(Fraction(1\u003c\u003csum(p[r]*p[s]*gcd(r,s) for r,s in combinations(p.keys(),2))+sum((q\u003e\u003e1)*r+(q*r*(r-1)\u003e\u003e1) for q, r in p.items()),prod(q**r*factorial(r) for q, r in p.items())) for p in partitions(n)))",
+			"    @lru_cache(maxsize=None)",
+			"    def c(n): return n*b(n)-sum(c(k)*b(n-k) for k in range(1,n))",
+			"    return sum(mobius(n//d)*c(d) for d in divisors(n,generator=True))//n # _Chai Wah Wu_, Jul 02-03 2024"
+		],
+		"xref": [
+			"Cf. A000088, A002218, A006290, A000719, A201922 (Multiset transform).",
+			"Row sums of A054924."
+		],
+		"keyword": "nonn,core,nice,changed",
+		"offset": "0,4",
+		"author": "_N. J. A. Sloane_",
+		"ext": [
+			"More terms from Ronald C. Read"
+		],
+		"references": 184,
+		"revision": 241,
+		"time": "2026-08-14T15:48:35-04:00",
+		"created": "1991-04-30T03:00:00-04:00"
+	}
+]
