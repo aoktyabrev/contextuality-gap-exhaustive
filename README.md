@@ -329,16 +329,34 @@ The certified enclosure of §"Eleven vertices" is cheap to re-derive on its own:
 .venv/bin/python runners/certify_enclosure.py     # ~3 minutes, exact arithmetic only
 ```
 
-Measured on 8 cores under WSL2, from an empty directory; building the virtual
-environment took 16 s and building `geng` 6 s, so the setup is not the cost — the
-enumeration is:
+Measured on 8 cores under WSL2, from an empty directory. Building the virtual environment
+took 14 s and building `geng` 8 s, so the setup is not the cost — the enumeration is:
 
 | stage | what it does | time |
 |---|---|--:|
-| Stage 0 | n ≤ 9: calibration against the source paper, filters, the 261 080-graph sweep | 19 min |
-| Stage 1 | n = 10: the 11 716 571-graph sweep, exact certificates, the series | 53 min |
-| Stage 2 | high-precision values, minimal polynomials, exact certificates | 63 min |
-| **total** | | **2 h 15 min** |
+| Stage 0 | n ≤ 9: calibration against the source paper, filters, the 261 080-graph sweep | 1117 s |
+| Stage 1 | n = 10: the 11 716 571-graph sweep, exact certificates, the series | 3090 s |
+| Stage 2 | high-precision values, minimal polynomials, exact certificates | 3670 s |
+| Stage 3 | comparison against the prior database, invariants, boundary certificates | 109 s |
+| Stage 4 | the top of the series, extreme-value analysis | 3305 s |
+| Stage 5 | the decomposition by independence number | 269 s |
+| Stage 7 | inheritance, the series table, the eleven-vertex enclosure | 189 s |
+| **total** | | **3 h 15 min** |
+| | | 23 322 comparisons, 0 mismatches |
+
+Two of those numbers deserve a word. **Stage 4 costs an hour to produce a negative result:**
+fitting a continuous extreme-value tail to an atomic distribution, and establishing that it
+cannot be done. That is what the hour buys, and it is not a defect of the pipeline. And
+**Stage 2's 3670 s is dominated by integer-relation searches that find nothing** — the
+negative bounds on the degree of the ten- and eleven-vertex values.
+
+Timings are stable across independent runs: a second clean room gave 1133 s, 3115 s and
+3695 s for stages 0, 1 and 2 against the 1117 s, 3090 s and 3670 s above — under 1.5 %
+apart on each.
+
+One step is skipped in a clean checkout and says so rather than passing silently: the
+cross-check that re-runs the *original authors'* code needs a second virtual environment
+built from their declared dependencies (`.venv-authors`), which the script does not create.
 
 ### Checking the preregistrations
 
