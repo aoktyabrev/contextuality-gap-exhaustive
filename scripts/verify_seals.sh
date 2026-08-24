@@ -43,6 +43,7 @@ check cf8bb87 PREREGISTRATION_STAGE4.sha256 "Stage 4"
 check 58d604a PREREGISTRATION_STAGE5.sha256 "Stage 5"
 check 7776955 PREREGISTRATION_STAGE6.sha256 "Stage 6"
 check b4dbe59 PREREGISTRATION_STAGE7.sha256 "Stage 7"
+check ed63e79 PREREGISTRATION_STAGE7_1B.sha256 "Stage 7.1b"
 check 0cb06ad PREDICTION_EDGES.sha256        "Edge-count prediction |E| = 5(n-6)"
 
 # Predictions committed without a .sha256 of their own: the seal is the commit itself,
