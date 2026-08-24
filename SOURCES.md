@@ -702,3 +702,58 @@ G′′ or u and v belong to opposite vertex sets`» — то есть cosum е�
 что верхние слои разложения по числу независимости целиком порождаются этим переносом,
 и что граница наследования при n = 9 и n = 10 равна a\* = 5. Само неравенство H7
 (D(n,a) ≥ T(n,a)) — прямое следствие S7.1 и S7.2, а не самостоятельный результат.
+
+---
+
+## S8 — Nie, Ranestad, Sturmfels: алгебраическая степень SDP (литчек Stage 7.1b, ПОСЛЕ формулировки)
+
+J. Nie, K. Ranestad, B. Sturmfels, *The Algebraic Degree of Semidefinite Programming*,
+Mathematical Programming **122** (2010) 379–405; препринт arXiv:math/0611562v3, 8 Sep 2008.
+https://arxiv.org/abs/math/0611562 — обращение **2026-08-24**.
+Выгрузка: `sources/nie_ranestad_sturmfels_sdp_degree.pdf` (23 страницы, 1 474 359 байт),
+текст `sources/nie_ranestad_sturmfels_sdp_degree.txt`.
+
+Порядок соблюдён: утверждение 7.1b.d об обрыве ряда замкнутых форм сформулировано и
+закоммичено (`ae3ca4b`) прежде, чем этот источник был открыт.
+
+### S8.1 — степень оптимума SDP и невыразимость в радикалах
+
+Строки 98–103:
+
+> `Our analysis shows that the algebraic degree of SDP equals six when m = 2 and n = 3.`
+> `If the matrix B and the plane U are defined over Q then the coordinates of the optimal`
+> `solution Ŷ are algebraic numbers of degree six. By Galois theory, the solution Ŷ cannot in`
+> `general be expressed in terms of radicals. For any specific numerical instance we can use the`
+> `command “galois” in maple to compute the Galois group, which is then typically found to`
+> `be the symmetric group S6.`
+
+### S8.2 — степень «обычно очень велика»
+
+Строки 148–151:
+
+> `The algebraic degree of semidefinite programming addresses the computational complexity`
+> `at a fundamental level. To solve the semidefinite programming exactly essentially reduces`
+> `to solve a class of univariate polynomial equations whose degrees are the algebraic degree.`
+> `As we will see later in this paper, the algebraic degree is usually very big, even for some small`
+> `problems.`
+
+Строка 863 — конкретные значения при n = 6:
+
+> `δ(6, 6, 4) = 1400 , δ (7, 6, 4) = 2040 , δ (8, 6, 4) = 2100 , δ (9, 6, 4) = 1470 .`
+
+### S8.3 — что это подтверждает и чего не подтверждает
+
+**Подтверждает** формулировку 7.1b.d: типичная алгебраическая степень оптимума SDP с
+рациональными данными велика уже при матрицах 3×3 (шесть, с группой Галуа S₆ и без
+выражения в радикалах) и исчисляется тысячами при 6×6. Ожидать замкнутых форм для
+матриц 11×11 нет оснований; обрыв ряда на n = 11 — норма, а не неудача.
+
+**Не подтверждает буквально**: результат относится к **типичной** (generic) SDP, а наша —
+структурированная (ϑ), с нулями на рёбрах и следом 1, и потому не покрывается их
+теоремами напрямую. Низкие степени при n ≤ 10 (от 1 до 4) — именно отклонение от
+типичного, и объяснять их надо структурой и симметрией, а не общей теорией.
+
+Наблюдение, записываемое как наблюдение и без пересчёта каких-либо корреляций:
+|Aut| максимизаторов по ряду равен 10, 10, 14, 8, 12, 16 и **2** при n = 11. Граф,
+на котором степень уходит за 48, — наименее симметричный из всех семи, то есть первый
+в ряду, близкий к типичному в смысле S8.1–S8.2. Механизма отсюда не выводится.
