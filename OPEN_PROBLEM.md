@@ -96,3 +96,40 @@ at n = 12. Whether a\* grows with n is open, and we have no argument either way.
 
 No approach of our own. The question is combinatorial — a bound on ϑ under a constraint on
 α — and not something more computation would settle.
+
+---
+
+## Literature check, run after the problem was written
+
+The statement above was written and committed (`3b80add`) before this search was made.
+Result: **the problem does not reduce to a known bound.** The nearest tools are these, and
+none is parameterised by α in a way that helps.
+
+**The sandwich itself.** α(G) ≤ ϑ(G) ≤ χ_f(Ḡ) — the upper end is the fractional relaxation,
+and it is what our sweep already uses as a filter. It bounds ϑ by a *chromatic* quantity of
+the complement, not by n and α, and in the upper layers it is far from tight.
+
+**Orthogonality dimension** (Knuth §28, `sources/knuth_sandwich_theorem.txt` line 1640,
+after Lovász): if G has an orthogonal labeling of dimension d with no zero vectors then
+ϑ(G) ≤ d. This is the quantity our campaign calls d\*, and it bounds ϑ by a representation
+parameter, again not by α. Computing d\* is itself hard — η_d is non-convex, and our own
+values rest on restarts and are marked *indicated* rather than proved.
+
+**The regular case** (Knuth §24, line ~1449): for r-regular G with adjacency matrix B,
+ϑ(G) ≤ n·Λ(−B)/(Λ(B)+Λ(−B)) — the Hoffman-type ratio bound. It is parameterised by n and
+the spectrum, which is closer in spirit, but requires regularity. The eleven-vertex
+maximizer is not regular (degrees 2, 3⁸, 4²), and upper-layer graphs are sparse and
+irregular in general.
+
+**The product bound** (Knuth line 1395): ϑ(G)ϑ(Ḡ) ≥ n, with equality for vertex-symmetric
+graphs. This constrains ϑ from *below* given the complement, which is the wrong direction.
+
+**Sparse-graph results.** For graphs of bounded maximum degree d the integrality gap of the
+ϑ-based SDP is Õ(d/log^{3/2} d) (Bansal, Gupta & Guruganesh, STOC 2015, arXiv:1504.04767).
+These are asymptotic approximation ratios, not bounds tight enough to decide whether a
+particular layer can exceed a particular transferred value.
+
+**Conclusion.** No off-the-shelf reduction. The problem asks for something the literature
+does not seem to provide: an upper bound on ϑ under a *constraint on α* rather than on
+degree, spectrum or chromatic number, and tight in the regime where α is large relative
+to n. Whether that is hard or merely unasked, we do not know.
