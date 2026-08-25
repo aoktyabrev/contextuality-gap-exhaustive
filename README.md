@@ -136,7 +136,7 @@ Stated without rounding in our own favour:
   disagreement of 9.39·10⁻⁸ — and no certificates were built for a billion graphs, nor
   were they ever intended.
 
-## Inheritance: which layers need not be swept at all
+## Inheritance, and how far it goes
 
 Take a maximizer on m vertices, add k−1 mutually independent vertices and one universal
 vertex. The result is connected, its α and its ϑ both rise by exactly k−1, and Δ is
@@ -145,43 +145,54 @@ Both ingredients are Knuth's (`SOURCES.md` §S7): ϑ is additive on a disjoint u
 and takes the max on a join (19.2). **The mechanism is a known property, not a finding
 here.**
 
-What is new is that above a boundary the inequality is an *equality* — the upper layers
-generate nothing of their own:
+> **This is proved and it is a theorem:** D(n, a) ≥ Δ_max(m) for a = a_m + (n − m) − 1,
+> an inequality between algebraic numbers with no floating point in it.
 
-| n | boundary a\* | graphs in layers a ≥ a\* | share of the sweep |
-|--:|--:|---:|---:|
-| 9 | 5 | 22 922 | 8.78 % |
-| 10 | 5 | 1 663 003 | 14.19 % |
+### The equality does not hold in general — refuted 2026-08-25
 
-### Half of this is proved and half is measured
+The interesting question was whether the inequality is an *equality* above some boundary,
+so that the upper layers generate nothing of their own. On the complete enumerations at
+n = 9, 10 and 11 it looked that way, with the boundary at a\* = 5 on all three.
 
-The distinction matters and the reports state it explicitly. The **lower half is exact**:
-the cone shifts α and ϑ by the same integer, so Δ transfers untouched and
-D(n, a) ≥ Δ_max(m) holds as an inequality between algebraic numbers, with no floating point
-anywhere in it. The **upper half is measured**: that nothing in the layer *exceeds* the
-transfer was observed on n = 9 and n = 10, at the 10⁻⁸ level that is all a solver can
-offer, and it is not proved at any size.
+**It is false.** `` L@JC?_ASKAGPBH `` on 13 vertices, with α = 5 and 19 edges, has
 
-So the 8.78 % and 14.19 % below are savings established by computing those layers and
-finding nothing new — an observation about two sizes, not a theorem. Proving the upper half
-would turn it into a reduction of the search space that holds without computing anything,
-which for twelve vertices (164 059 830 476 connected graphs, about 490 days at our measured
-rate) is the only way to say anything at all. That is the project's main open question:
-**[`OPEN_PROBLEM.md`](OPEN_PROBLEM.md)**.
+    Delta   >= 45375481648 / 55555555557        = 0.816758669642764
+    T(13,5) <= 12398216523947 / 16000000000000  = 0.774888532746687
 
-Those layers need not be enumerated: their maxima are already known from smaller sizes.
+— strictly greater by 0.0419, both bounds from exact primal–dual certificates, compared
+as fractions. Layer 5 at thirteen vertices generates a value of its own.
+See `REPORT_STAGE8.md`.
 
-**All five of the stage's sealed predictions hit** — the analytic claim that α and ϑ both
-shift by exactly k−1, equality for every non-empty layer a ≥ 5 including the ones never
-computed before, the boundary landing at exactly 5 on both sizes, agreement within 10⁻⁶
-(it came out exact), and that the saving would be modest rather than a serious speedup.
-The weak form of the hypothesis — D(n, a) ≥ transfer bound — is violated nowhere; the
-strong form holds above the boundary and fails below it, where layers 2, 3 and 4 exceed
-the transfer bound by 0.04 to 0.20 and so generate values of their own.
+**Why the earlier boundary survived three stages.** The rule that fits all sixteen known
+points is a ≥ max(5, n − 6) — both a floor at 5 *and* a cap of 6 on n − a. At n = 9, 10
+and 11 that expression is identically 5, so three complete enumerations could not tell it
+apart from the simpler "a ≥ 5"; the two first differ at n = 12. The replacement rule is
+sealed, with its own weaknesses, in `PREDICTION_INHERITANCE_RULE.md`.
 
-`REPORT_STAGE7.md` has the verdict in full. **n = 11 is excluded from it**, because the
-hypothesis was formed by looking at n = 11; the check runs on n = 9 and n = 10, closed
-since 2026-08-18.
+### What this costs, stated plainly
+
+Version **v2.0 of this repository stated the consequence more broadly than turned out to
+be true** — as though upper layers could be skipped as a matter of method. They cannot.
+The archived v2.0 record cannot be rewritten, so the correction lives here and in
+`REPORT_STAGE8.md`.
+
+The correct statement is narrower and is a fact about two sizes, not a technique:
+
+| n | layers a ≥ 5 | graphs there | share of the sweep | status |
+|--:|---|---:|---:|---|
+| 9 | a = 5…8 | 22 922 | 8.78 % | verified equal by complete enumeration |
+| 10 | a = 5…9 | 1 663 003 | 14.19 % | verified equal by complete enumeration |
+
+Those two figures remain correct for those two sizes, where every layer was actually
+computed. **They do not carry forward.** At n = 13 the corresponding layer is not equal
+to its transfer bound, so skipping upper layers at an unswept size is not sound.
+
+Proving *any* version of the equality — for which layers, at which sizes — is the
+project's main open question: **[`OPEN_PROBLEM.md`](OPEN_PROBLEM.md)**. For twelve
+vertices (164 059 830 476 connected graphs, about 490 days at our measured rate) a proof
+is the only route to saying anything at all.
+
+`REPORT_STAGE7.md` has the original verdict, `REPORT_STAGE8.md` its refutation.
 
 ## Structure across the series
 
@@ -386,6 +397,8 @@ PREREGISTRATION*.sha256  stage was run and sealed by hash; ten seals, all checke
                          scripts/verify_seals.sh against their sealing commits
 PREDICTION_N11.md        Delta_max(11), sealed before any eleven-vertex graph existed
 PREDICTION_EDGES.md      |E| = 5(n-6), sealed at 40% coverage; refuted at 100%
+PREDICTION_INHERITANCE_RULE.md  a >= max(5, n-6), sealed after the counterexample
+OPEN_PROBLEM.md          the main unsolved question, and a literature check on it
 SOURCES.md               every external number, quoted verbatim with a line number and an
                          access date, from dumps kept in sources/
 REPORT.md                Stage 0 — n ≤ 9
@@ -396,6 +409,7 @@ REPORT_STAGE4.md         Stage 4 — where the top of the series is anomalous
 REPORT_STAGE5.md         Stage 5 — the series split into layers by alpha
 REPORT_STAGE6.md         Stage 6 — the ceiling, and the exhaustive sweep at n = 11
 REPORT_STAGE7.md         Stage 7 — inheritance of the upper layers, boundary a* = 5
+REPORT_STAGE8.md         Stage 8 — that boundary refuted by a certified counterexample
 REPORT_STAGE7_1B.md      Stage 7.1b — the certified enclosure for n = 11
 quadc5/                  the library: graph6 codec, alpha, theta, filters, structure,
                          hiprec (arbitrary-precision refinement), numfield (exact
