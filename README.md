@@ -450,5 +450,7 @@ Archived on Zenodo. Cite the concept DOI, which always resolves to the current v
     Exact contextuality gaps for graphs up to ten vertices.
     Zenodo. https://doi.org/10.5281/zenodo.22031808
 
-The DOI for this specific release is [10.5281/zenodo.22031809](https://doi.org/10.5281/zenodo.22031809).
+The DOI for this specific release (v2.0) is
+[10.5281/zenodo.22092303](https://doi.org/10.5281/zenodo.22092303); v1.0.0 was
+[10.5281/zenodo.22031809](https://doi.org/10.5281/zenodo.22031809).
 Please cite the paper this continues as well: arXiv:2605.12828.
