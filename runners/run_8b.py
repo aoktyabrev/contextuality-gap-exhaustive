@@ -27,6 +27,12 @@ TARGETS = [
 # Stage 8-bis (PREREGISTRATION_STAGE8B.md): the reinforced target plus controls where a
 # counterexample is KNOWN to exist from complete enumeration, so that a second failure
 # can be read at all.
+# Addendum to 8-bis (PREREGISTRATION_STAGE8B_ADDENDUM.md): the third point at which
+# d=6 and d=7 disagree.  Same threshold 2/3 as the other two, transferred from (9,3).
+TARGETS_ADD = [
+    dict(tag="D1", n=14, a=7, thr=0.6666666667, src="(9,3)", role="target"),
+]
+
 TARGETS_8BIS = [
     dict(tag="G",  n=12, a=5, thr=0.6666666667, src="(9,3)",  role="target"),
     dict(tag="K1", n=11, a=4, thr=0.6666666667, src="(9,3)",  role="control", known=0.7748885),
@@ -190,11 +196,16 @@ if __name__ == "__main__":
     ap.add_argument("--out", default=os.path.join(RES, "report_8b.json"))
     ap.add_argument("--bis", action="store_true",
                     help="Stage 8-bis: reinforced target plus controls")
+    ap.add_argument("--add", action="store_true",
+                    help="8-bis addendum: the third differing point (14,7)")
     ap.add_argument("--target-restarts", type=int, default=1000,
                     help="restarts for the 8-bis target (10x budget)")
     args = ap.parse_args()
     methods = ["hill", "anneal", "cone"]
-    if args.bis:
+    if args.add:
+        jobs = [(t, m, args.restarts, args.steps, args.seed)
+                for t in TARGETS_ADD for m in methods]
+    elif args.bis:
         jobs = []
         for t in TARGETS_8BIS:
             for m in methods:
