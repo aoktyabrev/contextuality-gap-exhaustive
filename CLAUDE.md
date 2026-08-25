@@ -143,6 +143,22 @@ so `run_stage0.sh` stops on its own.
   overwriting each other while the work is live. The same applies to any file a re-run
   would clobber: `run_2b.py` needed `--out` for exactly this reason.
 
+- **Three points do not distinguish two formulas when one degenerates into the other
+  over that range.** Twice now a coincidence on three consecutive sizes was taken for a
+  law. The graph-count growth ratio: 85.9 was a measured one-step ratio (n = 10 → 11)
+  presented as a constant of the series, and the ratios 23.5, 44.9, 85.9, 163.0 were all
+  computable from counts already in hand — they double each step. The inheritance
+  boundary: `a >= 5` and `a >= max(5, n - 6)` are *identically equal* at n = 9, 10, 11,
+  because max(5, n-6) is 5 at all three; three complete enumerations could not tell them
+  apart, and the campaign carried the wrong one through three stages until a
+  counterexample at n = 13 separated them.
+
+  Before calling a pattern on k points a law, write down at least one alternative
+  formula that agrees with it on those k points and check whether any available data
+  separates them. If none does, say so in the claim: "consistent with, and not
+  distinguished from, X on this range." Both errors above would have been caught by that
+  question and by nothing else.
+
 ## Regenerating the bulk data
 
 `results/n9_all.csv` (29 MB, all 261 080 rows) is gitignored; the committed copy is
