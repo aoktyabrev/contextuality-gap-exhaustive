@@ -334,16 +334,17 @@ took 14 s and building `geng` 8 s, so the setup is not the cost — the enumerat
 
 | stage | what it does | time |
 |---|---|--:|
-| Stage 0 | n ≤ 9: calibration against the source paper, filters, the 261 080-graph sweep | 1117 s |
-| Stage 1 | n = 10: the 11 716 571-graph sweep, exact certificates, the series | 3090 s |
-| Stage 2 | high-precision values, minimal polynomials, exact certificates | 3670 s |
-| Stage 3 | comparison against the prior database, invariants, boundary certificates | 109 s |
-| Stage 4 | the top of the series, extreme-value analysis | 3305 s |
-| Stage 5 | the decomposition by independence number | 269 s |
-| Stage 6 | the ceiling α\*, the rational-ϑ scan | ~5 s |
-| Stage 7.1 | integer-relation searches: the negative bound on the field degree at n = 11 | ~65 min |
-| Stage 7 | inheritance, the series table, the eleven-vertex enclosure | 189 s |
-| **total** | | **≈ 4 h 20 min** |
+| Stage 0 | n ≤ 9: calibration against the source paper, filters, the 261 080-graph sweep | 1120 s |
+| Stage 1 | n = 10: the 11 716 571-graph sweep, exact certificates, the series | 3181 s |
+| Stage 2 | high-precision values, minimal polynomials, exact certificates | 3722 s |
+| Stage 3 | comparison against the prior database, invariants, boundary certificates | 111 s |
+| Stage 4 | the top of the series, extreme-value analysis | 3374 s |
+| Stage 5 | the decomposition by independence number | 277 s |
+| Stage 6 | the ceiling α\*, the rational-ϑ scan | 27 s |
+| Stage 7.1 | integer-relation searches: the negative bound on the field degree at n = 11 | 3947 s |
+| Stage 7 | inheritance, the series table, the eleven-vertex enclosure | 193 s |
+| **total** | | **15 973 s = 4 h 26 min** |
+| | | 23 833 comparisons, **0 mismatches** |
 
 **Over two of those four hours go into producing negative results, and that is not a defect
 of the pipeline.** Stage 4 spends an hour establishing that a continuous extreme-value tail
@@ -353,9 +354,9 @@ polynomial of degree ≤ 48 with height ≤ 10⁹" is made of, and it is reprodu
 than taken on trust. Much of Stage 2's hour goes the same way, into the negative bound for
 the ten-vertex rank 2.
 
-Timings are stable across independent runs: a second clean room gave 1133 s, 3115 s and
-3695 s for stages 0, 1 and 2 against the 1117 s, 3090 s and 3670 s above — under 1.5 %
-apart on each.
+Timings are stable across independent runs. Three clean rooms gave 1133 / 1117 / 1120 s for
+Stage 0, 3115 / 3090 / 3181 s for Stage 1 and 3695 / 3670 / 3722 s for Stage 2 — under 3 %
+apart on each. The table above is the run on the released tag itself, not a composite.
 
 One step is skipped in a clean checkout and says so rather than passing silently: the
 cross-check that re-runs the *original authors'* code needs a second virtual environment
