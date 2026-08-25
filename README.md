@@ -340,15 +340,18 @@ took 14 s and building `geng` 8 s, so the setup is not the cost — the enumerat
 | Stage 3 | comparison against the prior database, invariants, boundary certificates | 109 s |
 | Stage 4 | the top of the series, extreme-value analysis | 3305 s |
 | Stage 5 | the decomposition by independence number | 269 s |
+| Stage 6 | the ceiling α\*, the rational-ϑ scan | ~5 s |
+| Stage 7.1 | integer-relation searches: the negative bound on the field degree at n = 11 | ~65 min |
 | Stage 7 | inheritance, the series table, the eleven-vertex enclosure | 189 s |
-| **total** | | **3 h 15 min** |
-| | | 23 322 comparisons, 0 mismatches |
+| **total** | | **≈ 4 h 20 min** |
 
-Two of those numbers deserve a word. **Stage 4 costs an hour to produce a negative result:**
-fitting a continuous extreme-value tail to an atomic distribution, and establishing that it
-cannot be done. That is what the hour buys, and it is not a defect of the pipeline. And
-**Stage 2's 3670 s is dominated by integer-relation searches that find nothing** — the
-negative bounds on the degree of the ten- and eleven-vertex values.
+**Over two of those four hours go into producing negative results, and that is not a defect
+of the pipeline.** Stage 4 spends an hour establishing that a continuous extreme-value tail
+cannot be fitted to an atomic distribution. Stage 7.1 spends another hour on integer-relation
+searches that find nothing — which is exactly what the claim "not a root of any integer
+polynomial of degree ≤ 48 with height ≤ 10⁹" is made of, and it is reproduced here rather
+than taken on trust. Much of Stage 2's hour goes the same way, into the negative bound for
+the ten-vertex rank 2.
 
 Timings are stable across independent runs: a second clean room gave 1133 s, 3115 s and
 3695 s for stages 0, 1 and 2 against the 1117 s, 3090 s and 3670 s above — under 1.5 %

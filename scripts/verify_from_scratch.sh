@@ -74,6 +74,22 @@ stage "Stage 4 (top of the series)" bash -c \
 stage "Stage 5 (layers by alpha)" bash -c \
   ".venv/bin/python runners/run_5a.py && \
    .venv/bin/python runners/run_5bcef.py"
+stage "Stage 6 (ceiling, rational-theta scan)" bash -c \
+  ".venv/bin/python runners/run_6a.py && \
+   .venv/bin/python runners/run_6ab.py"
+
+# The eleven-vertex sweep is out of scope here (71.8 h), but the integer-relation
+# searches that establish the negative bound on its field degree are not: the deep one
+# is about 65 minutes and it is what the claim "no polynomial of degree <= 48 with
+# height <= 1e9" is made of.  Reproduced rather than taken on trust.
+stage "Stage 7.1 (PSLQ: the negative bound on the degree)" bash -c \
+  ".venv/bin/python runners/run_2b.py --codes 'J?\`D@pgd?{?' --dps 240 \
+       --out results/report_7a_pslq.json && \
+   .venv/bin/python runners/run_2b.py --codes 'J?\`D@pgd?{?' --dps 500 \
+       --degrees 2 3 4 5 6 7 8 \
+       --extra-degrees 9 10 12 14 16 18 20 24 28 32 40 48 \
+       --out results/report_7a_pslq_deep.json"
+
 stage "Stage 7 (inheritance, series, enclosure)" bash -c \
   ".venv/bin/python runners/run_7.py && \
    .venv/bin/python runners/run_7_series.py && \
