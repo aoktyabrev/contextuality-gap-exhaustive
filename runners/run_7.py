@@ -114,12 +114,20 @@ def layers_by_enumeration(m, eps=1e-9):
 
 
 def layers_from_csv(path, positive_only):
+    """Streaming.  The n = 11 table is 10.9 GB and 100 827 522 rows; holding it in a
+    list would need tens of gigabytes -- the same trap that nearly cost the n = 11
+    sweep its own collection step.  Only the per-layer maximum is kept."""
     op = gzip.open if path.endswith(".gz") else open
-    rows = []
+    D = {}
     with op(path, "rt") as fh:
-        for r in csv.DictReader(fh):
-            rows.append((r["graph6"], int(r["alpha"]), float(r["delta"]), int(r["edges"])))
-    D = layers_from_rows(rows)
+        rd = csv.reader(fh)
+        head = next(rd)
+        ia, idx, ie = head.index("alpha"), head.index("delta"), head.index("edges")
+        for r in rd:
+            a = int(r[ia])
+            d = float(r[idx])
+            if a not in D or d > D[a][0]:
+                D[a] = (d, r[0], int(r[ie]))
     for a in list(D):
         if D[a][0] < TAU:
             D[a] = (0.0, D[a][1], D[a][2])
@@ -136,7 +144,12 @@ def block_7b(args):
     D[9] = layers_from_csv(p9 if os.path.exists(p9) else p9 + ".gz", False)
     p10 = os.path.join(RES, "n10_nonzero.csv")
     D[10] = layers_from_csv(p10 if os.path.exists(p10) else p10 + ".gz", True)
-    for m in (9, 10):
+    # n = 11, when its table is present.  Stage 8 block 8.a: recorded as fact, never as
+    # verdict -- the hypothesis was formed by looking at these very numbers.
+    p11 = os.path.join(RES, "n11_nonzero.csv")
+    if os.path.exists(p11) or os.path.exists(p11 + ".gz"):
+        D[11] = layers_from_csv(p11 if os.path.exists(p11) else p11 + ".gz", True)
+    for m in sorted(set(D) & {9, 10, 11}):
         print(f"  n={m}: layers " + ", ".join(f"a={a}:{v[0]:.7f}" for a, v in sorted(D[m].items())))
 
     def T(n, a):
@@ -152,7 +165,7 @@ def block_7b(args):
         return best, arg
 
     table = []
-    for n in (9, 10):
+    for n in sorted(set(D) & {9, 10, 11}):
         for a in sorted(D[n]):
             d = D[n][a][0]
             t, arg = T(n, a)
@@ -167,6 +180,10 @@ def block_7b(args):
         print(f"{r['n']:>2} {r['a']:>2} {r['D']:>12.7f} {r['T']:>12.7f} "
               f"{str(r['source']):>9} {r['diff']:>+12.7f}  {v}")
     weak = [r for r in table if r["diff"] < -TAU]
+    n11 = [r for r in table if r["n"] == 11]
+    if n11:
+        print("\n  NB: the n=11 rows are FACT, not verdict -- the hypothesis was formed\n"
+              "      by looking at them (PREREGISTRATION_STAGE7 0, PREREGISTRATION_STAGE8 1).")
     rec("H7 weak form: D(n,a) >= T(n,a) everywhere", not weak,
         f"{len(weak)} violations" if weak else "no violations")
     return D, table
@@ -175,7 +192,7 @@ def block_7b(args):
 def block_7c(table):
     print("\n=== 7.c  inheritance boundary ===")
     out = {}
-    for n in (9, 10):
+    for n in sorted({r["n"] for r in table}):
         rows = [r for r in table if r["n"] == n and not r["empty"]]
         rows.sort(key=lambda r: r["a"])
         boundary = None
