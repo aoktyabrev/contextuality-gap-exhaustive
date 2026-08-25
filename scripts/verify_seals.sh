@@ -64,6 +64,7 @@ check_doc() {                   # check_doc <sealing-commit> <file> <label>
 }
 
 check a12ffc5 PREREGISTRATION_STAGE8B.sha256   "Stage 8-bis"
+check 00d2049 PREREGISTRATION_STAGE8C.sha256   "Stage 8-c"
 check_doc 9b833a2 PREDICTION_N11.md "Prediction Delta_max(11)"
 check 6a06f4a PREDICTION_INHERITANCE_RULE.sha256 "Inheritance rule a >= max(5, n-6)"
 check 490ab59 PREDICTION_N12_LAYERS.sha256  "Prediction: upper layers at n=12"
