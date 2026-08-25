@@ -22,7 +22,7 @@ primal/dual certificates, no floating-point in the verdict — or **[numerical]*
 | 8 | 0.4678437 | root of y⁴ + 11y³ + 68y² + 64y − 46 | 4 (S₄) | **[proved]** |
 | 9 | 0.6666667 | 2/3 | 1 | **[proved]** |
 | 10 | 0.7071068 | √2/2 | 2 | **[proved]** |
-| 11 | 0.7748885 | none found | > 48 | see §3 |
+| 11 | 0.7748885 | none found | none within deg ≤ 48 | see §3 |
 
 Equivalently for n = 8, ϑ is the root in (3,4) of x⁴ − x³ + 23x² − 155x + 158.
 This is the value your integer-relation search reported as a false positive;
@@ -48,8 +48,11 @@ and against OEIS A001349, which also matches our counts at n = 8, 9 and 10.
 
 ## 3. No closed form at n = 11 — and why the earlier ones are the surprise
 
-PSLQ at 495 verified digits, degrees 2…48, zero candidates; height bounds
-from 10¹⁵⁸ (degree 2) to 10⁹ (degree 48). **[proved as a negative bound]**
+PSLQ at 495 verified digits, degrees 2…48, zero candidates; height bounds from 10¹⁵⁸
+(degree 2) through 10⁹⁵ (degree 4) down to 10⁹ (degree 48). **[proved as a negative
+bound]** Note what this does and does not say: a relation of degree below 48 whose
+coefficients exceed those bounds is *not* excluded, and no computation at that
+precision could exclude it.
 
 Nie, Ranestad & Sturmfels (*The Algebraic Degree of Semidefinite Programming*,
 Math. Program. **122** (2010)) give the context: for 3×3 matrices the typical
