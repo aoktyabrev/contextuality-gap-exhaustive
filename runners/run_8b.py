@@ -23,6 +23,17 @@ TARGETS = [
     dict(tag="T3", n=13, a=5, thr=0.7748885327, src="(11,4)"),
     dict(tag="T4", n=13, a=6, thr=0.6666666667, src="(9,3)"),
 ]
+
+# Stage 8-bis (PREREGISTRATION_STAGE8B.md): the reinforced target plus controls where a
+# counterexample is KNOWN to exist from complete enumeration, so that a second failure
+# can be read at all.
+TARGETS_8BIS = [
+    dict(tag="G",  n=12, a=5, thr=0.6666666667, src="(9,3)",  role="target"),
+    dict(tag="K1", n=11, a=4, thr=0.6666666667, src="(9,3)",  role="control", known=0.7748885),
+    dict(tag="K2", n=10, a=3, thr=0.6666666667, src="(9,3)",  role="control", known=0.7071068),
+    dict(tag="K3", n=9,  a=2, thr=0.3431457506, src="(8,2)",  role="control", known=0.3837191),
+    dict(tag="K4", n=13, a=5, thr=0.7748885327, src="(11,4)", role="control", known=0.8167587),
+]
 # A candidate must clear the transfer bound by a real margin, not by solver noise.
 # The cone starts exactly ON the bound and SCS returns its value a few 1e-9 either
 # side, so without a margin every cone start reports a false counterexample on its
@@ -156,7 +167,8 @@ def one_pair(job):
     log = []
     ts = time.time()
     best, evals = run_search(method, tgt, restarts, steps, rng, restarts * steps, log)
-    row = dict(target=tgt["tag"], n=tgt["n"], a=tgt["a"], threshold=tgt["thr"],
+    row = dict(target=tgt["tag"], role=tgt.get("role", "target"),
+               known=tgt.get("known"), n=tgt["n"], a=tgt["a"], threshold=tgt["thr"],
                method=method, best_delta=best["delta"], evaluations=evals,
                seconds=time.time() - ts,
                exceeded=best["delta"] > tgt["thr"] + MARGIN,
@@ -176,14 +188,27 @@ if __name__ == "__main__":
     ap.add_argument("--procs", type=int, default=7)
     ap.add_argument("--seed", type=int, default=20260819)
     ap.add_argument("--out", default=os.path.join(RES, "report_8b.json"))
+    ap.add_argument("--bis", action="store_true",
+                    help="Stage 8-bis: reinforced target plus controls")
+    ap.add_argument("--target-restarts", type=int, default=1000,
+                    help="restarts for the 8-bis target (10x budget)")
     args = ap.parse_args()
     methods = ["hill", "anneal", "cone"]
-    jobs = [(t, m, args.restarts, args.steps, args.seed) for t in TARGETS for m in methods]
+    if args.bis:
+        jobs = []
+        for t in TARGETS_8BIS:
+            for m in methods:
+                if t["tag"] == "K4" and m == "cone":
+                    continue          # K4 tests cold starts only, preregistration 1
+                r = args.target_restarts if t["role"] == "target" else args.restarts
+                jobs.append((t, m, r, args.steps, args.seed))
+    else:
+        jobs = [(t, m, args.restarts, args.steps, args.seed) for t in TARGETS for m in methods]
     budget = args.restarts * args.steps
     print(f"{len(jobs)} pairs, budget {budget} theta-evaluations each "
           f"({len(jobs)*budget} total), {args.procs} processes", flush=True)
-    rep = {"budget_per_pair": budget, "total_budget": len(jobs) * budget,
-           "methods": methods, "margin": MARGIN, "targets": []}
+    rep = {"budget_per_pair": budget, "total_budget": sum(j[2] * j[3] for j in jobs),
+           "methods": methods, "margin": MARGIN, "bis": args.bis, "targets": []}
     t0 = time.time()
     with Pool(args.procs) as pool:
         for row in pool.imap_unordered(one_pair, jobs):

@@ -1,0 +1,650 @@
+{
+ "alternatives": {
+  "family": "inherit  <=>  a >= max(c, n - d)",
+  "fitting": [
+   {
+    "c": 5,
+    "d": 6,
+    "predicts_12_5": "generates",
+    "predicts_13_6": "generates",
+    "threshold_at": {
+     "9": 5,
+     "10": 5,
+     "11": 5,
+     "12": 6,
+     "13": 7,
+     "14": 8,
+     "15": 9
+    }
+   },
+   {
+    "c": 5,
+    "d": 7,
+    "predicts_12_5": "inherits",
+    "predicts_13_6": "inherits",
+    "threshold_at": {
+     "9": 5,
+     "10": 5,
+     "11": 5,
+     "12": 5,
+     "13": 6,
+     "14": 7,
+     "15": 8
+    }
+   }
+  ]
+ },
+ "layer_maximizers": [
+  {
+   "graph6": "HQyurzU",
+   "n": 9,
+   "alpha": 2,
+   "edges": 22,
+   "density": 0.6111111111111112,
+   "aut": 8,
+   "triangles": 16,
+   "girth": 3,
+   "c5": 12,
+   "c7": 0,
+   "edges_covered_by_c5": 22,
+   "chi_comp": 3,
+   "degseq": [
+    4,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+   ],
+   "layer": [
+    9,
+    2
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 7
+  },
+  {
+   "graph6": "HCRbdO{",
+   "n": 9,
+   "alpha": 3,
+   "edges": 15,
+   "density": 0.4166666666666667,
+   "aut": 12,
+   "triangles": 1,
+   "girth": 3,
+   "c5": 12,
+   "c7": 0,
+   "edges_covered_by_c5": 15,
+   "chi_comp": 4,
+   "degseq": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4,
+    4
+   ],
+   "layer": [
+    9,
+    3
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 6
+  },
+  {
+   "graph6": "H?bB@_W",
+   "n": 9,
+   "alpha": 4,
+   "edges": 9,
+   "density": 0.25,
+   "aut": 18,
+   "triangles": 0,
+   "girth": 9,
+   "c5": 0,
+   "c7": 0,
+   "edges_covered_by_c5": 0,
+   "chi_comp": 5,
+   "degseq": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "layer": [
+    9,
+    4
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 5
+  },
+  {
+   "graph6": "H?AEAJ~",
+   "n": 9,
+   "alpha": 5,
+   "edges": 13,
+   "density": 0.3611111111111111,
+   "aut": 60,
+   "triangles": 5,
+   "girth": 3,
+   "c5": 1,
+   "c7": 0,
+   "edges_covered_by_c5": 5,
+   "chi_comp": 6,
+   "degseq": [
+    1,
+    1,
+    1,
+    3,
+    3,
+    3,
+    3,
+    3,
+    8
+   ],
+   "layer": [
+    9,
+    5
+   ],
+   "role": "\u043d\u0430\u0441\u043b\u0435\u0434\u0443\u0435\u0442",
+   "n_minus_a": 4
+  },
+  {
+   "graph6": "IUZurzmmo",
+   "n": 10,
+   "alpha": 2,
+   "edges": 30,
+   "density": 0.6666666666666666,
+   "aut": 120,
+   "triangles": 30,
+   "girth": 3,
+   "c5": 12,
+   "c7": 0,
+   "edges_covered_by_c5": 30,
+   "chi_comp": 3,
+   "degseq": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+   ],
+   "layer": [
+    10,
+    2
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 8
+  },
+  {
+   "graph6": "ICRb`yiu?",
+   "n": 10,
+   "alpha": 3,
+   "edges": 20,
+   "density": 0.4444444444444444,
+   "aut": 16,
+   "triangles": 4,
+   "girth": 3,
+   "c5": 16,
+   "c7": 0,
+   "edges_covered_by_c5": 20,
+   "chi_comp": 4,
+   "degseq": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+   ],
+   "layer": [
+    10,
+    3
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 7
+  },
+  {
+   "graph6": "I?`DA_wJ?",
+   "n": 10,
+   "alpha": 4,
+   "edges": 12,
+   "density": 0.26666666666666666,
+   "aut": 4,
+   "triangles": 0,
+   "girth": 5,
+   "c5": 2,
+   "c7": 2,
+   "edges_covered_by_c5": 7,
+   "chi_comp": 5,
+   "degseq": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3
+   ],
+   "layer": [
+    10,
+    4
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 6
+  },
+  {
+   "graph6": "I?AEB?WHG",
+   "n": 10,
+   "alpha": 5,
+   "edges": 10,
+   "density": 0.2222222222222222,
+   "aut": 4,
+   "triangles": 0,
+   "girth": 7,
+   "c5": 0,
+   "c7": 1,
+   "edges_covered_by_c5": 0,
+   "chi_comp": 6,
+   "degseq": [
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3
+   ],
+   "layer": [
+    10,
+    5
+   ],
+   "role": "\u043d\u0430\u0441\u043b\u0435\u0434\u0443\u0435\u0442",
+   "n_minus_a": 5
+  },
+  {
+   "graph6": "I??CE@An_",
+   "n": 10,
+   "alpha": 6,
+   "edges": 11,
+   "density": 0.24444444444444444,
+   "aut": 48,
+   "triangles": 1,
+   "girth": 3,
+   "c5": 1,
+   "c7": 0,
+   "edges_covered_by_c5": 5,
+   "chi_comp": 7,
+   "degseq": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    3,
+    3,
+    6
+   ],
+   "layer": [
+    10,
+    6
+   ],
+   "role": "\u043d\u0430\u0441\u043b\u0435\u0434\u0443\u0435\u0442",
+   "n_minus_a": 4
+  },
+  {
+   "graph6": "JQyurzUnvZ?",
+   "n": 11,
+   "alpha": 2,
+   "edges": 36,
+   "density": 0.6545454545454545,
+   "aut": 24,
+   "triangles": 42,
+   "girth": 3,
+   "c5": 24,
+   "c7": 0,
+   "edges_covered_by_c5": 36,
+   "chi_comp": 3,
+   "degseq": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "layer": [
+    11,
+    2
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 9
+  },
+  {
+   "graph6": "JCRbeo{ifI?",
+   "n": 11,
+   "alpha": 3,
+   "edges": 25,
+   "density": 0.45454545454545453,
+   "aut": 2,
+   "triangles": 9,
+   "girth": 3,
+   "c5": 29,
+   "c7": 0,
+   "edges_covered_by_c5": 25,
+   "chi_comp": 4,
+   "degseq": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    5,
+    5,
+    5,
+    5
+   ],
+   "layer": [
+    11,
+    3
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 8
+  },
+  {
+   "graph6": "J?`D@pgd?{?",
+   "n": 11,
+   "alpha": 4,
+   "edges": 17,
+   "density": 0.3090909090909091,
+   "aut": 2,
+   "triangles": 0,
+   "girth": 4,
+   "c5": 11,
+   "c7": 4,
+   "edges_covered_by_c5": 17,
+   "chi_comp": 6,
+   "degseq": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    4
+   ],
+   "layer": [
+    11,
+    4
+   ],
+   "role": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u0435\u0442",
+   "n_minus_a": 7
+  },
+  {
+   "graph6": "J?AAD@cHb|_",
+   "n": 11,
+   "alpha": 5,
+   "edges": 18,
+   "density": 0.32727272727272727,
+   "aut": 8,
+   "triangles": 7,
+   "girth": 3,
+   "c5": 5,
+   "c7": 0,
+   "edges_covered_by_c5": 12,
+   "chi_comp": 6,
+   "degseq": [
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    4,
+    4,
+    8
+   ],
+   "layer": [
+    11,
+    5
+   ],
+   "role": "\u043d\u0430\u0441\u043b\u0435\u0434\u0443\u0435\u0442",
+   "n_minus_a": 6
+  },
+  {
+   "graph6": "J??CE@_Gcw?",
+   "n": 11,
+   "alpha": 6,
+   "edges": 11,
+   "density": 0.2,
+   "aut": 12,
+   "triangles": 0,
+   "girth": 7,
+   "c5": 0,
+   "c7": 1,
+   "edges_covered_by_c5": 0,
+   "chi_comp": 7,
+   "degseq": [
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    4
+   ],
+   "layer": [
+    11,
+    6
+   ],
+   "role": "\u043d\u0430\u0441\u043b\u0435\u0434\u0443\u0435\u0442",
+   "n_minus_a": 5
+  },
+  {
+   "graph6": "J???CB?OV~_",
+   "n": 11,
+   "alpha": 7,
+   "edges": 15,
+   "density": 0.2727272727272727,
+   "aut": 1200,
+   "triangles": 5,
+   "girth": 3,
+   "c5": 1,
+   "c7": 0,
+   "edges_covered_by_c5": 5,
+   "chi_comp": 8,
+   "degseq": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    3,
+    3,
+    3,
+    3,
+    3,
+    10
+   ],
+   "layer": [
+    11,
+    7
+   ],
+   "role": "\u043d\u0430\u0441\u043b\u0435\u0434\u0443\u0435\u0442",
+   "n_minus_a": 4
+  }
+ ],
+ "pc5": [
+  {
+   "layer": [
+    9,
+    2
+   ],
+   "cone_from": [
+    8,
+    2
+   ],
+   "cone_n": 9,
+   "c5_generating": 12,
+   "c5_cone": 4,
+   "generating_has_more": true
+  },
+  {
+   "layer": [
+    9,
+    3
+   ],
+   "cone_from": [
+    8,
+    3
+   ],
+   "cone_n": 9,
+   "c5_generating": 12,
+   "c5_cone": 4,
+   "generating_has_more": true
+  },
+  {
+   "layer": [
+    9,
+    4
+   ],
+   "cone_from": [
+    7,
+    3
+   ],
+   "cone_n": 9,
+   "c5_generating": 0,
+   "c5_cone": 0,
+   "generating_has_more": false
+  },
+  {
+   "layer": [
+    10,
+    2
+   ],
+   "cone_from": [
+    9,
+    2
+   ],
+   "cone_n": 10,
+   "c5_generating": 12,
+   "c5_cone": 12,
+   "generating_has_more": false
+  },
+  {
+   "layer": [
+    10,
+    3
+   ],
+   "cone_from": [
+    9,
+    3
+   ],
+   "cone_n": 10,
+   "c5_generating": 16,
+   "c5_cone": 12,
+   "generating_has_more": true
+  },
+  {
+   "layer": [
+    10,
+    4
+   ],
+   "cone_from": [
+    8,
+    3
+   ],
+   "cone_n": 10,
+   "c5_generating": 2,
+   "c5_cone": 4,
+   "generating_has_more": false
+  },
+  {
+   "layer": [
+    11,
+    2
+   ],
+   "cone_from": [
+    10,
+    2
+   ],
+   "cone_n": 11,
+   "c5_generating": 24,
+   "c5_cone": 16,
+   "generating_has_more": true
+  },
+  {
+   "layer": [
+    11,
+    3
+   ],
+   "cone_from": [
+    10,
+    3
+   ],
+   "cone_n": 11,
+   "c5_generating": 29,
+   "c5_cone": 16,
+   "generating_has_more": true
+  },
+  {
+   "layer": [
+    11,
+    4
+   ],
+   "cone_from": [
+    9,
+    3
+   ],
+   "cone_n": 11,
+   "c5_generating": 11,
+   "c5_cone": 12,
+   "generating_has_more": false
+  }
+ ],
+ "pc5_verdict": "\u043f\u043e\u0440\u043e\u0436\u0434\u0430\u044e\u0449\u0438\u0435 \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0442 \u0431\u043e\u043b\u044c\u0448\u0435 C5 \u0445\u043e\u0442\u044f \u0431\u044b \u0440\u0430\u0437"
+}
