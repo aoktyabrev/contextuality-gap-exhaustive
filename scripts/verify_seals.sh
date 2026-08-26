@@ -68,7 +68,7 @@ check 00d2049 PREREGISTRATION_STAGE8C.sha256   "Stage 8-c"
 check_doc 9b833a2 PREDICTION_N11.md "Prediction Delta_max(11)"
 check 6a06f4a PREDICTION_INHERITANCE_RULE.sha256 "Inheritance rule a >= max(5, n-6)"
 check 490ab59 PREDICTION_N12_LAYERS.sha256  "Prediction: upper layers at n=12"
-check a9d1a11 PREREGISTRATION_STAGE9.sha256   "Stage 9 (algebraic degrees)"
+check 585a275 PREREGISTRATION_STAGE9.sha256   "Stage 9 (algebraic degrees)"
 
 echo
 if [ $fail -eq 0 ]; then
