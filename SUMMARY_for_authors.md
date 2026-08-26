@@ -63,31 +63,43 @@ generic SDP and do not cover ours directly (ours is structured: zeros on edges,
 unit trace), so the low degrees need a structural explanation. We consider this
 the most interesting question the series raises.
 
-## 4. Inheritance: layers that need not be swept
+## 4. Inheritance — and a correction to what I told you before
 
 For a maximiser G\* on m vertices with α = a_m, the cone
-C_k(G\*) = {v} ∨ (G\* ⊔ K̄_{k−1}) is connected, shifts both α and ϑ by exactly
-k − 1, and therefore carries Δ unchanged. Hence **[proved]**
+C_k(G\*) = {v} ∨ (G\* ⊔ K̄_{k−1}) is connected, shifts both α and ϑ by exactly k − 1, and
+therefore carries Δ unchanged. Hence **[proved]**
 
   D(n, a) ≥ Δ_max(m)  for a = a_m + (n − m) − 1.
 
-Additivity of ϑ under disjoint union and join is classical (Knuth (18.2) and
-(19.2), after Lovász); the application is what is new here. Measured on
-n = 9, 10: equality holds for all layers a ≥ 5 **[numerical]** — these layers
-generate nothing of their own and need not be swept at all. That is 8.78 % of
-the sweep at n = 9 and 14.19 % at n = 10. Layers a ≤ 4 do generate their own,
-exceeding the transfer by 0.04–0.20.
+Additivity of ϑ under disjoint union and join is classical (Knuth (18.2) and (19.2), after
+Lovász); the application is what was new here. **That much still stands.**
 
-A prediction for n = 12 follows with no SDP at all, and is sealed (commit
-490ab59): layers 5, 6, 7, 8 equal Δ_max(9) = 2/3, Δ_max(8), Δ_max(7),
-Δ_max(5); layers a ≥ 9 empty; the maximiser has α ∈ {4, 5}. The lower half is
-proved; that nothing larger sits in those layers is the part that can fail.
+**What does not stand is what I wrote to you last time about it.** I said the upper layers
+generate nothing of their own, so they need not be swept — 8.78 % of the sweep at n = 9
+and 14.19 % at n = 10 — and I offered a sealed n = 12 prediction as a ready check. The
+equality is **false**, and we refuted it ourselves:
 
-Proving that upper half is the main question the work leaves open — it would
-turn a measured 14 % saving into a theoretical reduction of the search space,
-and for n = 12, where a sweep would take about 490 days, it is the only route
-to saying anything. A literature check found no off-the-shelf reduction; see
-`OPEN_PROBLEM.md`.
+> `` L@JC?_ASKAGPBH `` on 13 vertices, α = 5, 19 edges: Δ ≥ 45375481648/55555555557
+> = 0.816758669642764, against a transfer bound T(13,5) ≤ 12398216523947/16000000000000
+> = 0.774888532746687. Strictly greater by 0.0419, both bounds from exact primal–dual
+> certificates, compared as fractions. **[proved]**
+
+So upper layers cannot be skipped as a matter of method. The two percentages remain
+correct for the two sizes where every layer was actually computed, and they do not carry
+forward. The sealed n = 12 prediction loses one of its four rows. Please treat the
+inheritance paragraph of my previous message as withdrawn to that extent.
+
+**The replacement rule is a candidate, not a result.** a ≥ max(5, n − 6) fits all sixteen
+known points — but the 5 is decided by nine of them and the 6 by exactly one, the
+counterexample itself. Worse, the data admit exactly two rules: d = 6 and d = 7. A
+directed search at ten times budget failed to separate them, and the failure leans towards
+d = 7, i.e. against our own formula. Details in `REPORT_STAGE8BIS.md`.
+
+One thing there that may interest you regardless of how it resolves: the floor at 5 has an
+arithmetic candidate. The odd cycle C_{2a+1} lives in layer a at n = 2a+1 and its gap
+rises monotonically to a limit of exactly ½, while transfer bounds have no such ceiling.
+The cycle beats the transfer at a = 2, 3, 4 and loses from a = 5 onward — and at a = 4 the
+layer maximiser *is* C₉, to the digit.
 
 ## 5. Points bearing directly on your paper
 

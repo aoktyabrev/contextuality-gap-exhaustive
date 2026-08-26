@@ -194,6 +194,68 @@ is the only route to saying anything at all.
 
 `REPORT_STAGE7.md` has the original verdict, `REPORT_STAGE8.md` its refutation.
 
+### The replacement rule is a candidate, and half of it rests on one point
+
+The rule that fits every known point is **a ≥ max(5, n − 6)** — a floor at 5 *and* a cap
+of 6 on n − a. Sixteen points, no exceptions. That sounds stronger than it is, and the
+honest accounting is this:
+
+| constant | points where it actually decides the verdict |
+|---|---:|
+| the **5** | **9** |
+| the **6** | **1** — the certified counterexample (13,5) |
+
+The other fifteen points agree with the 6 without testing it: they all have n − a ≤ 6, so
+the cap never binds. Counting points that *agree* rather than points that *discriminate*
+is how the previous formulation survived three stages, and it is not repeated here.
+
+**The data do not even pin the rule.** Over the family a ≥ max(c, n − d), exactly two
+members fit all sixteen points: our d = 6, and d = 7. They disagree across the whole
+family a = n − 7, whose first three members are (12,5), (13,6) and (14,7), all with the
+same threshold 2/3.
+
+**A directed search at ten times budget failed to separate them, and the failure leans
+against our own rule.** At (12,5) — where d = 6 requires a counterexample and d = 7
+forbids one — 7.12 million θ evaluations across three methods found nothing, while all
+four controls, chosen where a counterexample is known to exist with a comparable excess,
+were found in 10 runs out of 10. `REPORT_STAGE8BIS.md` records this as evidence *for*
+d = 7 and against d = 6, with the two sub-cases it cannot separate named as such.
+
+### What the search instrument can and cannot do, measured
+
+Two abilities, and they are not the same one:
+
+| ability | result |
+|---|---|
+| finds *an* exceedance of the transfer bound, when one exists | **10 of 10** |
+| finds the layer *maximum* | **2 of 8** |
+
+The shortfalls are systematic: at control (10,3) all three methods stalled at the same
+value, 0.0400 below the true maximum. **No "best found" figure from these searches may be
+read as an estimate of D(n, a).** Measured fitness stops at n = 13; at fourteen vertices
+both cold-start methods failed to reach a value the cone construction supplies outright,
+so that size carries no evidence either way.
+
+### Where the 5 may come from
+
+The floor has a candidate mechanism, and it is arithmetic rather than analogy. The odd
+cycle C_{2a+1} sits in layer a at n = 2a+1, and its gap rises monotonically to a limit of
+exactly ½ — 0.236, 0.318, 0.360, 0.386, 0.404, … — while transfer bounds grow without
+that ceiling. The cycle beats the transfer at a = 2, 3, 4 and loses from a = 5 on:
+
+| a | 2 | 3 | 4 | **5** | 6 | 7 |
+|---|---|---|---|---|---|---|
+| Δ(C_{2a+1}) − T(2a+1, a) | +0.236 | +0.082 | +0.042 | **−0.082** | −0.262 | −0.358 |
+
+At a = 4 the layer maximizer *is* C₉ — girth 9, |Aut| = 18, Δ = 0.3600896 to the digit.
+At a = 5 it is not: the layer inherits instead.
+
+This is a candidate, not an established explanation. It makes a claim beyond the data —
+odd cycles are not layer maximizers at n = 13, 15, 17, 19, sizes never enumerated — which
+is why it is more than a coincidence; but it is verified only for a = 5…9, it explains
+nothing about layers (10,4) and (11,4) where the generating graph is not a cycle at all,
+and it says nothing whatever about the 6. `REPORT_STAGE8.md` §5 has the accounting.
+
 ## Structure across the series
 
 **Nesting fails, and fails precisely at the top.** No maximizer contains its predecessor as
@@ -410,6 +472,7 @@ REPORT_STAGE5.md         Stage 5 — the series split into layers by alpha
 REPORT_STAGE6.md         Stage 6 — the ceiling, and the exhaustive sweep at n = 11
 REPORT_STAGE7.md         Stage 7 — inheritance of the upper layers, boundary a* = 5
 REPORT_STAGE8.md         Stage 8 — that boundary refuted by a certified counterexample
+REPORT_STAGE8BIS.md      Stage 8-bis — reinforced search, controls, and the instrument measured
 REPORT_STAGE7_1B.md      Stage 7.1b — the certified enclosure for n = 11
 quadc5/                  the library: graph6 codec, alpha, theta, filters, structure,
                          hiprec (arbitrary-precision refinement), numfield (exact
