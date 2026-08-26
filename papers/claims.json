@@ -597,7 +597,7 @@
   "paper": "A",
   "section": "4.2",
   "tag": "proved",
-  "claim": "enclosure lower",
+  "claim": "enclosure for the named graph J?`D@pgd?{? — lower",
   "as_written": "0.7748885327027013",
   "check": {
    "kind": "text",
@@ -610,7 +610,7 @@
   "paper": "A",
   "section": "4.2",
   "tag": "proved",
-  "claim": "enclosure upper",
+  "claim": "enclosure for the named graph J?`D@pgd?{? — upper",
   "as_written": "0.7748885327466875",
   "check": {
    "kind": "text",
@@ -778,8 +778,8 @@
   "id": "A-5.3-d",
   "paper": "A",
   "section": "5.3",
-  "tag": "proved",
-  "claim": "transfer bound",
+  "tag": "measured",
+  "claim": "transfer bound (transfer side: measured, see §5.3)",
   "as_written": "12398216523947 / 16000000000000",
   "check": {
    "kind": "text",
@@ -791,8 +791,8 @@
   "id": "A-5.3-e",
   "paper": "A",
   "section": "5.3",
-  "tag": "proved",
-  "claim": "transfer decimal",
+  "tag": "measured",
+  "claim": "transfer decimal (transfer side: measured, see §5.3)",
   "as_written": "0.774888532746687",
   "check": {
    "kind": "text",
@@ -804,8 +804,8 @@
   "id": "A-5.3-f",
   "paper": "A",
   "section": "5.3",
-  "tag": "proved",
-  "claim": "excess",
+  "tag": "measured",
+  "claim": "excess (transfer side: measured, see §5.3)",
   "as_written": "0.0419",
   "check": {
    "kind": "text",
@@ -2423,6 +2423,45 @@
    "file": "results/report_stability_vs_accuracy.json",
    "path": "graphs.3.rows.3.residual",
    "expect": "1.559e-1922"
+  }
+ },
+ {
+  "id": "A-5.3-k",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(11,5), the term that bounds T(12,5) in the case analysis",
+  "as_written": "0.4678438",
+  "check": {
+   "kind": "text",
+   "file": "REPORT_STAGE8.md",
+   "needle": "| 11 | 5 | 6 | 0.4678438"
+  }
+ },
+ {
+  "id": "A-5.3-l",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(11,4), the term that gives the transfer bound",
+  "as_written": "0.7748885",
+  "check": {
+   "kind": "text",
+   "file": "REPORT_STAGE8.md",
+   "needle": "| 11 | 4 | 7 | 0.7748885"
+  }
+ },
+ {
+  "id": "A-5.8-a",
+  "paper": "A",
+  "section": "5.8",
+  "tag": "measured",
+  "claim": "smallest difference on which an 'inherits' verdict rested",
+  "as_written": "8.3·10⁻⁸",
+  "check": {
+   "kind": "text",
+   "file": "REPORT_STAGE8.md",
+   "needle": "+8.3·10⁻⁸"
   }
  }
 ]
