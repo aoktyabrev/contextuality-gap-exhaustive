@@ -29,6 +29,15 @@ So the surprise is not the absence of a closed form at n = 11 — that is the no
 behaviour of an 11×11 semidefinite program. The surprise is that closed forms existed at
 all up to ten vertices, where the generic expectation is degrees in the hundreds.
 
+**And the landscape has now been measured, which sharpens that a third time.** Algebraic
+degrees were computed for 1286 graphs at n = 5…11 — the top 100 by Δ at each size, a
+random sample of the same size among graphs with Δ > 0, and a Δ = 0 control. Extremal
+graphs turn out to be the algebraically **hardest** part of the landscape, not the
+easiest. So the six closed forms up to n = 10 were not found in the easy country and
+then lost when the terrain got hard; they were found six times running in the hardest
+country there is here. That is the surprising part, and it is the reverse of how this
+project read its own series until 2026-08-26.
+
 **The caveat, which the claim needs to be honest.** Nie–Ranestad–Sturmfels describe
 **generic** semidefinite programs with rational data. Ours is structured — zeros on every
 edge, trace fixed at 1 — and is not covered by their theorems directly. The low degrees up
@@ -277,6 +286,111 @@ non-zero gap at n = 10 sit on the single value √5 − 2. A continuous tail fit
 to fit; `REPORT_STAGE4.md` records that as the reason the GPD/GEV route was abandoned
 rather than tuned.
 
+## Algebraic degrees across the landscape
+
+Measured, not conjectured: **1286 graphs at n = 5…11**, in three samples per size — the
+top 100 by Δ (**A**), a uniform random sample of the same size among graphs with Δ > 0
+(**B**), and a Δ = 0 control (**C**). A relation was found for 1137, not found for 122,
+and 27 were declined by the instrument. Sealed as `PREREGISTRATION_STAGE9.md` before the
+first measurement; full account in `REPORT_STAGE9.md`.
+
+> **Extremal graphs are algebraically harder than typical ones.** The fraction of graphs
+> with no closed form runs **1 % → 61 %** across n = 8…11 in the top 100 (0.01, 0.10,
+> 0.28, 0.61), against **0 % → 14 %** in a random sample of the same size (0.00, 0.00,
+> 0.07, 0.14). The sign is the same on all four sizes.
+>
+> **The sealed threshold was not met, and it is not being lowered.** The hypothesis that
+> extremality raises the degree required the gap to reach 0.25 on at least three of the
+> four sizes; it does so on **one** (n = 11). The verdict recorded is therefore *not
+> confirmed*. The bar was fixed in the sealed file before any graph was measured, and a
+> direction that is consistent on 4 of 4 sizes is a description, not a verdict — a sign
+> test on four points gives p = 0.0625, which does not clear the ordinary bar either.
+
+**All three sealed hypotheses failed their criteria.** That low degrees are a property of
+the whole problem: unresolved, 2 of 4 against a bar of 3. That they are a property of
+extremality: refuted, 0 of 4. That degree tracks the automorphism group: refuted, |ρ| <
+0.20 on three sizes of four with inconsistent signs. The stage's preregistration said in
+advance that this closes it rather than voids it — the measurement is the deliverable.
+
+**What the degrees look like.** 97.4 % of the relations found are degree 1, 2, 3 or 4.
+The tail is thin: 6, 7, 8, 9, 10, 12, 14, 16, 20. **Degree 5 was searched for and never
+occurred once.** Degrees 11, 13, 15 and the other odd values above 10 were never
+searched — the ladder runs 1…10, then 12, 14, 16, 20, 24 — so their absence is a property
+of the ladder, not a measurement, and nothing about the tail's parity follows.
+
+**The sharpest cut is by layer, not by median.** At n = 11 the top-100 graphs in the
+layer α = 4 are out of reach almost entirely: **45 of 47 (96 %)**, against **8 of 41
+(20 %)** in the random sample at the same size and the same layer.
+
+**The best predictor is edge count, and only at the top.** Inside sample A,
+ρ(degree, |E|) = −0.30, −0.44, −0.42, −0.76 at n = 8…11, all significant; inside sample B
+it is +0.09, 0.00, +0.08, −0.10, none significant. Symmetry gives nothing anywhere:
+|ρ(degree, log₂|Aut|)| ≤ 0.21 at every size.
+
+**With the limit stated in the same breath.** |E|, α and the layer n − α are nearly one
+quantity — ρ(|E|, α) = −0.87 at n = 11, and layer = n − α is an identity. Holding the
+layer fixed, |E| separates from α on **5 cells of 13**, all of them inside sample A and
+none inside B. What the data support is: *at the top, sparser graphs are algebraically
+harder, and this does not reduce entirely to the layer; in the middle of the landscape
+edge count says nothing.* Anything stronger they do not support, and nothing stronger is
+claimed here.
+
+**Literature.** No measurement of the algebraic degree of ϑ across a class of graphs was
+found, and no work connecting algebraic degree to the automorphism group was found; the
+classical literature on symmetry reduction in semidefinite programming is about
+computational cost, not about degree. Both are recorded as **results of a search on
+2026-08-26**, not as claims about the literature — an empty search is not evidence that
+nothing exists (`SOURCES.md` §S13).
+
+## Two precisions agreeing is not evidence of accuracy
+
+This may matter more than the degrees, so it is here and not in a footnote.
+
+The campaign's rule for counting trustworthy digits, in use since Stage 2, was: run the
+refinement at precision *p* and at 2*p*, take the matching prefix, subtract five. It is
+sound only while the higher run is genuinely better. **It measures the stability of an
+iteration, not its correctness.**
+
+On a degenerate optimum, Gauss–Newton settles on a fixed point that is not the optimum,
+and every precision level reproduces that same wrong point. For the graph `GCY^fW` the
+values at 960, 1920 and 3840 digits agree **with each other** to 465 and 945 digits,
+while agreeing with the truth ϑ = α = 3 to **359**. The rule reported 945 honest digits
+for a value correct to 359.
+
+**The failure is not a blank — it is a plausible wrong answer.** Hand an integer-relation
+search those 940 claimed digits and at degree 1 it finds nothing, while at degree 3 it
+returns
+
+> **x³ − 9x² + 27x − 27 = (x − 3)³**
+
+because the *cube* of the 10⁻³⁵⁹ error falls below the claimed tolerance. An integer
+polynomial, an unremarkable degree, everything looking right. At an honest 350 digits the
+same value gives x = 3 immediately. Both are checks in `tests/test_algdeg.py`.
+
+**This is the same mechanism as the false positive the original paper's authors withdrew**
+(`SOURCES.md` §S1.9) — stated without any accusatory edge, because we walked into it
+ourselves, in our own instrument, and it took three restarts to see. It also corrects our
+own Stage 2 method: there the agreement-between-levels criterion was used as a test of
+correctness, and what it tests is stability.
+
+**The residual settles it, by mechanism rather than by a tuned threshold.** A converged
+run has residual ≈ 10^−dps and loses hundreds of orders per doubling of precision
+(3.06·10⁻²⁴¹ → 5.65·10⁻⁴⁸² for C₅); a stalled one returns the *identical* residual at
+every precision (1.44·10⁻³¹ at both 240 and 480 for `FCRto`). Convergence is now verified
+before any digit count is believed, and 27 of 1286 graphs were declined on that test —
+2.1 %, against a preregistered kill threshold of 40 %. The refusal is conservative: for
+all 20 declined in the control sample the value is right to 8·10⁻⁸ already in double
+precision; what cannot be stated is the number of honest digits, and the instrument says
+so instead of inventing one.
+
+**Three defects, all ours, and the gate caught every one.** It caught them on the Δ = 0
+control sample, where the answer is the exact integer α computed by an independent route.
+On a graph with Δ > 0 a wrong value still looks like a plausible algebraic number, and
+none of the three would have been visible. The standing rule that came out of it: choose
+a calibration sample for having an **exactly known** answer, not for looking
+representative, and check against that answer rather than against some weaker property it
+happens to have.
+
 ## Predictions: the scoreboard
 
 Every stage sealed its predictions, with tolerances and kill-criteria, by SHA-256 before it
@@ -293,7 +407,10 @@ ran. Across the campaign:
 | 6 — n = 11 | **1 / 10** |
 | 7 — inheritance | 5 / 5 |
 | 7.1b — certified enclosure | 5 / 5 |
-| **total** | **49 / 66** |
+| 8 — attacking inheritance | 0 / 5 |
+| 8-bis — reinforced search | 5 / 8 |
+| 9 — algebraic degrees | 4 / 6 |
+| **total** | **58 / 85** |
 
 **The one hit at n = 11 was a coincidence, and saying otherwise would be dishonest.** The
 interval [0.7475, 0.9059] was constructed by extrapolating **layer a = 3**. The observed
@@ -304,6 +421,16 @@ high: the extrapolation systematically underestimates the upper layers.
 
 Stage 6 is the campaign's worst stage by score and its most informative one. The
 preregistration named, in advance, the exact mechanism that would break it.
+
+Stage 8 scored zero of five and was the campaign's best outcome to date: the prediction
+it broke was that no counterexample to the inheritance conjecture existed, and the
+counterexample found is exact and certified. Five predictions across stages 8 and 8-bis
+were left unresolved — blocks not run, or not decidable from what the search returned —
+and they are counted in the denominator rather than quietly dropped, which understates
+those two stages rather than flattering them.
+
+Stage 9's two misses are one guess: that the top of the landscape sits on a plateau of
+rational values while the middle is algebraically harder. The measurement reverses it.
 
 ## The eight-vertex value
 
@@ -362,9 +489,11 @@ git clone https://github.com/aoktyabrev/contextuality-gap-exhaustive && cd conte
 bash scripts/verify_from_scratch.sh
 ```
 
-The script creates a virtual environment from pinned requirements, builds `geng` from the
-nauty tarball included in `sources/`, clears `results/`, runs all three stages, and diffs
-what comes out against what is committed. It exits non-zero if any published number differs.
+The script creates a virtual environment from pinned requirements, builds `geng` and
+`dreadnaut` from the nauty tarball included in `sources/`, clears `results/`, runs every
+stage that does not depend on the eleven-vertex sweep — including the algebraic-degree
+measurement of Stage 9, about seventy minutes on seven cores — and diffs what comes out
+against what is committed. It exits non-zero if any published number differs.
 
 Requirements: Python 3.12, a C compiler for nauty, ~8 CPU cores, ~2 GB of free disk for the
 intermediate sweep files. No GPU — every SDP here is at most 11×11. If a system nauty is
@@ -474,14 +603,19 @@ REPORT_STAGE7.md         Stage 7 — inheritance of the upper layers, boundary a
 REPORT_STAGE8.md         Stage 8 — that boundary refuted by a certified counterexample
 REPORT_STAGE8BIS.md      Stage 8-bis — reinforced search, controls, and the instrument measured
 REPORT_STAGE7_1B.md      Stage 7.1b — the certified enclosure for n = 11
+REPORT_STAGE9.md         Stage 9 — algebraic degrees measured across the landscape
 quadc5/                  the library: graph6 codec, alpha, theta, filters, structure,
                          hiprec (arbitrary-precision refinement), numfield (exact
-                         arithmetic in a number field with exact sign decisions)
+                         arithmetic in a number field with exact sign decisions),
+                         algdeg (algebraic degree, with a convergence test on the
+                         refinement before any digit count is believed)
 runners/                 one script per block, plus run_stage{0,1,2}.sh
 scripts/                 clean-room verification and the results comparator
 verification_pack/       stand-alone five-minute check of the eight-vertex value: one
                          dependency-free script, the exact certificates, and a note
-tests/                   the estimator gate: every estimator on random inputs, two routes
+tests/                   the estimator gate: every estimator on random inputs, two routes;
+                         and the algebraic-degree gate, which demonstrates that an
+                         over-claimed digit count returns a plausible WRONG polynomial
 results/                 top-1000 tables, certificates, per-block JSON reports
 sources/                 the paper, its LaTeX source, the authors' repository and Zenodo
                          archive, McKay's graph6 databases, the nauty tarball
@@ -500,9 +634,14 @@ English sources verbatim, and this README and all code comments are in English.
 - **Thresholds are measured, not assumed.** The Δ = 0 cut is placed inside an empirically
   empty band whose two edges are reported: at n = 10 the solver noise floor is 1.9·10⁻⁶,
   measured over 10⁵ provably-zero graphs, and the smallest genuine gap is 5.894·10⁻⁴.
-- **Precision claims are measured too.** "Verified digits" means the matching prefix of a run
-  at working precision and a run at twice that, minus five — always fewer than the solver's
-  own residual suggests.
+- **Precision claims are measured too, and the measure has a precondition.** "Verified
+  digits" means the matching prefix of a run at working precision and a run at twice that,
+  minus five — always fewer than the solver's own residual suggests. **That is valid only
+  while the refinement is still converging.** Two levels agreeing measures stability, not
+  correctness: on a degenerate optimum Gauss–Newton settles on a stable wrong point and
+  every level reproduces it. Convergence is checked first, by the residual falling with
+  precision; where it does not fall, the value is reported as unmeasurable rather than
+  guessed at. This corrects the rule as it was used in Stage 2 — see the section above.
 - **graph6 encodes a labelling, not an isomorphism class.** McKay's published files are in
   `geng`'s default labelling; passing `-l` yields a different canonical form that disagrees
   with them on 260 902 of 261 080 nine-vertex codes.

@@ -63,6 +63,51 @@ generic SDP and do not cover ours directly (ours is structured: zeros on edges,
 unit trace), so the low degrees need a structural explanation. We consider this
 the most interesting question the series raises.
 
+**Since then we have measured it.** Algebraic degrees for 1286 graphs at
+n = 5…11, in three samples per size: the top 100 by Δ, a uniform random sample
+of the same size among graphs with Δ > 0, and a Δ = 0 control. Found 1137,
+not found 122, declined by the instrument 27. 97.4 % of those found are degree
+1–4; degree 5 was searched for and never occurred.
+
+The direction is the opposite of what we had assumed. **Extremal graphs are the
+algebraically hardest part of the landscape, not the easiest**: the fraction
+with no closed form runs 1 % → 61 % across n = 8…11 in the top 100, against
+0 % → 14 % in the random sample, the same sign on all four sizes. At n = 11 the
+cut by layer is sharp — in the top 100 the graphs with α = 4 are out of reach
+45 of 47 (96 %), against 8 of 41 (20 %) in the random sample at the same size
+and layer.
+
+**The sealed threshold for that hypothesis was not met and we are not lowering
+it**: it required the gap to reach 0.25 on three of four sizes and it does so on
+one. Recorded as *not confirmed*. All three sealed hypotheses of the stage failed
+their criteria, including the one that degree tracks the automorphism group —
+|ρ| < 0.20 on three sizes of four, signs inconsistent. Symmetry explains nothing
+here. Edge count does, but only inside the top (ρ = −0.30…−0.76 there, nothing at
+all in the random sample), and |E|, α and the layer n − α are nearly one quantity,
+separating on 5 cells of 13.
+
+So the reading of §3 above stands, but sharpened: the six closed forms up to
+n = 10 were not found in easy country and lost when the ground got hard. They
+were found six times running in the hardest country in this landscape.
+
+We found no prior measurement of the algebraic degree of ϑ over a class of
+graphs, and no work relating it to the automorphism group. That is the result of
+a search on 2026-08-26, not a claim about the literature.
+
+**One methodological point we would flag even if nothing else here interests
+you.** The rule we had been using to count trustworthy digits — matching prefix
+of a run at precision *p* and one at 2*p*, minus five — measures the *stability*
+of the refinement, not its correctness. On a degenerate optimum Gauss–Newton
+settles on a stable wrong point and every precision reproduces it: for one
+eight-vertex graph the values at 960, 1920 and 3840 digits agree with each other
+to 945 digits while agreeing with the truth ϑ = α = 3 to 359. Feeding an
+integer-relation search those 940 claimed digits returns not a blank but
+(x − 3)³ — an integer polynomial of degree 3 where the truth is degree 1. This
+is the same mechanism as the false positive you withdrew, and we walked into it
+in our own instrument; it took three restarts and a control sample with exactly
+known answers to see. The fix is to require the residual to fall with precision
+before believing any digit count.
+
 ## 4. Inheritance — and a correction to what I told you before
 
 For a maximiser G\* on m vertices with α = a_m, the cone
@@ -134,7 +179,9 @@ whose own predicted interval was overshot. The layer-extrapolation method was
 refuted by exactly the mechanism its own preregistration named in advance as
 its failure mode.
 
-Across the whole campaign the count is 49 of 66.
+Across the whole campaign the count is 58 of 85. Stage 9 scored 4 of 6, and both misses were the same guess: that the top of the landscape sat on a
+plateau of rational values while the middle was harder. It is the other way
+round.
 
 Preregistrations are in the repository, one commit each, never edited;
 `scripts/verify_seals.sh` checks byte-identity and commit order.

@@ -17,10 +17,11 @@ impression.
              the set of graphs and the sorted values are.
   ignored    wall-clock times, iteration counts, solver residuals and anything else
              that is a property of the machine rather than of the mathematics
-  skipped    the n = 11 artefacts.  That sweep is 71.8 hours and this script does not
-             re-run it, so its outputs are input data here, not something the fresh
-             run could produce.  They are named below and the count of skipped files
-             is printed, so the exclusion is visible rather than silent.
+  skipped    the n = 11 artefacts, and the record of a run that failed a gate.  Each
+             exclusion is named below WITH ITS REASON, and both the reasons and the
+             counts are printed, so an exclusion is visible rather than silent.
+  jsonl      per-graph rows, matched by key rather than by line order, with the same
+             ignore list applied field by field.
 """
 import sys, os, json, csv, math
 
@@ -29,9 +30,15 @@ IGNORE_SUBSTRINGS = ("time", "second", "residual", "iteration", "history",
                      "elapsed", "duration", "wall", "_gap", "solver_diff", "pr_hi",
                      "identification_error", "root_gap", "seconds")
 
-# Produced by the n = 11 sweep, which verify_from_scratch.sh deliberately does not
-# re-run.  Comparing them would compare a file with itself.
-NOT_REPRODUCED_HERE = ("n11_", "report_1c_n11")
+# Files the fresh run cannot or should not produce.  Each carries its reason, and the
+# reasons are printed at the end: an exclusion nobody can see is an exclusion nobody
+# can check.
+NOT_REPRODUCED_HERE = {
+    "n11_": "produced by the 71.8-hour n = 11 sweep, which this script does not re-run",
+    "report_1c_n11": "summary of that same sweep",
+    "stage9_degrees_FAILED": "the record of a run that FAILED gate G9.1 -- kept as "
+                             "evidence of the defect, not as a result to reproduce",
+}
 
 fails, checks = [], 0
 
@@ -122,12 +129,32 @@ def cmp_csv(pa, pb, name):
             note(not bad, f"{name}: sorted {col}", f"{len(bad)} differ, max {worst:.3e}")
 
 
+def cmp_jsonl(pa, pb, name):
+    """Per-graph rows, matched by key.  Line order is not part of the answer -- the
+    measurement runs in a process pool and rows land in completion order."""
+    def load(p):
+        out = {}
+        for line in open(p):
+            line = line.strip()
+            if not line:
+                continue
+            d = json.loads(line)
+            out[(d.get("n"), d.get("sample"), d.get("graph6"))] = d
+        return out
+    a, b = load(pa), load(pb)
+    note(set(a) == set(b), f"{name}: set of rows",
+         f"{len(set(a) ^ set(b))} keys differ")
+    for k in sorted(set(a) & set(b), key=lambda t: tuple(str(x) for x in t)):
+        cmp_json(a[k], b[k], f"{name}[{k[0]}{k[1]}:{k[2]}]")
+
+
 def main(dpub, dnew):
     print(f"comparing {dnew}/ against {dpub}/  (tolerance {TOL:g} on floats)\n")
     skipped = []
     for fn in sorted(os.listdir(dpub)):
-        if any(m in fn for m in NOT_REPRODUCED_HERE):
-            skipped.append(fn)
+        why = next((r for m, r in NOT_REPRODUCED_HERE.items() if m in fn), None)
+        if why:
+            skipped.append((fn, why))
             continue
         pa, pb = os.path.join(dpub, fn), os.path.join(dnew, fn)
         if not os.path.exists(pb):
@@ -140,9 +167,12 @@ def main(dpub, dnew):
                 note(False, fn, f"unreadable: {e}")
         elif fn.endswith(".csv"):
             cmp_csv(pa, pb, fn)
+        elif fn.endswith(".jsonl"):
+            cmp_jsonl(pa, pb, fn)
     if skipped:
-        print(f"\nskipped {len(skipped)} n=11 artefact(s), not reproduced by this script: "
-              + ", ".join(skipped))
+        print(f"\nskipped {len(skipped)} file(s), each with its reason:")
+        for fn, why in skipped:
+            print(f"  {fn}\n      {why}")
     print(f"\n{checks} comparisons, {len(fails)} mismatches")
     if fails:
         print("\nGATE R.b FAILED -- the following did not reproduce:")

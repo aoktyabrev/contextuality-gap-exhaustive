@@ -37,6 +37,12 @@ if [ ! -x build/nauty2_9_3/geng ] && [ -z "${QUADC5_GENG:-}" ]; then
     "mkdir -p build && tar xzf sources/nauty2_9_3.tar.gz -C build && \
      cd build/nauty2_9_3 && ./configure && make -j geng"
 fi
+# Stage 9 needs dreadnaut as well: |Aut| is computed by two independent routes and
+# nauty is one of them.  Built from the same tarball, so nothing is downloaded.
+if [ ! -x build/nauty2_9_3/dreadnaut ]; then
+  stage "build nauty 2.9.3 (dreadnaut)" bash -c \
+    "cd build/nauty2_9_3 && make dreadnaut"
+fi
 
 # --- 3. set the published results aside -----------------------------------
 # n = 11 is NOT reproduced here: the sweep is 71.8 hours and nobody will re-run it.
@@ -94,6 +100,16 @@ stage "Stage 7 (inheritance, series, enclosure)" bash -c \
   ".venv/bin/python runners/run_7.py && \
    .venv/bin/python runners/run_7_series.py && \
    .venv/bin/python runners/certify_enclosure.py"
+
+# Stage 9 measures algebraic degrees over 1286 graphs and takes about 70 minutes on
+# seven cores -- the same order as the deep integer-relation search above, and it is
+# reproduced rather than shipped as data.  The samples are a seeded draw over tables
+# this script has just rebuilt; the n = 11 sources it reads (n11_nonzero.csv,
+# n11_top1000.csv) are the preserved sweep artefacts, as everywhere else.
+stage "Stage 9 (algebraic degrees)" bash -c \
+  ".venv/bin/python runners/run_9a_samples.py && \
+   .venv/bin/python runners/run_9a.py --procs 7 && \
+   .venv/bin/python runners/run_9b.py"
 
 # --- 5. compare -----------------------------------------------------------
 say ""
