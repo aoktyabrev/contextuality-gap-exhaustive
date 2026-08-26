@@ -13,7 +13,7 @@ and the statement is:
 
 The second is about eleven vertices, where **no closed form exists** — see below.
 
-`python3 verify.py` checks both in 45 steps and prints PASS or FAIL, exiting non-zero on
+`python3 verify.py` checks all three in 57 steps and prints PASS or FAIL, exiting non-zero on
 FAIL. Standard library only, no installation, no network, no solver. Measured with the
 network switched off: **1.7 s on Python 3.12, 1.9 s on 3.11, 5.9 s on 3.9, 3.4 s on 3.7**
 (an ordinary desktop; the numbers only say that nothing here is slow — the four sets of

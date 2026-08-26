@@ -5,6 +5,10 @@ A self-contained check of two statements, both in exact arithmetic.
 > **1.** For the eight-vertex Quad-C₅ graph `` GCQb`o ``: ϑ is the root of
 > x⁴ − x³ + 23x² − 155x + 158 in (3, 4), and α = 3, so Δ = 0.4678437298402241086973918817770…
 >
+> **3.** A conjecture of ours, refuted: `` L@JC?_ASKAGPBH `` on 13 vertices with α = 5
+> has Δ ≥ 323153259433/55555555557 − 5, strictly greater than the bound our own
+> inheritance hypothesis required it to equal. The margin, 0.0418701369, is exact.
+>
 > **2.** For eleven vertices, where **no closed form exists**: the maximum gap is attained
 > by `` J?`D@pgd?{? `` with α = 4, and Δ_max(11) ∈ [0.7748885327027013, 0.7748885327466875],
 > a proved rational interval of width 4.4·10⁻¹¹. The runner-up is separated from it by a
@@ -16,7 +20,7 @@ A self-contained check of two statements, both in exact arithmetic.
 python3 verify.py
 ```
 
-45 checks; prints PASS or FAIL and exits non-zero on FAIL. Standard library only — no
+57 checks; prints PASS or FAIL and exits non-zero on FAIL. Standard library only — no
 installation, no network, no SDP solver, nothing to download. A couple of seconds
 (1.7 s on Python 3.12, 3.4 s on 3.7; tested on 3.7, 3.9, 3.11 and 3.12 with networking
 switched off).
@@ -38,6 +42,7 @@ caught.
 | `verify.py` | the checker |
 | `certificates/quadc5_certificate.json` | exact primal and dual matrices over ℚ(ϑ) |
 | `certificates/quadc5_n11_enclosure.json` | the eleven-vertex enclosure, over ℚ |
+| `certificates/quadc5_counterexample_n13.json` | the graph that refutes our own inheritance conjecture |
 | `certificates/minimal_polynomial.txt` | the quartic, and why (3, 4) names one root |
 | `NOTE.md` | two pages: what a certificate proves, and how ℚ(ϑ) is represented |
 | `graph6.txt` | maximizers for n = 5…10 with α, ϑ, Δ and minimal polynomials |

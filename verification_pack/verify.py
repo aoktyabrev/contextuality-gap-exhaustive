@@ -5,6 +5,9 @@
 
     Delta_max(11) in [0.7748885327027013, 0.7748885327466875]   (no closed form exists)
 
+and one refutation: a graph in an upper layer whose gap STRICTLY EXCEEDS the value the
+inheritance hypothesis required it to equal.
+
 Run:  python3 verify.py            (standard library only; no installation)
 
 WHAT IS PROVED HERE, AND HOW
@@ -236,8 +239,16 @@ def decode_g6(code):
     "Description of graph6, sparse6 and digraph6 encodings"), not wrapped around a
     library, so that this check is independent of whatever produced the certificate.
     Only the n < 63 form is needed here."""
+    if not code or any(not (63 <= ord(c) < 127) for c in code):
+        raise ValueError("not a graph6 string: characters out of range")
     b = [ord(c) - 63 for c in code]
     n, b = b[0], b[1:]
+    if n >= 63:
+        raise ValueError("only the n < 63 form is supported")
+    need = (n * (n - 1) // 2 + 5) // 6
+    if len(b) != need:
+        raise ValueError(f"graph6 length {len(b)+1} does not match n = {n}, "
+                         f"which needs {need+1}")
     bits = "".join(format(x, "06b") for x in b)
     e, k = set(), 0
     for j in range(1, n):                 # column-major upper triangle
@@ -246,6 +257,16 @@ def decode_g6(code):
                 e.add((i, j))
             k += 1
     return n, e
+
+
+def try_decode(code):
+    """Decode, or report why not.  A corrupted certificate must produce a named failed
+    check, never a traceback: the whole point of the script is that its verdict is
+    legible."""
+    try:
+        return decode_g6(code), None
+    except Exception as exc:
+        return (None, None), str(exc)
 
 
 def independence_number(n, edges):
@@ -360,10 +381,12 @@ def check_enclosure():
     L, U = rat(lead["primal_lower"]), rat(lead["dual_u"])
 
     print("5. the certificate describes the graph it names")
-    gn, gedges = decode_g6(lead["graph6"])
-    step("graph6 decodes to the certificate's vertex count", gn == n, f"n = {gn}")
+    (gn, gedges), err = try_decode(lead["graph6"])
+    step("graph6 decodes to the certificate's vertex count", gn == n,
+         f"n = {gn}" if not err else f"undecodable: {err}")
     step("graph6 decodes to the certificate's edge set", gedges == edges,
-         f"{len(gedges)} edges, decoded independently of the certificate")
+         f"{len(gedges)} edges, decoded independently of the certificate"
+         if gedges is not None else "not decodable")
     a_exact = independence_number(n, edges)
     step("alpha is as claimed", a_exact == lead["alpha"],
          f"alpha = {a_exact}, by exhaustion over all 2^{n} vertex subsets")
@@ -404,7 +427,7 @@ def check_enclosure():
     print("\n9. the runner-up is strictly below")
     n2 = sec["n"]
     edges2 = set(tuple(sorted(e)) for e in sec["edges"])
-    gn2, gedges2 = decode_g6(sec["graph6"])
+    (gn2, gedges2), _e2 = try_decode(sec["graph6"])
     step("second graph6 decodes to its certificate's edge set",
          gn2 == n2 and gedges2 == edges2, f"{sec['graph6']}, {len(gedges2)} edges")
     a2 = independence_number(n2, edges2)
@@ -492,6 +515,74 @@ def psd_minors_q(M, n):
 
 
 # --------------------------------------------------------------------------
+def check_counterexample():
+    """The refutation.  A conjecture of ours said that above a boundary every layer of
+    the independence-number decomposition merely inherits its maximum from smaller
+    sizes -- equality with the "transfer bound".  This graph is in such a layer and
+    exceeds that bound, so the conjecture is false.  Both sides are exact rationals:
+    the primal certificate bounds Delta from below, and the transfer bound is the
+    proved upper end of the eleven-vertex enclosure checked in section 6."""
+    path = os.path.join(HERE, "certificates", "quadc5_counterexample_n13.json")
+    if not os.path.exists(path):
+        return
+    cert = json.load(open(path))
+    g = cert["counterexample"]
+    tb = cert["transfer_bound"]
+
+    def rat(pair):
+        return F(int(pair[0]), int(pair[1]))
+
+    def mat(M):
+        return [[rat(c) for c in row] for row in M]
+
+    n = g["n"]
+    edges = set(tuple(sorted(e)) for e in g["edges"])
+    L = rat(g["primal_lower"])
+    T = F(int(tb["numerator"]), int(tb["denominator"]))
+    alpha = g["alpha"]
+
+    print("\n" + "=" * 70)
+    print(f"\ngraph  {g['graph6']}   n = {n}   |E| = {len(edges)}   alpha = {alpha}")
+    print("claim  this layer does NOT inherit: its gap exceeds the transfer bound\n")
+
+    print("10. the certificate describes the graph it names")
+    (gn, gedges), err = try_decode(g["graph6"])
+    step("graph6 decodes to the certificate's vertex count", gn == n,
+         f"n = {gn}" if not err else f"undecodable: {err}")
+    step("graph6 decodes to the certificate's edge set", gedges == edges,
+         f"{len(gedges)} edges, decoded independently of the certificate"
+         if gedges is not None else "not decodable")
+    a_exact = independence_number(n, edges)
+    step("alpha is as claimed", a_exact == alpha,
+         f"alpha = {a_exact}, by exhaustion over all 2^{n} vertex subsets")
+
+    print("\n11. primal certificate  ->  Delta >= L - alpha")
+    X = mat(g["primal_X"])
+    step("X is symmetric", all(X[i][j] == X[j][i] for i in range(n) for j in range(n)))
+    step("trace X = 1", sum(X[i][i] for i in range(n)) == 1)
+    step("X vanishes on every edge", all(X[i][j] == 0 for (i, j) in edges),
+         f"{len(edges)} edges")
+    s_ = sum(X[i][j] for i in range(n) for j in range(n))
+    step("1^T X 1 = L", s_ == L, f"L = {L.numerator}/{L.denominator}")
+    okA, rkA = psd_schur_q(X, n)
+    okB, cntB = psd_minors_q(X, n)
+    step("X is PSD, method A (pivoted Schur complement)", okA, f"rank {rkA}")
+    step("X is PSD, method B (all principal minors)", okB, f"{cntB} minors")
+    step("the two PSD methods agree", okA == okB)
+
+    print("\n12. the refutation")
+    d_lo = L - alpha
+    step("the transfer bound is the proved upper end of Delta_max(11)",
+         T == F(12398216523947, 16000000000000),
+         f"T <= {T.numerator}/{T.denominator}")
+    step("Delta of this graph STRICTLY EXCEEDS the transfer bound", d_lo > T,
+         f"margin = {float(d_lo - T):.10f}, exact and positive")
+    print(f"\nfor reference only, not used above: Delta >= {float(d_lo):.15f} "
+          f"against T <= {float(T):.15f}")
+
+
+
+# --------------------------------------------------------------------------
 def main():
     t0 = time.time()
     path = os.path.join(HERE, "certificates", "quadc5_certificate.json")
@@ -511,10 +602,12 @@ def main():
     theta = K.gen()
 
     print("0. the certificate describes the graph it names")
-    gn, gedges = decode_g6(cert["graph6"])
-    step("graph6 decodes to the certificate's vertex count", gn == n, f"n = {gn}")
+    (gn, gedges), err = try_decode(cert["graph6"])
+    step("graph6 decodes to the certificate's vertex count", gn == n,
+         f"n = {gn}" if not err else f"undecodable: {err}")
     step("graph6 decodes to the certificate's edge set", gedges == edges,
-         f"{len(gedges)} edges, decoded independently of the certificate")
+         f"{len(gedges)} edges, decoded independently of the certificate"
+         if gedges is not None else "not decodable")
     a_exact = independence_number(n, edges)
     step("alpha is as claimed", a_exact == alpha,
          f"alpha = {a_exact}, by exhaustion over all 2^{n} vertex subsets")
@@ -574,6 +667,7 @@ def main():
           f"Delta = theta - alpha = {K.approx(K.sub(theta, K.rat(alpha)))}")
 
     check_enclosure()
+    check_counterexample()
 
     dt = time.time() - t0
     bad = [s for s in STEPS if not s[1]]
@@ -581,7 +675,7 @@ def main():
     if bad:
         print(f"\nFAIL - {len(bad)} check(s) did not hold: {[b[0] for b in bad]}")
         return 1
-    print("\nPASS - every statement above is proved: the eight-vertex value exactly, the\n       eleven-vertex value to within an explicit rational interval.")
+    print("\nPASS - every statement above is proved: the eight-vertex value exactly, the\n       eleven-vertex value within an explicit rational interval, and the\n       inheritance conjecture refuted by a graph that exceeds its bound.")
     return 0
 
 
