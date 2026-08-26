@@ -214,33 +214,46 @@ reads. Deleting it and re-running `run_0c.py` also works — the chunk checkpoin
 
 ## Stage 9 additions
 
+- **Agreement between two precision levels is evidence of STABILITY, not of accuracy.**
+  This is the load-bearing one, and it corrects a Stage 2 method that had only ever
+  been calibrated on non-degenerate values. Gauss–Newton on some degenerate optima
+  settles on a fixed point that is *not* the optimum, and every precision level then
+  reproduces that same wrong point. Measured on `GCY^fW`: the values at dps 960, 1920
+  and 3840 agree with **each other** to 465 and 945 digits, while agreeing with the
+  truth ϑ = α = 3 to only **359**. The honest-digit rule "matching prefix of a dps run
+  and a 2·dps run, minus 5" reported 945 honest digits for a value correct to 359.
+
+  The **residual** separates the two cleanly and by mechanism, not by a tuned
+  threshold: a converged run has residual ≈ 10^−dps, so doubling dps drops it by
+  hundreds of orders (3.06e-241 → 5.65e-482 for `DUW`); a stalled run returns the
+  *identical* residual at every precision (1.44e-31 at both 240 and 480 for `FCRto`).
+  **Verify convergence before trusting any inter-level digit count.** Where the
+  residual does not scale, the value is not measurable by this instrument, and the
+  honest report is to say so and count it — never to guess.
+
 - **A check that runs at the same precision as the thing it checks is not a check.**
-  Stage 9's confirmation step re-runs PSLQ at higher precision to kill spurious hits.
-  The first implementation hard-coded the confirmation level instead of deriving it
-  from the level the search actually used. For graphs that had escalated, the two
-  coincided; `matching_digits` compared a value against *itself*, took its `a == b`
-  branch, and returned the full `dps` — a fabricated 955 honest digits for a value
-  correct to 389. PSLQ then failed to confirm true relations, and gate G9.1 reported
-  twenty `pslq_unstable` on graphs whose answer is exactly α. **Derive the check's
-  precision from the measurement's; never write it as a constant.** And make the
-  identical-value case return *nothing* rather than a number — a comparison that
-  carries no information must not be able to masquerade as a good one.
+  The confirmation step re-runs PSLQ at higher precision to kill spurious hits. The
+  first implementation hard-coded its level instead of deriving it from the level the
+  search actually used; for graphs that had escalated the two coincided,
+  `matching_digits` compared a value with *itself*, and the count came back as the
+  full `dps` — 955 fabricated digits for a value correct to 389. **Derive the check's
+  precision from the measurement's; never write it as a constant**, and make the
+  self-comparison raise rather than return a number that will pass for a good one.
 
-- **Gauss–Newton plateaus on a degenerate optimum, and the flat honest-digit margin
-  fails there.** `hiprec.refine` damps with λ = 10^(−dps//2); when the KKT system is
-  singular — which is the normal case for a Δ = 0 graph — attainable accuracy is about
-  dps/2, not dps, and it stops improving entirely past some level. Measured on
-  `FCRto`: 113, 233, 389, 389 correct digits at dps 240, 480, 960, 1920. The rule
-  "matching prefix of a dps run and a 2·dps run, minus 5" is sound **only while the
-  2·dps run is genuinely better**; once two consecutive levels are equally accurate
-  their matching prefix *equals* that accuracy and five digits of margin leave
-  nothing. Escalate precision until the count clears the target, stop escalating when
-  doubling buys less than ~1.3×, and use a **proportional** margin for anything built
-  on top of the count.
+- **Bit-identical values from two DIFFERENT precisions are the strongest agreement
+  available, not the weakest.** For a Δ = 0 graph ϑ is the integer α and the
+  refinement lands on it exactly, so every level returns the same value. The first
+  correction to the bug above treated that as "uninformative" — and sent 304 such
+  graphs escalating to the precision ceiling, reporting 297 of them as
+  `low_precision`. Two wrong corrections in one afternoon, both caught by the same
+  gate. When a fix makes a *previously passing* population fail, the fix is the
+  suspect, not the population.
 
-- **The gate caught it, and it caught it where the answer was already known.** This is
-  what the C sample is for: on a Δ > 0 graph a wrong value still looks like a
-  plausible algebraic number, and both defects above would have been invisible. They
-  surfaced only because the truth on those graphs is the exact integer α. When
-  designing a calibration sample, prefer inputs whose answer is known *exactly* over
-  inputs that merely look representative.
+- **The gate caught all of it, and it caught it where the answer was already known.**
+  That is what the Δ = 0 control sample is for: on a Δ > 0 graph a wrong value still
+  looks like a plausible algebraic number, and none of the above would have been
+  visible. It surfaced only because the truth on those graphs is the exact integer α,
+  computed by an independent route. **When designing a calibration sample, prefer
+  inputs whose answer is known *exactly* over inputs that merely look
+  representative** — and make the gate compare against that exact answer, not against
+  a weaker property the answer happens to have.

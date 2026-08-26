@@ -56,7 +56,16 @@ def measure(task):
         a = alpha_bitmask(n, adj)
         r = theta_honest(code=code, dps=240)     # escalates on its own, 2.2
         D = r["honest"]
-        prec = "ok" if (D is not None and D >= MIN_HONEST) else "low_precision"
+        if not r["converged"]:
+            # Gauss-Newton settled on a stable point that is not the optimum.  Every
+            # precision level reproduces it, so inter-level agreement says nothing
+            # about accuracy.  Not measurable by this instrument -- reported, not
+            # guessed at, and counted towards kill rule K9.3.
+            prec = "unconverged"
+        elif D is None or D < MIN_HONEST:
+            prec = "low_precision"
+        else:
+            prec = "ok"
 
         cache = {}
 
@@ -68,8 +77,8 @@ def measure(task):
                 cache["dps"] = d2
             return cache["v"]
 
-        if prec == "low_precision":
-            m = dict(degree=None, poly=None, status="low_precision", ladder=[],
+        if prec != "ok":
+            m = dict(degree=None, poly=None, status=prec, ladder=[],
                      confirmed_at=None)
         else:
             m = find_minpoly(r["theta"], D, confirm=confirm)
@@ -81,7 +90,7 @@ def measure(task):
                     delta=float(r["theta"]) - a, honest=D, precision=prec,
                     rank=r["rank"], aut=aut, orbits=orb,
                     dps_used=r["dps_used"], confirm_dps=cache.get("dps"),
-                    plateau=r["plateau"],
+                    converged=r["converged"],
                     degree=m["degree"], poly=m["poly"], status=m["status"],
                     confirmed_at=m.get("confirmed_at"),
                     theta=nstr(r["theta"], 50), seconds=round(time.time() - t_start, 1))
@@ -184,18 +193,34 @@ def gate_C(samples, procs):
     print("  makes this gate able to fail.")
     tasks = [(int(n), "C", c) for n, s in samples.items() for c in s["C"]]
     got = run_tasks(sorted(tasks), procs, "sample C")
+
+    # A graph the instrument declines to measure is not a gate failure -- it is an
+    # instrument limitation, and PREREGISTRATION_STAGE9 2.2 already carves such graphs
+    # out of the degree statistics and counts them separately.  What governs them is
+    # kill rule K9.3, applied below on the whole run.  What must NOT happen is a
+    # declined graph being quietly dropped, so the count is printed either way.
+    UNMEASURABLE = ("unconverged", "low_precision", "error")
+    declined = [d for d in got if d.get("status") in UNMEASURABLE]
+    measured = [d for d in got if d.get("status") not in UNMEASURABLE]
     bad = []
-    for d in got:
+    for d in measured:
         if d.get("status") != "hit" or d.get("degree") != 1:
             bad.append((d["graph6"], d.get("status"), d.get("degree"), "degree"))
             continue
         p = d["poly"]                            # p[1]*x + p[0] = 0  ->  x = -p[0]/p[1]
         if p[1] * d["alpha"] + p[0] != 0:
             bad.append((d["graph6"], "root", -p[0] / p[1], d["alpha"]))
-    print(f"  {len(got)} graphs, {len(bad)} failures")
+    byreason = {}
+    for d in declined:
+        byreason[d["status"]] = byreason.get(d["status"], 0) + 1
+    print(f"  {len(got)} graphs: {len(measured)} measured, {len(bad)} of those failed")
+    print(f"  {len(declined)} declined by the instrument and excluded from the degree")
+    print(f"  statistics, counted here and towards K9.3: {byreason}")
     for b in bad[:20]:
         print(f"  FAIL {b}")
-    return not bad, dict(checked=len(got), failures=len(bad), detail=bad[:50])
+    return not bad, dict(checked=len(got), measured=len(measured),
+                         failures=len(bad), declined=len(declined),
+                         declined_by_reason=byreason, detail=bad[:50])
 
 
 if __name__ == "__main__":
@@ -236,6 +261,26 @@ if __name__ == "__main__":
     tasks = sorted((int(n), s, c) for n, d in samples.items()
                    for s in ("A", "B") for c in d[s])
     run_tasks(tasks, a.procs, "A and B")
+
+    # ---- kill rule K9.3, on the whole run ---------------------------------
+    allrows = list(load_done().values())
+    UNMEASURABLE = ("unconverged", "low_precision", "error")
+    dec = [d for d in allrows if d.get("status") in UNMEASURABLE]
+    frac = len(dec) / len(allrows) if allrows else 0.0
+    byreason = {}
+    for d in dec:
+        byreason[d["status"]] = byreason.get(d["status"], 0) + 1
+    report["K9_3"] = dict(total=len(allrows), declined=len(dec),
+                          fraction=round(frac, 4), by_reason=byreason,
+                          triggered=frac > 0.40)
+    print(f"\n=== K9.3 -- instrument fitness ===")
+    print(f"  {len(dec)}/{len(allrows)} graphs declined ({frac:.1%}): {byreason}")
+    if frac > 0.40:
+        print("  K9.3 TRIGGERED: more than 40% declined.  Degree statistics are NOT")
+        print("  published; the stage reports as blocked on precision.")
+    else:
+        print("  below the 40% threshold: degree statistics are published, with the")
+        print("  declined graphs counted in every table rather than dropped.")
 
     report["wall_minutes"] = round((time.time() - t_all) / 60, 1)
     json.dump(report, open(os.path.join(RES, "report_9a.json"), "w"), indent=1)

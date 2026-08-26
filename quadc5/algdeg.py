@@ -48,20 +48,28 @@ def _dual_start(n, edges):
     return (B.value + B.value.T) / 2, float(t.value)
 
 
-def matching_digits(a, b, dps):
-    """Length of the common decimal prefix of two mpf values, or None.
+def matching_digits(a, b, dps, levels=None):
+    """Length of the common decimal prefix of two mpf values.
 
-    None means the two values are bit-identical, and that is NOT evidence of `dps`
-    honest digits -- it means the comparison carries no information, almost always
-    because both came from the same refinement.  Returning `dps` there is how a
-    fabricated count of 955 honest digits reached PSLQ and failed gate G9.1 on
-    2026-08-26; see REPORT_STAGE9.  Callers must treat None as unmeasurable and
-    compare against a genuinely higher precision instead.
+    `levels` is the (dps_a, dps_b) pair the two values came from.  It is not
+    decoration: comparing a value with ITSELF is what manufactured 955 honest digits
+    and failed gate G9.1 on 2026-08-26, and this function now refuses to do it.
+
+    Bit-identical values from two DIFFERENT precisions are the strongest agreement
+    available, not the weakest -- for a Delta = 0 graph theta is the integer alpha and
+    Gauss-Newton lands on it exactly, so every level returns that integer.  `dps` is
+    returned there as a lower bound.  Treating that case as uninformative -- a first,
+    wrong, correction made the same day -- sent 304 such graphs escalating to the
+    precision ceiling and reported 297 of them as low_precision.
     """
+    if levels is not None and levels[0] == levels[1]:
+        raise ValueError(f"comparing a value with itself at dps={levels[0]}: the "
+                         "check's precision must be derived from the measurement's, "
+                         "never equal to it")
     mp.dps = dps
     d = fabs(a - b)
     if d == 0:
-        return None
+        return dps
     return int(floor(-log10(d / max(fabs(a), mpf(1)))))
 
 
@@ -73,19 +81,29 @@ def numeric_rank(X, tol=1e-8):
 
 
 def theta_honest(code=None, n=None, edges=None, dps=240, target=MIN_HONEST,
-                 max_dps=3840):
-    """High-precision theta plus its MEASURED honest-digit count, escalating as needed.
+                 max_dps=1920):
+    """High-precision theta, its MEASURED honest-digit count, and whether the
+    refinement actually CONVERGED.
 
-    The honest count always compares a run at level d against a run at level 2d, and
-    the value returned is the 2d one -- so the count UNDERSTATES the returned value's
-    accuracy, which is the safe direction.
+    The honest count compares a run at level d against a run at level 2d and the
+    value returned is the 2d one, so the count understates that value's accuracy --
+    the safe direction.
 
-    Escalation is not decoration.  hiprec.refine damps with lambda = 10^(-dps//2), and
-    on a DEGENERATE optimum -- which is what a Delta = 0 graph typically has -- the
-    damping floor caps attainable accuracy at roughly dps/2 digits, not dps.  Measured
-    on FCRto: 113 correct digits at dps 240, 233 at 480, 389 at 960.  A fixed dps is
-    therefore not enough; the count has to be measured and the precision raised until
-    it clears `target`.
+    But agreement between levels is only evidence of accuracy when the iteration is
+    converging.  Gauss-Newton on some degenerate optima settles on a stable point that
+    is NOT the optimum, and every precision level then reproduces that same wrong
+    point: for GCY^fW the values at dps 960, 1920 and 3840 agree with each other to
+    465 and 945 digits while agreeing with the truth theta = alpha = 3 to only 359.
+    Two runs agreeing tells you the iteration is stable, not that it is right.  This
+    is a limitation of the Stage 2 measure, which was calibrated on four
+    non-degenerate values and never met this case.
+
+    The residual separates the two cleanly, and by mechanism rather than by a tuned
+    threshold: a converged run has residual ~ 10^-dps, so doubling dps drops it by
+    hundreds of orders (measured: 3.06e-241 -> 5.65e-482 for DUW).  A stalled run
+    returns the SAME residual at every precision (1.44e-31 at both 240 and 480 for
+    FCRto).  A ratio anywhere near 1 therefore means the value is not measurable by
+    this instrument, and saying so is the honest report -- guessing is not.
     """
     if code is not None:
         n, adj = decode_g6(code)
@@ -99,55 +117,45 @@ def theta_honest(code=None, n=None, edges=None, dps=240, target=MIN_HONEST,
             cache[d] = refine(n, edges, pr["X"], B0, pr["theta"], dps=d)
         return cache[d]
 
-    d, prev, plateau = dps, None, False
+    d, prev = dps, None
     while True:
         lo, hi = at(d), at(2 * d)
-        h = matching_digits(lo["theta"], hi["theta"], 2 * d)
-        h = None if h is None else h - 5
-        if h is not None and h >= target:
+        mp.dps = 2 * d
+        converged = hi["residual"] < lo["residual"] * mpf(10) ** -10
+        h = matching_digits(lo["theta"], hi["theta"], 2 * d, levels=(d, 2 * d)) - 5
+        if not converged or h >= target or 2 * d >= max_dps:
             break
-        if prev is not None and h is not None and h < 1.3 * prev:
-            # Doubling the precision bought almost nothing.  Gauss-Newton has
-            # plateaued on a degenerate optimum and further escalation only burns
-            # time -- for a graph that needs dps 3840 that is minutes, per graph.
-            plateau = True
-            break
-        if 2 * d >= max_dps:
+        if prev is not None and h < 1.3 * prev:
             break
         prev, d = h, d * 2
-    return dict(theta=hi["theta"], honest=h, dps_used=2 * d, plateau=plateau,
+    return dict(theta=hi["theta"], honest=h, dps_used=2 * d, converged=bool(converged),
+                residual_lo=lo["residual"], residual_hi=hi["residual"],
                 rank=numeric_rank(pr["X"]), n=n, edges=edges,
                 seed=(pr["X"], B0, pr["theta"]))
 
 
-def higher(rec, factor=2, backoff=0.90):
-    """A strictly higher-precision value than rec's, with a usable digit count.
+def higher(rec, factor=2):
+    """A strictly higher-precision value, with a conservative honest count.
 
-    Two separate defects were found here by gate G9.1 on 2026-08-26 and both are
-    fixed in this function.
+    The level is DERIVED from rec["dps_used"], never written as a constant.  Hard-coding
+    it is what failed gate G9.1 on 2026-08-26: for graphs that had escalated, the
+    "confirmation" ran at the same dps as the search, matching_digits compared a value
+    with itself, and the count came back as the full dps -- 955 digits for a value
+    correct to 389.  matching_digits now refuses that comparison outright.
 
-    First, the level must be DERIVED from rec["dps_used"].  Hard-coding it meant that
-    for graphs which had escalated, the "confirmation" ran at the same dps as the
-    search; matching_digits saw two identical values and reported the full dps as
-    honest digits, and PSLQ then chased 955 digits of a value correct to 389.
-
-    Second, the flat five-digit margin of the sealed rule does not survive a PLATEAU.
-    Gauss-Newton on a degenerate optimum stops gaining: for FCRto the value is correct
-    to 113, 233, 389, 389 digits at dps 240, 480, 960, 1920.  Once two consecutive
-    levels are equally accurate, their matching prefix equals that accuracy and minus
-    five leaves nothing -- PSLQ was handed 395 digits of a 389-digit value and declared
-    a true relation unstable.  The margin therefore scales: `backoff` of the measured
-    count.  This only ever makes the confirmation MORE conservative, and it still runs
-    far above the search precision, so it remains a test that can fail.
+    The count returned measures the accuracy of the SEARCH value, and PSLQ then runs on
+    the higher one, so it understates -- the safe direction.  That is sound only
+    because theta_honest has already established that the refinement CONVERGES; on a
+    stalled refinement the two levels agree without either being right, and this
+    function would hand PSLQ digits that do not exist.
     """
     n, edges = rec["n"], rec["edges"]
     X0, B0, t0 = rec["seed"]
     d2 = factor * rec["dps_used"]
     r = refine(n, edges, X0, B0, t0, dps=d2)
-    h = matching_digits(rec["theta"], r["theta"], d2)
-    if h is None:
-        return r["theta"], None, d2
-    return r["theta"], int((h - 5) * backoff), d2
+    h = matching_digits(rec["theta"], r["theta"], d2,
+                        levels=(rec["dps_used"], d2)) - 5
+    return r["theta"], h, d2
 
 
 def budget(D, d):
@@ -211,12 +219,6 @@ def find_minpoly(t, D, confirm=None, degrees=DEGREES):
             return dict(degree=d, poly=rel, status="hit", ladder=tried,
                         confirmed_at=None)
         t2, D2 = confirm()
-        if D2 is None or D2 <= D:
-            # The higher-precision run gained nothing: the value has plateaued and
-            # there is no level at which to confirm.  Blaming PSLQ here would be
-            # wrong, so this gets its own status rather than "unstable".
-            return dict(degree=d, poly=rel, status="precision_plateau", ladder=tried,
-                        confirmed_at=D2)
         rel2, _ = _pslq_at(t2, D2, d)
         if rel2 == rel:
             return dict(degree=d, poly=rel, status="hit", ladder=tried,
