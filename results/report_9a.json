@@ -1,0 +1,161 @@
+{
+ "seed": 20260826,
+ "degrees_ladder": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  12,
+  14,
+  16,
+  20,
+  24
+ ],
+ "min_honest": 150,
+ "G9_3": {
+  "passed": true,
+  "checked": 497,
+  "mismatches": 0,
+  "capped": 0
+ },
+ "G9_2": {
+  "passed": true,
+  "rows": [
+   {
+    "label": "n=5 max",
+    "graph6": "DUW",
+    "expected": 2,
+    "got": 2,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=6 max",
+    "graph6": "EUZw",
+    "expected": 2,
+    "got": 2,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=7 max",
+    "graph6": "FCp`_",
+    "expected": 3,
+    "got": 3,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=8 max",
+    "graph6": "GCQb`o",
+    "expected": 4,
+    "got": 4,
+    "status": "hit",
+    "honest": 237,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=9 max",
+    "graph6": "HCRbdO{",
+    "expected": 1,
+    "got": 1,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=9 rank 2",
+    "graph6": "HCrb`qi",
+    "expected": 2,
+    "got": 2,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=10 max",
+    "graph6": "ICRb`yiu?",
+    "expected": 2,
+    "got": 2,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=10 rank 3",
+    "graph6": "ICRbcqhNO",
+    "expected": 1,
+    "got": 1,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=10 rank 4",
+    "graph6": "ICQ`fP[r_",
+    "expected": 1,
+    "got": 1,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=10 rank 5",
+    "graph6": "ICRbdO{xG",
+    "expected": 1,
+    "got": 1,
+    "status": "hit",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=10 rank 2",
+    "graph6": "ICQeR`[Mg",
+    "expected": null,
+    "got": null,
+    "status": "not_found",
+    "honest": 236,
+    "verdict": "PASS"
+   },
+   {
+    "label": "n=11 max",
+    "graph6": "J?`D@pgd?{?",
+    "expected": null,
+    "got": null,
+    "status": "not_found",
+    "honest": 236,
+    "verdict": "PASS"
+   }
+  ]
+ },
+ "G9_1": {
+  "passed": true,
+  "checked": 437,
+  "measured": 417,
+  "failures": 0,
+  "declined": 20,
+  "declined_by_reason": {
+   "unconverged": 20
+  },
+  "detail": []
+ },
+ "K9_3": {
+  "total": 1286,
+  "declined": 27,
+  "fraction": 0.021,
+  "by_reason": {
+   "unconverged": 27
+  },
+  "triggered": false
+ },
+ "wall_minutes": 66.1
+}

@@ -57,6 +57,7 @@ def cell_stats(rows):
     nf = sum(1 for d in rows if d["status"] in ("not_found", "pslq_unstable"))
     unst = sum(1 for d in rows if d["status"] == "pslq_unstable")
     low = sum(1 for d in rows if d["status"] == "low_precision")
+    unc = sum(1 for d in rows if d["status"] == "unconverged")
     err = sum(1 for d in rows if d["status"] == "error")
     hits = [d["degree"] for d in rows if d["status"] == "hit"]
     dist = defaultdict(int)
@@ -65,7 +66,8 @@ def cell_stats(rows):
     return dict(n_graphs=len(rows), n_used=len(used),
                 med_cens=median(used), med_hits=median(hits),
                 f_nf=(nf / len(used)) if used else None, n_nf=nf,
-                n_unstable=unst, n_low_precision=low, n_error=err,
+                n_unstable=unst, n_low_precision=low, n_unconverged=unc,
+                n_declined=low + unc + err, n_error=err,
                 deg1=sum(1 for h in hits if h == 1),
                 le2=sum(1 for h in hits if h <= 2),
                 le4=sum(1 for h in hits if h <= 4),
@@ -85,7 +87,7 @@ def main():
 
     print("=== 9.a / 9.c -- distribution of algebraic degrees, per cell ===")
     print(f"{'n':>3} {'выб':>4} {'графов':>7} {'med_cens':>9} {'med_hit':>8} "
-          f"{'доля НН':>8} {'НН':>4} {'нест':>5} {'низкТ':>6} {'deg=1':>6} "
+          f"{'доля НН':>8} {'НН':>4} {'нест':>5} {'откл':>5} {'deg=1':>6} "
           f"{'<=2':>5} {'<=4':>5}   распределение степеней")
     for n in sorted({k[0] for k in by}):
         for s in ("A", "B", "C"):
@@ -97,7 +99,7 @@ def main():
             mc = "—" if st["med_cens"] is None else f"{st['med_cens']:g}"
             mh = "—" if st["med_hits"] is None else f"{st['med_hits']:g}"
             print(f"{n:>3} {s:>4} {st['n_graphs']:>7} {mc:>9} {mh:>8} {fn:>8} "
-                  f"{st['n_nf']:>4} {st['n_unstable']:>5} {st['n_low_precision']:>6} "
+                  f"{st['n_nf']:>4} {st['n_unstable']:>5} {st['n_declined']:>5} "
                   f"{st['deg1']:>6} {st['le2']:>5} {st['le4']:>5}   {st['dist']}")
 
     # ---- H9-A / H9-B / H9-B'  (3.1, 3.2, 3.3) ------------------------------
@@ -199,11 +201,84 @@ def main():
     if all(v == 0 for v in disc.values()):
         print("  Ноль различающих точек: ни одно из объяснений не объявляется найденным.")
 
+    # ---- 6, continued: within-sample and within-layer discrimination -------
+    # A correlation computed on A u B can be an artefact of the two samples
+    # differing, so every competitor is recomputed INSIDE each sample, and then
+    # inside each (sample, alpha) layer.  Cells where two explanations agree do
+    # not count; only cells where they part do.
+    print("\n=== 9.6 -- те же ковариаты ВНУТРИ каждой выборки ===")
+    print("  Связь, посчитанная на A ∪ B, может быть артефактом различия выборок.")
+    within = {}
+    for n in SIZES_AB:
+        for s in ("A", "B"):
+            pool = [d for d in by.get((n, s), []) if cens(d) is not None and d.get("aut")]
+            if len(pool) < 15:
+                continue
+            row = {}
+            for name, f in covars:
+                r, p = spearmanr([f(d) for d in pool], [cens(d) for d in pool])
+                row[name] = dict(rho=round(float(r), 4), p=float(p), N=len(pool))
+            within[f"{n}{s}"] = row
+            print(f"  n={n} {s} (N={len(pool)}): " +
+                  "   ".join(f"{nm} ρ={row[nm]['rho']:+.3f}"
+                             f"{'*' if row[nm]['p'] < 0.05 else ' '}" for nm, _ in covars))
+    rep["within_sample_rho"] = within
+
+    print("\n=== 9.6 -- различает ли что-нибудь |E| от α (= от слоя n − α) ===")
+    print("  α и слой n − α -- одна и та же величина по определению, так что")
+    print("  разделять надо |E| и α.  Клетка различает их только если внутри")
+    print("  ФИКСИРОВАННОГО слоя связь с |E| остаётся значимой.")
+    disc_cells, tot_cells, layer_rows = 0, 0, []
+    for n in SIZES_AB:
+        for s in ("A", "B"):
+            pool = [d for d in by.get((n, s), []) if cens(d) is not None]
+            for al in sorted({d["alpha"] for d in pool}):
+                g = [d for d in pool if d["alpha"] == al]
+                nf = sum(1 for d in g if cens(d) == CENSOR)
+                if len(g) >= 8:
+                    layer_rows.append(dict(n=n, sample=s, alpha=al, N=len(g),
+                                           not_found=nf, f_nf=round(nf / len(g), 4)))
+                if len(g) < 15 or len({d["edges"] for d in g}) < 2:
+                    continue
+                tot_cells += 1
+                r, p = spearmanr([d["edges"] for d in g], [cens(d) for d in g])
+                sig = bool(p < 0.05 and abs(r) >= 0.30)
+                disc_cells += sig
+                print(f"  n={n} {s} α={al}: N={len(g):3d}  ρ(deg,|E|)={r:+.3f} "
+                      f"(p={p:.2g})  {'РАЗЛИЧАЕТ' if sig else 'нет'}")
+    print(f"  различающих клеток: {disc_cells} из {tot_cells}")
+    rep["edges_vs_alpha"] = dict(discriminating=disc_cells, cells=tot_cells)
+
+    print("\n=== 9.c -- доля «не найдено» по слоям, A против B при одних n и α ===")
+    print(f"  {'n':>3} {'α':>3} {'A: НН/N':>12} {'доля':>6}   {'B: НН/N':>12} {'доля':>6}   разность")
+    paired = []
+    for n in SIZES_AB:
+        for al in sorted({r["alpha"] for r in layer_rows if r["n"] == n}):
+            ra = next((r for r in layer_rows if r["n"] == n and r["sample"] == "A"
+                       and r["alpha"] == al), None)
+            rb = next((r for r in layer_rows if r["n"] == n and r["sample"] == "B"
+                       and r["alpha"] == al), None)
+            if not ra or not rb:
+                continue
+            d = ra["f_nf"] - rb["f_nf"]
+            paired.append(dict(n=n, alpha=al, fA=ra["f_nf"], fB=rb["f_nf"],
+                               diff=round(d, 4)))
+            print(f"  {n:>3} {al:>3} {ra['not_found']:>5}/{ra['N']:<6} {ra['f_nf']:>6.2f}   "
+                  f"{rb['not_found']:>5}/{rb['N']:<6} {rb['f_nf']:>6.2f}   {d:+.2f}")
+    same = sum(1 for r in paired if r["diff"] > 0)
+    print(f"  A тяжелее B на {same} из {len(paired)} сопоставленных пар (одинаковые n и α).")
+    print("  Это ОПИСАНИЕ, а не вердикт: запечатанный критерий H9-B' считает по")
+    print("  размерам, а не по парам, и он приведён выше в том виде, в каком запечатан.")
+    rep["layer_rows"] = layer_rows
+    rep["paired_layers"] = dict(pairs=paired, A_harder=same, total=len(paired))
+
     # ---- sealed predictions (5) --------------------------------------------
     print("\n=== запечатанные предсказания ===")
     P = {}
     C = [rep["cells"][k] for k in rep["cells"] if k.endswith("C")]
-    P["P9-1"] = all(c["n_graphs"] == c["deg1"] for c in C)
+    # 2.2/K9.3: graphs the instrument declined are excluded from the degree
+    # statistics and counted; P9-1 is judged on the graphs actually measured.
+    P["P9-1"] = all(c["n_used"] == c["deg1"] for c in C)
     P["P9-2"] = (all(rep["cells"][f"{n}A"]["med_cens"] is not None
                      and rep["cells"][f"{n}A"]["med_cens"] <= 2 for n in (9, 10, 11))
                  and all(rep["cells"][f"{n}B"]["med_cens"] is not None
@@ -212,7 +287,7 @@ def main():
     fs = [rep["cells"][f"{n}B"]["f_nf"] for n in SIZES_AB
           if rep["cells"].get(f"{n}B", {}).get("f_nf") is not None]
     P["P9-4"] = len(fs) == 4 and all(fs[i] <= fs[i + 1] for i in range(3))
-    P["P9-5"] = all(rep["cells"][f"{n}A"]["deg1"] / rep["cells"][f"{n}A"]["n_graphs"] >= 0.25
+    P["P9-5"] = all(rep["cells"][f"{n}A"]["deg1"] / max(rep["cells"][f"{n}A"]["n_used"], 1) >= 0.25
                     for n in (9, 10, 11))
     P["P9-6"] = (rep["cells"].get("11A", {}).get("f_nf") or 0) >= 0.5
     for k in sorted(P):

@@ -42,3 +42,4 @@ results/n11_nonzero.csv.gz
 
 # editor
 .idea/
+results/stage9_degrees_SUPERSEDED_*.jsonl
