@@ -10,13 +10,16 @@ authors:
 repository-code: "https://github.com/aoktyabrev/contextuality-gap-exhaustive"
 license: MIT
 license-url: "https://github.com/aoktyabrev/contextuality-gap-exhaustive/blob/master/LICENSE"
-version: "2.0"
+version: "2.1"
 doi: "10.5281/zenodo.22031808"
-date-released: "2026-08-25"
+date-released: "2026-08-26"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22031808"
     description: "Concept DOI, always the latest version"
+  - type: doi
+    value: "10.5281/zenodo.22110971"
+    description: "DOI of release v2.1"
   - type: doi
     value: "10.5281/zenodo.22092303"
     description: "DOI of release v2.0"

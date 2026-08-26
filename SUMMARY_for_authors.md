@@ -6,7 +6,7 @@ arXiv:2605.12828.
 
 Repository: https://github.com/aoktyabrev/contextuality-gap-exhaustive
 Archive: https://doi.org/10.5281/zenodo.22031808 (concept DOI, always the current version)
-This text describes v2.0, archived as https://doi.org/10.5281/zenodo.22092303
+This text describes v2.1, archived as https://doi.org/10.5281/zenodo.22110971
 
 Every claim below is marked **[proved]** — exact arithmetic with verified
 primal/dual certificates, no floating-point in the verdict — or **[numerical]**.
