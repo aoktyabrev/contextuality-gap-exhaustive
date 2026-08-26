@@ -97,6 +97,29 @@ def run_one(cid, ch):
         tol = ch.get("tol", 0)
         return note(abs(float(got) - float(exp)) <= tol, cid,
                     f"{ch['agg']}: {got} != {exp} (tol {tol})")
+    if kind == "layer":
+        # D(n, a) straight from the Stage 7 layer table -- the feeding terms of a
+        # transfer bound.  Recomputed here rather than copied, because naming the wrong
+        # feeding term is exactly the mistake this check exists to catch.
+        tab = load_json("results/report_7.json")["blocks"]["7b"]
+        hit = [r for r in tab if r["n"] == ch["n"] and r["a"] == ch["a"]]
+        if not hit:
+            return note(False, cid, f"D({ch['n']},{ch['a']}) absent from the layer table")
+        return note(abs(hit[0]["D"] - ch["expect"]) <= ch.get("tol", 0), cid,
+                    f"D({ch['n']},{ch['a']}) = {hit[0]['D']} != {ch['expect']}")
+    if kind == "layer8":
+        import csv
+        best = {}
+        with open(os.path.join(ROOT, "results", "n8_all.csv")) as f:
+            for r in csv.DictReader(f):
+                a, d = int(r["alpha"]), float(r["delta"])
+                if d > best.get(a, -1):
+                    best[a] = d
+        got = best.get(ch["a"])
+        if got is None:
+            return note(False, cid, f"no n=8 layer a={ch['a']}")
+        return note(abs(got - ch["expect"]) <= ch.get("tol", 0), cid,
+                    f"D(8,{ch['a']}) = {got} != {ch['expect']}")
     if kind == "multi":
         ok = True
         for j, item in enumerate(ch["items"]):

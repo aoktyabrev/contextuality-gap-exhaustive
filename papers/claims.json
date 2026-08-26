@@ -2426,32 +2426,6 @@
   }
  },
  {
-  "id": "A-5.3-k",
-  "paper": "A",
-  "section": "5.3",
-  "tag": "measured",
-  "claim": "D(11,5), the term that bounds T(12,5) in the case analysis",
-  "as_written": "0.4678438",
-  "check": {
-   "kind": "text",
-   "file": "REPORT_STAGE8.md",
-   "needle": "| 11 | 5 | 6 | 0.4678438"
-  }
- },
- {
-  "id": "A-5.3-l",
-  "paper": "A",
-  "section": "5.3",
-  "tag": "measured",
-  "claim": "D(11,4), the term that gives the transfer bound",
-  "as_written": "0.7748885",
-  "check": {
-   "kind": "text",
-   "file": "REPORT_STAGE8.md",
-   "needle": "| 11 | 4 | 7 | 0.7748885"
-  }
- },
- {
   "id": "A-5.8-a",
   "paper": "A",
   "section": "5.8",
@@ -2462,6 +2436,106 @@
    "kind": "text",
    "file": "REPORT_STAGE8.md",
    "needle": "+8.3·10⁻⁸"
+  }
+ },
+ {
+  "id": "A-5.3-T125-9",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(9,3), the largest feeding term of T(12,5)",
+  "as_written": "0.6666667",
+  "check": {
+   "kind": "layer",
+   "n": 9,
+   "a": 3,
+   "expect": 0.6666667,
+   "tol": 5e-07
+  }
+ },
+ {
+  "id": "A-5.3-T125-10",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(10,4), feeding T(12,5)",
+  "as_written": "0.5507551",
+  "check": {
+   "kind": "layer",
+   "n": 10,
+   "a": 4,
+   "expect": 0.5507551,
+   "tol": 5e-07
+  }
+ },
+ {
+  "id": "A-5.3-T135-10",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(10,3), feeding T(13,5)",
+  "as_written": "0.7071068",
+  "check": {
+   "kind": "layer",
+   "n": 10,
+   "a": 3,
+   "expect": 0.7071068,
+   "tol": 5e-07
+  }
+ },
+ {
+  "id": "A-5.3-T135-9",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(9,2), feeding T(13,5)",
+  "as_written": "0.3837191",
+  "check": {
+   "kind": "layer",
+   "n": 9,
+   "a": 2,
+   "expect": 0.3837191,
+   "tol": 5e-07
+  }
+ },
+ {
+  "id": "A-5.3-T125-11",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(11,5), feeding T(12,5) -- NOT D(11,4)",
+  "as_written": "0.4678438",
+  "check": {
+   "kind": "text",
+   "file": "REPORT_STAGE8.md",
+   "needle": "| 11 | 5 | 6 | 0.4678438"
+  }
+ },
+ {
+  "id": "A-5.3-T135-11",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(11,4), feeding T(13,5) -- NOT D(11,5)",
+  "as_written": "0.7748885",
+  "check": {
+   "kind": "text",
+   "file": "REPORT_STAGE8.md",
+   "needle": "| 11 | 4 | 7 | 0.7748885"
+  }
+ },
+ {
+  "id": "A-5.3-T125-8",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "D(8,2), feeding T(12,5)",
+  "as_written": "0.3431458",
+  "check": {
+   "kind": "layer8",
+   "a": 2,
+   "expect": 0.3431458,
+   "tol": 5e-07
   }
  }
 ]
