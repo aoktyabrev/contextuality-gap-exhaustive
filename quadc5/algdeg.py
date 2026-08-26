@@ -49,13 +49,19 @@ def _dual_start(n, edges):
 
 
 def matching_digits(a, b, dps):
-    """Length of the common decimal prefix of two mpf values."""
+    """Length of the common decimal prefix of two mpf values, or None.
+
+    None means the two values are bit-identical, and that is NOT evidence of `dps`
+    honest digits -- it means the comparison carries no information, almost always
+    because both came from the same refinement.  Returning `dps` there is how a
+    fabricated count of 955 honest digits reached PSLQ and failed gate G9.1 on
+    2026-08-26; see REPORT_STAGE9.  Callers must treat None as unmeasurable and
+    compare against a genuinely higher precision instead.
+    """
     mp.dps = dps
-    if a == b:
-        return dps
     d = fabs(a - b)
     if d == 0:
-        return dps
+        return None
     return int(floor(-log10(d / max(fabs(a), mpf(1)))))
 
 
@@ -66,18 +72,82 @@ def numeric_rank(X, tol=1e-8):
     return int((w > tol * m).sum())
 
 
-def theta_honest(code=None, n=None, edges=None, dps=240):
-    """High-precision theta plus its MEASURED honest-digit count."""
+def theta_honest(code=None, n=None, edges=None, dps=240, target=MIN_HONEST,
+                 max_dps=3840):
+    """High-precision theta plus its MEASURED honest-digit count, escalating as needed.
+
+    The honest count always compares a run at level d against a run at level 2d, and
+    the value returned is the 2d one -- so the count UNDERSTATES the returned value's
+    accuracy, which is the safe direction.
+
+    Escalation is not decoration.  hiprec.refine damps with lambda = 10^(-dps//2), and
+    on a DEGENERATE optimum -- which is what a Delta = 0 graph typically has -- the
+    damping floor caps attainable accuracy at roughly dps/2 digits, not dps.  Measured
+    on FCRto: 113 correct digits at dps 240, 233 at 480, 389 at 960.  A fixed dps is
+    therefore not enough; the count has to be measured and the precision raised until
+    it clears `target`.
+    """
     if code is not None:
         n, adj = decode_g6(code)
         edges = edges_of(n, adj)
     pr = theta_cvxpy(n, edges, solver="CLARABEL")
     B0, t0 = _dual_start(n, edges)
-    r1 = refine(n, edges, pr["X"], B0, pr["theta"], dps=dps)
-    r2 = refine(n, edges, pr["X"], B0, pr["theta"], dps=2 * dps)
-    honest = matching_digits(r1["theta"], r2["theta"], 2 * dps) - 5
-    return dict(theta=r2["theta"], theta_lo=r1["theta"], honest=honest,
-                rank=numeric_rank(pr["X"]), dps=2 * dps, n=n, edges=edges)
+    cache = {}
+
+    def at(d):
+        if d not in cache:
+            cache[d] = refine(n, edges, pr["X"], B0, pr["theta"], dps=d)
+        return cache[d]
+
+    d, prev, plateau = dps, None, False
+    while True:
+        lo, hi = at(d), at(2 * d)
+        h = matching_digits(lo["theta"], hi["theta"], 2 * d)
+        h = None if h is None else h - 5
+        if h is not None and h >= target:
+            break
+        if prev is not None and h is not None and h < 1.3 * prev:
+            # Doubling the precision bought almost nothing.  Gauss-Newton has
+            # plateaued on a degenerate optimum and further escalation only burns
+            # time -- for a graph that needs dps 3840 that is minutes, per graph.
+            plateau = True
+            break
+        if 2 * d >= max_dps:
+            break
+        prev, d = h, d * 2
+    return dict(theta=hi["theta"], honest=h, dps_used=2 * d, plateau=plateau,
+                rank=numeric_rank(pr["X"]), n=n, edges=edges,
+                seed=(pr["X"], B0, pr["theta"]))
+
+
+def higher(rec, factor=2, backoff=0.90):
+    """A strictly higher-precision value than rec's, with a usable digit count.
+
+    Two separate defects were found here by gate G9.1 on 2026-08-26 and both are
+    fixed in this function.
+
+    First, the level must be DERIVED from rec["dps_used"].  Hard-coding it meant that
+    for graphs which had escalated, the "confirmation" ran at the same dps as the
+    search; matching_digits saw two identical values and reported the full dps as
+    honest digits, and PSLQ then chased 955 digits of a value correct to 389.
+
+    Second, the flat five-digit margin of the sealed rule does not survive a PLATEAU.
+    Gauss-Newton on a degenerate optimum stops gaining: for FCRto the value is correct
+    to 113, 233, 389, 389 digits at dps 240, 480, 960, 1920.  Once two consecutive
+    levels are equally accurate, their matching prefix equals that accuracy and minus
+    five leaves nothing -- PSLQ was handed 395 digits of a 389-digit value and declared
+    a true relation unstable.  The margin therefore scales: `backoff` of the measured
+    count.  This only ever makes the confirmation MORE conservative, and it still runs
+    far above the search precision, so it remains a test that can fail.
+    """
+    n, edges = rec["n"], rec["edges"]
+    X0, B0, t0 = rec["seed"]
+    d2 = factor * rec["dps_used"]
+    r = refine(n, edges, X0, B0, t0, dps=d2)
+    h = matching_digits(rec["theta"], r["theta"], d2)
+    if h is None:
+        return r["theta"], None, d2
+    return r["theta"], int((h - 5) * backoff), d2
 
 
 def budget(D, d):
@@ -141,6 +211,12 @@ def find_minpoly(t, D, confirm=None, degrees=DEGREES):
             return dict(degree=d, poly=rel, status="hit", ladder=tried,
                         confirmed_at=None)
         t2, D2 = confirm()
+        if D2 is None or D2 <= D:
+            # The higher-precision run gained nothing: the value has plateaued and
+            # there is no level at which to confirm.  Blaming PSLQ here would be
+            # wrong, so this gets its own status rather than "unstable".
+            return dict(degree=d, poly=rel, status="precision_plateau", ladder=tried,
+                        confirmed_at=D2)
         rel2, _ = _pslq_at(t2, D2, d)
         if rel2 == rel:
             return dict(degree=d, poly=rel, status="hit", ladder=tried,

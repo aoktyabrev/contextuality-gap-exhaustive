@@ -210,3 +210,37 @@ reads. Deleting it and re-running `run_0c.py` also works — the chunk checkpoin
   the whole point of Stage 2 is not repeating it.
 - **Calibrate on C₇ before touching anything unknown.** Its ϑ is a known cubic, so it
   exercises the entire degree-≥3 pipeline end to end; `runners/certify_nf.py` runs it first.
+
+
+## Stage 9 additions
+
+- **A check that runs at the same precision as the thing it checks is not a check.**
+  Stage 9's confirmation step re-runs PSLQ at higher precision to kill spurious hits.
+  The first implementation hard-coded the confirmation level instead of deriving it
+  from the level the search actually used. For graphs that had escalated, the two
+  coincided; `matching_digits` compared a value against *itself*, took its `a == b`
+  branch, and returned the full `dps` — a fabricated 955 honest digits for a value
+  correct to 389. PSLQ then failed to confirm true relations, and gate G9.1 reported
+  twenty `pslq_unstable` on graphs whose answer is exactly α. **Derive the check's
+  precision from the measurement's; never write it as a constant.** And make the
+  identical-value case return *nothing* rather than a number — a comparison that
+  carries no information must not be able to masquerade as a good one.
+
+- **Gauss–Newton plateaus on a degenerate optimum, and the flat honest-digit margin
+  fails there.** `hiprec.refine` damps with λ = 10^(−dps//2); when the KKT system is
+  singular — which is the normal case for a Δ = 0 graph — attainable accuracy is about
+  dps/2, not dps, and it stops improving entirely past some level. Measured on
+  `FCRto`: 113, 233, 389, 389 correct digits at dps 240, 480, 960, 1920. The rule
+  "matching prefix of a dps run and a 2·dps run, minus 5" is sound **only while the
+  2·dps run is genuinely better**; once two consecutive levels are equally accurate
+  their matching prefix *equals* that accuracy and five digits of margin leave
+  nothing. Escalate precision until the count clears the target, stop escalating when
+  doubling buys less than ~1.3×, and use a **proportional** margin for anything built
+  on top of the count.
+
+- **The gate caught it, and it caught it where the answer was already known.** This is
+  what the C sample is for: on a Δ > 0 graph a wrong value still looks like a
+  plausible algebraic number, and both defects above would have been invisible. They
+  surfaced only because the truth on those graphs is the exact integer α. When
+  designing a calibration sample, prefer inputs whose answer is known *exactly* over
+  inputs that merely look representative.

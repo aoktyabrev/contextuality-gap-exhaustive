@@ -21,7 +21,7 @@ from quadc5.alpha import alpha_bitmask
 from quadc5.theta import theta_cvxpy
 from quadc5.hiprec import refine
 from quadc5.algdeg import (theta_honest, find_minpoly, matching_digits, _dual_start,
-                           aut_dreadnaut, aut_networkx, vertex_orbits,
+                           higher, aut_dreadnaut, aut_networkx, vertex_orbits,
                            MIN_HONEST, DEGREES, budget)
 from mpmath import mp, nstr
 
@@ -54,24 +54,18 @@ def measure(task):
         n, adj = decode_g6(code)
         edges = edges_of(n, adj)
         a = alpha_bitmask(n, adj)
-        r = theta_honest(code=code, dps=240)
+        r = theta_honest(code=code, dps=240)     # escalates on its own, 2.2
         D = r["honest"]
-        prec = "ok"
-        if D < MIN_HONEST:                      # 2.2: one retry, then flag
-            r = theta_honest(code=code, dps=480)
-            D = r["honest"]
-            if D < MIN_HONEST:
-                prec = "low_precision"
+        prec = "ok" if (D is not None and D >= MIN_HONEST) else "low_precision"
 
         cache = {}
 
         def confirm():
+            """A strictly higher precision than the search used -- never the same one."""
             if "v" not in cache:
-                pr = theta_cvxpy(n, edges, solver="CLARABEL")
-                B0, _ = _dual_start(n, edges)
-                r3 = refine(n, edges, pr["X"], B0, pr["theta"], dps=4 * 240)
-                cache["v"] = (r3["theta"],
-                              matching_digits(r["theta"], r3["theta"], 4 * 240) - 5)
+                t2, D2, d2 = higher(r)
+                cache["v"] = (t2, D2)
+                cache["dps"] = d2
             return cache["v"]
 
         if prec == "low_precision":
@@ -86,6 +80,8 @@ def measure(task):
         return dict(n=n, sample=sample, graph6=code, edges=len(edges), alpha=a,
                     delta=float(r["theta"]) - a, honest=D, precision=prec,
                     rank=r["rank"], aut=aut, orbits=orb,
+                    dps_used=r["dps_used"], confirm_dps=cache.get("dps"),
+                    plateau=r["plateau"],
                     degree=m["degree"], poly=m["poly"], status=m["status"],
                     confirmed_at=m.get("confirmed_at"),
                     theta=nstr(r["theta"], 50), seconds=round(time.time() - t_start, 1))
