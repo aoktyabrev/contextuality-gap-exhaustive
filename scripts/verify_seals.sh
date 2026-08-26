@@ -11,6 +11,22 @@ set -uo pipefail
 cd "$(dirname "$0")/.."
 fail=0
 
+# A shallow clone has no sealing commits, so every SOURCES.md prefix check would fail
+# and the script would print SEAL CHECK FAILED -- the worst possible false alarm for a
+# project whose credibility rests on these seals.  Say what is actually wrong instead.
+if [ "$(git rev-parse --is-shallow-repository 2>/dev/null)" = "true" ]; then
+  echo "This is a SHALLOW clone (git clone --depth ...)."
+  echo
+  echo "The seals are checked against the commits that created them, and a shallow"
+  echo "clone does not contain those commits.  Nothing here is wrong with the seals;"
+  echo "there is simply no history to check them against.  Fetch it with"
+  echo
+  echo "    git fetch --unshallow"
+  echo
+  echo "and run this again."
+  exit 2
+fi
+
 check() {                       # check <sealing-commit> <sha256-file> <label>
   local commit="$1" sealfile="$2" label="$3"
   echo "=== $label  (sealed in $commit) ==="
