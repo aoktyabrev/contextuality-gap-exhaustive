@@ -575,7 +575,14 @@ stage was run, and the hash was committed before any of its results existed. The
 checks that the sealed documents are byte-identical to what was sealed and prints the commit
 timestamps, so the ordering — prediction first, data second — is checkable by anyone rather
 than asserted. `SOURCES.md` grows across stages and is never edited in place, so each seal
-covers the prefix that existed when it was taken; the script checks the prefixes.
+covers the prefix that existed when it was taken; the script checks the prefixes. Running
+`sha256sum -c` on a `.sha256` file by hand will therefore report `SOURCES.md: FAILED`,
+correctly — the whole file is not what was sealed, its prefix is.
+
+**This check needs the git history**, because it verifies each seal against the commit
+that created it. A `--depth 1` clone and the source archive on Zenodo are snapshots
+without that history; the script detects the shallow case and says so rather than
+reporting a failure. To check the seals, clone the repository in full.
 
 Nauty 2.9.3 is pinned; the tarball in `sources/` has SHA-256
 `9fc4edae04f88a0f5883985be3b39cf7f898fd6cc96e96b9ee25452743cc1b5b`.
