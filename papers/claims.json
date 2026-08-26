@@ -1,0 +1,2428 @@
+[
+ {
+  "id": "A-abs-1",
+  "paper": "A",
+  "section": "abstract",
+  "tag": "measured",
+  "claim": "connected graphs at n=11",
+  "as_written": "1 006 700 565",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "1 006 700 565"
+  }
+ },
+ {
+  "id": "A-abs-2",
+  "paper": "A",
+  "section": "abstract",
+  "tag": "proved",
+  "claim": "quartic",
+  "as_written": "x⁴ − x³ + 23x² − 155x + 158",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "x⁴ − x³ + 23x² − 155x + 158"
+  }
+ },
+ {
+  "id": "A-abs-3",
+  "paper": "A",
+  "section": "abstract",
+  "tag": "proved",
+  "claim": "enclosure width",
+  "as_written": "4.4·10⁻¹¹",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "4.4e-11"
+  }
+ },
+ {
+  "id": "A-abs-4",
+  "paper": "A",
+  "section": "abstract",
+  "tag": "measured",
+  "claim": "stage 9 graph count",
+  "as_written": "1286",
+  "check": {
+   "kind": "agg",
+   "agg": "stage9_rows",
+   "expect": 1286
+  }
+ },
+ {
+  "id": "A-abs-5",
+  "paper": "A",
+  "section": "measured",
+  "tag": "measured",
+  "claim": "relation threshold",
+  "as_written": "22",
+  "check": {
+   "kind": "json",
+   "file": "results/report_precision_threshold.json",
+   "path": "threshold_digits",
+   "expect": 22
+  }
+ },
+ {
+  "id": "A-1.2-a",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "measured",
+  "claim": "database counts n=5..10",
+  "as_written": "1, 3, 33, 498, 16 533 and 975 330",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "(1, 3, 33, 498, 16533, 975330)"
+  }
+ },
+ {
+  "id": "A-1.2-b",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "observed",
+  "claim": "authors' reported gap",
+  "as_written": "0.46784",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "0.46784"
+  }
+ },
+ {
+  "id": "A-1.2-c",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "observed",
+  "claim": "authors' maximizer code",
+  "as_written": "GCQb`o",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "GCQb`o"
+  }
+ },
+ {
+  "id": "A-1.2-d",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "observed",
+  "claim": "authors' false-positive sentence",
+  "as_written": "r \\approx 20 \\gg 1",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "is a false positive"
+  }
+ },
+ {
+  "id": "A-2.2-a",
+  "paper": "A",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "geng -l mismatch count",
+  "as_written": "260 902",
+  "check": {
+   "kind": "text",
+   "file": "CLAUDE.md",
+   "needle": "260 902"
+  }
+ },
+ {
+  "id": "A-2.2-b",
+  "paper": "A",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "swept totals",
+  "as_written": "21, 112, 853, 11 117, 261 080, 11 716 571 and 1 006 700 565",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "21, 112, 853, 11 117, 261 080, 11 716 571, 1 006 700 565"
+  }
+ },
+ {
+  "id": "A-2.3-a",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "filter share at n=11",
+  "as_written": "89.98",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "89.98"
+  }
+ },
+ {
+  "id": "A-2.3-b",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "solver share at n=11",
+  "as_written": "10.02",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "10.02"
+  }
+ },
+ {
+  "id": "A-2.3-c",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "geng -P counts",
+  "as_written": "7 805 / 126 777 / 3 122 221",
+  "check": {
+   "kind": "text",
+   "file": "CLAUDE.md",
+   "needle": "7 805 / 126 777 / 3 122 221"
+  }
+ },
+ {
+  "id": "A-2.4-a",
+  "paper": "A",
+  "section": "2.4",
+  "tag": "measured",
+  "claim": "noise floor n=10",
+  "as_written": "1.9e-6",
+  "check": {
+   "kind": "text",
+   "file": "CLAUDE.md",
+   "needle": "1.9e-6"
+  }
+ },
+ {
+  "id": "A-2.4-b",
+  "paper": "A",
+  "section": "2.4",
+  "tag": "measured",
+  "claim": "smallest genuine gap n=10",
+  "as_written": "5.894e-4",
+  "check": {
+   "kind": "text",
+   "file": "CLAUDE.md",
+   "needle": "5.894e-4"
+  }
+ },
+ {
+  "id": "A-2.5-a",
+  "paper": "A",
+  "section": "2.5",
+  "tag": "measured",
+  "claim": "number of sealed documents",
+  "as_written": "17",
+  "check": {
+   "kind": "agg",
+   "agg": "seal_count",
+   "expect": 17
+  }
+ },
+ {
+  "id": "A-3.1-5",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "Delta_max(5)",
+  "as_written": "0.23606797749978970",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.23606797749978970"
+  }
+ },
+ {
+  "id": "A-3.1-6",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "Delta_max(6)",
+  "as_written": "0.23606797749978970",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.23606797749978970"
+  }
+ },
+ {
+  "id": "A-3.1-7",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "Delta_max(7)",
+  "as_written": "0.31766720739409539",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.31766720739409539"
+  }
+ },
+ {
+  "id": "A-3.1-8",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "Delta_max(8)",
+  "as_written": "0.46784372984022411",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.46784372984022411"
+  }
+ },
+ {
+  "id": "A-3.1-9",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "Delta_max(9)",
+  "as_written": "0.66666666666666667",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.66666666666666667"
+  }
+ },
+ {
+  "id": "A-3.1-10",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "Delta_max(10)",
+  "as_written": "0.70710678118654752",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.70710678118654752"
+  }
+ },
+ {
+  "id": "A-3.1-code-DUW",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "maximizer graph6",
+  "as_written": "DUW",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "DUW"
+  }
+ },
+ {
+  "id": "A-3.1-code-EUZw",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "maximizer graph6",
+  "as_written": "EUZw",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "EUZw"
+  }
+ },
+ {
+  "id": "A-3.1-code-FCp`_",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "maximizer graph6",
+  "as_written": "FCp`_",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "FCp`_"
+  }
+ },
+ {
+  "id": "A-3.1-code-GCQb`o",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "maximizer graph6",
+  "as_written": "GCQb`o",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "GCQb`o"
+  }
+ },
+ {
+  "id": "A-3.1-code-HCRbdO{",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "maximizer graph6",
+  "as_written": "HCRbdO{",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "HCRbdO{"
+  }
+ },
+ {
+  "id": "A-3.1-code-ICRb`yiu?",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "maximizer graph6",
+  "as_written": "ICRb`yiu?",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "ICRb`yiu?"
+  }
+ },
+ {
+  "id": "A-3.1-code-J?`D@pgd?{?",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "maximizer graph6",
+  "as_written": "J?`D@pgd?{?",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "J?`D@pgd?{?"
+  }
+ },
+ {
+  "id": "A-3.1-minpolys",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "proved",
+  "claim": "minimal polynomials of Delta",
+  "as_written": "y²+4y−1, y²+4y−1, y³+16y²+20y−8, y⁴+11y³+68y²+64y−46, 3y−2, 2y²−1",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "y²+4y−1, y²+4y−1, y³+16y²+20y−8, y⁴+11y³+68y²+64y−46,"
+  }
+ },
+ {
+  "id": "A-3.2-a",
+  "paper": "A",
+  "section": "3.2",
+  "tag": "measured",
+  "claim": "ratio 9->10",
+  "as_written": "1.061",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "1.061"
+  }
+ },
+ {
+  "id": "A-3.2-b",
+  "paper": "A",
+  "section": "3.2",
+  "tag": "measured",
+  "claim": "historical ratio range",
+  "as_written": "1.35–1.47",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "1.35–1.47"
+  }
+ },
+ {
+  "id": "A-3.2-c",
+  "paper": "A",
+  "section": "3.2",
+  "tag": "measured",
+  "claim": "rank-3-down ratio",
+  "as_written": "1.41–1.43",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "1.41–1.43"
+  }
+ },
+ {
+  "id": "A-3.3-a",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "proved",
+  "claim": "theta digits",
+  "as_written": "3.46784372984022410869739188177700792442892753691289881998283530238038751",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "3.46784372984022410869739188177700792442892753691289881998283530238038751"
+  }
+ },
+ {
+  "id": "A-3.3-b",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "proved",
+  "claim": "Delta minimal polynomial",
+  "as_written": "y⁴ + 11y³ + 68y² + 64y − 46",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "y⁴ + 11y³ + 68y² + 64y − 46"
+  }
+ },
+ {
+  "id": "A-3.3-c",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "proved",
+  "claim": "principal minors at n=8",
+  "as_written": "255",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "255 principal minors"
+  }
+ },
+ {
+  "id": "A-3.3-d",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "measured",
+  "claim": "precision threshold",
+  "as_written": "22",
+  "check": {
+   "kind": "json",
+   "file": "results/report_precision_threshold.json",
+   "path": "threshold_digits",
+   "expect": 22
+  }
+ },
+ {
+  "id": "A-3.3-e",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "measured",
+  "claim": "spurious count",
+  "as_written": "6",
+  "check": {
+   "kind": "json",
+   "file": "results/report_precision_threshold.json",
+   "path": "spurious_count",
+   "expect": 6
+  }
+ },
+ {
+  "id": "A-3.3-f",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "measured",
+  "claim": "spurious degrees all 3",
+  "as_written": "[3]",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_precision_threshold.json",
+   "path": "spurious_degrees",
+   "expect": "[3]"
+  }
+ },
+ {
+  "id": "A-3.3-g",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "measured",
+  "claim": "min spurious height",
+  "as_written": "2358",
+  "check": {
+   "kind": "json",
+   "file": "results/report_precision_threshold.json",
+   "path": "spurious_height_min",
+   "expect": 2358
+  }
+ },
+ {
+  "id": "A-3.3-h",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "measured",
+  "claim": "max spurious height",
+  "as_written": "483 092",
+  "check": {
+   "kind": "json",
+   "file": "results/report_precision_threshold.json",
+   "path": "spurious_height_max",
+   "expect": 483092
+  }
+ },
+ {
+  "id": "A-3.3-i",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "measured",
+  "claim": "quartic height",
+  "as_written": "158",
+  "check": {
+   "kind": "json",
+   "file": "results/report_precision_threshold.json",
+   "path": "true_quartic_height",
+   "expect": 158
+  }
+ },
+ {
+  "id": "A-3.3-j",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "measured",
+  "claim": "top of digit range",
+  "as_written": "40",
+  "check": {
+   "kind": "json",
+   "file": "results/report_precision_threshold.json",
+   "path": "digit_range.1",
+   "expect": 40
+  }
+ },
+ {
+  "id": "A-4.1-a",
+  "paper": "A",
+  "section": "4.1",
+  "tag": "measured",
+  "claim": "sweep wall time",
+  "as_written": "71.8",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "71.8 hours"
+  }
+ },
+ {
+  "id": "A-4.2-a",
+  "paper": "A",
+  "section": "4.2",
+  "tag": "proved",
+  "claim": "enclosure lower",
+  "as_written": "0.7748885327027013",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.7748885327027013"
+  }
+ },
+ {
+  "id": "A-4.2-b",
+  "paper": "A",
+  "section": "4.2",
+  "tag": "proved",
+  "claim": "enclosure upper",
+  "as_written": "0.7748885327466875",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.7748885327466875"
+  }
+ },
+ {
+  "id": "A-4.2-c",
+  "paper": "A",
+  "section": "4.2",
+  "tag": "proved",
+  "claim": "primal L",
+  "as_written": "1193722133190 / 250000000003",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "1193722133190 / 250000000003"
+  }
+ },
+ {
+  "id": "A-4.2-d",
+  "paper": "A",
+  "section": "4.2",
+  "tag": "proved",
+  "claim": "dual U",
+  "as_written": "76398216523947 / 16000000000000",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "76398216523947 / 16000000000000"
+  }
+ },
+ {
+  "id": "A-4.2-e",
+  "paper": "A",
+  "section": "4.2",
+  "tag": "proved",
+  "claim": "principal minors at n=11",
+  "as_written": "2047",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "2047"
+  }
+ },
+ {
+  "id": "A-4.3-a",
+  "paper": "A",
+  "section": "4.3",
+  "tag": "proved",
+  "claim": "runner-up code",
+  "as_written": "J?`@f?kUDG_",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "J?`@f?kUDG_"
+  }
+ },
+ {
+  "id": "A-4.3-b",
+  "paper": "A",
+  "section": "4.3",
+  "tag": "proved",
+  "claim": "runner-up bound",
+  "as_written": "152149953435449/32000000000000",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "152149953435449/32000000000000"
+  }
+ },
+ {
+  "id": "A-4.3-c",
+  "paper": "A",
+  "section": "4.3",
+  "tag": "proved",
+  "claim": "runner-up decimal",
+  "as_written": "0.7546860448577810",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.7546860448577810"
+  }
+ },
+ {
+  "id": "A-4.3-d",
+  "paper": "A",
+  "section": "4.3",
+  "tag": "proved",
+  "claim": "separation margin",
+  "as_written": "0.0202024878",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.0202024878"
+  }
+ },
+ {
+  "id": "A-4.4-a",
+  "paper": "A",
+  "section": "4.4",
+  "tag": "measured",
+  "claim": "SCS-CLARABEL disagreement",
+  "as_written": "9.39·10⁻⁸",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "9.39·10⁻⁸"
+  }
+ },
+ {
+  "id": "A-4.5-a",
+  "paper": "A",
+  "section": "4.5",
+  "tag": "measured",
+  "claim": "degree bound at n=11",
+  "as_written": "degree ≤ 48 with height ≤ 10⁹",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "degree ≤ 48 with height ≤ 10⁹"
+  }
+ },
+ {
+  "id": "A-5.3-a",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "proved",
+  "claim": "counterexample code",
+  "as_written": "L@JC?_ASKAGPBH",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "L@JC?_ASKAGPBH"
+  }
+ },
+ {
+  "id": "A-5.3-b",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "proved",
+  "claim": "counterexample Delta",
+  "as_written": "45375481648 / 55555555557",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "45375481648 / 55555555557"
+  }
+ },
+ {
+  "id": "A-5.3-c",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "proved",
+  "claim": "counterexample decimal",
+  "as_written": "0.816758669642764",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.816758669642764"
+  }
+ },
+ {
+  "id": "A-5.3-d",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "proved",
+  "claim": "transfer bound",
+  "as_written": "12398216523947 / 16000000000000",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "12398216523947 / 16000000000000"
+  }
+ },
+ {
+  "id": "A-5.3-e",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "proved",
+  "claim": "transfer decimal",
+  "as_written": "0.774888532746687",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.774888532746687"
+  }
+ },
+ {
+  "id": "A-5.3-f",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "proved",
+  "claim": "excess",
+  "as_written": "0.0419",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.0419"
+  }
+ },
+ {
+  "id": "A-5.3-g",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "n=9 layers>=5 graphs",
+  "as_written": "22 922",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "22 922"
+  }
+ },
+ {
+  "id": "A-5.3-h",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "n=9 share",
+  "as_written": "8.78",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "8.78 %"
+  }
+ },
+ {
+  "id": "A-5.3-i",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "n=10 layers>=5 graphs",
+  "as_written": "1 663 003",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "1 663 003"
+  }
+ },
+ {
+  "id": "A-5.3-j",
+  "paper": "A",
+  "section": "5.3",
+  "tag": "measured",
+  "claim": "n=10 share",
+  "as_written": "14.19",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "14.19 %"
+  }
+ },
+ {
+  "id": "A-5.4-a",
+  "paper": "A",
+  "section": "5.4",
+  "tag": "measured",
+  "claim": "points deciding the 5",
+  "as_written": "9",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "| the **5** | **9** |"
+  }
+ },
+ {
+  "id": "A-5.5-a",
+  "paper": "A",
+  "section": "5.5",
+  "tag": "measured",
+  "claim": "theta evaluations at (12,5)",
+  "as_written": "7.12",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "7.12 million"
+  }
+ },
+ {
+  "id": "A-5.6-a",
+  "paper": "A",
+  "section": "5.6",
+  "tag": "measured",
+  "claim": "exceedance ability",
+  "as_written": "10 of 10",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "**10 of 10**"
+  }
+ },
+ {
+  "id": "A-5.6-b",
+  "paper": "A",
+  "section": "5.6",
+  "tag": "measured",
+  "claim": "layer-maximum ability",
+  "as_written": "2 of 8",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "**2 of 8**"
+  }
+ },
+ {
+  "id": "A-5.6-c",
+  "paper": "A",
+  "section": "5.6",
+  "tag": "measured",
+  "claim": "(10,3) shortfall",
+  "as_written": "0.0400",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.0400"
+  }
+ },
+ {
+  "id": "A-5.7-a",
+  "paper": "A",
+  "section": "5.7",
+  "tag": "measured",
+  "claim": "odd-cycle table",
+  "as_written": "+0.236 | +0.082 | +0.042 | **−0.082** | −0.262 | −0.358",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "+0.236 | +0.082 | +0.042 | **−0.082** | −0.262 | −0.358"
+  }
+ },
+ {
+  "id": "A-5.7-b",
+  "paper": "A",
+  "section": "5.7",
+  "tag": "measured",
+  "claim": "C9 gap",
+  "as_written": "0.3600896",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.3600896"
+  }
+ },
+ {
+  "id": "A-6.1-a",
+  "paper": "A",
+  "section": "6.1",
+  "tag": "observed",
+  "claim": "NRS degrees at n=6",
+  "as_written": "δ(6,6,4) = 1400, δ(7,6,4) = 2040, δ(8,6,4) = 2100, δ(9,6,4) = 1470",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "δ(6, 6, 4) = 1400 , δ (7, 6, 4) = 2040 , δ (8, 6, 4) = 2100 , δ (9, 6, 4) = 1470"
+  }
+ },
+ {
+  "id": "A-6.1-b",
+  "paper": "A",
+  "section": "6.1",
+  "tag": "observed",
+  "claim": "NRS genericity caveat",
+  "as_written": "All results in this paper are only valid under this genericity hypothesis",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "All results in this paper are only valid under this genericity hypothesis"
+  }
+ },
+ {
+  "id": "A-6.2-a",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "relations found",
+  "as_written": "1137",
+  "check": {
+   "kind": "agg",
+   "agg": "stage9_hit",
+   "expect": 1137
+  }
+ },
+ {
+  "id": "A-6.2-b",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "not found",
+  "as_written": "122",
+  "check": {
+   "kind": "agg",
+   "agg": "stage9_notfound",
+   "expect": 122
+  }
+ },
+ {
+  "id": "A-6.2-c",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "declined",
+  "as_written": "27",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9a.json",
+   "path": "K9_3.declined",
+   "expect": 27
+  }
+ },
+ {
+  "id": "A-6.2-d",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "degree histogram",
+  "as_written": "1:452, 2:498, 3:110, 4:47, 6:2, 7:4, 8:1, 9:2, 10:5, 12:5, 14:3, 16:5, 20:3",
+  "check": {
+   "kind": "agg",
+   "agg": "stage9_hist",
+   "expect": {
+    "1": 452,
+    "2": 498,
+    "3": 110,
+    "4": 47,
+    "6": 2,
+    "7": 4,
+    "8": 1,
+    "9": 2,
+    "10": 5,
+    "12": 5,
+    "14": 3,
+    "16": 5,
+    "20": 3
+   }
+  }
+ },
+ {
+  "id": "A-6.2-e",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "share degree<=4",
+  "as_written": "97.4",
+  "check": {
+   "kind": "agg",
+   "agg": "stage9_share_le4",
+   "expect": 97.4,
+   "tol": 0.05
+  }
+ },
+ {
+  "id": "A-6.2-f",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "degree 5 never occurs",
+  "as_written": "0",
+  "check": {
+   "kind": "agg",
+   "agg": "stage9_deg5",
+   "expect": 0
+  }
+ },
+ {
+  "id": "A-6.2-g",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "ladder",
+  "as_written": "1…10, then 12, 14, 16, 20, 24",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_9a.json",
+   "path": "degrees_ladder",
+   "expect": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 20, 24]"
+  }
+ },
+ {
+  "id": "A-6.2-h",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "11A median censored",
+  "as_written": "25",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9b.json",
+   "path": "cells.11A.med_cens",
+   "expect": 25
+  }
+ },
+ {
+  "id": "A-6.2-i",
+  "paper": "A",
+  "section": "6.2",
+  "tag": "measured",
+  "claim": "10A deg1 count",
+  "as_written": "28",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9b.json",
+   "path": "cells.10A.deg1",
+   "expect": 28
+  }
+ },
+ {
+  "id": "A-6.3-a",
+  "paper": "A",
+  "section": "6.3",
+  "tag": "measured",
+  "claim": "f_nf sample A 8..11",
+  "as_written": "0.01, 0.10, 0.28, 0.61",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_9b.json",
+     "path": "cells.8A.f_nf",
+     "expect": 0.01,
+     "tol": 0.005
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "cells.9A.f_nf",
+     "expect": 0.1,
+     "tol": 0.005
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "cells.10A.f_nf",
+     "expect": 0.276,
+     "tol": 0.005
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "cells.11A.f_nf",
+     "expect": 0.61,
+     "tol": 0.005
+    }
+   ]
+  }
+ },
+ {
+  "id": "A-6.3-b",
+  "paper": "A",
+  "section": "6.3",
+  "tag": "measured",
+  "claim": "f_nf sample B 8..11",
+  "as_written": "0.00, 0.00, 0.07, 0.14",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_9b.json",
+     "path": "cells.8B.f_nf",
+     "expect": 0.0,
+     "tol": 0.005
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "cells.9B.f_nf",
+     "expect": 0.0,
+     "tol": 0.005
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "cells.10B.f_nf",
+     "expect": 0.071,
+     "tol": 0.005
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "cells.11B.f_nf",
+     "expect": 0.144,
+     "tol": 0.005
+    }
+   ]
+  }
+ },
+ {
+  "id": "A-6.3-c",
+  "paper": "A",
+  "section": "6.3",
+  "tag": "measured",
+  "claim": "H9-A verdict",
+  "as_written": "unresolved",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_9b.json",
+   "path": "H9A",
+   "expect": "не разрешена"
+  }
+ },
+ {
+  "id": "A-6.3-d",
+  "paper": "A",
+  "section": "6.3",
+  "tag": "measured",
+  "claim": "H9-B verdict",
+  "as_written": "refuted",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_9b.json",
+   "path": "H9B",
+   "expect": "ОПРОВЕРГНУТА"
+  }
+ },
+ {
+  "id": "A-6.3-e",
+  "paper": "A",
+  "section": "6.3",
+  "tag": "measured",
+  "claim": "H9-B' verdict",
+  "as_written": "not confirmed",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_9b.json",
+   "path": "H9Bp",
+   "expect": "не подтверждена"
+  }
+ },
+ {
+  "id": "A-6.3-f",
+  "paper": "A",
+  "section": "6.3",
+  "tag": "measured",
+  "claim": "H9-C verdict",
+  "as_written": "refuted",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_9b.json",
+   "path": "H9C",
+   "expect": "ОПРОВЕРГНУТА"
+  }
+ },
+ {
+  "id": "A-6.4-a",
+  "paper": "A",
+  "section": "6.4",
+  "tag": "measured",
+  "claim": "n=11 alpha=4 sample A fraction",
+  "as_written": "45 of 47 (96 %)",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9b.json",
+   "path": "paired_layers.pairs.5.fA",
+   "expect": 0.9574,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "A-6.4-b",
+  "paper": "A",
+  "section": "6.4",
+  "tag": "measured",
+  "claim": "n=11 alpha=4 sample B fraction",
+  "as_written": "8 of 41 (20 %)",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9b.json",
+   "path": "paired_layers.pairs.5.fB",
+   "expect": 0.1951,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "A-6.4-c",
+  "paper": "A",
+  "section": "6.4",
+  "tag": "measured",
+  "claim": "rho(deg,|E|) within A",
+  "as_written": "−0.301, −0.438, −0.420, −0.763",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_9b.json",
+     "path": "within_sample_rho.8A.|E|.rho",
+     "expect": -0.301,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "within_sample_rho.9A.|E|.rho",
+     "expect": -0.438,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "within_sample_rho.10A.|E|.rho",
+     "expect": -0.42,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "within_sample_rho.11A.|E|.rho",
+     "expect": -0.763,
+     "tol": 0.002
+    }
+   ]
+  }
+ },
+ {
+  "id": "A-6.4-d",
+  "paper": "A",
+  "section": "6.4",
+  "tag": "measured",
+  "claim": "rho(deg,|E|) within B",
+  "as_written": "+0.091, 0.000, +0.082, −0.096",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_9b.json",
+     "path": "within_sample_rho.8B.|E|.rho",
+     "expect": 0.091,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "within_sample_rho.9B.|E|.rho",
+     "expect": 0.0,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "within_sample_rho.10B.|E|.rho",
+     "expect": 0.082,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "within_sample_rho.11B.|E|.rho",
+     "expect": -0.096,
+     "tol": 0.002
+    }
+   ]
+  }
+ },
+ {
+  "id": "A-6.4-e",
+  "paper": "A",
+  "section": "6.4",
+  "tag": "measured",
+  "claim": "rho(deg,log2|Aut|) across A∪B",
+  "as_written": "+0.009, +0.128, −0.206, +0.050",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_9b.json",
+     "path": "rho.log2|Aut|.8.rho",
+     "expect": 0.009,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "rho.log2|Aut|.9.rho",
+     "expect": 0.128,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "rho.log2|Aut|.10.rho",
+     "expect": -0.206,
+     "tol": 0.002
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "rho.log2|Aut|.11.rho",
+     "expect": 0.05,
+     "tol": 0.002
+    }
+   ]
+  }
+ },
+ {
+  "id": "A-6.4-f",
+  "paper": "A",
+  "section": "6.4",
+  "tag": "measured",
+  "claim": "discriminating cells",
+  "as_written": "5 of 13",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_9b.json",
+     "path": "edges_vs_alpha.discriminating",
+     "expect": 5
+    },
+    {
+     "file": "results/report_9b.json",
+     "path": "edges_vs_alpha.cells",
+     "expect": 13
+    }
+   ]
+  }
+ },
+ {
+  "id": "A-6.4-g",
+  "paper": "A",
+  "section": "6.4",
+  "tag": "measured",
+  "claim": "earlier symmetry rho (Stage 3, 42 graphs) and its Stage 2 sign reversal",
+  "as_written": "−0.116, p = 0.46, on 42 graphs; +0.414, p = 0.235, on ten",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "kind": "text",
+     "file": "REPORT_STAGE3.md",
+     "needle": "−0.116, p = 0.46"
+    },
+    {
+     "kind": "text",
+     "file": "REPORT_STAGE2.md",
+     "needle": "+0.414**"
+    }
+   ]
+  }
+ },
+ {
+  "id": "A-7.1-a",
+  "paper": "A",
+  "section": "7.1",
+  "tag": "observed",
+  "claim": "n=12 graph count",
+  "as_written": "164 059 830 476",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "164 059 830 476"
+  }
+ },
+ {
+  "id": "A-7.1-b",
+  "paper": "A",
+  "section": "7.1",
+  "tag": "measured",
+  "claim": "n=12 estimate",
+  "as_written": "490",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "490 суток"
+  }
+ },
+ {
+  "id": "A-7.1-c",
+  "paper": "A",
+  "section": "7.1",
+  "tag": "measured",
+  "claim": "throughput",
+  "as_written": "1.402·10⁷",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "1.402·10⁷"
+  }
+ },
+ {
+  "id": "A-7.2-a",
+  "paper": "A",
+  "section": "7.2",
+  "tag": "measured",
+  "claim": "campaign score",
+  "as_written": "58 of 85",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "**58 / 85**"
+  }
+ },
+ {
+  "id": "A-7.2-b",
+  "paper": "A",
+  "section": "7.2",
+  "tag": "measured",
+  "claim": "n=11 predicted interval",
+  "as_written": "[0.7475, 0.9059]",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "[0.7475, 0.9059]"
+  }
+ },
+ {
+  "id": "A-7.2-c",
+  "paper": "A",
+  "section": "7.2",
+  "tag": "measured",
+  "claim": "layer-4 predicted interval",
+  "as_written": "[0.6748, 0.7414]",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "[0.6748, 0.7414]"
+  }
+ },
+ {
+  "id": "A-7.2-d",
+  "paper": "A",
+  "section": "7.2",
+  "tag": "measured",
+  "claim": "overshoot",
+  "as_written": "0.033",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "0.033"
+  }
+ },
+ {
+  "id": "A-8-a",
+  "paper": "A",
+  "section": "8",
+  "tag": "measured",
+  "claim": "verification pack checks",
+  "as_written": "57",
+  "check": {
+   "kind": "agg",
+   "agg": "pack_checks",
+   "expect": 57
+  }
+ },
+ {
+  "id": "A-8-b",
+  "paper": "A",
+  "section": "8",
+  "tag": "observed",
+  "claim": "concept DOI",
+  "as_written": "10.5281/zenodo.22031808",
+  "check": {
+   "kind": "text",
+   "file": "CITATION.cff",
+   "needle": "10.5281/zenodo.22031808"
+  }
+ },
+ {
+  "id": "A-8-c",
+  "paper": "A",
+  "section": "8",
+  "tag": "observed",
+  "claim": "version DOI",
+  "as_written": "10.5281/zenodo.22114415",
+  "check": {
+   "kind": "text",
+   "file": "CITATION.cff",
+   "needle": "10.5281/zenodo.22114415"
+  }
+ },
+ {
+  "id": "B-2.2-gcy-240",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "GCY^fW at dps 240",
+  "as_written": "9.473e-32 / 105 / 105",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.0.residual",
+     "expect": "9.473e-32",
+     "kind": "str"
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.0.correct_digits",
+     "expect": 105
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.0.agrees_with_next",
+     "expect": 105
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-2.2-gcy-480",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "GCY^fW at dps 480",
+  "as_written": "9.473e-32 / 225 / 225",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.1.residual",
+     "expect": "9.473e-32",
+     "kind": "str"
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.1.correct_digits",
+     "expect": 225
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.1.agrees_with_next",
+     "expect": 225
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-2.2-gcy-960",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "GCY^fW at dps 960",
+  "as_written": "9.473e-32 / 359 / 465",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.2.residual",
+     "expect": "9.473e-32",
+     "kind": "str"
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.2.correct_digits",
+     "expect": 359
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.2.agrees_with_next",
+     "expect": 465
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-2.2-gcy-1920",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "GCY^fW at dps 1920",
+  "as_written": "9.473e-32 / 359 / 945",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.3.residual",
+     "expect": "9.473e-32",
+     "kind": "str"
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.3.correct_digits",
+     "expect": 359
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.rows.3.agrees_with_next",
+     "expect": 945
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-2.2-fcr-240",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "FCRto at dps 240",
+  "as_written": "1.442e-31 / 113",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.0.residual",
+     "expect": "1.442e-31",
+     "kind": "str"
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.0.correct_digits",
+     "expect": 113
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-2.2-fcr-480",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "FCRto at dps 480",
+  "as_written": "1.442e-31 / 233",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.1.residual",
+     "expect": "1.442e-31",
+     "kind": "str"
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.1.correct_digits",
+     "expect": 233
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-2.2-fcr-960",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "FCRto at dps 960",
+  "as_written": "1.442e-31 / 389",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.2.residual",
+     "expect": "1.442e-31",
+     "kind": "str"
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.2.correct_digits",
+     "expect": 389
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-2.2-fcr-1920",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "FCRto at dps 1920",
+  "as_written": "1.442e-31 / 389 / 618",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.3.residual",
+     "expect": "1.442e-31",
+     "kind": "str"
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.3.correct_digits",
+     "expect": 389
+    },
+    {
+     "kind": "json",
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.rows.3.agrees_with_next",
+     "expect": 618
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-2.2-dbrace-0",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "D]{ residual level 0",
+  "as_written": "3.024e-241",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.2.rows.0.residual",
+   "expect": "3.024e-241"
+  }
+ },
+ {
+  "id": "B-2.2-dbrace-1",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "D]{ residual level 1",
+  "as_written": "1.53e-482",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.2.rows.1.residual",
+   "expect": "1.53e-482"
+  }
+ },
+ {
+  "id": "B-2.2-dbrace-2",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "D]{ residual level 2",
+  "as_written": "2.596e-961",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.2.rows.2.residual",
+   "expect": "2.596e-961"
+  }
+ },
+ {
+  "id": "B-2.2-ecz-0",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "ECzw residual at 240",
+  "as_written": "1.241e-240",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.3.rows.0.residual",
+   "expect": "1.241e-240"
+  }
+ },
+ {
+  "id": "B-2.2-ecz-1",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "ECzw residual at 480",
+  "as_written": "1.891e-481",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.3.rows.1.residual",
+   "expect": "1.891e-481"
+  }
+ },
+ {
+  "id": "B-2.2-conv",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "convergence classification",
+  "as_written": "2 stalled, 2 converged",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.0.converged",
+     "expect": false
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.1.converged",
+     "expect": false
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.2.converged",
+     "expect": true
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "graphs.3.converged",
+     "expect": true
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-3-a",
+  "paper": "B",
+  "section": "3",
+  "tag": "measured",
+  "claim": "claimed digits",
+  "as_written": "940",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "over_claimed_demo.claimed_digits",
+   "expect": 940
+  }
+ },
+ {
+  "id": "B-3-b",
+  "paper": "B",
+  "section": "3",
+  "tag": "measured",
+  "claim": "over-claimed relation",
+  "as_written": "(x − 3)³ = [-27, 27, -9, 1] at degree 3",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "over_claimed_demo.over-claimed.degree",
+     "expect": 3
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "over_claimed_demo.over-claimed.poly",
+     "expect": "[-27, 27, -9, 1]",
+     "kind": "str"
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-3-c",
+  "paper": "B",
+  "section": "3",
+  "tag": "measured",
+  "claim": "honest relation",
+  "as_written": "x − 3 at degree 1",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "over_claimed_demo.honest.degree",
+     "expect": 1
+    },
+    {
+     "file": "results/report_stability_vs_accuracy.json",
+     "path": "over_claimed_demo.honest.poly",
+     "expect": "[-3, 1]",
+     "kind": "str"
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-3.1-a",
+  "paper": "B",
+  "section": "3.1",
+  "tag": "measured",
+  "claim": "precision threshold",
+  "as_written": "22",
+  "check": {
+   "kind": "json",
+   "file": "results/report_precision_threshold.json",
+   "path": "threshold_digits",
+   "expect": 22
+  }
+ },
+ {
+  "id": "B-4-a",
+  "paper": "B",
+  "section": "4",
+  "tag": "measured",
+  "claim": "fabricated digit count",
+  "as_written": "955",
+  "check": {
+   "kind": "text",
+   "file": "CLAUDE.md",
+   "needle": "955"
+  }
+ },
+ {
+  "id": "B-4-b",
+  "paper": "B",
+  "section": "4",
+  "tag": "measured",
+  "claim": "over-corrected escalation",
+  "as_written": "304 graphs, 297 reported low_precision",
+  "check": {
+   "kind": "multi",
+   "items": [
+    {
+     "file": "CLAUDE.md",
+     "needle": "304",
+     "kind": "text"
+    },
+    {
+     "file": "CLAUDE.md",
+     "needle": "297",
+     "kind": "text"
+    }
+   ]
+  }
+ },
+ {
+  "id": "B-5-a",
+  "paper": "B",
+  "section": "5",
+  "tag": "measured",
+  "claim": "control sample measured",
+  "as_written": "417",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9a.json",
+   "path": "G9_1.measured",
+   "expect": 417
+  }
+ },
+ {
+  "id": "B-5-b",
+  "paper": "B",
+  "section": "5",
+  "tag": "measured",
+  "claim": "control sample failures",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9a.json",
+   "path": "G9_1.failures",
+   "expect": 0
+  }
+ },
+ {
+  "id": "B-5-c",
+  "paper": "B",
+  "section": "5",
+  "tag": "measured",
+  "claim": "control sample declined",
+  "as_written": "20",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9a.json",
+   "path": "G9_1.declined",
+   "expect": 20
+  }
+ },
+ {
+  "id": "B-5-d",
+  "paper": "B",
+  "section": "5",
+  "tag": "measured",
+  "claim": "control sample size",
+  "as_written": "437",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9a.json",
+   "path": "G9_1.checked",
+   "expect": 437
+  }
+ },
+ {
+  "id": "B-5-e",
+  "paper": "B",
+  "section": "5",
+  "tag": "measured",
+  "claim": "overall declined fraction",
+  "as_written": "2.1 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9a.json",
+   "path": "K9_3.fraction",
+   "expect": 0.021,
+   "tol": 0.0005
+  }
+ },
+ {
+  "id": "B-5-f",
+  "paper": "B",
+  "section": "5",
+  "tag": "measured",
+  "claim": "abort threshold not triggered",
+  "as_written": "False",
+  "check": {
+   "kind": "json",
+   "file": "results/report_9a.json",
+   "path": "K9_3.triggered",
+   "expect": false
+  }
+ },
+ {
+  "id": "B-6-a",
+  "paper": "B",
+  "section": "6",
+  "tag": "observed",
+  "claim": "authors' quoted sentence",
+  "as_written": "is a false positive",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "is a false positive"
+  }
+ },
+ {
+  "id": "B-6-b",
+  "paper": "B",
+  "section": "6",
+  "tag": "observed",
+  "claim": "authors' recommendation",
+  "as_written": "SDPA-GMP at ≥30 significant digits",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "SDPA-GMP at `$\\geq30$` significant digits"
+  }
+ },
+ {
+  "id": "V3-csw-ineq",
+  "paper": "A",
+  "section": "1.1",
+  "tag": "external",
+  "claim": "EXTERNAL: CSW inequality, as quoted",
+  "as_written": "α(G) ≤ Σ p_i ≤ ϑ(G)",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "\\al(G) \\leq \\sum_{i\\in V}p_i \\leq \\vt(G)"
+  }
+ },
+ {
+  "id": "V3-csw-cite",
+  "paper": "A",
+  "section": "1.1",
+  "tag": "external",
+  "claim": "EXTERNAL: CSW bibliographic entry",
+  "as_written": "Phys. Rev. Lett. 112, 040401 (2014)",
+  "check": {
+   "kind": "text",
+   "file": "sources/eprint_2605.12828/paper.tex",
+   "needle": "Graph-theoretic approach to quantum correlations"
+  }
+ },
+ {
+  "id": "V3-lovasz-cite",
+  "paper": "A",
+  "section": "1.1",
+  "tag": "external",
+  "claim": "EXTERNAL: Lovasz 1979, via Knuth's bibliography",
+  "as_written": "IEEE Transactions on Information Theory IT-25 (1979), 1-7",
+  "check": {
+   "kind": "text",
+   "file": "sources/knuth_sandwich_theorem.txt",
+   "needle": "On the Shannon capacity of a graph"
+  }
+ },
+ {
+  "id": "V3-amselem",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "external",
+  "claim": "EXTERNAL: Amselem et al. bibliographic entry",
+  "as_written": "Phys. Rev. Lett. 108, 200405 (2012)",
+  "check": {
+   "kind": "text",
+   "file": "sources/eprint_2605.12828/paper.tex",
+   "needle": "Experimental fully contextual correlations"
+  }
+ },
+ {
+  "id": "V3-amselem-scope",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "external",
+  "claim": "EXTERNAL: what that database computed",
+  "as_written": "fewer than 11 vertices",
+  "check": {
+   "kind": "text",
+   "file": "sources/eprint_2605.12828/paper.tex",
+   "needle": "with fewer than $11$ vertices"
+  }
+ },
+ {
+  "id": "V3-db-counts",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "external",
+  "claim": "EXTERNAL: database download table",
+  "as_written": "5 quantum5 1 graph ... 10 quantum10 975330",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "10 quantum10 975330 graphs"
+  }
+ },
+ {
+  "id": "V3-db-dead",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "external",
+  "claim": "EXTERNAL: database address returns 404",
+  "as_written": "HTTP 404",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "отдаёт HTTP 404"
+  }
+ },
+ {
+  "id": "V3-fp-1",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "external",
+  "claim": "EXTERNAL: authors' false-positive sentence",
+  "as_written": "is a false positive",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "is a false positive"
+  }
+ },
+ {
+  "id": "V3-fp-2",
+  "paper": "A",
+  "section": "3.3",
+  "tag": "external",
+  "claim": "EXTERNAL: authors' precision recommendation",
+  "as_written": "a high-precision solver such as",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "A reliable closed form for `$\\vt$` requires a high-precision solver such as"
+  }
+ },
+ {
+  "id": "V3-fp-3",
+  "paper": "B",
+  "section": "6",
+  "tag": "external",
+  "claim": "EXTERNAL: authors' SDPA-GMP recommendation",
+  "as_written": "SDPA-GMP at >= 30 significant digits",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "SDPA-GMP at `$\\geq30$` significant digits"
+  }
+ },
+ {
+  "id": "V3-code",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "external",
+  "claim": "EXTERNAL: authors' graph6 identifier for the maximizer",
+  "as_written": "GCQb`o",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "which we retain"
+  }
+ },
+ {
+  "id": "V3-nrs-6",
+  "paper": "A",
+  "section": "6.1",
+  "tag": "external",
+  "claim": "EXTERNAL: NRS degree six at m=2, n=3",
+  "as_written": "the algebraic degree of SDP equals six when m = 2 and n = 3",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "the algebraic degree of SDP equals six when m = 2 and n = 3"
+  }
+ },
+ {
+  "id": "V3-nrs-s6",
+  "paper": "A",
+  "section": "6.1",
+  "tag": "external",
+  "claim": "EXTERNAL: NRS Galois group typically S6",
+  "as_written": "the symmetric group S6",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "be the symmetric group S6"
+  }
+ },
+ {
+  "id": "V3-nrs-caveat-1",
+  "paper": "A",
+  "section": "6.1",
+  "tag": "external",
+  "claim": "EXTERNAL: NRS genericity caveat, first half",
+  "as_written": "only valid under this genericity hypothesis",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "All results in this paper are only valid under this genericity hypothesis"
+  }
+ },
+ {
+  "id": "V3-nrs-caveat-2",
+  "paper": "A",
+  "section": "6.1",
+  "tag": "external",
+  "claim": "EXTERNAL: NRS genericity caveat, second half",
+  "as_written": "we shall not address them in this present study",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "we shall not address them in this present study"
+  }
+ },
+ {
+  "id": "V3-knuth-18",
+  "paper": "A",
+  "section": "5.1",
+  "tag": "external",
+  "claim": "EXTERNAL: Knuth (18.2), additivity on a disjoint union",
+  "as_written": "ϑ(G, w) = ϑ(G′, w′) + ϑ(G′′, w′′)",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "ϑ(G, w) = ϑ(G′, w′) + ϑ(G′′, w′′) , (18.2)"
+  }
+ },
+ {
+  "id": "V3-knuth-19",
+  "paper": "A",
+  "section": "5.1",
+  "tag": "external",
+  "claim": "EXTERNAL: Knuth (19.2), maximum on a join",
+  "as_written": "ϑ(G, w) = max ( ϑ(G′, w′), ϑ (G′′, w′′) )",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "ϑ(G, w) = max ( ϑ(G′, w′), ϑ (G′′, w′′) )   (19.2)"
+  }
+ },
+ {
+  "id": "V3-knuth-prior",
+  "paper": "A",
+  "section": "5.1",
+  "tag": "external",
+  "claim": "EXTERNAL: priority: Knuth 1993/1994, after Lovasz 1979",
+  "as_written": "published by Knuth, going back to Lovasz",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "Обе формулы опубликованы Кнутом в 1993/1994 и восходят к Ловасу (1979)"
+  }
+ },
+ {
+  "id": "V3-oeis",
+  "paper": "A",
+  "section": "2.2",
+  "tag": "external",
+  "claim": "EXTERNAL: OEIS A001349 agreement at four sizes",
+  "as_written": "1 006 700 565",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "| 11 | 1 006 700 565 | 1 006 700 565 |"
+  }
+ },
+ {
+  "id": "V3-nauty",
+  "paper": "A",
+  "section": "2.2",
+  "tag": "external",
+  "claim": "EXTERNAL: nauty tarball SHA-256",
+  "as_written": "9fc4edae...",
+  "check": {
+   "kind": "text",
+   "file": "README.md",
+   "needle": "9fc4edae04f88a0f5883985be3b39cf7f898fd6cc96e96b9ee25452743cc1b5b"
+  }
+ },
+ {
+  "id": "B-2.2-gcy-3840",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "GCY^fW correct digits do not improve at 3840",
+  "as_written": "359",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.0.rows.4.correct_digits",
+   "expect": 359
+  }
+ },
+ {
+  "id": "B-2.2-dbrace-3",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "D]{ residual at 1920",
+  "as_written": "6.716e-1922",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.2.rows.3.residual",
+   "expect": "6.716e-1922"
+  }
+ },
+ {
+  "id": "B-2.2-ecz-2",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "ECzw residual at 960",
+  "as_written": "1.766e-961",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.3.rows.2.residual",
+   "expect": "1.766e-961"
+  }
+ },
+ {
+  "id": "B-2.2-ecz-3",
+  "paper": "B",
+  "section": "2.2",
+  "tag": "measured",
+  "claim": "ECzw residual at 1920",
+  "as_written": "1.559e-1922",
+  "check": {
+   "kind": "json_str",
+   "file": "results/report_stability_vs_accuracy.json",
+   "path": "graphs.3.rows.3.residual",
+   "expect": "1.559e-1922"
+  }
+ }
+]

@@ -1,0 +1,324 @@
+{
+ "quartic": [
+  158,
+  -155,
+  23,
+  -1,
+  1
+ ],
+ "degrees": [
+  1,
+  2,
+  3,
+  4
+ ],
+ "maxcoeff": 1000000,
+ "digit_range": [
+  16,
+  40
+ ],
+ "rows": [
+  {
+   "digits": 16,
+   "degree": 3,
+   "poly": [
+    1661,
+    1577,
+    -2358,
+    509
+   ],
+   "is_true_quartic": false
+  },
+  {
+   "digits": 17,
+   "degree": 3,
+   "poly": [
+    5593,
+    -16457,
+    -1972,
+    1803
+   ],
+   "is_true_quartic": false
+  },
+  {
+   "digits": 18,
+   "degree": 3,
+   "poly": [
+    -13499,
+    29580,
+    -25558,
+    5234
+   ],
+   "is_true_quartic": false
+  },
+  {
+   "digits": 19,
+   "degree": 3,
+   "poly": [
+    37837,
+    -104425,
+    17863,
+    2625
+   ],
+   "is_true_quartic": false
+  },
+  {
+   "digits": 20,
+   "degree": 3,
+   "poly": [
+    -99325,
+    32876,
+    -206826,
+    59289
+   ],
+   "is_true_quartic": false
+  },
+  {
+   "digits": 21,
+   "degree": 3,
+   "poly": [
+    -483092,
+    -377188,
+    -50019,
+    57372
+   ],
+   "is_true_quartic": false
+  },
+  {
+   "digits": 22,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 23,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 24,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 25,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 26,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 27,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 28,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 29,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 30,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 31,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 32,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 33,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 34,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 35,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 36,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 37,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 38,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 39,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  },
+  {
+   "digits": 40,
+   "degree": 4,
+   "poly": [
+    158,
+    -155,
+    23,
+    -1,
+    1
+   ],
+   "is_true_quartic": true
+  }
+ ],
+ "threshold_digits": 22,
+ "spurious_count": 6,
+ "spurious_degrees": [
+  3
+ ],
+ "spurious_height_min": 2358,
+ "spurious_height_max": 483092,
+ "true_quartic_height": 158
+}
