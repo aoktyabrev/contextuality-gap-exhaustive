@@ -1,0 +1,111 @@
+{
+ "claim": "each of these graphs has Delta > 0, proved by an exact primal certificate; the database of quantum graphs omits them at n = 10",
+ "source_of_the_list": "runners/run_db_compare.py",
+ "all_certified": true,
+ "graphs": [
+  {
+   "graph6": "I?`e`qqUo",
+   "n": 10,
+   "alpha": 4,
+   "numeric_delta": 0.002787954,
+   "certified": true,
+   "denominator": "1e6",
+   "eps_c": 2,
+   "primal_lower": "333568/83335",
+   "primal_lower_float": 4.002735945281095,
+   "proved_gap": "228/83335",
+   "proved_gap_float": 0.0027359452810943783
+  },
+  {
+   "graph6": "I?`e`qsZO",
+   "n": 10,
+   "alpha": 4,
+   "numeric_delta": 0.003730476,
+   "certified": true,
+   "denominator": "1e6",
+   "eps_c": 1,
+   "primal_lower": "2001872/500005",
+   "primal_lower_float": 4.003703962960371,
+   "proved_gap": "1852/500005",
+   "proved_gap_float": 0.0037039629603703964
+  },
+  {
+   "graph6": "I?`e`qskg",
+   "n": 10,
+   "alpha": 4,
+   "numeric_delta": 0.00833254,
+   "certified": true,
+   "denominator": "1e6",
+   "eps_c": 1,
+   "primal_lower": "668057/166668",
+   "primal_lower_float": 4.008309933520532,
+   "proved_gap": "1385/166668",
+   "proved_gap_float": 0.008309933520531835
+  },
+  {
+   "graph6": "I?`edd[FW",
+   "n": 10,
+   "alpha": 4,
+   "numeric_delta": 0.007448285,
+   "certified": true,
+   "denominator": "1e6",
+   "eps_c": 1,
+   "primal_lower": "2003729/500005",
+   "primal_lower_float": 4.007417925820742,
+   "proved_gap": "3709/500005",
+   "proved_gap_float": 0.007417925820741793
+  },
+  {
+   "graph6": "I?bebOxNG",
+   "n": 10,
+   "alpha": 4,
+   "numeric_delta": 0.003403936,
+   "certified": true,
+   "denominator": "1e6",
+   "eps_c": 1,
+   "primal_lower": "2001706/500005",
+   "primal_lower_float": 4.003371966280337,
+   "proved_gap": "1686/500005",
+   "proved_gap_float": 0.0033719662803371967
+  },
+  {
+   "graph6": "ICQe`pcMg",
+   "n": 10,
+   "alpha": 4,
+   "numeric_delta": 0.006452719,
+   "certified": true,
+   "denominator": "1e6",
+   "eps_c": 1,
+   "primal_lower": "2003233/500006",
+   "primal_lower_float": 4.006417922984924,
+   "proved_gap": "3209/500006",
+   "proved_gap_float": 0.006417922984924181
+  },
+  {
+   "graph6": "ICQe`psMg",
+   "n": 10,
+   "alpha": 4,
+   "numeric_delta": 0.006401044,
+   "certified": true,
+   "denominator": "1e6",
+   "eps_c": 1,
+   "primal_lower": "2003205/500006",
+   "primal_lower_float": 4.006361923656916,
+   "proved_gap": "3181/500006",
+   "proved_gap_float": 0.006361923656916117
+  },
+  {
+   "graph6": "ICvdq~sNo",
+   "n": 10,
+   "alpha": 3,
+   "numeric_delta": 0.002914064,
+   "certified": true,
+   "denominator": "1e6",
+   "eps_c": 1,
+   "primal_lower": "1501461/500005",
+   "primal_lower_float": 3.002891971080289,
+   "proved_gap": "1446/500005",
+   "proved_gap_float": 0.0028919710802891973
+  }
+ ]
+}

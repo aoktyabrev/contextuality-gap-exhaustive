@@ -3071,5 +3071,512 @@
    "expect": 99.61,
    "tol": 0.01
   }
+ },
+ {
+  "id": "DB-count-5",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "external",
+  "claim": "EXTERNAL: database count at n=5",
+  "as_written": "1",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.5.db_count",
+   "expect": 1,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlytheirs-5",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in the database at n=5",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.5.at_threshold.1e-06.only_theirs",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlyours-5",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in ours at n=5",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.5.at_threshold.1e-06.only_ours",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-alpha-5",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "alpha mismatches at n=5",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.5.values.alpha_mismatches",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-count-6",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "external",
+  "claim": "EXTERNAL: database count at n=6",
+  "as_written": "3",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.6.db_count",
+   "expect": 3,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlytheirs-6",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in the database at n=6",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.6.at_threshold.1e-06.only_theirs",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlyours-6",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in ours at n=6",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.6.at_threshold.1e-06.only_ours",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-alpha-6",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "alpha mismatches at n=6",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.6.values.alpha_mismatches",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-count-7",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "external",
+  "claim": "EXTERNAL: database count at n=7",
+  "as_written": "33",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.7.db_count",
+   "expect": 33,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlytheirs-7",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in the database at n=7",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.7.at_threshold.1e-06.only_theirs",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlyours-7",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in ours at n=7",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.7.at_threshold.1e-06.only_ours",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-alpha-7",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "alpha mismatches at n=7",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.7.values.alpha_mismatches",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-count-8",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "external",
+  "claim": "EXTERNAL: database count at n=8",
+  "as_written": "498",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.8.db_count",
+   "expect": 498,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlytheirs-8",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in the database at n=8",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.8.at_threshold.1e-06.only_theirs",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlyours-8",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in ours at n=8",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.8.at_threshold.1e-06.only_ours",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-alpha-8",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "alpha mismatches at n=8",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.8.values.alpha_mismatches",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-count-9",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "external",
+  "claim": "EXTERNAL: database count at n=9",
+  "as_written": "16533",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.9.db_count",
+   "expect": 16533,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlytheirs-9",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in the database at n=9",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.9.at_threshold.1e-06.only_theirs",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlyours-9",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in ours at n=9",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.9.at_threshold.1e-06.only_ours",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-alpha-9",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "alpha mismatches at n=9",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.9.values.alpha_mismatches",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-count-10",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "external",
+  "claim": "EXTERNAL: database count at n=10",
+  "as_written": "975330",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.10.db_count",
+   "expect": 975330,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlytheirs-10",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in the database at n=10",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.10.at_threshold.1e-06.only_theirs",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-onlyours-10",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "graphs only in ours at n=10",
+  "as_written": "8",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.10.at_threshold.1e-06.only_ours",
+   "expect": 8,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-alpha-10",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "measured",
+  "claim": "alpha mismatches at n=10",
+  "as_written": "0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_compare.json",
+   "path": "sizes.10.values.alpha_mismatches",
+   "expect": 0,
+   "tol": 0
+  }
+ },
+ {
+  "id": "DB-cert-0",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "exact primal certificate, I?`e`qqUo",
+  "as_written": "4.002735945",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "graphs.0.primal_lower_float",
+   "expect": 4.002735945,
+   "tol": 5e-09
+  }
+ },
+ {
+  "id": "DB-cert-1",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "exact primal certificate, I?`e`qsZO",
+  "as_written": "4.003703963",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "graphs.1.primal_lower_float",
+   "expect": 4.003703963,
+   "tol": 5e-09
+  }
+ },
+ {
+  "id": "DB-cert-2",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "exact primal certificate, I?`e`qskg",
+  "as_written": "4.008309934",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "graphs.2.primal_lower_float",
+   "expect": 4.008309934,
+   "tol": 5e-09
+  }
+ },
+ {
+  "id": "DB-cert-3",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "exact primal certificate, I?`edd[FW",
+  "as_written": "4.007417926",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "graphs.3.primal_lower_float",
+   "expect": 4.007417926,
+   "tol": 5e-09
+  }
+ },
+ {
+  "id": "DB-cert-4",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "exact primal certificate, I?bebOxNG",
+  "as_written": "4.003371966",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "graphs.4.primal_lower_float",
+   "expect": 4.003371966,
+   "tol": 5e-09
+  }
+ },
+ {
+  "id": "DB-cert-5",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "exact primal certificate, ICQe`pcMg",
+  "as_written": "4.006417923",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "graphs.5.primal_lower_float",
+   "expect": 4.006417923,
+   "tol": 5e-09
+  }
+ },
+ {
+  "id": "DB-cert-6",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "exact primal certificate, ICQe`psMg",
+  "as_written": "4.006361924",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "graphs.6.primal_lower_float",
+   "expect": 4.006361924,
+   "tol": 5e-09
+  }
+ },
+ {
+  "id": "DB-cert-7",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "exact primal certificate, ICvdq~sNo",
+  "as_written": "3.002891971",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "graphs.7.primal_lower_float",
+   "expect": 3.002891971,
+   "tol": 5e-09
+  }
+ },
+ {
+  "id": "DB-all-cert",
+  "paper": "A",
+  "section": "1.2.1",
+  "tag": "proved",
+  "claim": "all eight certified",
+  "as_written": "8/8",
+  "check": {
+   "kind": "json",
+   "file": "results/report_db_extras_certified.json",
+   "path": "all_certified",
+   "expect": true
+  }
+ },
+ {
+  "id": "DB-source",
+  "paper": "A",
+  "section": "1.2",
+  "tag": "external",
+  "claim": "EXTERNAL: the location Danielsen supplied",
+  "as_written": "https://codetables.de/larsed/quantum_graphs/",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "https://codetables.de/larsed/quantum_graphs/"
+  }
  }
 ]
