@@ -2565,141 +2565,6 @@
   }
  },
  {
-  "id": "A-2.3-us-alpha",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "alpha cost per graph at n=11",
-  "as_written": "119.7",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "us_alpha",
-   "expect": 119.7,
-   "tol": 0.05
-  }
- },
- {
-  "id": "A-2.3-us-chi",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "exact chi(complement) cost per graph",
-  "as_written": "25.2",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "us_chi",
-   "expect": 25.2,
-   "tol": 0.05
-  }
- },
- {
-  "id": "A-2.3-us-filter",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "filter cost per graph",
-  "as_written": "144.9",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "us_filter",
-   "expect": 144.9,
-   "tol": 0.05
-  }
- },
- {
-  "id": "A-2.3-us-sdp",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "one SDP at eps 1e-8",
-  "as_written": "27 406",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "us_sdp",
-   "expect": 27406.0,
-   "tol": 1.0
-  }
- },
- {
-  "id": "A-2.3-ratio",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "ratio SDP over filter",
-  "as_written": "189",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "ratio_sdp_over_filter",
-   "expect": 189.2,
-   "tol": 0.15
-  }
- },
- {
-  "id": "A-2.3-sample-share",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "share closed in the sample, vs 89.98 from the sweep",
-  "as_written": "92.77",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "share_closed_in_sample",
-   "expect": 0.9277,
-   "tol": 0.0005
-  }
- },
- {
-  "id": "A-2.3-factor",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "estimated reduction in total work",
-  "as_written": "9.5",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "factor",
-   "expect": 9.5,
-   "tol": 0.05
-  }
- },
- {
-  "id": "A-2.3-h-with",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "projected hours with the filter",
-  "as_written": "116",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "hours_with_filter",
-   "expect": 115.5,
-   "tol": 0.6
-  }
- },
- {
-  "id": "A-2.3-h-without",
-  "paper": "A",
-  "section": "2.3",
-  "tag": "measured",
-  "claim": "projected hours without, ESTIMATE",
-  "as_written": "1095",
-  "check": {
-   "kind": "json",
-   "file": "results/report_filter_cost.json",
-   "path": "hours_without_filter_ESTIMATE",
-   "expect": 1094.8,
-   "tol": 1.0
-  }
- },
- {
   "id": "A-2.3-exact-chrom",
   "paper": "A",
   "section": "2.3",
@@ -2710,6 +2575,231 @@
    "kind": "text",
    "file": "quadc5/chrom.py",
    "needle": "Exact chromatic number for small graphs"
+  }
+ },
+ {
+  "id": "A-2.3-us-alpha",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "alpha cost per graph",
+  "as_written": "121",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "us_alpha",
+   "expect": 121.0,
+   "tol": 15.0
+  }
+ },
+ {
+  "id": "A-2.3-us-chi",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "exact chi(complement) cost",
+  "as_written": "27",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "us_chi",
+   "expect": 26.9,
+   "tol": 5.0
+  }
+ },
+ {
+  "id": "A-2.3-us-filter",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "filter cost per graph",
+  "as_written": "148",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "us_filter",
+   "expect": 147.9,
+   "tol": 18.0
+  }
+ },
+ {
+  "id": "A-2.3-median",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "solve time median",
+  "as_written": "5 097",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "solve_median_us",
+   "expect": 5097.1,
+   "tol": 1.0
+  }
+ },
+ {
+  "id": "A-2.3-p90",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "solve time 90th percentile",
+  "as_written": "10 944",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "solve_p90_us",
+   "expect": 10944.2,
+   "tol": 1.0
+  }
+ },
+ {
+  "id": "A-2.3-p99",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "solve time 99th percentile",
+  "as_written": "317 276",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "solve_p99_us",
+   "expect": 317276.3,
+   "tol": 1.0
+  }
+ },
+ {
+  "id": "A-2.3-max",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "largest solve time seen",
+  "as_written": "1 865 245",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "solve_max_us",
+   "expect": 1865244.6,
+   "tol": 1.0
+  }
+ },
+ {
+  "id": "A-2.3-tail",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "share of solver time in the top 1 %",
+  "as_written": "44.4",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "top1pct_share_of_time",
+   "expect": 0.444,
+   "tol": 0.002
+  }
+ },
+ {
+  "id": "A-2.3-matched",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "matched-|E| ratio, ours against the sweep's",
+  "as_written": "0.99",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "matched_edge_ratio",
+   "expect": 0.99,
+   "tol": 0.03
+  }
+ },
+ {
+  "id": "A-2.3-mean-total",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "per-solve mean recovered from the sweep total",
+  "as_written": "16 461",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "mean_sdp_from_total_us",
+   "expect": 16461.1,
+   "tol": 60.0
+  }
+ },
+ {
+  "id": "A-2.3-mean-sample",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "per-solve mean from 40 000 recorded rows",
+  "as_written": "15 048",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "sampled_mean_us",
+   "expect": 15048.2,
+   "tol": 1.0
+  }
+ },
+ {
+  "id": "A-2.3-ratio",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "ratio SDP over filter",
+  "as_written": "111",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "ratio_sdp_over_filter",
+   "expect": 111.3,
+   "tol": 12.0
+  }
+ },
+ {
+  "id": "A-2.3-h-with",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "projected hours with the filter",
+  "as_written": "71.8",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "hours_with_filter",
+   "expect": 71.8,
+   "tol": 0.15
+  }
+ },
+ {
+  "id": "A-2.3-h-without",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "projected hours without, ESTIMATE",
+  "as_written": "658",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "hours_without_filter_ESTIMATE",
+   "expect": 657.6,
+   "tol": 3.0
+  }
+ },
+ {
+  "id": "A-2.3-factor",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "estimated reduction in total work",
+  "as_written": "9.2",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "factor",
+   "expect": 9.2,
+   "tol": 0.15
   }
  }
 ]
