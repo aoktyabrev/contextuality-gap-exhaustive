@@ -29,14 +29,21 @@ So the surprise is not the absence of a closed form at n = 11 — that is the no
 behaviour of an 11×11 semidefinite program. The surprise is that closed forms existed at
 all up to ten vertices, where the generic expectation is degrees in the hundreds.
 
-**And the landscape has now been measured, which sharpens that a third time.** Algebraic
-degrees were computed for 1286 graphs at n = 5…11 — the top 100 by Δ at each size, a
-random sample of the same size among graphs with Δ > 0, and a Δ = 0 control. Extremal
-graphs turn out to be the algebraically **hardest** part of the landscape, not the
-easiest. So the six closed forms up to n = 10 were not found in the easy country and
-then lost when the terrain got hard; they were found six times running in the hardest
-country there is here. That is the surprising part, and it is the reverse of how this
-project read its own series until 2026-08-26.
+**And the landscape has now been measured — though what the measurement licenses is
+narrower than the picture it suggests, and the narrow version is the one that counts.**
+Algebraic degrees were computed for 1286 graphs at n = 5…11: the top 100 by Δ at each size,
+a random sample of the same size among graphs with Δ > 0, and a Δ = 0 control. The fraction
+with no closed form runs 1 % → 61 % across n = 8…11 in the top 100 against 0 % → 14 % in the
+random sample — the same direction on all four sizes where the comparison exists.
+
+**But the threshold sealed before any graph was measured required that gap to reach 0.25 on
+three of the four sizes, and it does so on one. The recorded verdict is therefore *not
+confirmed*, and the bar is not lowered after the fact. All three sealed hypotheses of that
+stage failed their criteria.** So this is a measured *direction*, not an established fact,
+and the reading it invites — that the six closed forms up to n = 10 were found in the
+hardest country rather than the easiest — is an interpretation of that direction and no
+more. It is still the reverse of how this project read its own series until 2026-08-26,
+which is why it is here at all.
 
 **The caveat, which the claim needs to be honest.** Nie–Ranestad–Sturmfels describe
 **generic** semidefinite programs with rational data. Ours is structured — zeros on every
@@ -65,24 +72,67 @@ both in exact arithmetic over the relevant number field, with positive semidefin
 checked twice by independent methods. That includes the eight-vertex value, which the
 paper above left open after reporting its integer-relation candidate as a false positive.
 
-**One count differs.** Ours at n = 10 is 975 338 against the database's 975 330. The
-counts agree exactly at n = 8 (498) and n = 9 (16 533). All thirteen of our graphs with
-Δ < 2·10⁻³ carry exact rational certificates of Δ > 0, so our side of the boundary is
-not inflated by solver noise; which eight graphs account for the difference cannot be
-determined, because the per-graph files are no longer retrievable from any source.
-See `REPORT_STAGE3.md`.
+**That database was believed lost, and it is not.** Its published address at
+`ii.uib.no/~larsed/quantum_graphs/` returns 404, and for a week this project could compare
+only counts. On 2026-08-27, in answer to a direct enquiry, L. E. Danielsen supplied its
+current location — **`https://codetables.de/larsed/quantum_graphs/`** — and the per-graph
+files are archived here with checksums (`SOURCES.md` §S14). So the comparison below is not
+of two totals but of **two independent enumerations, fourteen years apart, matched graph by
+graph**.
+
+| n | database | ours (τ = 10⁻⁶) | only theirs | only ours | α mismatches |
+|--:|--:|--:|--:|--:|--:|
+| 5 | 1 | 1 | 0 | 0 | 0 |
+| 6 | 3 | 3 | 0 | 0 | 0 |
+| 7 | 33 | 33 | 0 | 0 | 0 |
+| 8 | 498 | 498 | 0 | 0 | 0 |
+| 9 | 16 533 | 16 533 | 0 | 0 | 0 |
+| 10 | 975 330 | 975 338 | **0** | **8** | 0 |
+
+At five sizes the sets are **identical, graph for graph** — the graph6 strings match
+directly, no isomorphism testing was needed — with **zero disagreements on α across 992 398
+graphs** and every ϑ agreeing within the four decimals their files print.
+
+**The eight at n = 10 are not a threshold artefact, and that was our own hypothesis.** Their
+gaps run 2.7·10⁻³ to 8.3·10⁻³, three orders above any noise floor, and χ(Ḡ) > α for all
+eight, so the sandwich does not close them. Each now carries an **exact primal certificate**
+proving ϑ > α. **Why they are absent from the database we do not know and do not guess.**
+Lowering our cut to 10⁻⁷ instead adds 2 graphs at n = 8 and 67 at n = 9 — every one with
+χ(Ḡ) = α, so those are *proved* Δ = 0 and are our own solver noise; the database excludes
+them correctly. See `REPORT_STAGE3.md` and `SOURCES.md` §S14.
+
+**This validates the computation, not the enumeration.** Their index page names its second
+column `nauty-string`, so both sides rest on McKay's software and a shared omission would be
+invisible to the comparison. Completeness still rests on the `geng` part-sum and on OEIS.
 
 ## The series
 
-| n | Δ_max | exact value | deg | maximizer (graph6) | \|E\| | density | α | \|Aut\| |
-|--:|---|---|--:|---|--:|--:|--:|--:|
-| 5 | 0.23606797749978970 | √5 − 2 | 2 | `DUW` | 5 | 0.500 | 2 | 10 |
-| 6 | 0.23606797749978970 | √5 − 2 | 2 | `EUZw` | 10 | 0.667 | 2 | 10 |
-| 7 | 0.31766720739409539 | 7cos(π/7)/(1+cos(π/7)) − 3 | 3 | `` FCp`_ `` | 7 | 0.333 | 3 | 14 |
-| 8 | 0.46784372984022411 | root of x⁴−x³+23x²−155x+158 in (3,4), minus 3 | **4** | `` GCQb`o `` | 10 | 0.357 | 3 | 8 |
-| 9 | 0.66666666666666667 | 2/3 | 1 | `HCRbdO{` | 15 | 0.417 | 3 | 12 |
-| 10 | 0.70710678118654752 | 1/√2 | 2 | `` ICRb`yiu? `` | 20 | 0.444 | 3 | 16 |
-| 11 | **0.7748885327…** | no closed form; proved interval below | **> 48** | `` J?`D@pgd?{? `` | 17 | 0.309 | **4** | **2** |
+| n | Δ_max | exact value | deg | d\* | maximizer (graph6) | \|E\| | density | α | \|Aut\| |
+|--:|---|---|--:|--:|---|--:|--:|--:|--:|
+| 5 | 0.23606797749978970 | √5 − 2 | 2 | 3 | `DUW` | 5 | 0.500 | 2 | 10 |
+| 6 | 0.23606797749978970 | √5 − 2 | 2 | 4 | `EUZw` | 10 | 0.667 | 2 | 10 |
+| 7 | 0.31766720739409539 | 7cos(π/7)/(1+cos(π/7)) − 3 | 3 | 3 | `` FCp`_ `` | 7 | 0.333 | 3 | 14 |
+| 8 | 0.46784372984022411 | root of x⁴−x³+23x²−155x+158 in (3,4), minus 3 | **4** | 3 | `` GCQb`o `` | 10 | 0.357 | 3 | 8 |
+| 9 | 0.66666666666666667 | 2/3 | 1 | 4 | `HCRbdO{` | 15 | 0.417 | 3 | 12 |
+| 10 | 0.70710678118654752 | 1/√2 | 2 | 4† | `` ICRb`yiu? `` | 20 | 0.444 | 3 | 16 |
+| 11 | **0.7748885327…** | no closed form; proved interval below | **> 48** | — | `` J?`D@pgd?{? `` | 17 | 0.309 | **4** | **2** |
+
+**d\* is a lower bound from a non-convex heuristic, not a proved dimension.** It is the
+smallest dimension in which an orthogonal representation attaining the bound was *found*,
+by minimising η_d over random restarts; a value of d\* therefore rests on a
+*non-exceedance* — no representation one dimension down turned up — which is not the same
+as none existing. † marks the one entry where the dimension below was shown unreachable
+rather than merely not found; "—" means not computed. The authors of the work this
+continues mark their own the same way: *"without an SDP upper-bound verification one cannot
+rule out a 3D configuration with λmax > 3 that the heuristic failed to find […] a formal
+d\* = 4 proof remains an open question"* (`SOURCES.md` §S1.9).
+
+**This project is about the number ϑ, not about physical realisability.** Where the
+dimension is known we give it, because for a reader coming from quantum information it is
+the first question a table like this raises. But a certified value of ϑ says nothing about
+the dimension of a system that would exhibit it, **we have no upper bounds on η₃ and
+neither does the work we continue**, and nothing here should be read as a claim about
+experimental accessibility. The gap is stated rather than filled.
 
 Minimal polynomials of Δ for n ≤ 10: y²+4y−1, y²+4y−1, y³+16y²+20y−8, y⁴+11y³+68y²+64y−46,
 3y−2, 2y²−1. Graph counts swept: 21, 112, 853, 11 117, 261 080, 11 716 571, 1 006 700 565 —
@@ -117,10 +167,15 @@ not asserted but checked — the sum over the 4000 `res/mod` parts equals what `
 counts, graph for graph. 10.02 % of the graphs reached a semidefinite solver; the other
 89.98 % were closed by the sandwich χ(Ḡ) = α ⇒ Δ = 0.
 
-    Delta_max(11)  in  [ 0.7748885327027013 , 0.7748885327466875 ]      width 4.4e-11
+    Delta( J?`D@pgd?{? )  in  [ 0.7748885327027013 , 0.7748885327466875 ]   width 4.4e-11
 
     L  = 1193722133190 / 250000000003         primal certificate, theta >= L
     U  = 76398216523947 / 16000000000000      dual certificate,   theta <= U
+
+**The enclosure is about that one named graph. That it attains Δ_max(11) — that no other
+graph of the billion is higher — is measured, not proved**, and rests on the part of the
+sweep that is numerical; see "What is proved and what is not" below. The two halves are
+kept apart throughout, here as in the papers.
 
 Ten decimal places, proved in exact rational arithmetic: the 300-digit numerical solution
 only proposes the matrices, and symmetry, trace = 1 and the zeros on all 17 edges are then
@@ -197,9 +252,13 @@ computed. **They do not carry forward.** At n = 13 the corresponding layer is no
 to its transfer bound, so skipping upper layers at an unswept size is not sound.
 
 Proving *any* version of the equality — for which layers, at which sizes — is the
-project's main open question: **[`OPEN_PROBLEM.md`](OPEN_PROBLEM.md)**. For twelve
-vertices (164 059 830 476 connected graphs, about 490 days at our measured rate) a proof
-is the only route to saying anything at all.
+project's main open question: **[`OPEN_PROBLEM.md`](OPEN_PROBLEM.md)**.
+
+**Twelve vertices will not be enumerated, and that is a decision rather than a delay.**
+164 059 830 476 connected graphs at our measured 1.402·10⁷ per hour on seven cores is about
+**490 days**. Nothing in this project is waiting on that number. The next step is a proof
+about the layers, or a construction that reaches further without enumerating — not a bigger
+sweep.
 
 `REPORT_STAGE7.md` has the original verdict, `REPORT_STAGE8.md` its refutation.
 
