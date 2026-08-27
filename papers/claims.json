@@ -2140,11 +2140,11 @@
   "paper": "A",
   "section": "1.1",
   "tag": "external",
-  "claim": "EXTERNAL: Lovasz 1979, via Knuth's bibliography",
+  "claim": "EXTERNAL: Lovasz 1979, via Knuth's bibliography, quoted in SOURCES",
   "as_written": "IEEE Transactions on Information Theory IT-25 (1979), 1-7",
   "check": {
    "kind": "text",
-   "file": "sources/knuth_sandwich_theorem.txt",
+   "file": "SOURCES.md",
    "needle": "On the Shannon capacity of a graph"
   }
  },
@@ -3588,7 +3588,7 @@
   "as_written": "nauty-string",
   "check": {
    "kind": "text",
-   "file": "sources/quantum_graphs/index.html",
+   "file": "SOURCES.md",
    "needle": "nauty-string"
   }
  },

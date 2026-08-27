@@ -25,8 +25,8 @@ positive. Answer: ϑ(`` GCQb`o ``) is the root 3.46784372984… of **x⁴ − x�
 full S₄. The n=10 rank 2 did not close: no minimal polynomial of degree ≤ 48 with height
 ≤ 10⁹ exists. See `REPORT_STAGE2.md`.
 
-Separate repository, own `.venv`. Nothing is imported from the earlier campaigns
-(`/home/artem/tomloc`, `/home/artem/tomloc/DSNET`) — not a line of code, not a number.
+Separate repository, own `.venv`. Nothing is imported from the earlier campaigns — not a
+line of code, not a number.
 
 ## Standing rules — read these before writing code
 

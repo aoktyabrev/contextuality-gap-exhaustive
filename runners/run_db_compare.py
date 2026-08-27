@@ -27,6 +27,36 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES = os.path.join(ROOT, "results")
 DB = os.path.join(ROOT, "sources", "quantum_graphs")
+DB_URL = "https://codetables.de/larsed/quantum_graphs/"
+
+# The database carries no rights statement, so this repository does not redistribute it.
+# It is fetched on demand instead, and the checksums it must match are committed in
+# sources/quantum_graphs.sha256 -- so a reader verifies the same bytes we used without
+# our having republished them.
+
+
+def ensure_db():
+    """Fetch the database if absent, and check it against the committed checksums."""
+    import urllib.request, hashlib, bz2
+    os.makedirs(DB, exist_ok=True)
+    sums = {}
+    with open(os.path.join(ROOT, "sources", "quantum_graphs.sha256")) as f:
+        for line in f:
+            h, _, name = line.strip().partition("  ")
+            sums[name] = h
+    for name in ("index.html", "quantum5", "quantum6", "quantum7", "quantum8",
+                 "quantum9", "quantum10.bz2"):
+        dst = os.path.join(DB, name)
+        if not os.path.exists(dst):
+            print(f"  fetching {name} from {DB_URL}")
+            urllib.request.urlretrieve(DB_URL + name, dst)
+        got = hashlib.sha256(open(dst, "rb").read()).hexdigest()
+        if name in sums and got != sums[name]:
+            raise SystemExit(f"{name}: sha256 {got} != committed {sums[name]}")
+    flat = os.path.join(DB, "quantum10")
+    if not os.path.exists(flat):
+        with bz2.open(os.path.join(DB, "quantum10.bz2"), "rb") as z, open(flat, "wb") as o:
+            o.write(z.read())
 csv.field_size_limit(1 << 30)
 THRESHOLDS = (1e-7, 1e-6, 1e-5)
 
@@ -81,7 +111,8 @@ if __name__ == "__main__":
     ap.add_argument("--sizes", type=int, nargs="+", default=[5, 6, 7, 8, 9, 10])
     ap.add_argument("--out", default=os.path.join(RES, "report_db_compare.json"))
     a = ap.parse_args()
-    rep = {"source": "https://codetables.de/larsed/quantum_graphs/",
+    ensure_db()
+    rep = {"source": DB_URL,
            "accessed": "2026-08-27", "thresholds": list(THRESHOLDS), "sizes": {}}
 
     for n in a.sizes:

@@ -51,3 +51,20 @@ papers/*.md
 
 # the downloaded database ships compressed; the decompressed copy is derived
 sources/quantum_graphs/quantum10
+
+# Third-party material we may READ but may not REDISTRIBUTE.  SOURCES.md carries the
+# link, the access date, the SHA-256 and the quoted lines, which is what Rule 0 needs:
+# the quotes prove the source was read; the hash lets anyone reproduce the file.
+#   arXiv non-exclusive / assumed licences -- "limits re-use of any type from other
+#   entities or individuals" (arXiv's own wording)
+sources/nie_ranestad_sturmfels_sdp_degree.*
+sources/knuth_sandwich_theorem.*
+sources/eprint_1211.5825
+sources/ep1211/
+sources/letchford_giandomenico_rossi_theta_survey.pdf
+sources/letchford_theta_survey.txt
+#   the authors' GitHub clone declares no licence; the byte-identical Zenodo archive
+#   is CC BY 4.0 and is the copy we keep
+sources/quadc5_authors_repo/
+#   the quantum-graphs database carries no rights statement; run_db_compare.py fetches it
+sources/quantum_graphs/

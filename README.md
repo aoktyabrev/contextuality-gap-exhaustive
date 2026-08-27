@@ -723,13 +723,34 @@ are machine-checkable by anyone with a computer, independently of who produced t
 
 ## Licence and citation
 
-Code is MIT; data and documents are CC BY 4.0. See `LICENSE`, `LICENSE-DATA` and
-`CITATION.cff`.
+Code is MIT; data and documents produced here are CC BY 4.0. See `LICENSE`,
+`LICENSE-DATA` and `CITATION.cff`.
+
+### Third-party material
+
+`sources/` holds evidence for Rule 0 — every external number is quoted from a downloaded
+copy. A rights review on 2026-08-27 (`SOURCES.md` §S15) established what may be
+redistributed and what may only be *read*, and the repository now carries only the former.
+
+| what | terms | how it is handled |
+|---|---|---|
+| arXiv:2605.12828 (Tamer, Müstecaplıoğlu, Dizdar, Gedik) — PDF and LaTeX | **CC BY 4.0** | included, attributed |
+| The authors' code and data, Zenodo 10.5281/zenodo.20465134 | **CC BY 4.0** | included as `sources/zenodo_extract/`, attributed |
+| nauty 2.9.3 (B. D. McKay, A. Piperno) | **Apache 2.0** | tarball included; `COPYRIGHT` and `LICENSE-2.0.txt` travel inside it |
+| McKay's graph6 collections | no restriction stated on the source page | included; read by the Stage 0 and 1 runners |
+| OEIS A001349 | **CC BY-SA 4.0** — attribution and share-alike, [oeis.org](https://oeis.org/) | included unchanged as `sources/oeis_A001349.json`; that file is under CC BY-SA 4.0, not this repository's CC BY 4.0 |
+| arXiv:math/0611562, arXiv:math/9312214, arXiv:1211.5825 | arXiv non-exclusive / assumed licences, which in arXiv's own words *"limit re-use of any type from other entities or individuals"* | **not redistributed.** `SOURCES.md` carries the link, the access date, the SHA-256 and the quoted lines with their line numbers |
+| The quantum-graphs database (Cabello, Danielsen, López-Tarrida, Portillo) | no rights statement on the source page | **not redistributed.** `runners/run_db_compare.py` fetches it and verifies it against the committed checksums before use |
+
+**Nothing in Rule 0 is weakened by this.** A quotation with line numbers plus the file's
+SHA-256 proves the source was read in exactly that form, and lets any reader obtain the
+same bytes and check the same lines — without our republishing material we have no right
+to republish.
 
 Archived on Zenodo. Cite the concept DOI, which always resolves to the current version:
 
     Oktiabrev, A. (https://orcid.org/0009-0003-3626-2002) (2026).
-    Exact contextuality gaps for graphs up to ten vertices.
+    Exact contextuality gaps for graphs up to eleven vertices.
     Zenodo. https://doi.org/10.5281/zenodo.22031808
 
 The DOI for this specific release (v2.2) is
