@@ -75,10 +75,12 @@ paper above left open after reporting its integer-relation candidate as a false 
 **That database was believed lost, and it is not.** Its published address at
 `ii.uib.no/~larsed/quantum_graphs/` returns 404, and for a week this project could compare
 only counts. On 2026-08-27, in answer to a direct enquiry, L. E. Danielsen supplied its
-current location — **`https://codetables.de/larsed/quantum_graphs/`** — and the per-graph
-files are archived here with checksums (`SOURCES.md` §S14). So the comparison below is not
-of two totals but of **two independent enumerations, fourteen years apart, matched graph by
-graph**.
+current location — **`https://codetables.de/larsed/quantum_graphs/`**. The database carries
+no rights statement, so **it is not redistributed here**: what is archived here are its
+SHA-256 checksums, and `runners/run_db_compare.py` fetches the files from the address above
+and verifies them against those checksums before use (`SOURCES.md` §S14, §S15.4). So the
+comparison below is not of two totals but of **two independent enumerations, fourteen years
+apart, matched graph by graph**.
 
 | n | database | ours (τ = 10⁻⁶) | only theirs | only ours | α mismatches |
 |--:|--:|--:|--:|--:|--:|

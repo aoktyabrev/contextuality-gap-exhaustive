@@ -268,6 +268,14 @@ reads. Deleting it and re-running `run_0c.py` also works — the chunk checkpoin
   the paper's abstract back to back, as one text, and treat any place the summary promises
   more as a defect.
 
+  **Three instances in three days, and the shape is identical every time:** a fact changes,
+  the edit lands where the change was noticed, and the *other* places that asserted the old
+  fact keep asserting it — the database's unavailability, Stage 9's direction as fact, and
+  then a sentence saying we archive data we had just decided not to redistribute. The last
+  landed on the most sensitive subject there is, other people's rights. So the check is not
+  "did I update the text": it is **grep for the old claim and confirm zero hits** before
+  calling an edit done.
+
 - **An audit means the whole document, not the sentence that was reported.** This has now
   cost twice. The claim that Δ_max(11) was proved sat in five places when three were named;
   the claim that the database was unretrievable sat in four. Grep for the *idea*, not for
