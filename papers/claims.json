@@ -2801,5 +2801,275 @@
    "expect": 9.2,
    "tol": 0.15
   }
+ },
+ {
+  "id": "LINK-band-slow",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "slow band stall rate",
+  "as_written": "38 / 40 = 95 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "bands.slow_top1.rate",
+   "expect": 0.95,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "LINK-band-slow-med",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "slow band median",
+  "as_written": "226.88",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "bands.slow_top1.median_ms",
+   "expect": 226.88,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "LINK-band-upper",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "upper band stall rate",
+  "as_written": "12 / 40 = 30 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "bands.upper_90_99.rate",
+   "expect": 0.3,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "LINK-band-upper-med",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "upper band median",
+  "as_written": "4.77",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "bands.upper_90_99.median_ms",
+   "expect": 4.77,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "LINK-band-median",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "median band stall rate",
+  "as_written": "0 / 40",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "bands.median_45_55.rate",
+   "expect": 0.0,
+   "tol": 0.0
+  }
+ },
+ {
+  "id": "LINK-band-fast",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "fast band stall rate",
+  "as_written": "0 / 40",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "bands.fast_bottom10.rate",
+   "expect": 0.0,
+   "tol": 0.0
+  }
+ },
+ {
+  "id": "LINK-rho",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "rho(solve time, rank)",
+  "as_written": "+0.639",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "rank_vs_time_rho",
+   "expect": 0.639,
+   "tol": 0.002
+  }
+ },
+ {
+  "id": "LINK-rank3-slow",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "rank>=3 share, slow band",
+  "as_written": "100 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "rank_ge3_share.slow_top1",
+   "expect": 1.0,
+   "tol": 0.0
+  }
+ },
+ {
+  "id": "LINK-rank3-upper",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "rank>=3 share, upper band",
+  "as_written": "100 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "rank_ge3_share.upper_90_99",
+   "expect": 1.0,
+   "tol": 0.0
+  }
+ },
+ {
+  "id": "LINK-r4-slow",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "rank 4, slow band",
+  "as_written": "22 / 22 = 100 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "within_rank.rank4_slow_top1.rate",
+   "expect": 1.0,
+   "tol": 0.0
+  }
+ },
+ {
+  "id": "LINK-r4-upper",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "rank 4, upper band",
+  "as_written": "11 / 22 = 50 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "within_rank.rank4_upper_90_99.rate",
+   "expect": 0.5,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "LINK-r5-slow",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "rank 5, slow band",
+  "as_written": "20 / 22 = 91 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "within_rank.rank5_slow_top1.rate",
+   "expect": 0.909,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "LINK-r5-upper",
+  "paper": "A",
+  "section": "2.3.1 / 4.1",
+  "tag": "measured",
+  "claim": "rank 5, upper band",
+  "as_written": "5 / 22 = 23 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "within_rank.rank5_upper_90_99.rate",
+   "expect": 0.227,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "LINK-n9-zero-p99",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "n=9 zero-gap 99th pct",
+  "as_written": "172 573 us",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "tail_by_gap.9.zero.p99_ms",
+   "expect": 172.57,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "LINK-n9-pos-p99",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "n=9 positive-gap 99th pct",
+  "as_written": "7 040 us",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "tail_by_gap.9.positive.p99_ms",
+   "expect": 7.04,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "LINK-n11-J?bBD_{u",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "percentile of the stalled n=11 graph J?bBD_{uVe?",
+  "as_written": "98.78",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11.graphs.J?bBD_{uVe?.percentile",
+   "expect": 98.78,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "LINK-n11-J?bAV_{\\",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "percentile of the stalled n=11 graph J?bAV_{\\rz_",
+  "as_written": "99.41",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11.graphs.J?bAV_{\\rz_.percentile",
+   "expect": 99.41,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "LINK-n11-J?bFB_{m",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "percentile of the stalled n=11 graph J?bFB_{mnk_",
+  "as_written": "99.61",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11.graphs.J?bFB_{mnk_.percentile",
+   "expect": 99.61,
+   "tol": 0.01
+  }
  }
 ]

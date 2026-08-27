@@ -1,0 +1,124 @@
+{
+ "seed": 20260827,
+ "n": 9,
+ "tail_by_gap": {
+  "8": {
+   "zero": {
+    "n": 10616,
+    "median_ms": 1.6,
+    "p90_ms": 2.65,
+    "p99_ms": 100.9,
+    "max_ms": 342.57
+   },
+   "positive": {
+    "n": 500,
+    "median_ms": 2.06,
+    "p90_ms": 3.08,
+    "p99_ms": 4.55,
+    "max_ms": 7.08
+   }
+  },
+  "9": {
+   "zero": {
+    "n": 244398,
+    "median_ms": 2.08,
+    "p90_ms": 3.73,
+    "p99_ms": 172.57,
+    "max_ms": 974.38
+   },
+   "positive": {
+    "n": 16571,
+    "median_ms": 2.64,
+    "p90_ms": 4.22,
+    "p99_ms": 7.04,
+    "max_ms": 911.02
+   }
+  }
+ },
+ "bands": {
+  "slow_top1": {
+   "median_ms": 226.88,
+   "stalled": 38,
+   "n": 40,
+   "rate": 0.95
+  },
+  "upper_90_99": {
+   "median_ms": 4.77,
+   "stalled": 12,
+   "n": 40,
+   "rate": 0.3
+  },
+  "median_45_55": {
+   "median_ms": 2.08,
+   "stalled": 0,
+   "n": 40,
+   "rate": 0.0
+  },
+  "fast_bottom10": {
+   "median_ms": 1.42,
+   "stalled": 0,
+   "n": 40,
+   "rate": 0.0
+  }
+ },
+ "rank_vs_time_rho": 0.639,
+ "rank_ge3_share": {
+  "slow_top1": 1.0,
+  "upper_90_99": 1.0,
+  "median_45_55": 0.687,
+  "fast_bottom10": 0.14
+ },
+ "within_rank": {
+  "rank4_slow_top1": {
+   "rank": 4,
+   "band": "slow_top1",
+   "median_ms": 226.35,
+   "stalled": 22,
+   "n": 22,
+   "rate": 1.0
+  },
+  "rank4_upper_90_99": {
+   "rank": 4,
+   "band": "upper_90_99",
+   "median_ms": 44.8,
+   "stalled": 11,
+   "n": 22,
+   "rate": 0.5
+  },
+  "rank5_slow_top1": {
+   "rank": 5,
+   "band": "slow_top1",
+   "median_ms": 207.35,
+   "stalled": 20,
+   "n": 22,
+   "rate": 0.909
+  },
+  "rank5_upper_90_99": {
+   "rank": 5,
+   "band": "upper_90_99",
+   "median_ms": 4.74,
+   "stalled": 5,
+   "n": 22,
+   "rate": 0.227
+  }
+ },
+ "n11": {
+  "median_ms": 5.1,
+  "p99_ms": 317.28,
+  "graphs": {
+   "J?bBD_{uVe?": {
+    "solve_ms": 259.09,
+    "percentile": 98.78
+   },
+   "J?bAV_{\\rz_": {
+    "solve_ms": 451.58,
+    "percentile": 99.41
+   },
+   "J?bFB_{mnk_": {
+    "solve_ms": 578.91,
+    "percentile": 99.61
+   }
+  }
+ },
+ "wall_minutes": 43.1
+}
