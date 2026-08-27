@@ -3696,5 +3696,320 @@
    "expect": 0.9365,
    "tol": 0.0001
   }
+ },
+ {
+  "id": "SCR-t1",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "stalls caught, top 1 %",
+  "as_written": "6 / 27",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "thresholds.top_1pct.caught",
+   "expect": 6,
+   "tol": 0
+  }
+ },
+ {
+  "id": "SCR-t5",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "stalls caught, top 5 %",
+  "as_written": "12 / 27",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "thresholds.top_5pct.caught",
+   "expect": 12,
+   "tol": 0
+  }
+ },
+ {
+  "id": "SCR-t10",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "stalls caught, top 10 %",
+  "as_written": "14 / 27",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "thresholds.top_10pct.caught",
+   "expect": 14,
+   "tol": 0
+  }
+ },
+ {
+  "id": "SCR-t25",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "stalls caught, top 25 %",
+  "as_written": "15 / 27",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "thresholds.top_25pct.caught",
+   "expect": 15,
+   "tol": 0
+  }
+ },
+ {
+  "id": "SCR-sens10",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "sensitivity at top 10 %",
+  "as_written": "52 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "thresholds.top_10pct.sensitivity",
+   "expect": 0.519,
+   "tol": 0.002
+  }
+ },
+ {
+  "id": "SCR-share10",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "share sent to high precision at top 10 %",
+  "as_written": "9.1 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "thresholds.top_10pct.screened_share",
+   "expect": 0.091,
+   "tol": 0.002
+  }
+ },
+ {
+  "id": "SCR-declined",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "stalls among the scored graphs",
+  "as_written": "27",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "declined",
+   "expect": 27,
+   "tol": 0
+  }
+ },
+ {
+  "id": "SCR-scored",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "graphs scored",
+  "as_written": "1186",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "scored",
+   "expect": 1186,
+   "tol": 0
+  }
+ },
+ {
+  "id": "SCR-fn-0",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.0.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-1",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.1.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-2",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.2.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-3",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.3.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-4",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.4.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-5",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.5.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-6",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.6.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-7",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.7.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-8",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "0.0",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.8.percentile",
+   "expect": 0.0,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-9",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "33.28",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.9.percentile",
+   "expect": 33.28,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-10",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "64.5",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.10.percentile",
+   "expect": 64.5,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-11",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "72.36",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.11.percentile",
+   "expect": 72.36,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "SCR-fn-12",
+  "paper": "B",
+  "section": "4.2",
+  "tag": "measured",
+  "claim": "percentile of a false negative",
+  "as_written": "82.78",
+  "check": {
+   "kind": "json",
+   "file": "results/report_screen_retrospective.json",
+   "path": "false_negatives_below_p90.12.percentile",
+   "expect": 82.78,
+   "tol": 0.01
+  }
  }
 ]
