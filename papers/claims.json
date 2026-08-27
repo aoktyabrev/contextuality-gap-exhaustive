@@ -3578,5 +3578,18 @@
    "file": "SOURCES.md",
    "needle": "https://codetables.de/larsed/quantum_graphs/"
   }
+ },
+ {
+  "id": "DB-nauty-column",
+  "paper": "A",
+  "section": "2.2",
+  "tag": "external",
+  "claim": "EXTERNAL: the database's own column name shows it uses nauty",
+  "as_written": "nauty-string",
+  "check": {
+   "kind": "text",
+   "file": "sources/quantum_graphs/index.html",
+   "needle": "nauty-string"
+  }
  }
 ]
