@@ -85,9 +85,64 @@ if __name__ == "__main__":
     ap.add_argument("--per-rank", type=int, default=22)
     ap.add_argument("--rank-pool", type=int, default=150)
     ap.add_argument("--out", default=os.path.join(RES, "report_stall_vs_time.json"))
+    ap.add_argument("--only", choices=("all", "n11"), default="all")
+    ap.add_argument("--per-band-n11", type=int, default=25)
     a = ap.parse_args()
-    out = {"seed": SEED, "n": a.n}
     t_all = time.time()
+
+    if a.only == "n11":
+        out = json.load(open(a.out))
+        print("=== 6. n = 11, the band experiment on POSITIVE-gap graphs ===")
+        print("   forced by the data: 93.65 % of solver-reaching graphs have Delta = 0 at")
+        print("   n = 9, but only 0.063 % at n = 11, so the tail there is a positive-gap")
+        print("   phenomenon and the experiment follows it.")
+        path = os.path.join(RES, "n11_nonzero.csv")
+        ts = sorted(sample_recorded(path, 40000))
+        M = len(ts)
+        cut = {"slow_top1": (ts[int(0.99 * M)], float("inf")),
+               "upper_90_99": (ts[int(0.90 * M)], ts[int(0.99 * M)]),
+               "median_45_55": (ts[int(0.45 * M)], ts[int(0.55 * M)]),
+               "fast_bottom10": (0.0, ts[int(0.10 * M)])}
+        size = os.path.getsize(path)
+        rnd = random.Random(SEED)
+        picked = {k: [] for k in cut}
+        need = a.per_band_n11
+        tries = 0
+        with open(path, "rb") as f:
+            hdr = f.readline()
+            while any(len(v) < need for v in picked.values()) and tries < 4_000_000:
+                tries += 1
+                f.seek(rnd.randrange(len(hdr), size - 400)); f.readline()
+                row = f.readline().decode("utf-8", "ignore").strip().split(",")
+                if len(row) < 11:
+                    continue
+                try:
+                    t = float(row[8])
+                except ValueError:
+                    continue
+                for k, (lo_, hi_) in cut.items():
+                    if len(picked[k]) < need and lo_ <= t < hi_:
+                        picked[k].append((t, row[0]))
+                        break
+        out["n11_bands"] = {}
+        print(f"\n   {'band':14s} {'median ms':>10} {'stalled':>9} {'of':>4} {'rate':>7}")
+        for k, rows_ in picked.items():
+            st = sum(0 if converges(g) else 1 for _, g in rows_)
+            med = 1e3 * statistics.median(t for t, _ in rows_)
+            out["n11_bands"][k] = dict(median_ms=round(med, 2), stalled=st, n=len(rows_),
+                                       rate=round(st / len(rows_), 3))
+            print(f"   {k:14s} {med:10.2f} {st:9d} {len(rows_):4d} "
+                  f"{100*st/len(rows_):6.1f}%", flush=True)
+        out["n11_population"] = dict(sdp_calls=100891478, positive=100827522,
+                                     zero_reaching_solver=63956,
+                                     zero_share_of_solver_reaching=0.00063,
+                                     n9_zero_share_of_solver_reaching=0.9365)
+        out["wall_minutes_n11"] = round((time.time() - t_all) / 60, 1)
+        json.dump(out, open(a.out, "w"), indent=1)
+        print(f"\nmerged into {a.out}  ({out['wall_minutes_n11']} min)")
+        sys.exit(0)
+
+    out = {"seed": SEED, "n": a.n}
 
     # ---- 1. where the tail lives ------------------------------------------
     print("=== 1. the tail, by gap, at sizes where every row was kept ===")

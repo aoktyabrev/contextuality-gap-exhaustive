@@ -3591,5 +3591,110 @@
    "file": "sources/quantum_graphs/index.html",
    "needle": "nauty-string"
   }
+ },
+ {
+  "id": "LINK11-slow",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "top 1 % band at n=11",
+  "as_written": "88 % of 25",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11_bands.slow_top1.rate",
+   "expect": 0.88,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "LINK11-slow-med",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "its median",
+  "as_written": "498.57",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11_bands.slow_top1.median_ms",
+   "expect": 498.57,
+   "tol": 0.01
+  }
+ },
+ {
+  "id": "LINK11-upper",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "90-99 % band at n=11",
+  "as_written": "8 % of 25",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11_bands.upper_90_99.rate",
+   "expect": 0.08,
+   "tol": 0.001
+  }
+ },
+ {
+  "id": "LINK11-median",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "45-55 % band at n=11",
+  "as_written": "0 % of 25",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11_bands.median_45_55.rate",
+   "expect": 0.0,
+   "tol": 0.0
+  }
+ },
+ {
+  "id": "LINK11-fast",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "bottom 10 % band at n=11",
+  "as_written": "0 % of 25",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11_bands.fast_bottom10.rate",
+   "expect": 0.0,
+   "tol": 0.0
+  }
+ },
+ {
+  "id": "LINK11-pop",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "zero-gap share of solver-reaching graphs at n=11",
+  "as_written": "0.063 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11_population.zero_share_of_solver_reaching",
+   "expect": 0.00063,
+   "tol": 1e-06
+  }
+ },
+ {
+  "id": "LINK11-pop9",
+  "paper": "A",
+  "section": "2.3.1",
+  "tag": "measured",
+  "claim": "the same share at n=9",
+  "as_written": "93.65 %",
+  "check": {
+   "kind": "json",
+   "file": "results/report_stall_vs_time.json",
+   "path": "n11_population.n9_zero_share_of_solver_reaching",
+   "expect": 0.9365,
+   "tol": 0.0001
+  }
  }
 ]

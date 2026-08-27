@@ -120,5 +120,39 @@
    }
   }
  },
- "wall_minutes": 43.1
+ "wall_minutes": 43.1,
+ "n11_bands": {
+  "slow_top1": {
+   "median_ms": 498.57,
+   "stalled": 22,
+   "n": 25,
+   "rate": 0.88
+  },
+  "upper_90_99": {
+   "median_ms": 15.28,
+   "stalled": 2,
+   "n": 25,
+   "rate": 0.08
+  },
+  "median_45_55": {
+   "median_ms": 5.1,
+   "stalled": 0,
+   "n": 25,
+   "rate": 0.0
+  },
+  "fast_bottom10": {
+   "median_ms": 2.76,
+   "stalled": 0,
+   "n": 25,
+   "rate": 0.0
+  }
+ },
+ "n11_population": {
+  "sdp_calls": 100891478,
+  "positive": 100827522,
+  "zero_reaching_solver": 63956,
+  "zero_share_of_solver_reaching": 0.00063,
+  "n9_zero_share_of_solver_reaching": 0.9365
+ },
+ "wall_minutes_n11": 35.7
 }
