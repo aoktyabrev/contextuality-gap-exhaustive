@@ -257,3 +257,30 @@ reads. Deleting it and re-running `run_0c.py` also works — the chunk checkpoin
   inputs whose answer is known *exactly* over inputs that merely look
   representative** — and make the gate compare against that exact answer, not against
   a weaker property the answer happens to have.
+
+- **A public text may never claim more than a non-public one.** README, release notes and
+  the archive description are read by people who will never open the report, so an
+  overstatement there is the one that travels. Stage 9's result was tagged `[observed]` in
+  the paper — direction measured on four sizes, sealed threshold met on one, all three
+  hypotheses failed — while the README's opening presented it as established and mentioned
+  none of that. **When the two disagree, bring the stronger one down to the weaker**, never
+  the reverse. The check is cheap and belongs in every release: read the public summary and
+  the paper's abstract back to back, as one text, and treat any place the summary promises
+  more as a defect.
+
+- **An audit means the whole document, not the sentence that was reported.** This has now
+  cost twice. The claim that Δ_max(11) was proved sat in five places when three were named;
+  the claim that the database was unretrievable sat in four. Grep for the *idea*, not for
+  the wording, and read the sections that only touch it in passing — table captions,
+  appendix rows, abstracts.
+
+- **State a decision as a decision.** "Not yet computed" and "will not be computed" read
+  completely differently to a reader deciding whether to wait for you. Twelve vertices is
+  164 059 830 476 graphs and about 490 days at our measured rate; the honest form is that it
+  will not be run and the next step is a proof about the layers, not a bigger sweep.
+
+- **Name an absence rather than filling it.** The papers say plainly that this work is about
+  the number ϑ and not about physical realisability, that d\* is a lower bound from a
+  heuristic, and that we have no upper bounds on η₃ — and neither does the work we continue.
+  Where a reader will expect something we do not have, the boundary of the work is itself
+  worth stating; silence there reads as oversight rather than as choice.
