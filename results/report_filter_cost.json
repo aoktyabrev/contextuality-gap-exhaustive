@@ -1,0 +1,23 @@
+{
+ "n": 11,
+ "sample": 3000,
+ "slices": [
+  137,
+  901,
+  1733,
+  2450,
+  3111,
+  3777
+ ],
+ "us_alpha": 119.7,
+ "us_chi": 25.2,
+ "us_filter": 144.9,
+ "us_sdp": 27406.0,
+ "ratio_sdp_over_filter": 189.2,
+ "share_closed_full_sweep": 0.8998,
+ "share_closed_in_sample": 0.9277,
+ "hours_with_filter": 115.5,
+ "hours_without_filter_ESTIMATE": 1094.8,
+ "factor": 9.5,
+ "observed_run_hours": 71.8
+}

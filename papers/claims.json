@@ -2537,5 +2537,179 @@
    "expect": 0.3431458,
    "tol": 5e-07
   }
+ },
+ {
+  "id": "A-3.1-dstar",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "measured",
+  "claim": "d* series over n = 5..10, lower bounds from a heuristic",
+  "as_written": "3, 4, 3, 3, 4, 4†",
+  "check": {
+   "kind": "text",
+   "file": "REPORT_STAGE1.md",
+   "needle": "d\\* идёт 3, 4, 3, 3, 4, 4†"
+  }
+ },
+ {
+  "id": "A-3.1-dstar-quote",
+  "paper": "A",
+  "section": "3.1",
+  "tag": "external",
+  "claim": "EXTERNAL: the authors' own lower-bound caveat on d*",
+  "as_written": "a formal d* = 4 proof remains an open question",
+  "check": {
+   "kind": "text",
+   "file": "SOURCES.md",
+   "needle": "a formal `$d^*=4$` proof remains an open question"
+  }
+ },
+ {
+  "id": "A-2.3-us-alpha",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "alpha cost per graph at n=11",
+  "as_written": "119.7",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "us_alpha",
+   "expect": 119.7,
+   "tol": 0.05
+  }
+ },
+ {
+  "id": "A-2.3-us-chi",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "exact chi(complement) cost per graph",
+  "as_written": "25.2",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "us_chi",
+   "expect": 25.2,
+   "tol": 0.05
+  }
+ },
+ {
+  "id": "A-2.3-us-filter",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "filter cost per graph",
+  "as_written": "144.9",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "us_filter",
+   "expect": 144.9,
+   "tol": 0.05
+  }
+ },
+ {
+  "id": "A-2.3-us-sdp",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "one SDP at eps 1e-8",
+  "as_written": "27 406",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "us_sdp",
+   "expect": 27406.0,
+   "tol": 1.0
+  }
+ },
+ {
+  "id": "A-2.3-ratio",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "ratio SDP over filter",
+  "as_written": "189",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "ratio_sdp_over_filter",
+   "expect": 189.2,
+   "tol": 0.15
+  }
+ },
+ {
+  "id": "A-2.3-sample-share",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "share closed in the sample, vs 89.98 from the sweep",
+  "as_written": "92.77",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "share_closed_in_sample",
+   "expect": 0.9277,
+   "tol": 0.0005
+  }
+ },
+ {
+  "id": "A-2.3-factor",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "estimated reduction in total work",
+  "as_written": "9.5",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "factor",
+   "expect": 9.5,
+   "tol": 0.05
+  }
+ },
+ {
+  "id": "A-2.3-h-with",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "projected hours with the filter",
+  "as_written": "116",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "hours_with_filter",
+   "expect": 115.5,
+   "tol": 0.6
+  }
+ },
+ {
+  "id": "A-2.3-h-without",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "projected hours without, ESTIMATE",
+  "as_written": "1095",
+  "check": {
+   "kind": "json",
+   "file": "results/report_filter_cost.json",
+   "path": "hours_without_filter_ESTIMATE",
+   "expect": 1094.8,
+   "tol": 1.0
+  }
+ },
+ {
+  "id": "A-2.3-exact-chrom",
+  "paper": "A",
+  "section": "2.3",
+  "tag": "measured",
+  "claim": "the chromatic number is computed exactly, not heuristically",
+  "as_written": "Exact chromatic number for small graphs",
+  "check": {
+   "kind": "text",
+   "file": "quadc5/chrom.py",
+   "needle": "Exact chromatic number for small graphs"
+  }
  }
 ]
