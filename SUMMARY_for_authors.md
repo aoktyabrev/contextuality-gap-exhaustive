@@ -126,7 +126,7 @@ equality is **false**, and we refuted it ourselves:
 
 > `` L@JC?_ASKAGPBH `` on 13 vertices, α = 5, 19 edges: Δ ≥ 45375481648/55555555557
 > = 0.816758669642764, against a transfer bound T(13,5) ≤ 12398216523947/16000000000000
-> = 0.774888532746687. Strictly greater by 0.0419, both bounds from exact primal–dual
+> = 0.7748885327466875. Strictly greater by 0.0419, both bounds from exact primal–dual
 > certificates, compared as fractions. **[proved]**
 
 So upper layers cannot be skipped as a matter of method. The two percentages remain

@@ -173,12 +173,29 @@ def main():
             print(f"  MISMATCH  {cl['id']}  ({cl['paper']} §{cl['section']}) "
                   f"[{cl['tag']}] {cl['claim']}: as written {cl['as_written']!r}")
     print(f"\n{checked} comparisons, {len(fails)} mismatches")
-    if fails:
+
+    # A claim list compares numbers one at a time, so a false RELATION between two of
+    # them -- "this fraction equals that decimal" -- is invisible to it: each side can
+    # pass its own check while the equals sign between them is wrong.  That happened in
+    # section 4.3.  This pass checks the printed pairs themselves.
+    print()
+    import subprocess
+    ident = subprocess.run([sys.executable,
+                            os.path.join(ROOT, "scripts", "check_printed_identities.py")],
+                           capture_output=True, text=True)
+    print(ident.stdout.rstrip())
+    if ident.returncode != 0:
+        print(ident.stderr.rstrip())
+
+    if fails or ident.returncode != 0:
         print("\nPAPER CLAIM CHECK FAILED:")
         for cid, d in fails:
             print(f"  {cid}: {d}")
+        if ident.returncode != 0:
+            print("  printed fraction=decimal identities: see the table above")
         return 1
-    print("PAPER CLAIM CHECK PASSED — every number in both papers matches the repository")
+    print("\nPAPER CLAIM CHECK PASSED — every number in both papers matches the "
+          "repository, and every printed fraction equals the decimal beside it")
     return 0
 
 

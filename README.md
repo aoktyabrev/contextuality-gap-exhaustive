@@ -184,10 +184,11 @@ only proposes the matrices, and symmetry, trace = 1 and the zeros on all 17 edge
 checked as equalities in ℚ, with positive semidefiniteness established twice — pivoted
 Schur complement and all 2¹¹ − 1 = 2047 principal minors — which agreed in all 78 tests.
 
-The runner-up carries a dual certificate of its own, `` J?`@f?kUDG_ `` with
-Δ ≤ 152149953435449/32000000000000 = 0.7546860448577810, strictly below the leader's lower
-bound by 0.0202024878. **Uniqueness of the maximum within the top therefore does not rest
-on numerical ranking.**
+The runner-up carries a dual certificate of its own, `` J?`@f?kUDG_ `` with α = 4: the
+certificate bounds ϑ ≤ 152149953435449/32000000000000, so subtracting α gives
+Δ ≤ 24149953435449/32000000000000 = 0.75468604485778125 exactly, strictly below the
+leader's lower bound by 0.0202024878. **Uniqueness of the maximum within the top
+therefore does not rest on numerical ranking.**
 
 ### What is proved and what is not
 
@@ -223,7 +224,7 @@ n = 9, 10 and 11 it looked that way, with the boundary at a\* = 5 on all three.
 **It is false.** `` L@JC?_ASKAGPBH `` on 13 vertices, with α = 5 and 19 edges, has
 
     Delta   >= 45375481648 / 55555555557        = 0.816758669642764
-    T(13,5) <= 12398216523947 / 16000000000000  = 0.774888532746687
+    T(13,5) <= 12398216523947 / 16000000000000  = 0.7748885327466875
 
 — strictly greater by 0.0419, both bounds from exact primal–dual certificates, compared
 as fractions. Layer 5 at thirteen vertices generates a value of its own.
