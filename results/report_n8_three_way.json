@@ -1,0 +1,70 @@
+{
+  "stage": "F.1 -- reciprocal n=8 check, requested by the lead author of arXiv:2605.12828",
+  "requested_by": "U. Tamer, email 2026-09-04",
+  "tau": 1e-06,
+  "sources": {
+    "authors": {
+      "file": "authors_run/all_n8_results.csv",
+      "repo": "https://github.com/ugurtamerphys/quad-c5-contextuality",
+      "commit": "bfacfd0",
+      "rows": 11117
+    },
+    "database": {
+      "file": "sources/quantum_graphs/quantum8",
+      "url": "https://codetables.de/larsed/quantum_graphs/",
+      "rows": 498,
+      "accessed": "2026-08-27"
+    },
+    "ours": {
+      "file": "results/n8_all.csv",
+      "rows": 11117
+    }
+  },
+  "authors_set_size_by_threshold": {
+    "1e-05": 498,
+    "1e-06": 498,
+    "1e-07": 498
+  },
+  "counts": {
+    "authors": 498,
+    "database": 498,
+    "ours": 498
+  },
+  "all_three_identical_as_graph6_strings": true,
+  "pairwise": {
+    "authors_vs_database": {
+      "identical": true,
+      "only_first": [],
+      "only_second": []
+    },
+    "ours_vs_database": {
+      "identical": true,
+      "only_first": [],
+      "only_second": []
+    },
+    "ours_vs_authors": {
+      "identical": true,
+      "only_first": [],
+      "only_second": []
+    }
+  },
+  "alpha_mismatches": {
+    "ours_vs_authors": {
+      "compared": 11117,
+      "mismatches": []
+    },
+    "ours_vs_database": {
+      "compared": 498,
+      "mismatches": []
+    },
+    "authors_vs_database": {
+      "compared": 498,
+      "mismatches": []
+    }
+  },
+  "max_abs_theta_diff_authors_vs_database": {
+    "value": 4.7499999999978115e-05,
+    "graph6": "GCZJak",
+    "note": "database prints 4 decimals"
+  }
+}
