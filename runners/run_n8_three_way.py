@@ -25,6 +25,7 @@ geng labelling; see the graph6 trap in CLAUDE.md for why the distinction matters
 import sys, os, json, csv, argparse
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES = os.path.join(ROOT, "results")
 
@@ -98,6 +99,10 @@ def main():
     args = ap.parse_args()
 
     ensure_authors_csv()
+    # the database is not redistributed either; run_db_compare.py already owns the
+    # fetch-and-verify for it, so reuse that rather than write a second copy of it
+    from run_db_compare import ensure_db
+    ensure_db()
     A, D, O = load_authors(), load_db(), load_ours()
 
     # The authors' set is threshold-free across three decades; report that rather than
