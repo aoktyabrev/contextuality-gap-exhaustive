@@ -36,19 +36,35 @@ OURS_CSV = os.path.join(RES, "n8_all.csv")
 AUTHORS_REPO = "https://github.com/ugurtamerphys/quad-c5-contextuality"
 DB_URL = "https://codetables.de/larsed/quantum_graphs/"
 
-# The authors' working copy is not redistributed from this repository (see .gitignore).
-# Their archive on Zenodo is CC BY 4.0 and byte-identical to the repository at commit
-# bfacfd0, so the file is FETCHED on demand and checked against the sha256 committed in
-# sources/authors_run.sha256 -- a reader verifies the same bytes we used without our
-# having republished them.  This mirrors ensure_db() in run_db_compare.py.
+# The authors' file IS in this repository, under sources/zenodo_extract/: their Zenodo
+# archive is CC BY 4.0 (LICENSE-DATA), so that copy may be redistributed and is the one
+# used.  authors_run/ is only a scratch working copy and is gitignored.  The network is
+# the last resort, for a checkout where sources/ has been pruned; either way the bytes
+# are checked against the sha256 in sources/authors_run.sha256.
 AUTHORS_ZENODO = ("https://zenodo.org/api/records/20465134/files/"
                   "ugurtamerphys/quad-c5-contextuality-v1.0.0.zip/content")
 
 
+ZENODO_EXTRACT = os.path.join(ROOT, "sources", "zenodo_extract",
+                              "ugurtamerphys-quad-c5-contextuality-bfacfd0",
+                              "all_n8_results.csv")
+
+
 def ensure_authors_csv():
-    """Make authors_run/all_n8_results.csv present and verified, fetching if need be."""
+    """Return a verified path to the authors' per-graph file.
+
+    Preference order: the CC BY 4.0 copy committed under sources/zenodo_extract/, then
+    the local scratch copy, then the network.  Whichever is used, the bytes must match
+    sources/authors_run.sha256.
+    """
     import hashlib, io, zipfile, urllib.request
     want = open(os.path.join(ROOT, "sources", "authors_run.sha256")).read().split()[0]
+    for cand in (ZENODO_EXTRACT, AUTHORS_CSV):
+        if os.path.exists(cand):
+            got = hashlib.sha256(open(cand, "rb").read()).hexdigest()
+            if got != want:
+                raise SystemExit(f"{cand}: sha256 {got} != committed {want}")
+            return cand
     if not os.path.exists(AUTHORS_CSV):
         print(f"  fetching the authors' archive from Zenodo 10.5281/zenodo.20465134")
         blob = urllib.request.urlopen(AUTHORS_ZENODO, timeout=120).read()
@@ -60,12 +76,13 @@ def ensure_authors_csv():
     got = hashlib.sha256(open(AUTHORS_CSV, "rb").read()).hexdigest()
     if got != want:
         raise SystemExit(f"all_n8_results.csv: sha256 {got} != committed {want}")
+    return AUTHORS_CSV
 
 
-def load_authors():
+def load_authors(path=None):
     """graph6 -> (alpha, delta).  Their published per-graph file, all 11 117 rows."""
     out = {}
-    with open(AUTHORS_CSV) as fh:
+    with open(path or AUTHORS_CSV) as fh:
         for r in csv.DictReader(fh):
             out[r["graph6"]] = (int(r["alpha"]), float(r["delta_scs"]))
     return out
@@ -98,12 +115,13 @@ def main():
     ap.add_argument("--seed", type=int, default=20260819)  # unused; kept for uniformity
     args = ap.parse_args()
 
-    ensure_authors_csv()
+    csv_path = ensure_authors_csv()
+    print(f"  authors' file: {os.path.relpath(csv_path, ROOT)}")
     # the database is not redistributed either; run_db_compare.py already owns the
     # fetch-and-verify for it, so reuse that rather than write a second copy of it
     from run_db_compare import ensure_db
     ensure_db()
-    A, D, O = load_authors(), load_db(), load_ours()
+    A, D, O = load_authors(csv_path), load_db(), load_ours()
 
     # The authors' set is threshold-free across three decades; report that rather than
     # asserting it, because it is the reason this is a set comparison at all.
