@@ -187,15 +187,20 @@ def main():
     if ident.returncode != 0:
         print(ident.stderr.rstrip())
 
-    if fails or ident.returncode != 0:
+    if ident.returncode == 2:
+        print("  (identity pass reported NOT APPLICABLE; it is not counted as a pass)")
+    if fails or ident.returncode == 1:
         print("\nPAPER CLAIM CHECK FAILED:")
         for cid, d in fails:
             print(f"  {cid}: {d}")
         if ident.returncode != 0:
             print("  printed fraction=decimal identities: see the table above")
         return 1
+    tail = (", and every printed fraction equals the decimal beside it"
+            if ident.returncode == 0 else
+            " (the printed-identity pass had no manuscript to examine)")
     print("\nPAPER CLAIM CHECK PASSED — every number in both papers matches the "
-          "repository, and every printed fraction equals the decimal beside it")
+          "repository" + tail)
     return 0
 
 

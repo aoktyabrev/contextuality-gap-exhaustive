@@ -84,6 +84,13 @@ def main():
     for r in rows:
         print("  " + " | ".join(str(c).ljust(x) for c, x in zip(r, w)))
     print(f"\n  {len(rows)} printed fraction=decimal pairs checked, {bad} failing.")
+    if not files:
+        # papers/*.md is gitignored: from a clean checkout there is no manuscript to
+        # check.  Saying PASS on zero inputs is the vacuous-check failure this project
+        # keeps writing rules about, so say plainly that nothing was examined.
+        print("  NOT APPLICABLE — no papers/*.md in this checkout, so nothing was checked.")
+        print("  (the manuscripts are deliberately not published from this repository)")
+        return 2
     return 1 if bad else 0
 
 
