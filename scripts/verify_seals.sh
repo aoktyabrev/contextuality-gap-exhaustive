@@ -11,6 +11,25 @@ set -uo pipefail
 cd "$(dirname "$0")/.."
 fail=0
 
+# No git history at all -- an unpacked release tarball, which is exactly how the Zenodo
+# archive reaches a reader -- has the same consequence as a shallow clone and a worse
+# symptom: every SOURCES.md prefix check fails and prints a hash mismatch against the
+# hash of an EMPTY file, which reads as tampering.  The shallow-clone guard below
+# anticipated the failure mode but covered only one of its two causes.
+if ! git rev-parse --git-dir >/dev/null 2>&1; then
+  echo "This directory is NOT a git repository — most likely an unpacked release"
+  echo "tarball or Zenodo archive."
+  echo
+  echo "The seals are checked against the commits that created them, so there is no"
+  echo "history here to check them against.  Nothing is wrong with the seals; this"
+  echo "check simply does not apply to a tarball.  To run it, clone the repository:"
+  echo
+  echo "    git clone https://github.com/aoktyabrev/contextuality-gap-exhaustive"
+  echo
+  echo "Everything else in this archive works offline, including verification_pack/."
+  exit 2
+fi
+
 # A shallow clone has no sealing commits, so every SOURCES.md prefix check would fail
 # and the script would print SEAL CHECK FAILED -- the worst possible false alarm for a
 # project whose credibility rests on these seals.  Say what is actually wrong instead.
