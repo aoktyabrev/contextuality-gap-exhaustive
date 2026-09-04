@@ -1,0 +1,12 @@
+# sources/ is Rule 0's evidence: it must be stored byte-for-byte as downloaded, or a
+# checksum taken from the original stops matching the copy a reader clones.  This
+# machine has core.autocrlf=input, which silently stripped CR from four of the authors'
+# CSVs -- 11 118 of them from all_n8_results.csv alone -- so the committed copy was not
+# the file the source published.  Never normalise anything under sources/.
+sources/** -text
+
+# Our own CSVs are written by Python's csv module, whose default line terminator is
+# CRLF.  Their bytes are not load-bearing (every comparison against them is by value,
+# not by hash), but storing them unmodified keeps a clone byte-identical to the tree
+# that produced it.
+results/*.csv -text
