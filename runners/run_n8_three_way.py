@@ -35,6 +35,31 @@ OURS_CSV = os.path.join(RES, "n8_all.csv")
 AUTHORS_REPO = "https://github.com/ugurtamerphys/quad-c5-contextuality"
 DB_URL = "https://codetables.de/larsed/quantum_graphs/"
 
+# The authors' working copy is not redistributed from this repository (see .gitignore).
+# Their archive on Zenodo is CC BY 4.0 and byte-identical to the repository at commit
+# bfacfd0, so the file is FETCHED on demand and checked against the sha256 committed in
+# sources/authors_run.sha256 -- a reader verifies the same bytes we used without our
+# having republished them.  This mirrors ensure_db() in run_db_compare.py.
+AUTHORS_ZENODO = ("https://zenodo.org/api/records/20465134/files/"
+                  "ugurtamerphys/quad-c5-contextuality-v1.0.0.zip/content")
+
+
+def ensure_authors_csv():
+    """Make authors_run/all_n8_results.csv present and verified, fetching if need be."""
+    import hashlib, io, zipfile, urllib.request
+    want = open(os.path.join(ROOT, "sources", "authors_run.sha256")).read().split()[0]
+    if not os.path.exists(AUTHORS_CSV):
+        print(f"  fetching the authors' archive from Zenodo 10.5281/zenodo.20465134")
+        blob = urllib.request.urlopen(AUTHORS_ZENODO, timeout=120).read()
+        with zipfile.ZipFile(io.BytesIO(blob)) as z:
+            name = next(n for n in z.namelist() if n.endswith("all_n8_results.csv"))
+            os.makedirs(os.path.dirname(AUTHORS_CSV), exist_ok=True)
+            with open(AUTHORS_CSV, "wb") as fh:
+                fh.write(z.read(name))
+    got = hashlib.sha256(open(AUTHORS_CSV, "rb").read()).hexdigest()
+    if got != want:
+        raise SystemExit(f"all_n8_results.csv: sha256 {got} != committed {want}")
+
 
 def load_authors():
     """graph6 -> (alpha, delta).  Their published per-graph file, all 11 117 rows."""
@@ -72,6 +97,7 @@ def main():
     ap.add_argument("--seed", type=int, default=20260819)  # unused; kept for uniformity
     args = ap.parse_args()
 
+    ensure_authors_csv()
     A, D, O = load_authors(), load_db(), load_ours()
 
     # The authors' set is threshold-free across three decades; report that rather than
