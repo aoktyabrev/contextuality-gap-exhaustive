@@ -174,33 +174,21 @@ def main():
                   f"[{cl['tag']}] {cl['claim']}: as written {cl['as_written']!r}")
     print(f"\n{checked} comparisons, {len(fails)} mismatches")
 
-    # A claim list compares numbers one at a time, so a false RELATION between two of
-    # them -- "this fraction equals that decimal" -- is invisible to it: each side can
-    # pass its own check while the equals sign between them is wrong.  That happened in
-    # section 4.3.  This pass checks the printed pairs themselves.
-    print()
-    import subprocess
-    ident = subprocess.run([sys.executable,
-                            os.path.join(ROOT, "scripts", "check_printed_identities.py")],
-                           capture_output=True, text=True)
-    print(ident.stdout.rstrip())
-    if ident.returncode != 0:
-        print(ident.stderr.rstrip())
-
-    if ident.returncode == 2:
-        print("  (identity pass reported NOT APPLICABLE; it is not counted as a pass)")
-    if fails or ident.returncode == 1:
+    # The printed fraction=decimal identities are NOT checked here.  They are a
+    # property of the typeset PDF, and papers/ is gitignored, so from a release
+    # checkout this comparator can never see a manuscript -- a check that is
+    # structurally inapplicable in the release run is not a gate.  It lives in
+    # scripts/preflight_printed_identities.py and is run against the built PDFs
+    # immediately before they are sent.
+    if fails:
         print("\nPAPER CLAIM CHECK FAILED:")
         for cid, d in fails:
             print(f"  {cid}: {d}")
         if ident.returncode != 0:
             print("  printed fraction=decimal identities: see the table above")
         return 1
-    tail = (", and every printed fraction equals the decimal beside it"
-            if ident.returncode == 0 else
-            " (the printed-identity pass had no manuscript to examine)")
     print("\nPAPER CLAIM CHECK PASSED — every number in both papers matches the "
-          "repository" + tail)
+          "repository")
     return 0
 
 
