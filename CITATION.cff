@@ -36,13 +36,17 @@ keywords:
   - exhaustive graph enumeration
   - exact certificates
 abstract: >-
-  Exhaustive enumeration of all connected graphs on up to ten vertices by the
-  contextuality gap Delta(G) = theta(G) - alpha(G), with the maximum determined for
-  each size and the exact value of the Lovasz theta number established for every
-  maximizer by machine-checked primal and dual certificates in exact arithmetic.
-  The eight-vertex value, left open by the paper this continues, is the root of
-  x^4 - x^3 + 23x^2 - 155x + 158 in the interval (3, 4); its Galois group is the
-  full symmetric group on four letters, so the degree cannot be reduced.
+  Exhaustive enumeration of all connected graphs on up to eleven vertices —
+  1006700565 of them at the last size — by the contextuality gap
+  Delta(G) = theta(G) - alpha(G). The largest gap at each size is identified by that
+  sweep, and for every graph so identified the Lovasz theta number is established by
+  machine-checked primal and dual certificates in exact arithmetic: a closed form
+  where one exists, and a certified rational interval where none does. The value of
+  each named maximizer is proved; that it is the maximum over all graphs of its size
+  rests on the sweep's numerics and is not. The eight-vertex value, left open by the
+  paper this continues, is the root of x^4 - x^3 + 23x^2 - 155x + 158 in the interval
+  (3, 4); its Galois group is the full symmetric group on four letters, so the degree
+  cannot be reduced.
 references:
   - type: article
     title: "The Quad-C5 Graph: Maximum Contextuality Gap on Eight Vertices"

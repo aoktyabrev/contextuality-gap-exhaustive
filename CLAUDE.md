@@ -25,6 +25,82 @@ positive. Answer: ϑ(`` GCQb`o ``) is the root 3.46784372984… of **x⁴ − x�
 full S₄. The n=10 rank 2 did not close: no minimal polynomial of degree ≤ 48 with height
 ≤ 10⁹ exists. See `REPORT_STAGE2.md`.
 
+**Stage 3 question (closed):** the cross-check against the Cabello–Danielsen–López-Tarrida–Portillo
+quantum-graphs database, plus an invariant table over the top of every size. Answer: their
+enumeration predates ours and **the contribution is reformulated** — exact certification and
+maximization by absolute gap, not first enumeration. Counts agree exactly at n = 8 (498) and
+n = 9 (16 533) and differ by **+8** at n = 10 (975 338 against 975 330). The per-graph
+comparison was closed as *impossible* (the data files were never archived) and that was
+**reversed on 2026-08-27**: Danielsen replied, the data live at `codetables.de/larsed/quantum_graphs/`,
+sets agree name-by-name at n = 5…9 with **zero** α discrepancies over 992 398 graphs, and the
+eight extra graphs at n = 10 are real — each carries an exact primal certificate ϑ > α. The
+stage's own threshold hypothesis for those eight was refuted in the process. See
+`REPORT_STAGE3.md` **and its dated amendment**; the body above the amendment is deliberately
+not rewritten.
+
+**Stage 4 question (closed):** does the observed maximum match what the tail of the Δ
+distribution predicts? Answer: **the method is inapplicable, and that is the result** — Δ is
+atomic, 60.8 % of the gapped graphs at n = 10 sitting on the single pentagon value √5 − 2, so
+there is no density to fit. One stable anomaly survives every threshold, and it is at n = 9.
+Nine of the ten n = 10 leaders are the nine-vertex optimum plus a vertex; C₆+K₃ does not
+continue upward. Why 2/3 is reachable on nine vertices stayed open. See `REPORT_STAGE4.md`.
+
+**Stage 5 question (closed):** the decomposition into layers by independence number,
+D(n, a) = max{Δ : α(G) = a}. Answer: the gate passed on all six sizes — max over layers
+reproduces every Δ_max(n) and every maximizer by graph6 code — but **both main predictions
+missed**. The √5 − 2 atom does not split by layer, and 2/3 remains exactly as much of an
+outlier inside its layer as outside, because layer a = 3 at n = 9 *is* 88 % of the gapped
+graphs; there was almost nothing to unmix. See `REPORT_STAGE5.md`.
+
+**Stage 6 question (closed):** the ceiling of ϑ, and n = 11 by full enumeration. Answer:
+**Δ_max(11) = 0.7748885327…**, maximizer `` J?`D@pgd?{? ``, 17 edges, α = 4, and the maximum
+is **unique** — one graph in the billion exceeds 0.7748, the next is 0.0202 lower. All
+1 006 700 565 connected graphs covered, part-sum verified against `geng -c -u 11`; the
+sandwich removed 89.98 % and 100 891 478 SDPs were solved in 71.8 h on 7 processes. **One
+sealed prediction of ten hit, and it hit by coincidence** — the interval was built for layer
+a = 3 and the value arrived from layer a = 4, whose own interval was exceeded. The
+report is a dated running log, and the closing result sits at its `## Результат`, not at its
+head. See `REPORT_STAGE6.md`.
+
+**Stage 7 question (closed):** do the upper layers inherit from smaller sizes? Answer: the
+**weak form is true and is a consequence of two published properties of ϑ**, not a new
+theorem — the cone C_k(G) = {v} ∨ (G ⊔ K̄_{k−1}) shifts α and ϑ by exactly k−1 and carries Δ
+across unchanged, so D(n, a) ≥ T(n, a). The inheritance boundary is a\* = 5 at both n = 9 and
+n = 10. **All five sealed predictions hit** — against one of ten in Stage 6, because here a
+consequence of a mechanism was predicted rather than a numerical series extrapolated. See
+`REPORT_STAGE7.md`.
+
+**Stage 7.1b question (closed):** an exact handle on Δ_max(11), which has no closed form.
+Answer: a **certified rational enclosure**, Δ_max(11) ∈ [0.7748885327027013, 0.7748885327466875],
+width 4.399·10⁻¹¹ — ten decimal digits fixed — with both ends explicit rationals in ℚ from
+primal and dual certificates, and second place bounded strictly below the leader's lower end.
+All sealed predictions hit. See `REPORT_STAGE7_1B.md`.
+
+**Stage 8 question (closed):** does the *equality* half of inheritance hold? Answer: **no —
+H7-S is refuted by certificate.** The counterexample is `` L@JC?_ASKAGPBH ``, n = 13, 19
+edges, α = 5, with Δ ≥ 45375481648/55555555557 against a transfer bound of
+12398216523947/16·10¹² — a strict inequality with margin 0.0419 in which **no floating-point
+number appears**. The weak form is untouched. A replacement rule was sealed before any count
+by it. A 2026-08-26 amendment corrected the tag on the *upper* bound — it needs a sweeping
+argument to serve as a bound for T(13,5) — and the counterexample survived. See
+`REPORT_STAGE8.md`.
+
+**Stage 8-bis question (closed):** which of the two surviving inheritance formulas is right?
+Answer: **outcome B, decided by the seal before the count** — the (12,5) target was not found
+at ten times the budget while *every* control was found, so the instrument works and the
+failure is evidence. It points **against our own** `a ≥ max(5, n − 6)` and toward
+`a ≥ max(5, n − 7)`, and the two sub-cases cannot be separated with what we have. Only a full
+n = 12 sweep would close it: 164 059 830 476 connected graphs, about 490 days at the measured
+rate. **It will not be run** — the next step is a proof about the layers, and that is stated
+as a decision, not as a "not yet". Half the rule still rests on the single (13,5) point. See
+`REPORT_STAGE8BIS.md` and `OPEN_PROBLEM.md`.
+
+**Stage 9 question (closed):** the algebraic degree of ϑ across the landscape, not just at
+the top. Answer in the «Stage 9 additions» section below and in `REPORT_STAGE9.md`; the short
+form is that extremal graphs are the algebraically *hardest* part of the landscape, that this
+reverses how the project read its own series, and that **all three sealed hypotheses failed
+their criteria** — the direction is recorded as measured but *not confirmed*.
+
 Separate repository, own `.venv`. Nothing is imported from the earlier campaigns — not a
 line of code, not a number.
 
@@ -85,9 +161,51 @@ bash runners/run_stage1.sh                        # Stage 1 end to end (~45 min)
 bash runners/run_stage0.sh                        # all of the above, in order
 ```
 
+Stages 3–9 have no `run_stageN.sh`; they are individual runners, and several read data
+already on disk rather than sweeping again.
+
+```bash
+bash scripts/verify_seals.sh                      # every preregistration vs its seal; run first
+# Stage 3 — the database cross-check
+.venv/bin/python runners/run_3b.py --top 10       # invariant table over the top of each size
+.venv/bin/python runners/run_3c.py --top 10       # rationality vs symmetry; --dps
+.venv/bin/python runners/run_db_compare.py        # per-graph vs the 2012 database; --sizes, --out
+.venv/bin/python runners/certify_db_extras.py     # exact theta>alpha for the eight n=10 extras
+.venv/bin/python runners/certify_positive_gap.py  # exact Delta>0 without the exact theta
+# Stage 4 — the top anomaly (no new sweep; reads Stage 1-3 data)
+.venv/bin/python runners/run_4a.py                # tail statistics; --round
+.venv/bin/python runners/run_4bd.py               # who is on top at n=10, cheap hypotheses
+.venv/bin/python runners/run_4c.py                # does C6+K3 continue upward
+# Stage 5 — layers by independence number
+.venv/bin/python runners/run_5a.py --procs 7      # the D(n,a) table; gate 5.a
+.venv/bin/python runners/run_5bcef.py             # layer growth, crossings, atoms by layer
+# Stage 6 — the ceiling of theta, and n=11
+.venv/bin/python runners/run_6a.py --top 50       # fractional packing alpha*, the ceiling
+.venv/bin/python runners/run_6ab.py --sizes 9 10  # the ceiling among graphs that have a gap
+# the 6.c sweep is run_1c.py at --n 11: ~72 h on 7 procs, 4000 parts, resumable.
+# NEVER launch it without a timestamped log — see the log-naming trap below.
+# Stage 7 — inheritance of the upper layers
+.venv/bin/python runners/run_7.py --trials 25     # H7 blocks 7.a-7.c; --seed, --out
+.venv/bin/python runners/run_7_series.py          # series table, density, nesting
+.venv/bin/python runners/certify_enclosure.py     # 7.1b: certified rational enclosure
+                                                  #   --leader --second --dps --ladder --cs --out
+# Stage 8 — the attack on the equality half
+.venv/bin/python runners/run_8b.py --procs 7      # directed search; --restarts --steps --bis --add
+.venv/bin/python runners/run_8c.py                # where the constants 5 and 6 come from
+# Stage 9 — algebraic degrees
+.venv/bin/python runners/run_9a_samples.py        # build the three samples FIRST; --only-c
+.venv/bin/python runners/run_9a.py --procs 7      # the measurement and its three gates
+.venv/bin/python runners/run_9b.py                # the three hypotheses, sealed criteria only
+```
+
 Each runner takes `--seed` (default 20260819) and writes one JSON into `results/`.
 Nothing downstream of a failed gate should be run; the runners exit non-zero on failure
 so `run_stage0.sh` stops on its own.
+
+In `run_9a.py` the order of the gates is load-bearing, not cosmetic: two gates and the
+Δ = 0 control sample run *before* anything unknown is measured, so that a broken
+instrument is caught on graphs whose answer is already known exactly. Do not reorder it,
+and do not reach for `--skip-gates` to save time.
 
 ## Layout
 
@@ -275,6 +393,22 @@ reads. Deleting it and re-running `run_0c.py` also works — the chunk checkpoin
   landed on the most sensitive subject there is, other people's rights. So the check is not
   "did I update the text": it is **grep for the old claim and confirm zero hits** before
   calling an edit done.
+
+- **Correcting a claim means sweeping EVERY text in the project at once, not the document
+  where it was noticed.** Fourth instance in a row, same shape: the redistribution sentence
+  was fixed in `README.md` on 2026-08-27 and the identical claim sat untouched in
+  `papers/paper_A` §1.2 for a week. The unit of repair is the project, not the file. The
+  sweep runs over the papers, `README.md`, `SOURCES.md`, `CLAUDE.md`, the stage reports,
+  `CITATION.cff`, the GitHub release notes (`gh release view <tag> --json body`) and the
+  **Zenodo record description** (`curl https://zenodo.org/api/records/<id>`) — the last two
+  live outside the working tree and no `grep .` will ever reach them.
+
+  **A plain multi-word grep gives false zeros here, and it did.** These files are
+  hard-wrapped, so "archived here" was split across a newline and `grep -rn "archived here"`
+  reported the paper clean while the sentence was sitting in it. Flatten whitespace before
+  matching — read each file, `re.sub(r"\s+", " ", text)`, then search — and search for the
+  *idea* with several phrasings rather than the one wording you remember. Zero hits from a
+  line-oriented grep is not evidence.
 
 - **An audit means the whole document, not the sentence that was reported.** This has now
   cost twice. The claim that Δ_max(11) was proved sat in five places when three were named;

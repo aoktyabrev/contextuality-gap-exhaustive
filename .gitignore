@@ -48,6 +48,12 @@ results/report_9b.txt
 # Paper drafts stay out of the repository until they are published; the claim
 # checker and its hand-transcribed claim list do not.
 papers/*.md
+# the typeset copy and its build scratch follow the source: drafts are not published
+# from this repository, they are sent to named people (see M.5 of the 2026-09-04 brief)
+papers/*.pdf
+papers/.texbuild/
+papers/.preview/
+papers/.txtpages/
 
 # the downloaded database ships compressed; the decompressed copy is derived
 sources/quantum_graphs/quantum10
