@@ -758,7 +758,7 @@ Archived on Zenodo. Cite the concept DOI, which always resolves to the current v
     Zenodo. https://doi.org/10.5281/zenodo.22031808
 
 The DOI for this specific release (v2.2) is
-[10.5281/zenodo.22309457](https://doi.org/10.5281/zenodo.22309457); v2.1 was
+[10.5281/zenodo.22324644](https://doi.org/10.5281/zenodo.22324644); v2.1 was
 [10.5281/zenodo.22110971](https://doi.org/10.5281/zenodo.22110971), v2.0
 [10.5281/zenodo.22092303](https://doi.org/10.5281/zenodo.22092303) and v1.0.0
 [10.5281/zenodo.22031809](https://doi.org/10.5281/zenodo.22031809).

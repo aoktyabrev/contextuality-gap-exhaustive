@@ -1577,11 +1577,11 @@
     "section": "8",
     "tag": "observed",
     "claim": "version DOI",
-    "as_written": "10.5281/zenodo.22309457",
+    "as_written": "10.5281/zenodo.22324644",
     "check": {
       "kind": "text",
       "file": "CITATION.cff",
-      "needle": "10.5281/zenodo.22309457"
+      "needle": "10.5281/zenodo.22324644"
     }
   },
   {
