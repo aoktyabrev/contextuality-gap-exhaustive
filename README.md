@@ -559,7 +559,9 @@ measurement of Stage 9, about seventy minutes on seven cores — and diffs what 
 against what is committed. It exits non-zero if any published number differs.
 
 Requirements: Python 3.12, a C compiler for nauty, ~8 CPU cores, ~2 GB of free disk for the
-intermediate sweep files. No GPU — every SDP here is at most 11×11. If a system nauty is
+intermediate sweep files, and a network connection — two of the steps fetch third-party
+data this repository does not redistribute (`run_db_compare.py` and `run_n8_three_way.py`
+pull the 2012 database from `codetables.de` and check it against committed SHA-256 sums). No GPU — every SDP here is at most 11×11. If a system nauty is
 preferred, point `QUADC5_GENG` at its `geng` binary.
 
 **n = 11 is deliberately not part of this script.** Nobody is going to re-run a
