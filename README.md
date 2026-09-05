@@ -429,7 +429,8 @@ because the *cube* of the 10⁻³⁵⁹ error falls below the claimed tolerance.
 polynomial, an unremarkable degree, everything looking right. At an honest 350 digits the
 same value gives x = 3 immediately. Both are checks in `tests/test_algdeg.py`.
 
-**This is the same mechanism as the false positive the original paper's authors withdrew**
+**This is the same mechanism as the false positive the original paper's authors reported
+as such in their own text**
 (`SOURCES.md` §S1.9) — stated without any accusatory edge, because we walked into it
 ourselves, in our own instrument, and it took three restarts to see. It also corrects our
 own Stage 2 method: there the agreement-between-levels criterion was used as a test of

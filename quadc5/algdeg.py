@@ -12,11 +12,13 @@ Two things happen here and they must not be confused.
                 Ascending order is what makes the first hit MINIMAL, hence
                 irreducible over Q -- no separate irreducibility test is needed.
 
-A found polynomial is a HYPOTHESIS, not a result.  Stage 2 exists because the
-source's authors published a PSLQ hit as a closed form and withdrew it.  Here the
-only defence asked for by PREREGISTRATION_STAGE9 2.4 is reproduction at doubled
-precision; nothing in this module proves anything, and the word "proved" belongs
-only to the exact certificates of quadc5/numfield.py.
+A found polynomial is a HYPOTHESIS, not a result.  Stage 2 exists because the source's
+authors' PSLQ candidate at 15 digits was a false positive -- which their own paper says
+plainly, having tested it and reported it as such.  It was never offered as a closed
+form and nothing was withdrawn.  Here the only defence asked for by
+PREREGISTRATION_STAGE9 2.4 is reproduction at doubled precision; nothing in this module
+proves anything, and the word "proved" belongs only to the exact certificates of
+quadc5/numfield.py.
 """
 from __future__ import annotations
 import subprocess, os

@@ -102,8 +102,7 @@ settles on a stable wrong point and every precision reproduces it: for one
 eight-vertex graph the values at 960, 1920 and 3840 digits agree with each other
 to 945 digits while agreeing with the truth ϑ = α = 3 to 359. Feeding an
 integer-relation search those 940 claimed digits returns not a blank but
-(x − 3)³ — an integer polynomial of degree 3 where the truth is degree 1. This
-is the same mechanism as the false positive you withdrew, and we walked into it
+(x − 3)³ — an integer polynomial of degree 3 where the truth is degree 1. This is the same mechanism as the false positive you reported in your own paper, and we walked into it
 in our own instrument; it took three restarts and a control sample with exactly
 known answers to see. The fix is to require the residual to fall with precision
 before believing any digit count.

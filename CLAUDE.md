@@ -19,8 +19,7 @@ than a downloaded file, plus exact certificates and the series over n = 5…10. 
 step, and no structural invariant survives the whole series. See `REPORT_STAGE1.md`.
 
 **Stage 2 question (closed):** the exact value of ϑ for the eight-vertex maximizer — the
-one hole in the series, and the value whose PSLQ the source's authors withdrew as a false
-positive. Answer: ϑ(`` GCQb`o ``) is the root 3.46784372984… of **x⁴ − x³ + 23x² − 155x +
+one hole in the series, and the value whose PSLQ candidate the source's authors reported as a false positive. Answer: ϑ(`` GCQb`o ``) is the root 3.46784372984… of **x⁴ − x³ + 23x² − 155x +
 158**, proved by exact primal and dual certificates over ℚ(θ); its Galois group is the
 full S₄. The n=10 rank 2 did not close: no minimal polynomial of degree ≤ 48 with height
 ≤ 10⁹ exists. See `REPORT_STAGE2.md`.
