@@ -1,0 +1,13 @@
+# Tooling that is NOT needed to reproduce any published number.
+#
+# requirements.txt is what section 8 of the paper sends a reader to: the environment for
+# rebuilding the results.  Nothing here is on that path, and nothing here is imported by
+# any of the five gates -- keeping it separate means a reader installs what the claims
+# depend on and nothing else.
+#
+# pdfminer.six is a second, independent PDF text extractor, used only by
+# scripts/preflight_printed_identities.py, which reads the typeset manuscript and is a
+# pre-flight rather than a gate.  poppler-utils (pdftotext) is the other option and needs
+# root, so it is not assumed.  Without this package the pre-flight still runs, on
+# ghostscript alone.
+pdfminer.six==20260107
