@@ -48,18 +48,31 @@ NUM = r"\d[\d    ]*\d|\d"
 PAIR = re.compile(r"([≤≥=])?\s*(" + NUM + r")\s*/\s*(" + NUM + r")\s*=\s*(\d+\.\d+)")
 
 
-def extract(pdf):
-    """Text of a PDF.  pdftotext if present, else ghostscript's txtwrite."""
-    if shutil.which("pdftotext"):
-        r = subprocess.run(["pdftotext", "-layout", pdf, "-"],
-                           capture_output=True, text=True)
+def extract(pdf, engine="auto"):
+    """Text of a PDF, by a named engine.
+
+    More than one engine matters: this check reads the typeset artefact, so a result
+    that depends on WHICH extractor read it is not a result about the PDF.  Running two
+    independent implementations and comparing the tables is the cheap way to find that
+    out.  They disagree in whitespace -- ghostscript's txtwrite drops interword spaces
+    on justified lines -- so every consumer here normalises whitespace first.
+    """
+    if engine in ("auto", "pdftotext") and shutil.which("pdftotext"):
+        r = subprocess.run(["pdftotext", "-layout", pdf, "-"], capture_output=True, text=True)
         if r.returncode == 0:
             return r.stdout, "pdftotext"
-    r = subprocess.run(["gs", "-q", "-dNOPAUSE", "-dBATCH", "-sDEVICE=txtwrite",
-                        "-sOutputFile=-", pdf], capture_output=True, text=True)
-    if r.returncode != 0:
-        raise SystemExit(f"cannot extract text from {pdf}: {r.stderr[:200]}")
-    return r.stdout, "gs txtwrite"
+        if engine == "pdftotext":
+            raise SystemExit(f"pdftotext failed on {pdf}")
+    if engine == "pdfminer" or (engine == "auto" and not shutil.which("pdftotext") and False):
+        from pdfminer.high_level import extract_text
+        return extract_text(pdf), "pdfminer.six"
+    if engine in ("auto", "gs"):
+        r = subprocess.run(["gs", "-q", "-dNOPAUSE", "-dBATCH", "-sDEVICE=txtwrite",
+                            "-sOutputFile=-", pdf], capture_output=True, text=True)
+        if r.returncode != 0:
+            raise SystemExit(f"cannot extract text from {pdf}: {r.stderr[:200]}")
+        return r.stdout, "gs txtwrite"
+    raise SystemExit(f"unknown extractor {engine!r}")
 
 
 def clean(s):
@@ -67,10 +80,16 @@ def clean(s):
 
 
 def main():
-    pdfs = sys.argv[1:] or sorted(glob.glob(os.path.join(ROOT, "papers", "*.pdf")))
+    argv = list(sys.argv[1:])
+    engine = "auto"
+    if "--extractor" in argv:
+        i = argv.index("--extractor")
+        engine = argv[i + 1]
+        del argv[i:i + 2]
+    pdfs = argv or sorted(glob.glob(os.path.join(ROOT, "papers", "*.pdf")))
     rows, bad = [], 0
     for pdf in pdfs:
-        text, how = extract(pdf)
+        text, how = extract(pdf, engine)
         flat = re.sub(r"\s+", " ", text)
         for m in PAIR.finditer(flat):
             n, d, dec = clean(m.group(2)), clean(m.group(3)), m.group(4)
